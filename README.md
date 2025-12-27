@@ -1,18 +1,69 @@
-# Quartz v4
+# PME Treasure
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+A searchable web archive of 5,599 forum posts from the [Blender Artists Pie Menu Editor community](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456) (2016-2025).
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+**Live Site**: https://pluglug.github.io/pme-treasure-web/
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Features
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+- Full-text search across all posts
+- Interactive graph view of connections
+- Tag-based navigation
+- Mobile-friendly design
+- Dark/light mode
 
-## Sponsors
+## Data
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+This knowledge base contains:
+
+| Category | Count |
+|----------|-------|
+| Total Posts | 5,599 |
+| Contributors | 380 |
+| Solved Questions | 1,379 |
+| Unsolved Questions | 2,016 |
+
+### Topics
+
+- Pie Menus (1,820 posts)
+- Hotkey Configuration (1,519 posts)
+- Macros (767 posts)
+- Popup Dialogs (723 posts)
+- Scripting (293 posts)
+
+## AI-Friendly Exports
+
+Available in the `exports/` directory of the source repo:
+
+- `posts.json` - Full dataset (5MB)
+- `statistics.md` - Summary statistics
+- `topic_*.md` - Topic-specific compilations
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npx quartz build --serve
+
+# Build for production
+npx quartz build
+```
+
+## Built With
+
+- [Quartz](https://quartz.jzhao.xyz/) - Static site generator
+- [Obsidian](https://obsidian.md/) - Knowledge base format
+
+## License
+
+Content: Community-contributed, original authors retain rights
+Code: MIT License
+
+## Credits
+
+- Original PME addon by [roaoao](https://gum.co/pie_menu_editor)
+- Data extracted from [Blender Artists](https://blenderartists.org/)
+- AI classification powered by Claude
