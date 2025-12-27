@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# PME Treasure\n## Knowledge Base Overview\n\n5,599 posts | 380 users | 2016-2025","x":-200,"y":-400,"width":400,"height":140,"color":"6"},
+		{"id":"editors-title","type":"text","text":"## Editor Types","x":-600,"y":-200,"width":200,"height":60,"color":"4"},
+		{"id":"pie-menu","type":"text","text":"### Pie Menu\n1,820 posts\n\n#editor/pie-menu","x":-600,"y":-120,"width":180,"height":120,"color":"4"},
+		{"id":"macro","type":"text","text":"### Macro\n767 posts\n\n#editor/macro","x":-400,"y":-120,"width":180,"height":120,"color":"1"},
+		{"id":"popup","type":"text","text":"### Popup Dialog\n723 posts\n\n#editor/popup-dialog","x":-600,"y":20,"width":180,"height":120,"color":"2"},
+		{"id":"modal","type":"text","text":"### Modal\n86 posts\n\n#editor/modal","x":-400,"y":20,"width":180,"height":120,"color":"3"},
+		{"id":"panel","type":"text","text":"### Panel Group\n82 posts\n\n#editor/panel-group","x":-600,"y":160,"width":180,"height":120,"color":"5"},
+		{"id":"sticky","type":"text","text":"### Sticky Key\n25 posts\n\n#editor/sticky-key","x":-400,"y":160,"width":180,"height":120,"color":"3"},
+		{"id":"topics-title","type":"text","text":"## Hot Topics","x":0,"y":-200,"width":200,"height":60,"color":"2"},
+		{"id":"hotkeys","type":"text","text":"### Hotkeys\n1,519 posts\n\nConfiguration: 658\nConflicts: 187","x":0,"y":-120,"width":200,"height":140,"color":"2"},
+		{"id":"scripting","type":"text","text":"### Scripting\n293 posts\n\nPython: 200","x":0,"y":40,"width":200,"height":120,"color":"2"},
+		{"id":"compatibility","type":"text","text":"### Compatibility\n74 posts\n\nBlender versions","x":0,"y":180,"width":200,"height":100,"color":"2"},
+		{"id":"status-title","type":"text","text":"## Status","x":300,"y":-200,"width":200,"height":60,"color":"1"},
+		{"id":"solved","type":"text","text":"### Solved\n1,379 posts\n\n#status/solved","x":300,"y":-120,"width":180,"height":120,"color":"4"},
+		{"id":"unsolved","type":"text","text":"### Unsolved\n2,016 posts\n\n#status/unsolved","x":300,"y":20,"width":180,"height":120,"color":"1"},
+		{"id":"difficulty-title","type":"text","text":"## Difficulty","x":550,"y":-200,"width":200,"height":60,"color":"5"},
+		{"id":"beginner","type":"text","text":"### Beginner\n1,868 posts (32%)","x":550,"y":-120,"width":180,"height":80,"color":"5"},
+		{"id":"intermediate","type":"text","text":"### Intermediate\n2,303 posts (40%)","x":550,"y":-20,"width":180,"height":80,"color":"6"},
+		{"id":"advanced","type":"text","text":"### Advanced\n406 posts (7%)","x":550,"y":80,"width":180,"height":80,"color":"1"},
+		{"id":"nav-title","type":"text","text":"## Navigation","x":-200,"y":320,"width":400,"height":50,"color":"6"},
+		{"id":"dashboard-link","type":"file","file":"Dashboard.md","x":-300,"y":390,"width":180,"height":80},
+		{"id":"timeline-link","type":"file","file":"_Index/Timeline.md","x":-100,"y":390,"width":180,"height":80},
+		{"id":"tags-link","type":"file","file":"_Index/Tag_Index.md","x":100,"y":390,"width":180,"height":80}
+	],
+	"edges":[
+		{"id":"edge1","fromNode":"title","fromSide":"bottom","toNode":"editors-title","toSide":"top"},
+		{"id":"edge2","fromNode":"title","fromSide":"bottom","toNode":"topics-title","toSide":"top"},
+		{"id":"edge3","fromNode":"title","fromSide":"bottom","toNode":"status-title","toSide":"top"},
+		{"id":"edge4","fromNode":"title","fromSide":"bottom","toNode":"difficulty-title","toSide":"top"}
+	]
+}
