@@ -2,7 +2,7 @@
 
 A searchable web archive of 5,599 forum posts from the [Blender Artists Pie Menu Editor community](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456) (2016-2025).
 
-**Live Site**: https://pluglug.github.io/pme-treasure-web/
+**Live Site**: https://pluglug.github.io/ba-pme-treasure/
 
 ## Features
 
