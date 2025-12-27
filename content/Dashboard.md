@@ -1,23 +1,23 @@
 # PME Treasure Dashboard
 
-> Dataviewプラグインが必要です: Settings → Community plugins → Browse → "Dataview" をインストール
+> Note: This dashboard uses Dataview plugin features. On the web version, these queries won't run, but you can view the data through the search and tag pages.
 
 ---
 
-## 統計概要
+## Statistics Overview
 
-### 投稿タイプ別
+### By Post Type
 
 ```dataview
 TABLE WITHOUT ID
-  choice(type = "question", "質問",
-  choice(type = "answer", "回答",
-  choice(type = "bug_report", "バグ報告",
-  choice(type = "feature_request", "機能要望",
-  choice(type = "showcase", "作品紹介",
-  choice(type = "discussion", "議論",
-  choice(type = "announcement", "お知らせ", type))))))) as "タイプ",
-  length(rows) as "件数"
+  choice(type = "question", "Question",
+  choice(type = "answer", "Answer",
+  choice(type = "bug_report", "Bug Report",
+  choice(type = "feature_request", "Feature Request",
+  choice(type = "showcase", "Showcase",
+  choice(type = "discussion", "Discussion",
+  choice(type = "announcement", "Announcement", type))))))) as "Type",
+  length(rows) as "Count"
 FROM "Posts"
 GROUP BY type
 SORT length(rows) DESC
@@ -25,13 +25,13 @@ SORT length(rows) DESC
 
 ---
 
-## 未解決の高品質な質問 (Top 20)
+## High-Quality Unsolved Questions (Top 20)
 
 ```dataview
 TABLE
-  author as "投稿者",
-  dateformat(date, "yyyy-MM-dd") as "日付",
-  quality_score as "品質"
+  author as "Author",
+  dateformat(date, "yyyy-MM-dd") as "Date",
+  quality_score as "Quality"
 FROM "Posts"
 WHERE contains(tags, "#status/unsolved") AND quality_score >= 7
 SORT quality_score DESC, date DESC
@@ -40,37 +40,37 @@ LIMIT 20
 
 ---
 
-## エディタ別 投稿数
+## Posts by Editor Type
 
 ```dataview
 TABLE WITHOUT ID
-  "Pie Menu" as "エディタ",
-  length(filter(rows, (r) => contains(r.tags, "#editor/pie-menu"))) as "件数"
+  "Pie Menu" as "Editor",
+  length(filter(rows, (r) => contains(r.tags, "#editor/pie-menu"))) as "Count"
 FROM "Posts"
 GROUP BY true
 
 TABLE WITHOUT ID
-  "Macro" as "エディタ",
-  length(filter(rows, (r) => contains(r.tags, "#editor/macro"))) as "件数"
+  "Macro" as "Editor",
+  length(filter(rows, (r) => contains(r.tags, "#editor/macro"))) as "Count"
 FROM "Posts"
 GROUP BY true
 
 TABLE WITHOUT ID
-  "Popup Dialog" as "エディタ",
-  length(filter(rows, (r) => contains(r.tags, "#editor/popup-dialog"))) as "件数"
+  "Popup Dialog" as "Editor",
+  length(filter(rows, (r) => contains(r.tags, "#editor/popup-dialog"))) as "Count"
 FROM "Posts"
 GROUP BY true
 ```
 
 ---
 
-## 解決済み投稿 (最新20件)
+## Solved Posts (Latest 20)
 
 ```dataview
 TABLE
-  author as "投稿者",
-  dateformat(date, "yyyy-MM-dd") as "日付",
-  quality_score as "品質"
+  author as "Author",
+  dateformat(date, "yyyy-MM-dd") as "Date",
+  quality_score as "Quality"
 FROM "Posts"
 WHERE contains(tags, "#status/solved")
 SORT date DESC
@@ -79,14 +79,14 @@ LIMIT 20
 
 ---
 
-## 難易度別分布
+## Distribution by Difficulty
 
 ```dataview
 TABLE WITHOUT ID
-  choice(contains(tags, "#difficulty/beginner"), "初級",
-  choice(contains(tags, "#difficulty/intermediate"), "中級",
-  choice(contains(tags, "#difficulty/advanced"), "上級", "未分類"))) as "難易度",
-  length(rows) as "件数"
+  choice(contains(tags, "#difficulty/beginner"), "Beginner",
+  choice(contains(tags, "#difficulty/intermediate"), "Intermediate",
+  choice(contains(tags, "#difficulty/advanced"), "Advanced", "Unclassified"))) as "Difficulty",
+  length(rows) as "Count"
 FROM "Posts"
 GROUP BY choice(contains(tags, "#difficulty/beginner"), "beginner",
          choice(contains(tags, "#difficulty/intermediate"), "intermediate",
@@ -96,13 +96,13 @@ SORT length(rows) DESC
 
 ---
 
-## スクリプティング関連 (高品質順)
+## Scripting-Related Posts (High Quality)
 
 ```dataview
 TABLE
-  author as "投稿者",
-  dateformat(date, "yyyy-MM-dd") as "日付",
-  type as "タイプ"
+  author as "Author",
+  dateformat(date, "yyyy-MM-dd") as "Date",
+  type as "Type"
 FROM "Posts"
 WHERE (contains(tags, "#topic/scripting") OR contains(tags, "#topic/python-scripting"))
   AND quality_score >= 6
@@ -112,13 +112,13 @@ LIMIT 30
 
 ---
 
-## ホットキー競合問題
+## Hotkey Conflict Issues
 
 ```dataview
 TABLE
-  author as "投稿者",
-  dateformat(date, "yyyy-MM-dd") as "日付",
-  choice(contains(tags, "#status/solved"), "解決", "未解決") as "状態"
+  author as "Author",
+  dateformat(date, "yyyy-MM-dd") as "Date",
+  choice(contains(tags, "#status/solved"), "Solved", "Unsolved") as "Status"
 FROM "Posts"
 WHERE contains(tags, "#topic/hotkeys/conflicts")
 SORT date DESC
@@ -127,13 +127,13 @@ LIMIT 30
 
 ---
 
-## 最近の投稿 (30日以内)
+## Recent Posts (Last 30 Days)
 
 ```dataview
 TABLE
-  author as "投稿者",
-  type as "タイプ",
-  quality_score as "品質"
+  author as "Author",
+  type as "Type",
+  quality_score as "Quality"
 FROM "Posts"
 WHERE date >= date(today) - dur(30 days)
 SORT date DESC
@@ -142,12 +142,12 @@ LIMIT 30
 
 ---
 
-## トップ貢献者
+## Top Contributors
 
 ```dataview
 TABLE WITHOUT ID
-  author as "ユーザー",
-  length(rows) as "投稿数"
+  author as "User",
+  length(rows) as "Posts"
 FROM "Posts"
 GROUP BY author
 SORT length(rows) DESC
@@ -156,20 +156,24 @@ LIMIT 15
 
 ---
 
-## クイックリンク
+## Quick Links
 
-- [[_Index/Timeline|タイムライン]]
-- [[_Index/Tag_Index|タグ一覧]]
-- [[_Index/User_Index|ユーザー一覧]]
+- [[_Index/Timeline|Timeline]]
+- [[_Index/Tag_Index|Tag Index]]
+- [[_Index/User_Index|User Index]]
 
 ---
 
-## フィルタリング Tips
+## Search Tips
 
-Obsidianの検索で以下のクエリが使えます：
+Use Obsidian's search (on desktop) with these queries:
 
 ```
-tag:#status/unsolved tag:#editor/pie-menu    // 未解決のパイメニュー質問
-tag:#difficulty/advanced tag:#topic/scripting // 上級スクリプティング
-path:Posts quality_score:9                    // 高品質投稿
+tag:#status/unsolved tag:#editor/pie-menu    // Unsolved pie menu questions
+tag:#difficulty/advanced tag:#topic/scripting // Advanced scripting topics
+path:Posts quality_score:9                    // High quality posts
 ```
+
+---
+
+**For Obsidian Users**: Download the vault from the repository to use these interactive Dataview queries locally.
