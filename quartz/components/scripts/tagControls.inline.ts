@@ -1,5 +1,8 @@
-// Tag Page Controls - Sorting and Filtering
-// This script provides client-side sorting and filtering for tag page listings
+// Tag Page Controls - Sorting, Filtering, and Pagination
+// This script provides client-side controls for tag page listings
+// with pagination to prevent browser freeze on large lists (1000+ items)
+
+const ITEMS_PER_PAGE = 50 // Show 50 items at a time
 
 interface PostData {
   element: HTMLElement
@@ -19,13 +22,18 @@ function initTagControls() {
   const items = listContainer.querySelectorAll("li.section-li")
   if (items.length === 0) return
 
+  // CRITICAL: Immediately hide all items to prevent layout thrashing
+  // This must happen before any other processing
+  const itemsArray = Array.from(items) as HTMLElement[]
+  itemsArray.forEach((item) => {
+    item.style.display = "none"
+  })
+
   // Extract data from each item
   const postsData: PostData[] = []
   const allTypes = new Set<string>()
 
-  items.forEach((item) => {
-    const element = item as HTMLElement
-
+  itemsArray.forEach((element) => {
     // Extract date from meta
     const metaEl = element.querySelector(".meta")
     const dateText = metaEl?.textContent?.trim() || ""
@@ -52,7 +60,11 @@ function initTagControls() {
   })
 
   // Don't add controls if there are very few items
-  if (postsData.length < 5) return
+  if (postsData.length < 5) {
+    // Show all items if less than 5
+    postsData.forEach((p) => (p.element.style.display = ""))
+    return
+  }
 
   // Create controls container
   const controlsContainer = document.createElement("div")
@@ -129,19 +141,39 @@ function initTagControls() {
     pageListingContainer.prepend(controlsContainer)
   }
 
+  // === Pagination Controls ===
+  const paginationContainer = document.createElement("div")
+  paginationContainer.className = "tag-pagination"
+
+  const loadMoreBtn = document.createElement("button")
+  loadMoreBtn.className = "load-more-btn"
+  loadMoreBtn.textContent = "Load More"
+
+  const paginationInfo = document.createElement("span")
+  paginationInfo.className = "pagination-info"
+
+  paginationContainer.appendChild(paginationInfo)
+  paginationContainer.appendChild(loadMoreBtn)
+
   // === Event Handlers ===
   let currentFilter = "all"
   let currentSort = "date-desc"
+  let currentPage = 1
+  let filteredData: PostData[] = []
 
-  function applyFiltersAndSort() {
+  function applyFiltersAndSort(resetPage = true) {
+    if (resetPage) {
+      currentPage = 1
+    }
+
     // Filter
-    let filtered = postsData
+    filteredData = postsData
     if (currentFilter !== "all") {
-      filtered = postsData.filter((p) => p.type === currentFilter)
+      filteredData = postsData.filter((p) => p.type === currentFilter)
     }
 
     // Sort
-    filtered.sort((a, b) => {
+    filteredData.sort((a, b) => {
       switch (currentSort) {
         case "date-desc":
           return b.date - a.date
@@ -156,27 +188,45 @@ function initTagControls() {
       }
     })
 
-    // Update visibility and order
+    // Hide all items first
     postsData.forEach((p) => {
       p.element.style.display = "none"
     })
 
-    filtered.forEach((p) => {
-      p.element.style.display = ""
-      listContainer.appendChild(p.element) // Re-append to reorder
-    })
+    // Show only items up to current page
+    const visibleCount = Math.min(currentPage * ITEMS_PER_PAGE, filteredData.length)
+    for (let i = 0; i < visibleCount; i++) {
+      filteredData[i].element.style.display = ""
+      listContainer.appendChild(filteredData[i].element) // Re-append to maintain order
+    }
 
-    // Update visible count
-    const visibleCount = filtered.length
-    const totalCount = postsData.length
+    // Update pagination info
+    const totalFiltered = filteredData.length
+    paginationInfo.textContent = `Showing ${visibleCount} of ${totalFiltered} items`
+
+    // Show/hide load more button
+    if (visibleCount >= totalFiltered) {
+      loadMoreBtn.style.display = "none"
+    } else {
+      loadMoreBtn.style.display = ""
+      loadMoreBtn.textContent = `Load More (${totalFiltered - visibleCount} remaining)`
+    }
+
+    // Update count text
     if (itemCountP) {
       if (currentFilter === "all") {
-        itemCountP.textContent = `${totalCount} items with this tag.`
+        itemCountP.textContent = `${postsData.length} items with this tag.`
       } else {
-        itemCountP.textContent = `Showing ${visibleCount} of ${totalCount} items (filtered by: ${currentFilter})`
+        itemCountP.textContent = `Filtered: ${totalFiltered} of ${postsData.length} items (${currentFilter})`
       }
     }
   }
+
+  // Load more button handler
+  loadMoreBtn.addEventListener("click", () => {
+    currentPage++
+    applyFiltersAndSort(false)
+  })
 
   // Sort change handler
   sortSelect.addEventListener("change", () => {
@@ -195,12 +245,18 @@ function initTagControls() {
       applyFiltersAndSort()
     })
   })
+
+  // Insert pagination container after the list
+  listContainer.after(paginationContainer)
+
+  // Initial display - show first page
+  applyFiltersAndSort()
 }
 
 // Initialize on navigation (SPA mode)
 document.addEventListener("nav", () => {
-  // Only run on tag pages
-  if (window.location.pathname.startsWith("/tags/")) {
+  // Only run on tag pages (handle both root and subdirectory deployments)
+  if (window.location.pathname.includes("/tags/")) {
     initTagControls()
   }
 })
