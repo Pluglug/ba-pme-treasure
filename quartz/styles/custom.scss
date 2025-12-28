@@ -1,3 +1,732 @@
 @use "./base.scss";
+@use "sass:color";
 
-// put your custom CSS here!
+// ═══════════════════════════════════════════════════════════════
+// PME TREASURE - "Treasure Vault" Design System
+// A technical blueprint aesthetic meets treasure discovery
+// ═══════════════════════════════════════════════════════════════
+
+// ─────────────────────────────────────────────────────────────────
+// Color Palette - Blender-inspired with treasure gold accents
+// ─────────────────────────────────────────────────────────────────
+$treasure-gold: #E87D0D;
+$treasure-amber: #F5A623;
+$deep-blue: #1a2332;
+$blueprint-blue: #265787;
+$light-blue: #6BA5E0;
+$emerald: #10B981;
+$ruby: #EF4444;
+$amethyst: #8B5CF6;
+
+// Glow effects
+$glow-orange: 0 0 20px rgba($treasure-gold, 0.4);
+$glow-blue: 0 0 20px rgba($light-blue, 0.3);
+$glow-soft: 0 0 40px rgba($treasure-gold, 0.15);
+
+// ─────────────────────────────────────────────────────────────────
+// Global Overrides - Typography & Base
+// ─────────────────────────────────────────────────────────────────
+:root {
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-body) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono) !important;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Page Background - Subtle grid pattern
+// ─────────────────────────────────────────────────────────────────
+.center {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      linear-gradient(rgba($blueprint-blue, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($blueprint-blue, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Hero Section - Bold, immersive entry point with background image
+// ─────────────────────────────────────────────────────────────────
+.hero-section {
+  position: relative;
+  text-align: center;
+  padding: 3rem 2rem 3.5rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+
+  // Hide the inline image (we use it as background instead)
+  img {
+    display: none;
+  }
+
+  // Background image layer
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/_static/images/pme-top.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  // Overlay gradient for readability
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba($treasure-gold, 0.15) 0%, transparent 60%),
+      linear-gradient(180deg, rgba($deep-blue, 0.7) 0%, rgba($deep-blue, 0.85) 100%);
+    z-index: 1;
+  }
+
+  // Glowing border
+  border: 1px solid rgba($treasure-gold, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    $glow-soft,
+    0 20px 40px rgba(0, 0, 0, 0.15);
+
+  // Content above overlay
+  h1, p {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    background: linear-gradient(135deg, $treasure-gold 0%, $treasure-amber 50%, $treasure-gold 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 10px rgba($treasure-gold, 0.4));
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+    strong {
+      color: $treasure-gold;
+      font-weight: 600;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Section Headers - Distinctive styling
+// ─────────────────────────────────────────────────────────────────
+article h2 {
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-top: 3rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, $treasure-gold 0%, $treasure-gold 40%, transparent 100%);
+    border-radius: 2px;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Navigation Cards Grid - Glass morphism cards
+// ─────────────────────────────────────────────────────────────────
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.nav-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+
+  // Gradient overlay on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($treasure-gold, 0.3);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba($treasure-gold, 0.1);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+
+      &::before {
+        content: '›';
+        position: absolute;
+        left: 0;
+        color: var(--gray);
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $treasure-gold;
+        }
+      }
+    }
+  }
+
+  // Card variants with accent colors
+  &.beginner {
+    border-left: 3px solid $emerald;
+
+    h3 { color: $emerald; }
+
+    &:hover {
+      border-color: rgba($emerald, 0.4);
+      box-shadow: 0 12px 40px rgba($emerald, 0.1), $glow-soft;
+    }
+  }
+
+  &.problem {
+    border-left: 3px solid $treasure-gold;
+
+    h3 { color: $treasure-gold; }
+
+    &:hover {
+      border-color: rgba($treasure-gold, 0.4);
+      box-shadow: 0 12px 40px rgba($treasure-gold, 0.1), $glow-orange;
+    }
+  }
+
+  &.code {
+    border-left: 3px solid $light-blue;
+
+    h3 { color: $light-blue; }
+
+    &:hover {
+      border-color: rgba($light-blue, 0.4);
+      box-shadow: 0 12px 40px rgba($light-blue, 0.1), $glow-blue;
+    }
+  }
+
+  &.explore {
+    border-left: 3px solid $amethyst;
+
+    h3 { color: $amethyst; }
+
+    &:hover {
+      border-color: rgba($amethyst, 0.4);
+      box-shadow: 0 12px 40px rgba($amethyst, 0.1);
+    }
+  }
+
+  &.showcase {
+    border-left: 3px solid $treasure-amber;
+
+    h3 { color: $treasure-amber; }
+
+    &:hover {
+      border-color: rgba($treasure-amber, 0.4);
+      box-shadow: 0 12px 40px rgba($treasure-amber, 0.15), $glow-orange;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Tables - Technical data display
+// ─────────────────────────────────────────────────────────────────
+article table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba($blueprint-blue, 0.2);
+  background: rgba(0, 0, 0, 0.02);
+
+  th {
+    background: linear-gradient(180deg, rgba($treasure-gold, 0.15) 0%, rgba($treasure-gold, 0.08) 100%);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $treasure-gold;
+    border-bottom: 2px solid rgba($treasure-gold, 0.3);
+  }
+
+  td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease;
+  }
+
+  tr {
+    transition: all 0.2s ease;
+
+    &:hover td {
+      background: rgba($treasure-gold, 0.05);
+    }
+
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  // First column emphasis
+  td:first-child {
+    font-weight: 500;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Code Blocks - Terminal aesthetic
+// ─────────────────────────────────────────────────────────────────
+article pre {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgba($blueprint-blue, 0.3);
+  background: rgba($deep-blue, 0.4) !important;
+  overflow: hidden;
+
+  // Terminal dots
+  &::before {
+    content: '● ● ●';
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  code {
+    display: block;
+    padding: 2.5rem 1.5rem 1.5rem !important;
+    font-family: var(--font-mono) !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+article code:not(pre code) {
+  font-family: var(--font-mono) !important;
+  background: rgba($treasure-gold, 0.1);
+  color: $treasure-gold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid rgba($treasure-gold, 0.2);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Blockquotes - Callout style
+// ─────────────────────────────────────────────────────────────────
+article blockquote {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba($treasure-gold, 0.08) 0%, rgba($treasure-gold, 0.03) 100%);
+  border: 1px solid rgba($treasure-gold, 0.2);
+  border-left: 4px solid $treasure-gold;
+  border-radius: 0 12px 12px 0;
+
+  &::before {
+    content: '💡';
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    background: var(--light);
+    padding: 0 8px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  strong {
+    color: $treasure-gold;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Tags - Pill badges
+// ─────────────────────────────────────────────────────────────────
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--gray);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $treasure-gold;
+      color: white;
+      border-color: $treasure-gold;
+      box-shadow: $glow-orange;
+    }
+
+    &[href*="editor/"] {
+      background: rgba($light-blue, 0.15);
+      color: $light-blue;
+      border-color: rgba($light-blue, 0.3);
+    }
+
+    &[href*="status/solved"] {
+      background: rgba($emerald, 0.15);
+      color: $emerald;
+      border-color: rgba($emerald, 0.3);
+    }
+
+    &[href*="difficulty/beginner"] {
+      background: rgba($emerald, 0.15);
+      color: $emerald;
+      border-color: rgba($emerald, 0.3);
+    }
+
+    &[href*="difficulty/advanced"] {
+      background: rgba($amethyst, 0.15);
+      color: $amethyst;
+      border-color: rgba($amethyst, 0.3);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Editor Card
+// ─────────────────────────────────────────────────────────────────
+.editor-card {
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  border-radius: 12px;
+  border: 1px solid rgba($treasure-gold, 0.2);
+  border-left: 4px solid $treasure-gold;
+  background: linear-gradient(135deg, rgba($treasure-gold, 0.05) 0%, transparent 100%);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba($treasure-gold, 0.4);
+    box-shadow: $glow-soft;
+  }
+
+  strong {
+    color: $treasure-gold;
+  }
+
+  ul {
+    margin: 0.75rem 0;
+    padding-left: 1.2rem;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Footer
+// ─────────────────────────────────────────────────────────────────
+.footer-note {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, transparent 0%, rgba($deep-blue, 0.2) 100%);
+
+  code {
+    background: rgba($treasure-gold, 0.15);
+    color: $treasure-gold;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Links
+// ─────────────────────────────────────────────────────────────────
+article a {
+  color: $light-blue;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $treasure-gold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Guide Cards
+// ─────────────────────────────────────────────────────────────────
+.guide-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+
+  h3 {
+    margin: 0.5rem 0;
+
+    a {
+      text-decoration: none;
+      color: var(--secondary);
+
+      &:hover {
+        color: $treasure-gold;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Animations - Staggered entrance
+// ─────────────────────────────────────────────────────────────────
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: $glow-soft; }
+  50% { box-shadow: 0 0 60px rgba($treasure-gold, 0.25); }
+}
+
+.hero-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card-grid .nav-card {
+  animation: fadeInUp 0.5s ease-out backwards;
+
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+}
+
+article table {
+  animation: fadeInUp 0.5s ease-out 0.3s backwards;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Responsive
+// ─────────────────────────────────────────────────────────────────
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2.5rem 1.5rem;
+
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  article h2::after {
+    width: 120px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-card {
+    padding: 1.25rem;
+  }
+
+  article table {
+    font-size: 0.85rem;
+
+    th, td {
+      padding: 0.7rem;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Dark Mode Enhancements
+// ─────────────────────────────────────────────────────────────────
+[saved-theme="dark"] {
+  .hero-section {
+    &::before {
+      opacity: 0.3;
+    }
+
+    &::after {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba($treasure-gold, 0.2) 0%, transparent 60%),
+        linear-gradient(180deg, rgba($deep-blue, 0.75) 0%, rgba($deep-blue, 0.9) 100%);
+    }
+
+    border-color: rgba($treasure-gold, 0.4);
+  }
+
+  .nav-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  article table {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba($blueprint-blue, 0.3);
+
+    th {
+      background: linear-gradient(180deg, rgba($treasure-gold, 0.2) 0%, rgba($treasure-gold, 0.1) 100%);
+    }
+  }
+
+  article pre {
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  article blockquote {
+    background: linear-gradient(135deg, rgba($treasure-gold, 0.12) 0%, rgba($treasure-gold, 0.05) 100%);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Post Meta Enhancement
+// ─────────────────────────────────────────────────────────────────
+.post-meta {
+  background: rgba(0, 0, 0, 0.02);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba($blueprint-blue, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Search Highlight
+// ─────────────────────────────────────────────────────────────────
+.search-highlight {
+  background: rgba($treasure-gold, 0.3);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba($treasure-gold, 0.4);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Horizontal Rules
+// ─────────────────────────────────────────────────────────────────
+article hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba($blueprint-blue, 0.3) 20%,
+    rgba($treasure-gold, 0.3) 50%,
+    rgba($blueprint-blue, 0.3) 80%,
+    transparent 100%);
+  margin: 2.5rem 0;
+}
