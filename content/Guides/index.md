@@ -77,6 +77,13 @@ Tips and recommendations from experienced PME users.
 
 </div>
 
+<div class="nav-card showcase">
+
+### [[curated-posts|📚 Curated Posts by Pluglug]]
+Hand-picked posts with Q&A format. Find your question, get the answer from the best posts.
+
+</div>
+
 </div>
 
 ---
@@ -92,6 +99,7 @@ Tips and recommendations from experienced PME users.
 | [[hotkey-conflicts]] | Hotkey issues | Keymaps, conflicts, Poll methods |
 | [[code-examples]] | Scripters | Python patterns, one-line constraint |
 | [[best-practices]] | Intermediate+ | Organization, performance, backup |
+| [[curated-posts]] | Everyone | Q&A guide with best posts by Pluglug |
 
 ---
 

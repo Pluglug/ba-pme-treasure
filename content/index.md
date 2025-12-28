@@ -107,8 +107,10 @@ These posts are highly rated and contain valuable information:
 | Post | Author | Topic |
 |------|--------|-------|
 | [#1: PME Introduction](Posts/2016/post_00001.md) | roaoao | Complete feature overview |
-| [#5626: PME-F Updates](Posts/2025/post_05626.md) | Pluglug | Latest fork development |
+| [#5660: PME 1.19.1 Release](Posts/2025/post_05660.md) | Pluglug | Latest PME-F release |
 | [#5648: Undo Stack Issue](Posts/2025/post_05648.md) | Pluglug | Advanced macro troubleshooting |
+
+> 📚 **[Curated Posts by Pluglug](Guides/curated-posts.md)** - Hand-picked posts with explanations of why each is worth reading. Great for Q&A-style learning!
 
 ### 👤 Key Contributors
 
