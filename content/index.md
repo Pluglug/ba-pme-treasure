@@ -6,7 +6,7 @@ title: PME Treasure
 
 ![Pie Menu Editor](_static/images/pme-top.png)
 
-# 💎 Treasure Hunt on BlenderArtists: PME Edition
+# Treasure Hunt on BlenderArtists: PME Edition
 
 **5,599 posts** from 10 years of Pie Menu Editor community knowledge, now searchable.
 
