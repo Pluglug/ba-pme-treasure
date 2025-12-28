@@ -71,7 +71,7 @@ Browse the archive by different categories.
 ### 🎨 I want to see examples
 User-created showcases and real-world PME setups.
 
-- [All Showcases](tags/type/showcase) (125 posts)
+- [Pie Menu Showcases](tags/editor/pie-menu) - Filter by "showcase" type (125 posts)
 - [#5000: Transform Preset](Posts/2024/post_05000.md) - Pie menu with orientation, pivot, snap
 - [#5489: Context Browser](Posts/2025/post_05489.md) - Essential tool for PME scripting
 - [Browse by Editor Type](tags/editor)
@@ -178,12 +178,24 @@ This knowledge base is optimized for use with AI assistants:
 
 ### 📖 Resources
 
+- 📕 [PME Documentation](https://pluglug.github.io/pme-docs/) - Official documentation (WIP)
 - 💬 [Blender Artists Thread](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456) - Original forum
-- 📚 [Archived Documentation](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/) - Official docs
+- 📚 [Archived Documentation](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/) - Legacy docs (Blender 2.79 era)
 
 ### ☕ Support
 
 - [Ko-fi (Pluglug)](https://ko-fi.com/pluglug) - Support PME-F development
+
+---
+
+## Contributing
+
+Found an incorrectly tagged post? Want to suggest improvements?
+
+- 🐛 [Report Issues](https://github.com/Pluglug/ba-pme-treasure/issues) - Report tagging errors, broken links, or suggestions
+- 🔧 [Pull Requests](https://github.com/Pluglug/ba-pme-treasure/pulls) - Submit corrections directly
+
+> **Note**: Tags were auto-generated using AI classification. Some posts may have incorrect or missing tags. Your contributions help improve the accuracy of this archive!
 
 ---
 
