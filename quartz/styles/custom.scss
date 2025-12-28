@@ -730,3 +730,59 @@ article hr {
     transparent 100%);
   margin: 2.5rem 0;
 }
+
+// ─────────────────────────────────────────────────────────────────
+// Tag Page Listing Enhancements
+// ─────────────────────────────────────────────────────────────────
+.page-listing {
+  li.section-li {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba($treasure-gold, 0.05);
+      border-color: rgba($treasure-gold, 0.2);
+    }
+  }
+
+  .section {
+    // Adjust grid for better description display
+    grid-template-columns: fit-content(6em) 1fr auto !important;
+    gap: 1rem;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr !important;
+      gap: 0.5rem;
+
+      .meta {
+        order: -1;
+        margin: 0 0 0.25rem 0 !important;
+      }
+    }
+  }
+
+  .desc h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .post-excerpt {
+    color: var(--gray);
+  }
+}
+
+// Tag page header styling
+[data-slug^="tags/"] {
+  .page-listing > p {
+    color: $treasure-gold;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba($treasure-gold, 0.2);
+  }
+}

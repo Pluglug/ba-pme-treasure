@@ -10,7 +10,7 @@ const config: QuartzConfig = {
     pageTitle: "PME Treasure",
     pageTitleSuffix: " | PME Community Knowledge",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false,  // Disabled for performance (5,992 files)
     analytics: null,
     locale: "en-US",
     baseUrl: "pluglug.github.io/ba-pme-treasure",

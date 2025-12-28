@@ -31,9 +31,13 @@ export default ((opts?: Partial<TagContentOptions>) => {
 
     const tag = simplifySlug(slug.slice("tags/".length) as FullSlug)
     const allPagesWithTag = (tag: string) =>
-      allFiles.filter((file) =>
-        (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(tag),
-      )
+      allFiles.filter((file) => {
+        // Exclude index pages from tag listings (e.g., _Index/Tag_Index)
+        const isIndexPage = file.slug?.includes("_Index/") || file.slug?.includes("index")
+        if (isIndexPage) return false
+
+        return (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(tag)
+      })
 
     const content = (
       (tree as Root).children.length === 0

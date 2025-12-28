@@ -69,6 +69,14 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
       {list.map((page) => {
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
+        // Extract additional post metadata
+        const author = page.frontmatter?.author as string | undefined
+        const postType = page.frontmatter?.type as string | undefined
+        const description = page.description
+        // Truncate description to ~100 characters
+        const shortDesc = description && description.length > 100
+          ? description.slice(0, 100) + "..."
+          : description
 
         return (
           <li class="section-li">
@@ -82,6 +90,15 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                     {title}
                   </a>
                 </h3>
+                {/* Post metadata: author and type */}
+                {(author || postType) && (
+                  <p class="post-meta-line">
+                    {postType && <span class={`post-type post-type-${postType}`}>{postType}</span>}
+                    {author && <span class="post-author">by {author}</span>}
+                  </p>
+                )}
+                {/* Short description */}
+                {shortDesc && <p class="post-excerpt">{shortDesc}</p>}
               </div>
               <ul class="tags">
                 {tags.map((tag) => (
@@ -110,5 +127,43 @@ PageList.css = `
 
 .section > .tags {
   margin: 0;
+}
+
+.post-meta-line {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-type {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.post-type-question { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+.post-type-answer { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.post-type-discussion { background: rgba(107, 165, 224, 0.2); color: #6BA5E0; }
+.post-type-showcase { background: rgba(245, 166, 35, 0.2); color: #F5A623; }
+.post-type-bug_report { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+.post-type-announcement { background: rgba(232, 125, 13, 0.2); color: #E87D0D; }
+
+.post-author {
+  color: var(--gray);
+  font-style: italic;
+}
+
+.post-excerpt {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.85rem;
+  color: var(--darkgray);
+  line-height: 1.4;
+  opacity: 0.85;
 }
 `
