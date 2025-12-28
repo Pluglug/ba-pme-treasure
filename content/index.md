@@ -87,6 +87,7 @@ User-created showcases and real-world PME setups.
 | Editor | Posts | What it does |
 |--------|-------|--------------|
 | 🥧 [Pie Menu](tags/editor/pie-menu) | 1,820 | Radial menus triggered by hotkeys |
+| 📜 Regular Menu | (tagging pending) | Traditional dropdown menus |
 | ⚡ [Macro](tags/editor/macro) | 767 | Chain multiple operations into one |
 | 📋 [Popup Dialog](tags/editor/popup-dialog) | 723 | Custom dialog windows with controls |
 | 📐 [Panel Group](tags/editor/panel-group) | 82 | Organize N-panel/sidebar panels |
@@ -196,6 +197,15 @@ Found an incorrectly tagged post? Want to suggest improvements?
 - 🔧 [Pull Requests](https://github.com/Pluglug/ba-pme-treasure/pulls) - Submit corrections directly
 
 > **Note**: Tags were auto-generated using AI classification. Some posts may have incorrect or missing tags. Your contributions help improve the accuracy of this archive!
+
+### 📋 Planned Improvements
+
+The following improvements are planned for this archive:
+
+- [ ] **AI Re-analysis**: Re-run AI classification with improved prompts to fix tagging errors
+- [ ] **Regular Menu tagging**: Add `#editor/regular-menu` tag to posts discussing Regular Menu Editor
+- [ ] **Tag cleanup**: Review and correct commonly misapplied tags
+- [ ] **Guide expansion**: Add more detailed guides based on user feedback
 
 ---
 

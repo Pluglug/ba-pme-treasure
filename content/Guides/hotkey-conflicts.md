@@ -9,16 +9,48 @@ One of the most common PME issues is hotkey conflicts. This guide helps you diag
 
 ---
 
-## Understanding Hotkey Priority
+## Understanding Keymap Hierarchy
 
-Blender's keymap system has a priority order:
+Blender's keymap is **hierarchical** - hotkey assignments are stored per editor type and editing mode.
 
-1. **Active Tool keymaps** (highest priority)
-2. **Editor-specific keymaps** (3D View, Node Editor, etc.)
-3. **Screen keymaps**
-4. **Window keymaps**
-5. **Add-on keymaps** (PME lives here)
-6. **User preferences keymaps** (lowest priority)
+### The Keymap Tree
+
+```
+Window / Screen (global)
+├── 3D View (3D View area)
+│   ├── Mesh (Mesh Edit Mode)
+│   ├── Object Mode
+│   ├── Sculpt
+│   └── Other modes...
+├── Image Editor
+├── Outliner
+└── Other editors...
+```
+
+When a key is pressed, Blender checks the **most specific** (narrower context) keymap first:
+
+```
+Key pressed
+  ├─→ 1. Screen Editing (highest priority)
+  ├─→ 2. Mode-specific (Mesh, Sculpt, Object Mode)
+  ├─→ 3. Editor-specific (3D View, Node Editor)
+  └─→ 4. Window/Screen (lowest priority)
+```
+
+### Priority Layers
+
+| Layer | Priority | Examples |
+|-------|----------|----------|
+| **Modal Handlers** | Highest | Screen Editing, active Modal Operators |
+| **Area/Region** | Medium | Active Tool, Mode-specific, Editor-specific |
+| **Window** | Lowest | Window, Screen |
+
+> [!warning] Screen Editing
+> Screen Editing has the **highest priority** and runs reliably, but easily conflicts with other keys and may trigger unexpectedly.
+>
+> - Start with editor/mode-specific keymaps
+> - Use Poll methods to limit when it triggers
+> - Avoid important keys (Tab, Space, LMB/RMB)
 
 > **Important**: If a higher-priority keymap uses your key, PME won't receive it!
 
@@ -113,6 +145,37 @@ In PME's Hotkey tab:
 
 ---
 
+## Using Poll Methods with Hotkeys
+
+Even when hotkeys are in the same keymap, you can use **Poll methods** to differentiate behavior based on conditions:
+
+```python
+# Only when a mesh object is selected
+ao = C.active_object; return ao and ao.type == 'MESH'
+
+# Only in Edit Mode with face selection
+return C.mode == 'EDIT_MESH' and C.tool_settings.mesh_select_mode[2]
+
+# Only in Sculpt Mode with Dyntopo enabled
+return C.mode == 'SCULPT' and C.active_object.use_dynamic_topology_sculpting
+```
+
+> [!tip] How Poll Works with Hotkeys
+> When a Poll method returns `False`, the hotkey is skipped and Blender checks the next keymap item. This lets you have the same key do different things based on context!
+
+### Choosing the Right Keymap
+
+| Use Case | Recommended Keymap |
+|----------|-------------------|
+| Mesh Edit Mode pie menu | `Mesh` (mode-specific) |
+| Sculpt brush switcher | `Sculpt` (mode-specific) |
+| Mesh object in Object Mode | `Object Mode` + Poll method |
+| Keyframe operations | `Frames` (all editors) |
+| Global creation menu | `Window` or `Screen` |
+| Always, everywhere | `Screen Editing` (use carefully!) |
+
+---
+
 ## Best Practices
 
 ### 1. Use Modifiers
@@ -131,11 +194,17 @@ Generic: "Window" (conflicts everywhere)
 Specific: "Object Mode" (only in Object Mode)
 ```
 
-### 3. Document Your Keys
+### 3. Combine Keymap + Poll
+
+For maximum control, use both:
+- Keymap narrows where the hotkey is checked
+- Poll method narrows when it actually triggers
+
+### 4. Document Your Keys
 
 Keep track of your custom shortcuts to avoid self-conflicts.
 
-### 4. Test in Different Modes
+### 5. Test in Different Modes
 
 A hotkey that works in Object Mode might conflict in Edit Mode or Sculpt Mode.
 
@@ -176,3 +245,5 @@ Browse hotkey-related discussions:
 - [[getting-started|Getting Started]] - PME basics
 - [[troubleshooting|General Troubleshooting]] - Other issues
 - [[editor-overview|Editor Types]] - Choosing the right editor
+- [[terminology|Terminology & Concepts]] - PME and Blender concepts
+- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official scripting documentation

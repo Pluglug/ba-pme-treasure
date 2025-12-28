@@ -14,6 +14,7 @@ PME provides several "editor" types, each designed for different customization n
 | Editor | Best For | Trigger Method |
 |--------|----------|----------------|
 | **Pie Menu** | Quick access to commands | Hotkey press |
+| **Regular Menu** | Traditional dropdown menus | Hotkey press |
 | **Popup Dialog** | Forms with multiple options | Hotkey press |
 | **Macro** | Combining operations | Hotkey press |
 | **Stack Key** | Multiple actions on one key | Sequential presses |
@@ -41,6 +42,31 @@ PME provides several "editor" types, each designed for different customization n
 **Example**: Create a pie menu with `W` key for selection modes in Edit Mode.
 
 **Browse**: [[../tags/editor/pie-menu|Pie Menu Posts]] (1,820 posts)
+
+</div>
+
+---
+
+## Regular Menu Editor
+
+<div class="editor-card">
+
+**Best for**: Traditional dropdown menus like Blender's built-in menus
+
+**How it works**: Press a hotkey and a vertical dropdown menu appears. Works like standard Blender menus.
+
+**Use cases**:
+- Long lists of options that don't fit in a pie layout
+- Hierarchical menus with submenus
+- Familiar menu interface for users
+- When you need more than 8 items (pie menu limit)
+
+**Example**: Create a menu with all your favorite addons and tools organized in categories.
+
+**Browse**: Regular Menu posts (not yet tagged - see Todo below)
+
+> [!note] Regular Menu vs Pie Menu
+> Choose Regular Menu when you need many items in a linear list, or when the radial layout of pie menus isn't ideal.
 
 </div>
 
@@ -204,7 +230,8 @@ PME provides several "editor" types, each designed for different customization n
 
 ```
 Do you need a menu?
-├── Yes, with radial layout → Pie Menu
+├── Yes, with radial layout (≤8 items) → Pie Menu
+├── Yes, with linear list (many items) → Regular Menu
 ├── Yes, with form controls → Popup Dialog
 └── No
     ├── Need multiple commands at once? → Macro
@@ -220,5 +247,7 @@ Do you need a menu?
 ## Related Guides
 
 - [[getting-started|Getting Started]] - PME basics
+- [[terminology|Terminology & Concepts]] - Blender and PME concepts
 - [[code-examples|Code Examples]] - Scripting patterns
 - [[troubleshooting|Troubleshooting]] - Common issues
+- [PME Documentation](https://pluglug.github.io/pme-docs/) - Official documentation

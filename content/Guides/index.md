@@ -22,7 +22,14 @@ New to PME? Start here for an introduction to the addon and its core features.
 <div class="nav-card beginner">
 
 ### [[editor-overview|📚 Editor Types Overview]]
-Learn about the 8 different editor types and when to use each one.
+Learn about the 9 different editor types and when to use each one.
+
+</div>
+
+<div class="nav-card beginner">
+
+### [[terminology|📖 Terminology & Concepts]]
+Understand key Blender and PME concepts - context, operators, keymaps, and more.
 
 </div>
 
@@ -79,10 +86,11 @@ Tips and recommendations from experienced PME users.
 | Guide | For | Topics Covered |
 |-------|-----|----------------|
 | [[getting-started]] | New users | Installation, first pie menu, resources |
-| [[editor-overview]] | Everyone | All 8 editor types explained |
+| [[editor-overview]] | Everyone | All 9 editor types explained |
+| [[terminology]] | Beginners | Blender/PME concepts, global variables |
 | [[troubleshooting]] | Problem solving | Common errors, debugging tips |
-| [[hotkey-conflicts]] | Hotkey issues | Conflicts, priority, solutions |
-| [[code-examples]] | Scripters | Python patterns, API usage |
+| [[hotkey-conflicts]] | Hotkey issues | Keymaps, conflicts, Poll methods |
+| [[code-examples]] | Scripters | Python patterns, one-line constraint |
 | [[best-practices]] | Intermediate+ | Organization, performance, backup |
 
 ---

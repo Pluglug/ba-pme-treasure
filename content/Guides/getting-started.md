@@ -24,15 +24,28 @@ Welcome to PME! This guide will help you understand what PME can do and how to g
 
 ## Installation
 
-1. Download PME from [Gumroad](https://gum.co/pie_menu_editor)
+> [!tip] Recommended Download
+> To avoid confusion between different versions, we recommend downloading from the actively maintained fork:
+>
+> **[PME-F (Fork) Releases](https://github.com/Pluglug/pie-menu-editor-fork/releases)** - Latest version with Blender 4.x support
+
+### Installation Steps
+
+1. Download the latest `.zip` file from [PME-F Releases](https://github.com/Pluglug/pie-menu-editor-fork/releases)
 2. In Blender: `Edit → Preferences → Add-ons → Install`
 3. Select the downloaded `.zip` file
 4. Enable the addon by checking the box
+
+### Alternative Downloads
+
+- [Gumroad (Original)](https://gum.co/pie_menu_editor) - Original paid version (may not support latest Blender)
+- [SuperHive Market](https://superhivemarket.com/products/pie-menu-editor) - Alternative marketplace
 
 ### Troubleshooting Installation
 
 - [[../tags/topic/installation|Browse installation-related posts]]
 - Make sure you're using a compatible Blender version
+- For Blender 4.x, use PME-F (the fork version)
 
 ---
 
@@ -64,12 +77,14 @@ PME has several "editors" for different types of customization:
 | Editor | Use Case | Example |
 |--------|----------|---------|
 | **Pie Menu** | Quick access to commands | Transform tools pie |
+| **Regular Menu** | Traditional dropdown menus | Long tool lists |
 | **Popup Dialog** | Forms with multiple controls | Custom export settings |
 | **Macro** | Combine operations | "Duplicate and Mirror" in one click |
 | **Stack Key** | Multiple actions on one key | Press once for X, again for Y |
 | **Sticky Key** | Hold-to-show menus | Hold `Q` to see menu |
 | **Modal** | Interactive tools | Custom brush size adjuster |
 | **Property** | Expose hidden settings | Quick access to obscure options |
+| **Panel Group** | Sidebar organization | Custom N-panel sections |
 
 ---
 
@@ -91,9 +106,11 @@ PME has several "editors" for different types of customization:
 
 ## Next Steps
 
+- [[terminology|Terminology & Concepts]] - Understand Blender and PME concepts
 - [[troubleshooting|Troubleshooting Guide]] - If something isn't working
 - [[code-examples|Code Examples]] - For advanced customization
-- [[../tags/topic/hotkeys/configuration|Hotkey Configuration]] - Setting up shortcuts
+- [[hotkey-conflicts|Hotkey Conflicts]] - Resolving shortcut issues
+- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official documentation
 
 ---
 

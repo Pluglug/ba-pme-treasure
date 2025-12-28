@@ -148,5 +148,7 @@ If your issue isn't covered here, check the [Blender Artists thread](https://ble
 ## Related Guides
 
 - [[getting-started|Getting Started]] - Back to basics
+- [[terminology|Terminology & Concepts]] - Blender and PME concepts
 - [[code-examples|Code Examples]] - Working scripts and patterns
 - [[hotkey-conflicts|Hotkey Conflicts]] - Deep dive into shortcut issues
+- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official scripting documentation

@@ -261,6 +261,8 @@ Your problem has likely been solved before. Use `Ctrl+K` to search PME Treasure.
 ## Related Guides
 
 - [[getting-started|Getting Started]] - PME basics
+- [[terminology|Terminology & Concepts]] - Blender and PME concepts
 - [[troubleshooting|Troubleshooting]] - When things go wrong
 - [[code-examples|Code Examples]] - Script patterns
 - [[hotkey-conflicts|Hotkey Conflicts]] - Key binding issues
+- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official scripting documentation
