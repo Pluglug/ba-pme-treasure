@@ -786,3 +786,112 @@ article hr {
     border-bottom: 1px solid rgba($treasure-gold, 0.2);
   }
 }
+
+// ─────────────────────────────────────────────────────────────────
+// Tag Page Controls - Sorting and Filtering
+// ─────────────────────────────────────────────────────────────────
+.tag-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.tag-controls-sort,
+.tag-controls-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.controls-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.sort-select {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--darkgray);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba($treasure-gold, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $treasure-gold;
+    box-shadow: 0 0 0 2px rgba($treasure-gold, 0.2);
+  }
+
+  option {
+    background: var(--light);
+    color: var(--dark);
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gray);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba($treasure-gold, 0.1);
+    border-color: rgba($treasure-gold, 0.3);
+    color: $treasure-gold;
+  }
+
+  &.active {
+    background: $treasure-gold;
+    border-color: $treasure-gold;
+    color: white;
+  }
+
+  // Type-specific colors
+  &.filter-btn-question {
+    &:hover, &.active { background: rgba(139, 92, 246, 0.8); border-color: #a78bfa; }
+  }
+  &.filter-btn-answer {
+    &:hover, &.active { background: rgba(16, 185, 129, 0.8); border-color: #34d399; }
+  }
+  &.filter-btn-discussion {
+    &:hover, &.active { background: rgba(107, 165, 224, 0.8); border-color: #6BA5E0; }
+  }
+  &.filter-btn-showcase {
+    &:hover, &.active { background: rgba(245, 166, 35, 0.8); border-color: #F5A623; }
+  }
+  &.filter-btn-bug_report {
+    &:hover, &.active { background: rgba(239, 68, 68, 0.8); border-color: #f87171; }
+  }
+  &.filter-btn-announcement {
+    &:hover, &.active { background: rgba(232, 125, 13, 0.8); border-color: #E87D0D; }
+  }
+}
