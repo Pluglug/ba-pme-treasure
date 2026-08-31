@@ -21,6 +21,7 @@ title: PME Treasure
 <div class="nav-card beginner">
 
 ### 🌱 I'm new to PME
+
 Start here if you just purchased PME or want to learn the basics.
 
 - [[Guides/getting-started|Getting Started Guide]]
@@ -33,6 +34,7 @@ Start here if you just purchased PME or want to learn the basics.
 <div class="nav-card problem">
 
 ### 🔧 I have a problem
+
 Find solutions to common issues and errors.
 
 - [[Guides/troubleshooting|Troubleshooting Guide]]
@@ -45,6 +47,7 @@ Find solutions to common issues and errors.
 <div class="nav-card code">
 
 ### 💻 I need code examples
+
 Scripts, snippets, and advanced customization.
 
 - [[Guides/code-examples|Code Examples Collection]]
@@ -57,6 +60,7 @@ Scripts, snippets, and advanced customization.
 <div class="nav-card explore">
 
 ### 🗺️ I want to explore
+
 Browse the archive by different categories.
 
 - [All Tags](_Index/Tag_Index.md)
@@ -69,9 +73,10 @@ Browse the archive by different categories.
 <div class="nav-card showcase">
 
 ### 🎨 I want to see examples
+
 User-created showcases and real-world PME setups.
 
-- [Pie Menu Showcases](tags/editor/pie-menu) - Filter by "showcase" type (125 posts)
+- [[Guides/examples|Examples and Showcases]]
 - [#5000: Transform Preset](Posts/2024/post_05000.md) - Pie menu with orientation, pivot, snap
 - [#5489: Context Browser](Posts/2025/post_05489.md) - Essential tool for PME scripting
 - [Browse by Editor Type](tags/editor)
@@ -107,7 +112,7 @@ These posts are highly rated and contain valuable information:
 | Post | Author | Topic |
 |------|--------|-------|
 | [#1: PME Introduction](Posts/2016/post_00001.md) | roaoao | Complete feature overview |
-| [#5660: PME 1.19.1 Release](Posts/2025/post_05660.md) | Pluglug | Latest PME-F release |
+| [#5660: PME 1.19.1 Release](Posts/2025/post_05660.md) | Pluglug | Release context from 2025 |
 | [#5648: Undo Stack Issue](Posts/2025/post_05648.md) | Pluglug | Advanced macro troubleshooting |
 
 > 📚 **[Curated Posts by Pluglug](Guides/curated-posts.md)** - Hand-picked posts with explanations of why each is worth reading. Great for Q&A-style learning!
@@ -127,7 +132,7 @@ These posts are highly rated and contain valuable information:
 | Total Posts | 5,599 |
 | Solved Issues | 1,379 |
 | Unsolved Issues | 2,016 |
-| Contributors | 500+ |
+| Contributors | 380 |
 | Years of History | 10 (2016-2025) |
 
 ### Difficulty Distribution
