@@ -13,12 +13,16 @@ export type ContentDetails = {
   slug: FullSlug
   filePath: FilePath
   title: string
+  displayTitle: string
   links: SimpleSlug[]
   tags: string[]
   content: string
   richContent?: string
   date?: Date
   description?: string
+  contentType?: string
+  verificationStatus?: string
+  searchScope: "answers" | "archive" | "other"
 }
 
 interface Options {
@@ -37,6 +41,46 @@ const defaultOptions: Options = {
   rssFullHtml: false,
   rssSlug: "index",
   includeEmptyFiles: true,
+}
+
+function scalarFrontmatterValue(value: unknown): string | undefined {
+  if (typeof value === "string" || typeof value === "number") return String(value)
+  return undefined
+}
+
+function humanizePostType(value: string | undefined): string | undefined {
+  if (!value) return undefined
+  return value
+    .split("_")
+    .filter(Boolean)
+    .map((part) => part[0]?.toUpperCase() + part.slice(1))
+    .join(" ")
+}
+
+function getSearchScope(filePath: FilePath): ContentDetails["searchScope"] {
+  if (/^Guides\/(qa|how-to|reference|diagnostics)\//.test(filePath)) return "answers"
+  if (/^Posts\//.test(filePath)) return "archive"
+  return "other"
+}
+
+function getDisplayTitle(filePath: FilePath, title: string, frontmatter: Record<string, unknown>) {
+  if (!/^Posts\//.test(filePath)) return title
+
+  const postNumber = scalarFrontmatterValue(frontmatter.post_number)
+  const author = scalarFrontmatterValue(frontmatter.author)
+  const postType = humanizePostType(scalarFrontmatterValue(frontmatter.type))
+  return [postNumber ? `Post #${postNumber}` : title, author, postType].filter(Boolean).join(" · ")
+}
+
+function getSearchDescription(filePath: FilePath, description: string) {
+  if (!/^Posts\//.test(filePath)) return description
+
+  const excerpt = description
+    .split("📋 Metadata", 1)[0]
+    .replace(/^Post #\d+:\s*/i, "")
+    .trim()
+  if (!excerpt || excerpt.startsWith("![](")) return ""
+  return excerpt.length > 180 ? `${excerpt.slice(0, 180)}...` : excerpt
 }
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string {
@@ -103,18 +147,24 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
         const slug = file.data.slug!
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
+          const frontmatter = file.data.frontmatter ?? { title: "" }
+          const title = frontmatter.title
           linkIndex.set(slug, {
             slug,
             filePath: file.data.relativePath!,
-            title: file.data.frontmatter?.title!,
+            title,
+            displayTitle: getDisplayTitle(file.data.relativePath!, title, frontmatter),
             links: file.data.links ?? [],
-            tags: file.data.frontmatter?.tags ?? [],
+            tags: frontmatter.tags ?? [],
             content: file.data.text ?? "",
             richContent: opts?.rssFullHtml
               ? escapeHTML(toHtml(tree as Root, { allowDangerousHtml: true }))
               : undefined,
             date: date,
-            description: file.data.description ?? "",
+            description: getSearchDescription(file.data.relativePath!, file.data.description ?? ""),
+            contentType: scalarFrontmatterValue(frontmatter.content_type),
+            verificationStatus: scalarFrontmatterValue(frontmatter.verification_status),
+            searchScope: getSearchScope(file.data.relativePath!),
           })
         }
       }
@@ -140,10 +190,8 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       const fp = joinSegments("static", "contentIndex") as FullSlug
       const simplifiedIndex = Object.fromEntries(
         Array.from(linkIndex).map(([slug, content]) => {
-          // remove description and from content index as nothing downstream
-          // actually uses it. we only keep it in the index as we need it
-          // for the RSS feed
-          delete content.description
+          // Dates are only needed for RSS/sitemap generation. Search keeps the
+          // short description and editorial metadata for useful result cards.
           delete content.date
           return [slug, content]
         }),

@@ -29,16 +29,31 @@ export default ((userOpts?: Partial<SearchOptions>) => {
           </svg>
           <p>{i18n(cfg.locale).components.search.title}</p>
         </button>
-        <div class="search-container">
+        <div class="search-container" role="dialog" aria-modal="true" aria-label="Search PME">
           <div class="search-space">
-            <input
-              autocomplete="off"
-              class="search-bar"
-              name="search"
-              type="text"
-              aria-label={searchPlaceholder}
-              placeholder={searchPlaceholder}
-            />
+            <div class="search-controls">
+              <input
+                autocomplete="off"
+                class="search-bar"
+                name="search"
+                type="search"
+                aria-label={searchPlaceholder}
+                placeholder={searchPlaceholder}
+              />
+              <div class="search-scope" role="group" aria-label="Search in">
+                <button type="button" data-search-scope="answers" aria-pressed="true">
+                  Answers
+                </button>
+                <button type="button" data-search-scope="archive" aria-pressed="false">
+                  Forum archive
+                </button>
+              </div>
+              <button type="button" class="search-close" aria-label="Close search">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
             <div class="search-layout" data-preview={opts.enablePreview}></div>
           </div>
         </div>

@@ -6,6 +6,7 @@ const explorerSortFn = (a: any, b: any) => {
   // Priority order for folders
   const folderPriority: Record<string, number> = {
     "Guides": 1,
+    "Practical answers": 1,
     "_Index": 2,
     "Users": 3,
     "Posts": 4,
@@ -75,7 +76,10 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      localGraph: { depth: 1, showTags: false, focusOnHover: true },
+      globalGraph: { depth: 2, showTags: false, focusOnHover: true },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],

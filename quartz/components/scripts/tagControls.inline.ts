@@ -18,6 +18,8 @@ function initTagControls() {
 
   const listContainer = pageListingContainer.querySelector("ul.section-ul")
   if (!listContainer) return
+  const postList = listContainer
+  postList.id ||= "tag-results-list"
 
   const items = listContainer.querySelectorAll("li.section-li")
   if (items.length === 0) return
@@ -26,7 +28,7 @@ function initTagControls() {
   // This must happen before any other processing
   const itemsArray = Array.from(items) as HTMLElement[]
   itemsArray.forEach((item) => {
-    item.style.display = "none"
+    item.hidden = true
   })
 
   // Extract data from each item
@@ -62,7 +64,7 @@ function initTagControls() {
   // Don't add controls if there are very few items
   if (postsData.length < 5) {
     // Show all items if less than 5
-    postsData.forEach((p) => (p.element.style.display = ""))
+    postsData.forEach((p) => (p.element.hidden = false))
     return
   }
 
@@ -74,11 +76,13 @@ function initTagControls() {
   const sortContainer = document.createElement("div")
   sortContainer.className = "tag-controls-sort"
 
-  const sortLabel = document.createElement("span")
+  const sortLabel = document.createElement("label")
   sortLabel.textContent = "Sort by: "
   sortLabel.className = "controls-label"
 
   const sortSelect = document.createElement("select")
+  sortSelect.id = "tag-results-sort"
+  sortLabel.htmlFor = sortSelect.id
   sortSelect.className = "sort-select"
   sortSelect.innerHTML = `
     <option value="date-desc">Date (Newest)</option>
@@ -97,14 +101,19 @@ function initTagControls() {
   const filterLabel = document.createElement("span")
   filterLabel.textContent = "Filter: "
   filterLabel.className = "controls-label"
+  filterLabel.id = "tag-results-filter-label"
 
   const filterButtons = document.createElement("div")
   filterButtons.className = "filter-buttons"
+  filterButtons.setAttribute("role", "group")
+  filterButtons.setAttribute("aria-labelledby", filterLabel.id)
 
   // Add "All" button
   const allBtn = document.createElement("button")
+  allBtn.type = "button"
   allBtn.className = "filter-btn active"
   allBtn.dataset.type = "all"
+  allBtn.setAttribute("aria-pressed", "true")
   allBtn.textContent = `All (${postsData.length})`
   filterButtons.appendChild(allBtn)
 
@@ -115,13 +124,17 @@ function initTagControls() {
   })
 
   // Sort types by count descending
-  const sortedTypes = [...allTypes].sort((a, b) => (typeCounts.get(b) || 0) - (typeCounts.get(a) || 0))
+  const sortedTypes = [...allTypes].sort(
+    (a, b) => (typeCounts.get(b) || 0) - (typeCounts.get(a) || 0),
+  )
 
   sortedTypes.forEach((type) => {
     const count = typeCounts.get(type) || 0
     const btn = document.createElement("button")
+    btn.type = "button"
     btn.className = `filter-btn filter-btn-${type}`
     btn.dataset.type = type
+    btn.setAttribute("aria-pressed", "false")
     btn.textContent = `${type} (${count})`
     filterButtons.appendChild(btn)
   })
@@ -146,11 +159,14 @@ function initTagControls() {
   paginationContainer.className = "tag-pagination"
 
   const loadMoreBtn = document.createElement("button")
+  loadMoreBtn.type = "button"
   loadMoreBtn.className = "load-more-btn"
   loadMoreBtn.textContent = "Load More"
+  loadMoreBtn.setAttribute("aria-controls", postList.id)
 
   const paginationInfo = document.createElement("span")
   paginationInfo.className = "pagination-info"
+  paginationInfo.setAttribute("aria-live", "polite")
 
   paginationContainer.appendChild(paginationInfo)
   paginationContainer.appendChild(loadMoreBtn)
@@ -190,14 +206,14 @@ function initTagControls() {
 
     // Hide all items first
     postsData.forEach((p) => {
-      p.element.style.display = "none"
+      p.element.hidden = true
     })
 
     // Show only items up to current page
     const visibleCount = Math.min(currentPage * ITEMS_PER_PAGE, filteredData.length)
     for (let i = 0; i < visibleCount; i++) {
-      filteredData[i].element.style.display = ""
-      listContainer.appendChild(filteredData[i].element) // Re-append to maintain order
+      filteredData[i].element.hidden = false
+      postList.appendChild(filteredData[i].element) // Re-append to maintain order
     }
 
     // Update pagination info
@@ -238,8 +254,12 @@ function initTagControls() {
   filterButtons.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       // Update active state
-      filterButtons.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"))
+      filterButtons.querySelectorAll(".filter-btn").forEach((b) => {
+        b.classList.remove("active")
+        b.setAttribute("aria-pressed", "false")
+      })
       btn.classList.add("active")
+      btn.setAttribute("aria-pressed", "true")
 
       currentFilter = (btn as HTMLElement).dataset.type || "all"
       applyFiltersAndSort()

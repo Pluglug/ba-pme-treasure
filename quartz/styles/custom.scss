@@ -96,6 +96,7 @@ code, pre, .mono {
     background-position: center;
     opacity: 0.25;
     z-index: 0;
+    pointer-events: none;
   }
 
   // Overlay gradient for readability
@@ -110,6 +111,7 @@ code, pre, .mono {
       radial-gradient(ellipse at 50% 30%, rgba($treasure-gold, 0.15) 0%, transparent 60%),
       linear-gradient(180deg, rgba($deep-blue, 0.7) 0%, rgba($deep-blue, 0.85) 100%);
     z-index: 1;
+    pointer-events: none;
   }
 
   // Glowing border
@@ -228,7 +230,7 @@ article h2 {
 
   p {
     font-size: 0.9rem;
-    color: var(--gray);
+    color: var(--darkgray);
     margin-bottom: 1rem;
     line-height: 1.5;
   }
@@ -931,5 +933,14 @@ article hr {
 
   &:active {
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section,
+  .card-grid .nav-card,
+  article table {
+    animation: none;
+    transition: none;
   }
 }

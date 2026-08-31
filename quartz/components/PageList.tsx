@@ -72,11 +72,34 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         // Extract additional post metadata
         const author = page.frontmatter?.author as string | undefined
         const postType = page.frontmatter?.type as string | undefined
+        const postNumber = page.frontmatter?.post_number as string | number | undefined
         const description = page.description
+        const isArchivePost = page.relativePath?.replaceAll("\\", "/").startsWith("Posts/") ?? false
+        const humanPostType = postType
+          ?.split("_")
+          .filter(Boolean)
+          .map((part) => part[0]?.toUpperCase() + part.slice(1))
+          .join(" ")
+        const displayTitle = isArchivePost
+          ? [postNumber ? `Post #${postNumber}` : title, author, humanPostType]
+              .filter(Boolean)
+              .join(" · ")
+          : title
+        const isHistorical = page.frontmatter?.verification_status === "historical-unverified"
+        const archiveExcerpt = description
+          ?.split("📋 Metadata", 1)[0]
+          .replace(/^Post #\d+:\s*/i, "")
+          .trim()
         // Truncate description to ~100 characters
-        const shortDesc = description && description.length > 100
-          ? description.slice(0, 100) + "..."
-          : description
+        const shortDesc = isArchivePost
+          ? archiveExcerpt && !archiveExcerpt.startsWith("![](")
+            ? archiveExcerpt.length > 100
+              ? archiveExcerpt.slice(0, 100) + "..."
+              : archiveExcerpt
+            : undefined
+          : description && description.length > 100
+            ? description.slice(0, 100) + "..."
+            : description
 
         return (
           <li class="section-li">
@@ -87,9 +110,12 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               <div class="desc">
                 <h3>
                   <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                    {title}
+                    {displayTitle}
                   </a>
                 </h3>
+                {isHistorical && (
+                  <p class="historical-status">Historical · current compatibility unverified</p>
+                )}
                 {/* Post metadata: author and type */}
                 {(author || postType) && (
                   <p class="post-meta-line">
@@ -135,6 +161,13 @@ PageList.css = `
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.historical-status {
+  margin: 0.3rem 0 0;
+  color: var(--darkgray);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .post-type {
