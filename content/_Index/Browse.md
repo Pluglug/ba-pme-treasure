@@ -34,6 +34,8 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a Sidebar Panel Group]]
 - [[Guides/how-to/make-a-property-editor-slider|Expose a Blender value as a slider]]
+- [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Draw editable object dimensions in a PME layout]]
+- [[Guides/how-to/put-blender-header-menus-in-a-pie|Put Blender's header menus inside a Pie Menu]]
 - [[Guides/how-to/open-a-temporary-editor-with-popup-area|Open a temporary Blender editor]]
 
 </div>
@@ -45,6 +47,7 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 - [[Guides/qa/run-a-macro-from-a-pme-item|Call a Macro from a menu or panel]]
 - [[Guides/reference/share-state-between-macro-steps|Share temporary state between Macro steps]]
 - [[Guides/how-to/run-external-script-from-pme|Run a trusted external script]]
+- [[Guides/how-to/resize-a-blender-area-from-pme|Resize the current Blender area]]
 
 </div>
 
@@ -54,6 +57,7 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 
 - [[Guides/reference/conditional-execution-patterns|Choose a conditional execution pattern]]
 - [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu]]
+- [[Guides/qa/use-a-different-pie-in-each-node-editor|Separate Geometry, Shader, and Compositor node menus]]
 - [[Guides/qa/use-modifier-keys-in-one-pme-item|Branch one item with modifier keys]]
 
 </div>
@@ -94,6 +98,14 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 
 <div class="nav-card explore">
 
+### Follow an idea as it becomes a tool
+
+[[Guides/trails/from-shortcuts-to-workflow-tools|From Shortcuts to Workflow Tools]] connects eight resolved conversations: composing UI, borrowing state, remembering choices, execution mode, and Blender context.
+
+</div>
+
+<div class="nav-card explore">
+
 ### Sample ten years of conversation
 
 [[Timeline|Timeline 2016–2025]] opens the first 20 preserved posts from each year. Use Forum archive search for the complete conversation.
@@ -102,9 +114,9 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 
 <div class="nav-card beginner">
 
-### Find frequent contributors
+### Follow a problem solver's trail
 
-[[User_Index|Top contributors]] is ranked by preserved post count and links to each listed author’s forum trail.
+[[Guides/trails/from-shortcuts-to-workflow-tools|Read eight Motiomancer support arcs as one learning route]], then use [[User_Index|the contributor index]] to open other preserved forum trails.
 
 </div>
 
@@ -118,6 +130,8 @@ These pages preserve strong design ideas whose exact implementation belongs to a
 - [[Guides/how-to/build-stable-panel-group-toolbar|Stable Panel Group toolbar]] — make structure more durable than individual buttons.
 - [[Guides/how-to/group-framed-popup-dialog-sections|Framed Popup Dialog sections]] — use visual grouping to make a large custom tool readable.
 - [[Guides/how-to/hold-key-to-temporarily-switch-sculpt-brush|Temporary Sculpt brush]] — borrow a tool while a key is held, then restore the previous state.
+- [[Guides/showcases/keyframe-aware-property-control|Keyframe-aware Property control]] — let a control reflect the animation state it edits.
+- [[Guides/showcases/modal-viewport-controls|Modal viewport controls]] — adjust a live viewport value without opening a dialog.
 
 ## Search the complete archive
 

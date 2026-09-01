@@ -13,9 +13,9 @@ review_status: owner-review-pending
 provenance_version: 1
 ---
 
-PME becomes easier to understand when you begin with a concrete setup instead of a feature name. These examples were selected because each one contains an idea you can reuse in a different Blender workflow.
+PME becomes easier to imagine when you can see a result before learning a feature name. Open whichever setup catches your eye; every card explains the reusable idea and leads back to the source conversation.
 
-## Build a compact control surface
+## Pick a control surface you would like to steal
 
 <div class="card-grid">
 
@@ -23,25 +23,27 @@ PME becomes easier to understand when you begin with a concrete setup instead of
 
 ### Transform Preset
 
-[![A Pie Menu that groups transform orientation, pivot, snapping, and proportional editing](https://blenderartists.org/uploads/default/optimized/4X/1/6/1/161e70144b545e101e724e3aee548531116efdd9_2_690x411.jpeg)](https://blenderartists.org/t/662456/5000)
+[![A Transform Preset pie combining orientation, pivot, snapping, and proportional editing](https://blenderartists.org/uploads/default/original/4X/1/6/1/161e70144b545e101e724e3aee548531116efdd9.jpeg)](Guides/showcases/transform-preset-control-surface)
 
-[[Posts/2024/post_05000|Post #5000]] combines transform orientation, pivot, snapping, and proportional editing in one Pie Menu.
+[[Guides/showcases/transform-preset-control-surface|Open the showcase]]
 
-**Pattern to borrow:** group controls that belong to one task, and let the menu expose state instead of only launching commands.
+**Borrow this:** collect the live controls for one Blender task instead of scattering more command shortcuts around it.
 
-**2024 showcase · current JSON import not checked.**
+**Historical · current compatibility unverified**
 
 </div>
 
 <div class="nav-card showcase">
 
-### Property slider
+### Sculpt Brush Palette
 
-[![A PME Property Editor setup for a Blender value](https://blenderartists.org/uploads/default/optimized/4X/3/8/5/385e3b30b372e989fc3eb9ec2100325c8dc71aee_2_690x482.png)](https://blenderartists.org/t/662456/4922)
+[![A character sculpt with an icon-labelled Pie Menu for Blender sculpt brushes](https://blenderartists.org/uploads/default/original/4X/6/2/c/62c108ac4cd5c71973842aadde5d6dd302c9cca5.jpeg)](Guides/showcases/sculpt-brush-palette)
 
-[[Guides/how-to/make-a-property-editor-slider|Make a PME Property Editor slider]] binds a reusable PME control to a Blender value with Getter and Setter callbacks.
+[[Guides/showcases/sculpt-brush-palette|Open the showcase]]
 
-**Pattern to borrow:** put a useful value where the workflow needs it instead of repeatedly reopening its original panel.
+**Borrow this:** make a task palette feel native by reusing the host application's visual language.
+
+**Historical · current compatibility unverified**
 
 </div>
 
@@ -49,100 +51,115 @@ PME becomes easier to understand when you begin with a concrete setup instead of
 
 ### Sidebar Panel Group
 
-[![PME controls placed in a Blender sidebar Panel Group](https://blenderartists.org/uploads/default/original/4X/4/4/e/44e54e693141de856019e220bf4af58e6c8da3bb.png)](https://blenderartists.org/t/662456/5044)
+[![PME controls arranged in a Blender sidebar Panel Group](https://blenderartists.org/uploads/default/original/4X/4/4/e/44e54e693141de856019e220bf4af58e6c8da3bb.png)](Guides/how-to/create-a-pme-sidebar-panel-group)
 
-[[Guides/how-to/create-a-pme-sidebar-panel-group|Create a PME Sidebar Panel Group]] turns several related items into one working surface in Blender’s sidebar.
+[[Guides/how-to/create-a-pme-sidebar-panel-group|Build the current version]]
 
-**Pattern to borrow:** organize controls by job rather than by the add-on or Blender panel that originally owns them.
-
-</div>
+**Borrow this:** organize a persistent surface by the job it supports, not by which add-on originally owns each control.
 
 </div>
 
-## Make one input do more
+</div>
+
+## Make the interface explain its own state
 
 <div class="card-grid">
 
-<div class="nav-card explore">
+<div class="nav-card showcase">
 
-### Stack Key cycle
+### Keyframe-aware Property control
 
-[[Guides/how-to/cycle-actions-with-a-stack-key|Cycle several actions with one Stack Key]] advances through a short ordered set on repeated presses.
+[![An animated alpha control changing transparency and reflecting keyframe state](https://blenderartists.org/uploads/default/original/4X/8/0/7/8075b369c982d396a59aab6da12cd2f0238aece2.gif)](Guides/showcases/keyframe-aware-property-control)
 
-**Pattern to borrow:** when actions form a memorable cycle, one key can be clearer than several unrelated shortcuts.
+[[Guides/showcases/keyframe-aware-property-control|Open the showcase]]
 
-</div>
+**Borrow this:** let one compact control read, edit, key, and visibly report the state that matters.
 
-<div class="nav-card explore">
-
-### Temporary property change
-
-[[Guides/how-to/temporarily-change-a-property-with-sticky-key|Temporarily change a Blender property]] sets a state while a shortcut is held and restores the exact previous value on release.
-
-**Pattern to borrow:** borrow a state without destroying the user’s previous setup.
+**Historical · current compatibility unverified**
 
 </div>
 
-<div class="nav-card explore">
+<div class="nav-card showcase">
 
-### Context-specific menu
+### Property slider where you need it
 
-[[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu]] chooses a useful target from Blender’s mode, selection, or object type.
+[![A PME Property Editor control for a Blender value](https://blenderartists.org/uploads/default/original/4X/3/8/5/385e3b30b372e989fc3eb9ec2100325c8dc71aee.png)](Guides/how-to/make-a-property-editor-slider)
 
-**Pattern to borrow:** keep one muscle-memory shortcut while changing the offered tools with context.
+[[Guides/how-to/make-a-property-editor-slider|Build the current version]]
+
+**Borrow this:** expose a useful Blender value beside the action that depends on it.
+
+</div>
+
+<div class="nav-card showcase">
+
+### Readable Pie spacing and colour
+
+[![Two Pie Menu groups before their additional gap is increased](https://blenderartists.org/uploads/default/original/4X/b/5/a/b5a5e0aa6177e4f4d5830330a5862d1425a63926.png)](Guides/how-to/adjust-pie-menu-spacing-and-theme)
+
+[[Guides/how-to/adjust-pie-menu-spacing-and-theme|Tune the current settings]]
+
+**Borrow this:** simplify the menu first, then use spacing and Blender's theme to make its groups legible.
 
 </div>
 
 </div>
 
-## Build a more ambitious tool
+## Stay in the work instead of opening another panel
 
 <div class="card-grid">
 
-<div class="nav-card code">
+<div class="nav-card showcase">
 
-### Temporary editor window
+### Modal viewport controls
 
-[[Guides/how-to/open-a-temporary-editor-with-popup-area|Open a temporary Blender editor with popup_area]] creates a second editor only for the moment it is useful.
+<video controls preload="metadata" aria-label="A historical Blender recording where pointer gestures adjust focal length and studio-light rotation.">
+  <source src="https://blenderartists.org/uploads/default/original/4X/c/7/0/c70f1eefd501cb64c7afa9e5b11726d6cdf3fc3b.mp4" type="video/mp4">
+  <a href="https://blenderartists.org/uploads/default/original/4X/c/7/0/c70f1eefd501cb64c7afa9e5b11726d6cdf3fc3b.mp4">Watch the original recording.</a>
+</video>
 
-**Pattern to borrow:** summon a large tool when needed instead of permanently spending workspace area on it.
+[[Guides/showcases/modal-viewport-controls|Open the showcase]]
 
-</div>
+**Borrow this:** map one continuously adjusted value to a gesture and keep visual feedback in the viewport.
 
-<div class="nav-card code">
-
-### Blender widget inside PME
-
-[[Guides/how-to/add-complex-template-widget-to-popup|Add a complex template widget to a Popup Dialog]] uses Blender’s UILayout API when a normal picker cannot express the control.
-
-**Pattern to borrow:** combine PME composition with Blender-native widgets instead of rebuilding them.
+**Historical · current compatibility unverified**
 
 </div>
 
-<div class="nav-card code">
+<div class="nav-card showcase">
 
-### Panel-based Popup Dialog
+### PME Preferences in a full window
 
-[[Guides/reference/panel-function-current-reference|Use the current panel() helper]] draws an existing Blender panel with deliberate context, framing, header, and initial expansion.
+[![Blender Preferences opened with the Pie Menu Editor entry selected](https://blenderartists.org/uploads/default/original/4X/a/5/5/a557a707b2adb3c7e70b94b3787bf454cf817a6c.jpeg)](Guides/how-to/open-pme-preferences-directly)
 
-**Pattern to borrow:** reuse a working Blender panel in a task-focused surface.
+[[Guides/how-to/open-pme-preferences-directly|Add the current command]]
+
+**Borrow this:** put the authoring surface one action away when a tiny popup is not enough room.
+
+</div>
+
+<div class="nav-card showcase">
+
+### One hotkey, three Node Editors
+
+[![A Poll field restricting a PME menu to one Node Editor subtype](https://blenderartists.org/uploads/default/original/4X/e/5/b/e5ba259251316849eaaa1444efb9470a6b05374f.png)](Guides/qa/use-a-different-pie-in-each-node-editor)
+
+[[Guides/qa/use-a-different-pie-in-each-node-editor|Build the current version]]
+
+**Borrow this:** preserve one piece of muscle memory while each editor receives the tools that belong there.
 
 </div>
 
 </div>
 
-## Historical gems
+## More patterns to explore
 
-These ideas remain valuable, but their exact commands or UI belong to an earlier PME or Blender generation.
-
-- [[Guides/how-to/group-framed-popup-dialog-sections|Framed Popup Dialog sections]] — divide a large custom surface into readable visual groups.
-- [[Guides/how-to/build-stable-panel-group-toolbar|Stable Panel Group toolbar]] — make the structure of a custom interface predictable.
-- [[Guides/how-to/hold-key-to-temporarily-switch-sculpt-brush|Temporary Sculpt brush]] — hold a key to borrow a brush and restore the previous one.
-- [[Guides/reference/searchable-workspace-switcher-pattern|Searchable workspace switcher]] — filter a long list at the moment of invocation.
-
-## Tools used alongside PME
-
-[[Posts/2025/post_05489|Context Browser, Post #5489]] shows how an inspection tool can shorten the path from “I can see this Blender setting” to “I can expose or automate it with PME.” It is useful as a companion workflow rather than a PME setup by itself.
+- [[Guides/how-to/cycle-actions-with-a-stack-key|Cycle several related actions with a Stack Key]].
+- [[Guides/how-to/temporarily-change-a-property-with-sticky-key|Borrow a property value while a key is held, then restore it]].
+- [[Guides/how-to/put-blender-header-menus-in-a-pie|Put Blender's familiar header menus inside a Pie Menu]].
+- [[Guides/how-to/group-framed-popup-dialog-sections|Compose a large Popup Dialog from framed child sections]] — **Historical · current compatibility unverified**.
+- [[Guides/how-to/open-a-temporary-editor-with-popup-area|Summon a temporary Blender editor only when the workflow needs it]].
+- [[Guides/trails/from-shortcuts-to-workflow-tools|Follow eight resolved conversations from shortcuts to stateful workflow tools]].
 
 ## Find another example
 

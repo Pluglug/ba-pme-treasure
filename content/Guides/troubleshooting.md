@@ -1,154 +1,37 @@
 ---
-title: Troubleshooting Guide
-tags: ["#guide", "#topic/troubleshooting"]
+title: PME troubleshooting
+description: A short bridge to current symptom-led diagnostics, recovery, migration, and code answers.
+content_type: legacy-landing
+search_scope: other
+review_status: superseded
+show_folder_listing: false
 ---
 
-# PME Troubleshooting Guide
+# PME troubleshooting
 
-Common problems and solutions gathered from 9 years of community discussions.
+The maintained troubleshooting route begins with the symptom, not with an imported forum Tag.
 
----
+## Start with the failure you can observe
 
-## Quick Diagnosis
+- [[Guides/routes/solve-a-problem|Open the symptom-led troubleshooting route]]
+- [[Guides/hotkey-conflicts|A shortcut does not open—or opens in the wrong context]]
+- [[Guides/diagnostics/operator-needs-correct-blender-context|A Blender operator reports an incorrect context]]
+- [[Guides/diagnostics/execute-modal-operator-without-invoke|An interactive operator starts again instead of executing]]
+- [[Guides/qa/where-pme-stores-menu-definitions|Menus or resources appear to be missing]]
+- [[Guides/how-to/restore-pme-menus-from-auto-backup|Restore menus from an automatic backup]]
+- [[Guides/how-to/migrate-pme-to-2-1-safely|Move an existing setup to PME 2.1]]
+- [[Guides/code-examples|Debug or adapt a PME code example]]
 
-### "My hotkey doesn't work"
+For current installation guidance, use the [official PME installation page](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html).
 
-**Most common causes:**
+## When the selected answers are not enough
 
-1. **Hotkey conflict** - Another addon or Blender itself uses the same key
-   - Check: `Edit → Preferences → Keymap` and search for your key
-   - Solution: Use a different key combination
+Search the complete archive with the exact error, operator ID, PME version, Blender version, and the editor or mode in which it occurs. The [original Blender Artists thread](https://blenderartists.org/t/662456) remains the source for the preserved conversations.
 
-2. **Wrong context** - Hotkey only works in specific modes/areas
-   - Check: Make sure you're in the right editor (3D View, Node Editor, etc.)
-   - Solution: Set the correct "Key Map" in PME hotkey settings
+<div class="route-actions">
 
-3. **Poll condition failing** - The menu's condition isn't met
-   - Check: Does the menu require an object to be selected?
-   - Solution: Review the Poll tab in your PME item
+<button type="button" class="home-search-button" data-open-pme-search="answers">Search practical answers</button>
 
-> **Browse**: [[../tags/topic/hotkeys/conflicts|Hotkey Conflict Posts]] (187 posts)
+<button type="button" class="home-search-button archive" data-open-pme-search="archive">Search all 5,599 forum posts</button>
 
----
-
-### "PME doesn't load after Blender update"
-
-**After Blender 2.80:**
-- PME needed significant updates for the new API
-- Make sure you have PME v1.15+ for Blender 2.80+
-
-**After Blender 3.x/4.x:**
-- Use PME v1.18.8+ or [PME-F](https://github.com/Pluglug/pie-menu-editor-fork)
-- Some features may need adjustments
-
-> **Browse**: [[../tags/topic/compatibility|Compatibility Posts]] (74 posts)
-
----
-
-### "My menu disappeared"
-
-**Possible causes:**
-
-1. **Startup file not saved** - PME items are stored in your startup file
-   - Solution: `File → Defaults → Save Startup File`
-
-2. **Wrong .blend file** - Each file can have different PME configs
-   - Solution: Enable "Global" mode in PME preferences
-
-3. **Addon disabled** - Check if PME is still enabled
-   - Solution: `Edit → Preferences → Add-ons` → search "pie menu"
-
----
-
-### "Error in console when running macro"
-
-**Common errors:**
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| `RuntimeError: Operator bpy.ops.X not found` | Wrong operator name | Check exact operator ID in Blender info panel |
-| `Context is incorrect` | Wrong mode/selection | Add context checks or change keymap |
-| `TypeError: X() got unexpected keyword argument` | Wrong operator parameters | Check operator documentation |
-
-> **Browse**: [[../tags/topic/scripting|Scripting Posts]] for code-related issues
-
----
-
-## Common Scenarios
-
-### Pie Menu Issues
-
-| Problem | Solution |
-|---------|----------|
-| Menu appears in wrong position | Check "Center" option in pie settings |
-| Items overlap | Reduce number of items or use submenus |
-| Menu closes too fast | Adjust "Pie Menu Confirm Threshold" in Blender prefs |
-
-### Macro Issues
-
-| Problem | Solution |
-|---------|----------|
-| Only first command runs | Check for errors in later commands |
-| Undo doesn't work properly | See [[../Posts/2025/post_05648\|Post #5648]] about undo stack |
-| Different behavior than manual | Some ops behave differently when scripted |
-
-### Panel/Sidebar Issues
-
-| Problem | Solution |
-|---------|----------|
-| Panel doesn't appear | Check region type (UI, Tools, etc.) |
-| Panel in wrong position | Adjust order/category in settings |
-| Panel shows in wrong editor | Set correct space_type |
-
----
-
-## Error Messages Reference
-
-### "poll() failed"
-
-The operation's poll function returned False. This means:
-- Wrong mode (e.g., trying to edit mesh in Object mode)
-- Nothing selected when selection required
-- Wrong editor type
-
-**Solution**: Check context requirements for your operator.
-
-### "context is incorrect"
-
-Usually means you're calling an operator from the wrong area/region.
-
-**Solution**: Use `bpy.ops.X("INVOKE_DEFAULT")` or set up proper context.
-
-### "Restricted Context"
-
-Blender prevents certain operations in specific situations (like during render).
-
-**Solution**: Defer the operation or check context first.
-
----
-
-## Still Stuck?
-
-### Search the Archive
-
-Use `Ctrl+K` to search with your specific error message or symptom.
-
-### Browse by Tag
-
-- [[../tags/status/solved|Solved Posts]] - Problems that have been resolved
-- [[../tags/topic/troubleshooting|Troubleshooting Posts]] - General problem-solving
-- [[../tags/difficulty/advanced|Advanced Posts]] - Complex issues and solutions
-
-### Ask the Community
-
-If your issue isn't covered here, check the [Blender Artists thread](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456) - someone may have encountered the same problem!
-
----
-
-## Related Guides
-
-- [[getting-started|Getting Started]] - Back to basics
-- [[terminology|Terminology & Concepts]] - Blender and PME concepts
-- [[code-examples|Code Examples]] - Working scripts and patterns
-- [[hotkey-conflicts|Hotkey Conflicts]] - Deep dive into shortcut issues
-- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official scripting documentation
+</div>

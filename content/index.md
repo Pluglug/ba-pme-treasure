@@ -26,7 +26,7 @@ Start with one useful result, then learn only the PME building blocks you need.
 
 - [[Guides/routes/new-to-pme|Choose a first project]]
 - [[Guides/getting-started|Getting Started Guide]]
-- [[Posts/2024/post_05000|Transform Preset — 2024 showcase, current import not checked]]
+- [[Guides/showcases/transform-preset-control-surface|Transform Preset — one task, one control surface]]
 - [[Guides/examples|See more things people built]]
 
 </div>
@@ -77,9 +77,9 @@ Wander by capability, idea, year, or contributor without starting from a raw Tag
 Open selected PME setups and the reusable design idea behind each one.
 
 - [[Guides/examples|Open examples and showcases]]
-- [[Posts/2024/post_05000|Transform Preset — 2024 showcase, current import not checked]]
+- [[Guides/showcases/transform-preset-control-surface|Transform Preset — one task, one control surface]]
+- [[Guides/showcases/sculpt-brush-palette|Sculpt Brush Palette — familiar tools around one key]]
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Sidebar Panel Group — a custom working surface]]
-- [[Guides/how-to/cycle-actions-with-a-stack-key|Stack Key — several actions on one key]]
 
 </div>
 
@@ -105,7 +105,7 @@ PME Treasure preserves **5,599 posts** and **380 contributor pages** spanning **
 
 - [[_Index/Browse|Browse by PME capability and idea]]
 - [[_Index/Timeline|Browse 20 preserved posts from each year]]
-- [[_Index/User_Index|Meet the top contributors]]
+- [[_Index/User_Index|Open contributor pages and forum trails]]
 
 ## Original and current resources
 

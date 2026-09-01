@@ -30,6 +30,7 @@ Do not learn every PME feature first. Choose one piece of friction you would lik
 Build a small Pie Menu for one job: transforms, selection, viewport display, or sculpt brushes.
 
 - [[Guides/getting-started|Build the first useful menu step by step]]
+- [[Guides/qa/choose-pie-popup-or-dialog|Choose Pie, Popup, or Dialog Mode]]
 - [See the compact first-project checklist](#a-useful-first-project)
 - [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Make its hotkey work in Object and Edit Mode]]
 
@@ -52,9 +53,10 @@ Use a Macro when the same two or three Blender operations naturally belong toget
 
 PME can expose properties and panels, not only launch commands.
 
-- [[Posts/2024/post_05000|See the 2024 Transform Preset showcase · current import not checked]]
+- [[Guides/showcases/transform-preset-control-surface|See the Transform Preset control surface]]
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a Sidebar Panel Group]]
 - [[Guides/how-to/make-a-property-editor-slider|Make a Property slider]]
+- [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Put editable object dimensions in a PME layout]]
 
 </div>
 
@@ -66,6 +68,18 @@ Once the basic menu feels natural, try repeated presses or press-and-release beh
 
 - [[Guides/how-to/cycle-actions-with-a-stack-key|Cycle actions with a Stack Key]]
 - [[Guides/how-to/temporarily-change-a-property-with-sticky-key|Temporarily change a property with a Sticky Key]]
+
+</div>
+
+<div class="nav-card beginner">
+
+### Make authoring pleasant
+
+Small usability changes matter once a menu becomes part of daily work.
+
+- [[Guides/how-to/adjust-pie-menu-spacing-and-theme|Adjust Pie Menu spacing and Blender theme colours]]
+- [[Guides/how-to/open-pme-preferences-directly|Put PME Preferences one action away]]
+- [[Guides/examples|Borrow a visual pattern from selected setups]]
 
 </div>
 

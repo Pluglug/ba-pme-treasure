@@ -22,6 +22,7 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 
 - [[Guides/reference/conditional-execution-patterns|Choose between a Command branch, Poll, or a live Custom control]]
 - [[Guides/qa/use-modifier-keys-in-one-pme-item|Use Alt, Ctrl, or Shift for different actions]]
+- [[Guides/qa/use-a-different-pie-in-each-node-editor|Use one hotkey for different Node Editor menus]]
 - [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger by mode, selection, or object type]]
 
 </div>
@@ -32,6 +33,7 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 
 - [[Guides/qa/run-a-macro-from-a-pme-item|Run a Macro from a menu or panel item]]
 - [[Guides/how-to/run-external-script-from-pme|Run trusted Python from an external file]]
+- [[Guides/how-to/resize-a-blender-area-from-pme|Resize the current Blender area with PME's current operator]]
 - [[Guides/reference/share-state-between-macro-steps|Capture and restore state across Macro steps]]
 
 </div>
@@ -41,6 +43,8 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 ### Build a control or custom interface
 
 - [[Guides/how-to/make-a-property-editor-slider|Bind a PME Property to a Blender value]]
+- [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Draw editable object dimensions with `L.prop()`]]
+- [[Guides/how-to/put-blender-header-menus-in-a-pie|Draw Blender header menus with `header_menu()`]]
 - [[Guides/how-to/add-complex-template-widget-to-popup|Add a Blender template widget to a Popup Dialog]]
 - [[Guides/how-to/label-enum-buttons-in-custom-layout|Give enum buttons explicit labels]]
 - [[Guides/reference/panel-function-current-reference|Use the current panel() helper]]
@@ -53,6 +57,18 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose operator context and poll failures]]
 - [[Guides/how-to/export-blender-keymaps-without-ghost-pme-entries|Separate a command problem from stale keymap data]]
+
+</div>
+
+<div class="nav-card explore">
+
+### Revisit a community technique
+
+These pages preserve useful designs whose exact historical setup still needs a current compatibility test.
+
+- [[Guides/how-to/change-selected-values-relative-to-active-object|Apply one value, a delta, or a ratio across selected objects]]
+- [[Guides/how-to/use-properties-as-macro-options|Give one Macro visible Property options]]
+- [[Guides/how-to/embed-pose-panel-in-weight-paint|Study a context override used to draw a Pose panel in Weight Paint]]
 
 </div>
 

@@ -23,6 +23,7 @@ Start with what you can observe. “PME is broken” is not enough to distinguis
 
 ### The shortcut does nothing—or works in the wrong place
 
+- [[Guides/hotkey-conflicts|Run the full hotkey-conflict checklist]]
 - [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Make one hotkey work in Object and Edit Mode]]
 - [[Guides/diagnostics/pme-hold-tweak-shows-press-in-blender-keymap|Why Hold or Tweak appears as Press in Blender]]
 - [[Guides/how-to/export-blender-keymaps-without-ghost-pme-entries|Avoid ghost PME entries when exporting or importing keymaps]]
@@ -34,6 +35,7 @@ Start with what you can observe. “PME is broken” is not enough to distinguis
 ### A command reports a context or poll error
 
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose the editor, region, mode, and selection context]]
+- [[Guides/qa/use-a-different-pie-in-each-node-editor|Give Geometry, Shader, and Compositor nodes different menus on one hotkey]]
 - [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu for the current context]]
 
 </div>

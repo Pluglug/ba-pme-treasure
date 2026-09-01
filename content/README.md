@@ -1,91 +1,60 @@
+---
+title: PME Treasure archive
+description: A preserved forum archive with curated routes for practical Pie Menu Editor answers.
+content_type: archive-readme
+search_scope: other
+show_folder_listing: false
+---
+
 # PME Treasure
 
-**A Reference Library for Pie Menu Editor**
+PME Treasure preserves **5,599 posts** from ten years of Pie Menu Editor community conversation (2016–2025). Selected answers and examples sit in front of that archive so you can begin with a useful result, then open the original discussion when you need its evidence or context.
 
-This archive contains **5,599 forum posts** from the Blender Artists PME community thread, spanning 10 years (2016–2025). It's designed as a searchable reference library to support PME users and documentation efforts.
+## Start here
 
----
+- [[index|PME Treasure home]] — choose from five practical starting routes.
+- [[Guides/index|Guides]] — learn, troubleshoot, build, explore, or browse examples.
+- [[_Index/Browse|Explore selected answers]] — follow a capability, design idea, year, or contributor.
+- Use **Answers** search for selected knowledge; use **Forum archive** search for the complete original conversation.
 
-## What This Is
+## What this is
 
-- A **searchable archive** of the Blender Artists PME thread
-- A **reference library** for finding solutions, examples, and community knowledge
-- A **research vault** supporting official PME documentation development
+- A searchable snapshot of the Blender Artists PME thread.
+- A route into selected answers, recipes, and reusable setup ideas.
+- An Obsidian-compatible source vault whose links also power the public Graph View.
 
-## What This Is NOT
+## What this is not
 
-- **Not official documentation** – Official docs live at [PME Documentation](https://github.com/Pluglug/pme-docs)
-- **Not a curated tutorial** – Content is raw forum posts, quality varies
-- **Not actively maintained** – This is a snapshot as of December 2025
+- **Not the official manual.** Use the [current PME documentation](https://pie-menu-editor.github.io/pme-docs/) for current product instructions.
+- **Not a claim that every forum post is still current.** Older material remains available as historical evidence.
+- **Not a current installation source.** Follow the [current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html).
 
----
+## Search tips
 
-## How to Navigate
+Open search with `Ctrl+K` / `Cmd+K`. Begin with the result you want rather than an imported Tag—for example `hotkey does not open`, `geometry nodes poll`, `run external script`, or an exact error message.
 
-### By Topic
+## Archive snapshot
 
-| Category | Posts | Description |
-|----------|-------|-------------|
-| [Pie Menus](tags/editor/pie-menu) | 1,820 | Radial menus |
-| [Macros](tags/editor/macro) | 767 | Chained operations |
-| [Popup Dialogs](tags/editor/popup-dialog) | 723 | Custom dialogs |
-| [Scripting](tags/topic/scripting) | 293 | Python customization |
+| Property          | Value                                                         |
+| ----------------- | ------------------------------------------------------------- |
+| Preserved posts   | 5,599                                                         |
+| Contributor pages | 380                                                           |
+| Date range        | February 2016 – December 2025                                 |
+| Source            | [Blender Artists thread](https://blenderartists.org/t/662456) |
 
-### By Status
+## Related resources
 
-- [Solved Issues](tags/status/solved) – 1,379 posts with verified solutions
-- [Unsolved Issues](tags/status/unsolved) – 2,016 open questions
+- [Current PME documentation](https://pie-menu-editor.github.io/pme-docs/)
+- [Current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html)
+- [Legacy PME-F 1.x source archive](https://github.com/Pluglug/pie-menu-editor-fork)
+- [Original Blender Artists thread](https://blenderartists.org/t/662456)
 
-### By Difficulty
+## Open in Obsidian
 
-- [Beginner](tags/difficulty/beginner) – 1,868 posts
-- [Intermediate](tags/difficulty/intermediate) – 2,303 posts
-- [Advanced](tags/difficulty/advanced) – 406 posts
+1. Clone the [PME Treasure repository](https://github.com/Pluglug/ba-pme-treasure).
+2. Open `content/` as an Obsidian vault.
+3. Use links, backlinks, search, and the local graph to move between selected answers and their source posts.
 
----
+Initial indexing can take a moment because the vault contains 5,599 post files.
 
-## Search Tips
-
-Use `Ctrl+K` / `Cmd+K` to search the entire archive.
-
-**Example searches**:
-- `pie menu space` – Find pie menus using spacebar
-- `hotkey conflict` – Troubleshoot key binding issues
-- `python script custom` – Find scripting examples
-
----
-
-## Archive Metadata
-
-| Property | Value |
-|----------|-------|
-| Extraction Date | December 2025 |
-| Total Posts | 5,599 |
-| Contributors | 760 |
-| Date Range | February 2016 – December 2025 |
-| Source | [Blender Artists Thread](https://blenderartists.org/t/662456) |
-
----
-
-## Related Resources
-
-- [PME on Gumroad](https://gum.co/pie_menu_editor) – Purchase the original addon
-- [PME-F Fork](https://github.com/Pluglug/pie-menu-editor-fork) – Community-maintained fork
-- [PME Documentation](https://github.com/Pluglug/pme-docs) – Official docs (WIP)
-- [Original Thread](https://blenderartists.org/t/662456) – Live forum discussion
-
----
-
-## For Obsidian Users
-
-To use this archive locally:
-
-1. Clone the [repository](https://github.com/Pluglug/ba-pme-treasure)
-2. Open `content/` as an Obsidian vault
-3. Use Obsidian's search and graph view for exploration
-
-**Note**: With 5,599 files, initial indexing may take a moment.
-
----
-
-*This archive is maintained by [Pluglug](https://github.com/Pluglug) to preserve and make accessible 10 years of PME community knowledge.*
+_This archive preserves and makes accessible ten years of PME community knowledge._

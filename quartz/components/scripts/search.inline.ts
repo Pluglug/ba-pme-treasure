@@ -92,11 +92,15 @@ const indexes = {
   archive: createSearchIndex(),
 }
 
-const p = new DOMParser()
 const fetchContentCache: Map<FullSlug, Element[]> = new Map()
 const contextWindowWords = 30
 const numSearchResults = 12
 const numTagResults = 5
+
+type SearchShortcutEvent = Pick<
+  KeyboardEvent,
+  "altKey" | "ctrlKey" | "key" | "metaKey" | "repeat" | "shiftKey"
+>
 
 const tokenizeTerm = (term: string) => {
   const tokens = term.split(/\s+/).filter((t) => t.trim() !== "")
@@ -177,6 +181,11 @@ function highlight(searchTerm: string, text: string, trim?: boolean) {
   }`
 }
 
+function appendHighlightedMarkup(parent: HTMLElement, markup: string) {
+  const html = new DOMParser().parseFromString(markup, "text/html")
+  parent.append(...html.body.childNodes)
+}
+
 function highlightHTML(searchTerm: string, el: HTMLElement) {
   const p = new DOMParser()
   const tokenizedTerms = tokenizeTerm(searchTerm)
@@ -216,6 +225,26 @@ function highlightHTML(searchTerm: string, el: HTMLElement) {
   }
 
   return html.body
+}
+
+function isSearchShortcut(event: SearchShortcutEvent) {
+  return (
+    event.key.toLowerCase() === "k" &&
+    (event.ctrlKey || event.metaKey) &&
+    !event.altKey &&
+    !event.shiftKey &&
+    !event.repeat
+  )
+}
+
+function focusWrapTarget<T>(focusable: readonly T[], active: T | null, backwards: boolean) {
+  const first = focusable.at(0)
+  const last = focusable.at(-1)
+  if (!first || !last) return undefined
+  if (!focusable.includes(active as T)) return backwards ? last : first
+  if (backwards && active === first) return last
+  if (!backwards && active === last) return first
+  return undefined
 }
 
 async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: ContentIndex) {
@@ -289,16 +318,26 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       removeAllChildren(preview)
     }
     searchLayout.classList.remove("display-results")
+    currentSearchTerm = ""
     currentHover = null
     setSearchScope("answers", false)
-    const focusTarget = searchInvoker.isConnected ? searchInvoker : searchButton
+    const focusTarget =
+      searchInvoker.isConnected && !container.contains(searchInvoker) ? searchInvoker : searchButton
     focusTarget.focus()
   }
 
-  function showSearch(invoker?: HTMLElement) {
+  function showSearch(invoker?: HTMLElement, scope: SearchScope = "answers") {
+    const activeElement = document.activeElement
+    const candidate = invoker ?? (activeElement instanceof HTMLElement ? activeElement : null)
     searchInvoker =
-      invoker ??
-      (document.activeElement instanceof HTMLElement ? document.activeElement : searchButton)
+      candidate &&
+      candidate !== document.body &&
+      candidate !== document.documentElement &&
+      candidate.isConnected &&
+      !container.contains(candidate)
+        ? candidate
+        : searchButton
+    setSearchScope(scope, false)
     if (sidebar) sidebar.style.zIndex = "10000"
     container.classList.add("active")
     searchBar.focus()
@@ -306,7 +345,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
 
   let currentHover: HTMLInputElement | null = null
   async function shortcutHandler(e: HTMLElementEventMap["keydown"]) {
-    if (e.key.toLowerCase() === "k" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
+    if (isSearchShortcut(e)) {
       e.preventDefault()
       const searchBarOpen = container.classList.contains("active")
       searchBarOpen ? hideSearch() : showSearch(document.activeElement as HTMLElement)
@@ -325,17 +364,15 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
           "input:not([disabled]), button:not([disabled]), a[href]:not([hidden])",
         ),
       ).filter((element) => element.offsetParent !== null)
-      const first = focusable.at(0)
-      const last = focusable.at(-1)
-      if (
-        e.shiftKey &&
-        (document.activeElement === first || !container.contains(document.activeElement))
-      ) {
+      const activeElement = document.activeElement
+      const target = focusWrapTarget(
+        focusable,
+        activeElement instanceof HTMLElement ? activeElement : null,
+        e.shiftKey,
+      )
+      if (target) {
         e.preventDefault()
-        last?.focus()
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault()
-        first?.focus()
+        target.focus()
       }
       return
     }
@@ -384,66 +421,76 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     }
   }
 
-  const formatForDisplay = (term: string, id: number, type: SearchType) => {
+  const formatForDisplay = (id: number) => {
     const slug = idDataMap[id]
     const details = data[slug]
     return {
       id,
       slug,
-      title:
-        type === "tags"
-          ? escapeHTML(details.displayTitle)
-          : highlight(term, details.displayTitle ?? details.title ?? ""),
-      content: highlight(term, details.content ?? "", true),
-      summary: escapeHTML(details.description ?? ""),
-      tags: highlightTags(term, details.tags, type),
+      title: details.displayTitle ?? details.title ?? "",
+      content: details.content ?? "",
+      summary: details.description ?? "",
+      tags: details.tags ?? [],
       verificationStatus: details.verificationStatus,
       searchScope: details.searchScope as SearchScope,
     }
-  }
-
-  function highlightTags(term: string, tags: string[], type: SearchType) {
-    if (!tags || type !== "tags") {
-      return []
-    }
-
-    return tags
-      .map((tag) => {
-        const safeTag = escapeHTML(tag)
-        if (tag.toLowerCase().includes(term.toLowerCase())) {
-          return `<li><p class="match-tag">#${safeTag}</p></li>`
-        } else {
-          return `<li><p>#${safeTag}</p></li>`
-        }
-      })
-      .slice(0, numTagResults)
   }
 
   function resolveUrl(slug: FullSlug): URL {
     return new URL(resolveRelative(currentSlug, slug), location.toString())
   }
 
-  const resultToHTML = ({ slug, title, content, summary, tags, verificationStatus }: Item) => {
-    const htmlTags = tags.length > 0 ? `<ul class="tags">${tags.join("")}</ul>` : ``
-    const status =
-      verificationStatus === "historical-unverified"
-        ? `<p class="result-status">Historical · current compatibility unverified</p>`
-        : ``
+  const resultToElement = (
+    { slug, title, content, summary, tags, verificationStatus }: Item,
+    term: string,
+    type: SearchType,
+  ) => {
     const itemTile = document.createElement("a")
     itemTile.classList.add("result-card")
     itemTile.id = slug
     itemTile.href = resolveUrl(slug).toString()
-    itemTile.innerHTML = `
-      <h3 class="card-title">${title}</h3>
-      ${status}
-      ${htmlTags}
-      ${summary ? `<p class="card-summary">${summary}</p>` : ``}
-      <p class="card-description">${content}</p>
-    `
-    itemTile.addEventListener("click", (event) => {
-      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return
-      hideSearch()
-    })
+
+    const titleElement = document.createElement("h3")
+    titleElement.className = "card-title"
+    if (type === "tags") {
+      titleElement.textContent = title
+    } else {
+      appendHighlightedMarkup(titleElement, highlight(term, title))
+    }
+    itemTile.appendChild(titleElement)
+
+    if (verificationStatus === "historical-unverified") {
+      const status = document.createElement("p")
+      status.className = "result-status"
+      status.textContent = "Historical · current compatibility unverified"
+      itemTile.appendChild(status)
+    }
+
+    if (type === "tags" && tags.length > 0) {
+      const tagList = document.createElement("ul")
+      tagList.className = "tags"
+      for (const tag of tags.slice(0, numTagResults)) {
+        const tagItem = document.createElement("li")
+        const tagText = document.createElement("p")
+        if (tag.toLowerCase().includes(term.toLowerCase())) tagText.className = "match-tag"
+        tagText.textContent = `#${tag}`
+        tagItem.appendChild(tagText)
+        tagList.appendChild(tagItem)
+      }
+      itemTile.appendChild(tagList)
+    }
+
+    if (summary) {
+      const summaryElement = document.createElement("p")
+      summaryElement.className = "card-summary"
+      summaryElement.textContent = summary
+      itemTile.appendChild(summaryElement)
+    }
+
+    const description = document.createElement("p")
+    description.className = "card-description"
+    appendHighlightedMarkup(description, highlight(term, content, true))
+    itemTile.appendChild(description)
 
     const handler = (event: MouseEvent) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return
@@ -451,8 +498,8 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     }
 
     async function onMouseEnter(ev: MouseEvent) {
-      if (!ev.target) return
-      const target = ev.target as HTMLInputElement
+      const target = ev.currentTarget as HTMLElement | null
+      if (!target) return
       await displayPreview(target)
     }
 
@@ -469,23 +516,32 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     scope: SearchScope,
     revision: number,
     term: string,
+    type: SearchType,
   ) {
     if (revision !== searchRevision || scope !== currentSearchScope) return
     removeAllChildren(results)
     if (finalResults.length === 0) {
-      const archiveAction =
-        scope === "answers"
-          ? `<button type="button" class="search-archive-action">Search the forum archive</button>`
-          : `<p>Try a shorter term or search by a PME feature name.</p>`
-      results.innerHTML = `<div class="result-card no-match" role="status">
-          <h3>No matching ${scope === "answers" ? "answer" : "forum post"}.</h3>
-          ${archiveAction}
-      </div>`
-      results.querySelector(".search-archive-action")?.addEventListener("click", () => {
-        setSearchScope("archive")
-      })
+      const noMatch = document.createElement("div")
+      noMatch.className = "result-card no-match"
+      noMatch.setAttribute("role", "status")
+      const title = document.createElement("h3")
+      title.textContent = `No matching ${scope === "answers" ? "answer" : "forum post"}.`
+      noMatch.appendChild(title)
+      if (scope === "answers") {
+        const archiveAction = document.createElement("button")
+        archiveAction.type = "button"
+        archiveAction.className = "search-archive-action"
+        archiveAction.textContent = "Search the forum archive"
+        archiveAction.addEventListener("click", () => setSearchScope("archive"))
+        noMatch.appendChild(archiveAction)
+      } else {
+        const guidance = document.createElement("p")
+        guidance.textContent = "Try a shorter term or search by a PME feature name."
+        noMatch.appendChild(guidance)
+      }
+      results.appendChild(noMatch)
     } else {
-      results.append(...finalResults.map(resultToHTML))
+      results.append(...finalResults.map((result) => resultToElement(result, term, type)))
     }
 
     if (finalResults.length === 0 && preview) {
@@ -512,7 +568,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
         if (contents === undefined) {
           throw new Error(`Could not fetch ${targetUrl}`)
         }
-        const html = p.parseFromString(contents ?? "", "text/html")
+        const html = new DOMParser().parseFromString(contents ?? "", "text/html")
         normalizeRelativeURLs(html, targetUrl)
         return [...html.getElementsByClassName("popover-hint")]
       })
@@ -539,7 +595,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
 
     // scroll to longest
     const highlights = [...preview.getElementsByClassName("highlight")].sort(
-      (a, b) => b.innerHTML.length - a.innerHTML.length,
+      (a, b) => (b.textContent?.length ?? 0) - (a.textContent?.length ?? 0),
     )
     highlights[0]?.scrollIntoView({ block: "start" })
   }
@@ -605,14 +661,14 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       ...getByField("content"),
       ...getByField("tags"),
     ])
-    const finalResults = [...allIds].map((id) => formatForDisplay(term, id, resultType))
-    await displayResults(finalResults, scope, revision, term)
+    const finalResults = [...allIds].map(formatForDisplay)
+    await displayResults(finalResults, scope, revision, term, resultType)
   }
 
   await fillDocument(data)
   document.addEventListener("keydown", shortcutHandler)
   window.addCleanup(() => document.removeEventListener("keydown", shortcutHandler))
-  const searchButtonHandler = () => showSearch(searchButton)
+  const searchButtonHandler = () => showSearch(searchButton, "answers")
   searchButton.addEventListener("click", searchButtonHandler)
   window.addCleanup(() => searchButton.removeEventListener("click", searchButtonHandler))
   const externalSearchHandler = (event: MouseEvent) => {
@@ -621,8 +677,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     if (!button) return
 
     const requestedScope = button.dataset.openPmeSearch
-    setSearchScope(requestedScope === "archive" ? "archive" : "answers", false)
-    showSearch(button)
+    showSearch(button, requestedScope === "archive" ? "archive" : "answers")
   }
   document.addEventListener("click", externalSearchHandler)
   window.addCleanup(() => document.removeEventListener("click", externalSearchHandler))
@@ -671,11 +726,15 @@ async function fillDocument(data: ContentIndex) {
   indexPopulated = true
 }
 
-document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
-  const currentSlug = e.detail.url
-  const data = await fetchData
-  const searchElement = document.getElementsByClassName("search")
-  for (const element of searchElement) {
-    await setupSearch(element, currentSlug, data)
-  }
-})
+if (typeof document !== "undefined") {
+  document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
+    const currentSlug = e.detail.url
+    const data = await fetchData
+    const searchElement = document.getElementsByClassName("search")
+    for (const element of searchElement) {
+      await setupSearch(element, currentSlug, data)
+    }
+  })
+}
+
+export { encoder, focusWrapTarget, highlight, isSearchShortcut }

@@ -1,249 +1,41 @@
 ---
-title: Resolving Hotkey Conflicts
-tags: ["#guide", "#topic/hotkeys/conflicts"]
+title: Diagnose a PME hotkey conflict
+description: A durable diagnostic sequence for shortcuts that do not open, open in the wrong context, or leave stale Blender keymap entries.
+content_type: legacy-landing
+search_scope: other
+review_status: superseded
+show_folder_listing: false
 ---
 
-# Resolving Hotkey Conflicts
+# Diagnose a PME hotkey conflict
 
-One of the most common PME issues is hotkey conflicts. This guide helps you diagnose and fix them.
+A shortcut can fail because another Blender keymap item receives it, because the PME item is registered in a different scope, or because the action itself rejects the current context. These are different problems, so begin by observing what actually happens.
 
----
+## First checks
 
-## Understanding Keymap Hierarchy
+1. Reproduce the shortcut in the exact editor and mode where it fails.
+2. Search Blender's **Preferences → Keymap** for the same key and modifiers.
+3. Inspect the **Info** editor and System Console to see which operator ran or which error was raised.
+4. Compare the PME keymap scope with the failing editor, mode, and region.
+5. Test a minimal PME item in a fresh Blender file before changing several mappings at once.
 
-Blender's keymap is **hierarchical** - hotkey assignments are stored per editor type and editing mode.
+Do not treat a Poll expression as a replacement for keymap scope. A Poll decides whether a PME item is available in the current state; it does not by itself make Blender deliver a shortcut that another keymap entry has already consumed.
 
-### The Keymap Tree
+## Choose the matching answer
 
-```
-Window / Screen (global)
-├── 3D View (3D View area)
-│   ├── Mesh (Mesh Edit Mode)
-│   ├── Object Mode
-│   ├── Sculpt
-│   └── Other modes...
-├── Image Editor
-├── Outliner
-└── Other editors...
-```
+- [[Guides/routes/solve-a-problem|Start from the exact symptom]]
+- [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Use one hotkey in Object Mode and Edit Mode]]
+- [[Guides/qa/use-modifier-keys-in-one-pme-item|Use Alt, Ctrl, or Shift inside one PME item]]
+- [[Guides/diagnostics/pme-hold-tweak-shows-press-in-blender-keymap|Understand why Hold or Tweak appears as Press]]
+- [[Guides/how-to/export-blender-keymaps-without-ghost-pme-entries|Export Blender keymaps without ghost PME entries]]
+- [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose an operator context failure]]
 
-When a key is pressed, Blender checks the **most specific** (narrower context) keymap first:
+If none matches, search the Forum archive with the exact key combination, keymap name, operator ID, and error text.
 
-```
-Key pressed
-  ├─→ 1. Screen Editing (highest priority)
-  ├─→ 2. Mode-specific (Mesh, Sculpt, Object Mode)
-  ├─→ 3. Editor-specific (3D View, Node Editor)
-  └─→ 4. Window/Screen (lowest priority)
-```
+<div class="route-actions">
 
-### Priority Layers
+<button type="button" class="home-search-button" data-open-pme-search="answers">Search practical answers</button>
 
-| Layer | Priority | Examples |
-|-------|----------|----------|
-| **Modal Handlers** | Highest | Screen Editing, active Modal Operators |
-| **Area/Region** | Medium | Active Tool, Mode-specific, Editor-specific |
-| **Window** | Lowest | Window, Screen |
+<button type="button" class="home-search-button archive" data-open-pme-search="archive">Search all 5,599 forum posts</button>
 
-> [!warning] Screen Editing
-> Screen Editing has the **highest priority** and runs reliably, but easily conflicts with other keys and may trigger unexpectedly.
->
-> - Start with editor/mode-specific keymaps
-> - Use Poll methods to limit when it triggers
-> - Avoid important keys (Tab, Space, LMB/RMB)
-
-> **Important**: If a higher-priority keymap uses your key, PME won't receive it!
-
----
-
-## Diagnosing Conflicts
-
-### Method 1: Blender Keymap Search
-
-1. Go to `Edit → Preferences → Keymap`
-2. Click the search box
-3. Type your key combination (e.g., "Ctrl Shift S")
-4. Look for conflicts
-
-### Method 2: Info Panel
-
-1. Open the Info editor (`Window → Info`)
-2. Press your hotkey
-3. See what operator was called
-4. If it's not your PME menu, there's a conflict
-
-### Method 3: PME Hotkey Tab
-
-In your PME item:
-1. Open the Hotkey tab
-2. Check the "Key Map" setting
-3. Make sure it matches where you're pressing the key
-
----
-
-## Common Conflicts
-
-### With Built-in Blender Keys
-
-| Key | Blender Default | Workaround |
-|-----|-----------------|------------|
-| `Q` | Quick Favorites | Use `Shift+Q` or disable in keymap |
-| `W` | Selection Mode (2.80+) | Use modifier or different key |
-| `Tab` | Mode switch | Use with modifier |
-| `Ctrl+S` | Save | Use `Ctrl+Shift+S` |
-| `Space` | Search/Play | Context-dependent |
-
-### With Other Addons
-
-Popular addons that often conflict:
-- **Hard Ops** - Uses many keys
-- **BoxCutter** - Alt key combinations
-- **Machin3Tools** - Various shortcuts
-- **Quick Favorites** - Q key
-
-### Context-Specific Issues
-
-| Problem | Cause | Solution |
-|---------|-------|----------|
-| Works in Object Mode, not Edit | Wrong keymap | Set to "Mesh" keymap |
-| Works in 3D View, not Node Editor | Editor-specific keymap | Add separate binding |
-| Only works with mesh selected | Poll function | Check poll conditions |
-
----
-
-## Solutions
-
-### Solution 1: Use a Different Key
-
-The simplest fix. Good combinations that are often free:
-
-- `Ctrl+Shift+[Letter]`
-- `Alt+Shift+[Letter]`
-- `Ctrl+Alt+[Letter]`
-- Function keys (`F5`, `F6`, etc.)
-
-### Solution 2: Disable Conflicting Keymap
-
-In Blender preferences:
-1. `Edit → Preferences → Keymap`
-2. Find the conflicting entry
-3. Uncheck or delete it
-
-### Solution 3: Change PME Keymap
-
-In your PME item's Hotkey tab:
-1. Change "Key Map" to more specific context
-2. Options: "3D View", "Mesh", "Object Mode", etc.
-3. This makes PME respond only in that context
-
-### Solution 4: Use Context Override
-
-In PME's Hotkey tab:
-1. Set specific Space Type (3D View, Node Editor, etc.)
-2. Set Region Type if needed
-3. This narrows when the hotkey is active
-
----
-
-## Using Poll Methods with Hotkeys
-
-Even when hotkeys are in the same keymap, you can use **Poll methods** to differentiate behavior based on conditions:
-
-```python
-# Only when a mesh object is selected
-ao = C.active_object; return ao and ao.type == 'MESH'
-
-# Only in Edit Mode with face selection
-return C.mode == 'EDIT_MESH' and C.tool_settings.mesh_select_mode[2]
-
-# Only in Sculpt Mode with Dyntopo enabled
-return C.mode == 'SCULPT' and C.active_object.use_dynamic_topology_sculpting
-```
-
-> [!tip] How Poll Works with Hotkeys
-> When a Poll method returns `False`, the hotkey is skipped and Blender checks the next keymap item. This lets you have the same key do different things based on context!
-
-### Choosing the Right Keymap
-
-| Use Case | Recommended Keymap |
-|----------|-------------------|
-| Mesh Edit Mode pie menu | `Mesh` (mode-specific) |
-| Sculpt brush switcher | `Sculpt` (mode-specific) |
-| Mesh object in Object Mode | `Object Mode` + Poll method |
-| Keyframe operations | `Frames` (all editors) |
-| Global creation menu | `Window` or `Screen` |
-| Always, everywhere | `Screen Editing` (use carefully!) |
-
----
-
-## Best Practices
-
-### 1. Use Modifiers
-
-Instead of single keys, use combinations:
-```
-Bad:  Q (conflicts with Quick Favorites)
-Good: Ctrl+Shift+Q (less likely to conflict)
-```
-
-### 2. Be Context-Specific
-
-Set the most specific keymap possible:
-```
-Generic: "Window" (conflicts everywhere)
-Specific: "Object Mode" (only in Object Mode)
-```
-
-### 3. Combine Keymap + Poll
-
-For maximum control, use both:
-- Keymap narrows where the hotkey is checked
-- Poll method narrows when it actually triggers
-
-### 4. Document Your Keys
-
-Keep track of your custom shortcuts to avoid self-conflicts.
-
-### 5. Test in Different Modes
-
-A hotkey that works in Object Mode might conflict in Edit Mode or Sculpt Mode.
-
----
-
-## Debugging Tips
-
-### Check if PME is Loading
-
-1. Open Blender's System Console (`Window → Toggle System Console`)
-2. Look for PME-related messages
-3. Errors here might explain why hotkeys don't work
-
-### Test with Fresh File
-
-1. `File → New → General`
-2. Test your hotkey
-3. If it works, the issue is with your specific file
-
-### Disable Other Addons
-
-Temporarily disable other addons to isolate the conflict.
-
----
-
-## Archive Resources
-
-Browse hotkey-related discussions:
-
-- [[../tags/topic/hotkeys|All Hotkey Posts]] (1,519 posts)
-- [[../tags/topic/hotkeys/conflicts|Hotkey Conflicts]] (187 posts)
-- [[../tags/topic/hotkeys/configuration|Hotkey Configuration]] (658 posts)
-
----
-
-## Related Guides
-
-- [[getting-started|Getting Started]] - PME basics
-- [[troubleshooting|General Troubleshooting]] - Other issues
-- [[editor-overview|Editor Types]] - Choosing the right editor
-- [[terminology|Terminology & Concepts]] - PME and Blender concepts
-- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official scripting documentation
+</div>
