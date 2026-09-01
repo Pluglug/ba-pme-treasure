@@ -1,122 +1,89 @@
 ---
-title: Getting Started with PME
-tags: ["#guide", "#difficulty/beginner"]
+title: Getting Started Guide
+description: Build one useful Pie Menu, test it in a real Blender task, and grow it only when the workflow calls for more.
+content_type: guide
+search_scope: answers
+tags:
+  - knowledge/guide
+  - browse/getting-started
+created: 2026-09-01
+modified: 2026-09-01
+draft: false
+review_status: owner-review-pending
+verification_status: current-source-checked
+verified_on: 2026-09-01
+provenance_version: 1
+source_posts:
+  - Posts/2016/post_00001
+source_urls:
+  - https://pie-menu-editor.github.io/pme-docs/
+  - https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html
+pme_versions:
+  - "2.1"
+blender_versions:
+  - "4.5–5.2"
 ---
 
-# Getting Started with Pie Menu Editor
+The quickest way to understand Pie Menu Editor is to remove one small piece of friction from your own Blender workflow. Start with a menu you can use today; learn Macros, Properties, Stack Keys, and scripting only when the job asks for them.
 
-Welcome to PME! This guide will help you understand what PME can do and how to get started.
+## Before you build
 
----
+- Install and enable PME using the [current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html).
+- Pick one Blender task you already repeat, such as transforming objects, changing viewport display, switching selection tools, or choosing sculpt brushes.
+- Write down four to eight actions you reach for during that task.
+- Choose a shortcut that is not already important to your Blender workflow.
 
-## What is PME?
+If you are upgrading an existing setup, preserve it first with [[Guides/how-to/migrate-pme-to-2-1-safely|the migration and backup procedure]]. A migration is maintenance work, not the best first tour of PME.
 
-**Pie Menu Editor (PME)** is a powerful Blender addon that lets you customize Blender's interface without coding. You can create:
+## Build your first useful Pie Menu
 
-- **Pie Menus** - Radial menus that appear when you press a hotkey
-- **Popup Dialogs** - Custom windows with buttons, sliders, and controls
-- **Macros** - Chain multiple Blender operations into a single command
-- **And much more...**
+1. Create a **Pie Menu** in PME and name it after the job, not the commands—for example `Transform`, `Viewport`, or `Sculpt Brushes`.
+2. Add the actions you wrote down. Keep the first version small enough to remember without reading every label.
+3. Arrange related or opposite actions in positions that make sense together.
+4. Assign the shortcut and test it in the Blender editor and mode where you actually need it.
+5. Use the menu during a real work session. Remove entries you never choose before adding more.
 
-> **First Post**: Read the [[../Posts/2016/post_00001|original announcement by roaoao]] for a complete feature overview.
+The goal is not to reproduce a Blender menu. It is to make one repeated decision faster and easier to remember.
 
----
+## Three good first projects
 
-## Installation
+| Project        | Put in the first version                           | What it teaches                                                    |
+| -------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
+| Transform menu | orientation, pivot, snapping, proportional editing | Related controls can become one task surface.                      |
+| Viewport menu  | shading, overlays, local view, framing             | A single shortcut can replace scattered UI travel.                 |
+| Selection menu | the few selection actions you use most             | A compact menu is easier to learn than a complete command catalog. |
 
-> [!tip] Recommended Download
-> To avoid confusion between different versions, we recommend downloading from the actively maintained fork:
->
-> **[PME-F (Fork) Releases](https://github.com/Pluglug/pie-menu-editor-fork/releases)** - Latest version with Blender 4.x support
+[[Posts/2024/post_05000|The Transform Preset in Post #5000]] is a useful 2024 example of grouping stateful controls around one job. Its JSON has not been checked with current PME; borrow the design idea rather than assuming the old import is current.
 
-### Installation Steps
+## Improve the menu after using it
 
-1. Download the latest `.zip` file from [PME-F Releases](https://github.com/Pluglug/pie-menu-editor-fork/releases)
-2. In Blender: `Edit → Preferences → Add-ons → Install`
-3. Select the downloaded `.zip` file
-4. Enable the addon by checking the box
+### The shortcut works in one mode but not another
 
-### Alternative Downloads
+Open [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Make one hotkey work in Object and Edit Mode]]. Test the shortcut in its real editor and mode before changing the menu itself.
 
-- [Gumroad (Original)](https://gum.co/pie_menu_editor) - Original paid version (may not support latest Blender)
-- [SuperHive Market](https://superhivemarket.com/products/pie-menu-editor) - Alternative marketplace
+### Two or three actions always happen together
 
-### Troubleshooting Installation
+Use a Macro instead of hiding a long script in the first menu. [[Guides/qa/run-a-macro-from-a-pme-item|Run a Macro from a PME item]] shows how to keep that sequence visible and editable.
 
-- [[../tags/topic/installation|Browse installation-related posts]]
-- Make sure you're using a compatible Blender version
-- For Blender 4.x, use PME-F (the fork version)
+### You keep reopening a panel to change one value
 
----
+Expose that value where you use it. Start with [[Guides/how-to/make-a-property-editor-slider|a Property slider]], then consider [[Guides/how-to/create-a-pme-sidebar-panel-group|a Sidebar Panel Group]] when several related controls deserve a stable surface.
 
-## Your First Pie Menu
+### One shortcut should behave differently by context
 
-Here's a simple workflow to create your first pie menu:
+Keep the first menu simple until the need is clear, then use [[Guides/reference/conditional-execution-patterns|a conditional execution pattern]] or [[Guides/how-to/route-to-a-context-specific-menu|route to a context-specific menu]].
 
-1. Open PME panel (`N` key in 3D View → PME tab)
-2. Click `+` to add a new item
-3. Choose "Pie Menu"
-4. Set a hotkey (e.g., `Ctrl+Shift+Q`)
-5. Add items to your menu slots
+## See what PME can become
 
-### Example Posts
+- [[Guides/examples|Examples and Showcases]] collects reusable workflow patterns.
+- [[Guides/routes/new-to-pme|The newcomer route]] lets you choose a different first project.
+- [[Posts/2016/post_00001|The original announcement]] and the [original video playlist](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg) show the breadth of the original idea.
+- [[Guides/code-examples|Code Examples]] is there when a normal Command, Macro, or Property is no longer enough.
 
-These posts show basic pie menu creation:
+The historical post and videos use earlier PME and Blender interfaces. Use them for ideas; use the [current PME documentation](https://pie-menu-editor.github.io/pme-docs/) for version-specific controls.
 
-| Post | Description |
-|------|-------------|
-| [[../tags/editor/pie-menu\|Pie Menu Posts]] | Browse all pie menu discussions |
-| [[../tags/difficulty/beginner\|Beginner Posts]] | Posts suitable for newcomers |
+## If the first result is not right
 
----
-
-## Understanding PME Editors
-
-PME has several "editors" for different types of customization:
-
-| Editor | Use Case | Example |
-|--------|----------|---------|
-| **Pie Menu** | Quick access to commands | Transform tools pie |
-| **Regular Menu** | Traditional dropdown menus | Long tool lists |
-| **Popup Dialog** | Forms with multiple controls | Custom export settings |
-| **Macro** | Combine operations | "Duplicate and Mirror" in one click |
-| **Stack Key** | Multiple actions on one key | Press once for X, again for Y |
-| **Sticky Key** | Hold-to-show menus | Hold `Q` to see menu |
-| **Modal** | Interactive tools | Custom brush size adjuster |
-| **Property** | Expose hidden settings | Quick access to obscure options |
-| **Panel Group** | Sidebar organization | Custom N-panel sections |
-
----
-
-## Official Resources
-
-- 📺 [YouTube Tutorial Playlist](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg)
-- 📚 [Archived Documentation](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/)
-- 💬 [Blender Artists Thread](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456)
-
----
-
-## Community Resources
-
-- [[Jakro]] created excellent [scripts and tutorials](http://polycount.com/discussion/191787/jaks-blender-scripts-a-bunch-of-time-saving-tools-for-blender-free/)
-- [[roaoao]] (original developer) answered many questions in the forum
-- [[Pluglug]] maintains the [PME-F fork](https://github.com/Pluglug/pie-menu-editor-fork) for Blender 4.x+
-
----
-
-## Next Steps
-
-- [[terminology|Terminology & Concepts]] - Understand Blender and PME concepts
-- [[troubleshooting|Troubleshooting Guide]] - If something isn't working
-- [[code-examples|Code Examples]] - For advanced customization
-- [[hotkey-conflicts|Hotkey Conflicts]] - Resolving shortcut issues
-- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html) - Official documentation
-
----
-
-## Related Posts
-
-Browse beginner-friendly discussions:
-
-- [[../tags/difficulty/beginner|All Beginner Posts]] (1,868 posts)
-- [[../tags/status/solved|Solved Issues]] (1,379 posts)
+- [[Guides/routes/solve-a-problem|Start from the symptom]] instead of guessing which feature failed.
+- [[Guides/how-to/restore-pme-menus-from-auto-backup|Restore missing or damaged menus]] before rebuilding them.
+- [[Guides/diagnostics/operator-needs-correct-blender-context|Check Blender context]] when an operator works from one place but not another.

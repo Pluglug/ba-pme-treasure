@@ -5,11 +5,11 @@ import * as Component from "./quartz/components"
 const explorerSortFn = (a: any, b: any) => {
   // Priority order for folders
   const folderPriority: Record<string, number> = {
-    "Guides": 1,
+    Guides: 1,
     "Practical answers": 1,
-    "_Index": 2,
-    "Users": 3,
-    "Posts": 4,
+    _Index: 2,
+    Users: 3,
+    Posts: 4,
   }
 
   const aPriority = folderPriority[a.displayName] ?? 100
@@ -38,8 +38,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      "PME on Gumroad": "https://gum.co/pie_menu_editor",
-      "PME-F Fork": "https://github.com/Pluglug/pie-menu-editor-fork",
+      "Get current PME": "https://pluglug.gumroad.com/l/pie-menu-editor-fork",
+      "Legacy PME-F 1.x source archive": "https://github.com/Pluglug/pie-menu-editor-fork",
       "Blender Artists": "https://blenderartists.org/t/662456",
     },
   }),

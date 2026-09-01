@@ -20,14 +20,14 @@ title: PME Treasure
 
 <div class="nav-card beginner">
 
-### 🌱 I'm new to PME
+### 🌱 I’m new to PME
 
-Start here if you just purchased PME or want to learn the basics.
+Start with one useful result, then learn only the PME building blocks you need.
 
+- [[Guides/routes/new-to-pme|Choose a first project]]
 - [[Guides/getting-started|Getting Started Guide]]
-- [What is PME? (Post #1)](Posts/2016/post_00001.md)
-- [Official Documentation (Archive)](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/)
-- [YouTube Tutorials](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg)
+- [[Posts/2024/post_05000|Transform Preset — 2024 showcase, current import not checked]]
+- [[Guides/examples|See more things people built]]
 
 </div>
 
@@ -35,12 +35,12 @@ Start here if you just purchased PME or want to learn the basics.
 
 ### 🔧 I have a problem
 
-Find solutions to common issues and errors.
+Start from the symptom and move to a focused answer or recovery procedure.
 
-- [[Guides/troubleshooting|Troubleshooting Guide]]
-- [Browse Solved Posts](tags/status/solved) (1,379 posts)
-- [Hotkey Conflicts](tags/topic/hotkeys/conflicts) (187 posts)
-- [Compatibility Issues](tags/topic/compatibility) (74 posts)
+- [[Guides/routes/solve-a-problem|Choose the symptom]]
+- [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|A hotkey works in the wrong mode]]
+- [[Guides/diagnostics/operator-needs-correct-blender-context|An operator reports a context error]]
+- [[Guides/how-to/restore-pme-menus-from-auto-backup|Menus are missing or damaged]]
 
 </div>
 
@@ -48,12 +48,12 @@ Find solutions to common issues and errors.
 
 ### 💻 I need code examples
 
-Scripts, snippets, and advanced customization.
+Choose a goal, copy the useful pattern, and follow the source conversation when needed.
 
-- [[Guides/code-examples|Code Examples Collection]]
-- [Scripting Posts](tags/topic/scripting) (293 posts)
-- [Python Scripting](tags/topic/python-scripting) (200 posts)
-- [Advanced Topics](tags/difficulty/advanced) (406 posts)
+- [[Guides/code-examples|Open the code examples collection]]
+- [[Guides/reference/conditional-execution-patterns|Branch an action by context or state]]
+- [[Guides/how-to/run-external-script-from-pme|Run an external Python script]]
+- [[Guides/how-to/make-a-property-editor-slider|Build a Property slider]]
 
 </div>
 
@@ -61,12 +61,12 @@ Scripts, snippets, and advanced customization.
 
 ### 🗺️ I want to explore
 
-Browse the archive by different categories.
+Wander by capability, idea, year, or contributor without starting from a raw Tag dump.
 
-- [All Tags](_Index/Tag_Index.md)
-- [Timeline (2016-2025)](_Index/Timeline.md)
-- [Top Contributors](_Index/User_Index.md)
-- [By Editor Type](tags/editor)
+- [[_Index/Browse|Explore PME Treasure]]
+- [[Guides/examples|Borrow a workflow pattern]]
+- [[_Index/Timeline|Travel through 2016–2025]]
+- [[_Index/User_Index|Meet frequent contributors]]
 
 </div>
 
@@ -74,152 +74,48 @@ Browse the archive by different categories.
 
 ### 🎨 I want to see examples
 
-User-created showcases and real-world PME setups.
+Open selected PME setups and the reusable design idea behind each one.
 
-- [[Guides/examples|Examples and Showcases]]
-- [#5000: Transform Preset](Posts/2024/post_05000.md) - Pie menu with orientation, pivot, snap
-- [#5489: Context Browser](Posts/2025/post_05489.md) - Essential tool for PME scripting
-- [Browse by Editor Type](tags/editor)
-
-</div>
+- [[Guides/examples|Open examples and showcases]]
+- [[Posts/2024/post_05000|Transform Preset — 2024 showcase, current import not checked]]
+- [[Guides/how-to/create-a-pme-sidebar-panel-group|Sidebar Panel Group — a custom working surface]]
+- [[Guides/how-to/cycle-actions-with-a-stack-key|Stack Key — several actions on one key]]
 
 </div>
 
----
-
-## Browse by Editor Type
-
-| Editor | Posts | What it does |
-|--------|-------|--------------|
-| 🥧 [Pie Menu](tags/editor/pie-menu) | 1,820 | Radial menus triggered by hotkeys |
-| 📜 Regular Menu | (tagging pending) | Traditional dropdown menus |
-| ⚡ [Macro](tags/editor/macro) | 767 | Chain multiple operations into one |
-| 📋 [Popup Dialog](tags/editor/popup-dialog) | 723 | Custom dialog windows with controls |
-| 📐 [Panel Group](tags/editor/panel-group) | 82 | Organize N-panel/sidebar panels |
-| 🔑 [Stack Key](tags/editor/stack-key) | 78 | Multiple commands on one key |
-| 🎯 [Modal Operator](tags/editor/modal) | 86 | Interactive tools with real-time feedback |
-| 🖱️ [Sticky Key](tags/editor/sticky-key) | 25 | Hold-to-activate menus |
-| ⚙️ [Property Editor](tags/editor/property) | 50 | Custom properties and sliders |
+</div>
 
 ---
 
-## Featured Content
+## Search the way you need
 
-### 📌 Essential Posts
+Use **Answers** for selected explanations, recipes, and troubleshooting. Switch to **Forum archive** when you want the complete conversation history or an exact old error message.
 
-These posts are highly rated and contain valuable information:
+<div class="route-actions">
 
-| Post | Author | Topic |
-|------|--------|-------|
-| [#1: PME Introduction](Posts/2016/post_00001.md) | roaoao | Complete feature overview |
-| [#5660: PME 1.19.1 Release](Posts/2025/post_05660.md) | Pluglug | Release context from 2025 |
-| [#5648: Undo Stack Issue](Posts/2025/post_05648.md) | Pluglug | Advanced macro troubleshooting |
+<button type="button" class="home-search-button" data-open-pme-search="answers">Search practical answers</button>
 
-> 📚 **[Curated Posts by Pluglug](Guides/curated-posts.md)** - Hand-picked posts with explanations of why each is worth reading. Great for Q&A-style learning!
+<button type="button" class="home-search-button archive" data-open-pme-search="archive">Search all 5,599 forum posts</button>
 
-### 👤 Key Contributors
+</div>
 
-- **[roaoao](Users/roaoao.md)** (1,353 posts) - Original PME developer
-- **[Pluglug](Users/Pluglug.md)** (363 posts) - PME-F fork maintainer
-- **[Jakro](Users/Jakro.md)** (37 posts) - Author of popular tutorials
+## The archive at a glance
 
----
+PME Treasure preserves **5,599 posts** and **380 contributor pages** spanning **2016–2025**. The routes above promote useful answers and examples; the original posts remain available as their source and context.
 
-## Quick Statistics
+- [[_Index/Browse|Browse by PME capability and idea]]
+- [[_Index/Timeline|Browse 20 preserved posts from each year]]
+- [[_Index/User_Index|Meet the top contributors]]
 
-| Category | Count |
-|----------|-------|
-| Total Posts | 5,599 |
-| Solved Issues | 1,379 |
-| Unsolved Issues | 2,016 |
-| Contributors | 380 |
-| Years of History | 10 (2016-2025) |
+## Original and current resources
 
-### Difficulty Distribution
-
-```
-Beginner      ████████████████░░░░  1,868 posts
-Intermediate  █████████████████████  2,303 posts
-Advanced      ████░░░░░░░░░░░░░░░░    406 posts
-```
-
----
-
-## PME Versions
-
-This archive covers multiple PME versions:
-
-| Version Range | Era | Notes |
-|--------------|-----|-------|
-| v1.0 - v1.14 | 2016-2019 | Blender 2.79 era |
-| v1.15 - v1.18 | 2019-2022 | Blender 2.80+ transition |
-| v1.19 - v1.20 | 2023-2025 | Blender 3.x/4.x compatibility |
-| PME-F | 2024+ | Community fork by Pluglug |
-
----
-
-## For AI Tools
-
-This knowledge base is optimized for use with AI assistants:
-
-- **Full-text search** works great with Claude, ChatGPT, etc.
-- **JSON export** available for programmatic access
-- **Structured tags** help filter relevant content
-
-> **Tip**: Copy the URL of any post and ask your AI assistant to analyze it!
-
----
-
-## External Links
-
-### 🛍️ Get PME
-
-- 🛒 [PME on Gumroad](https://gum.co/pie_menu_editor) - Purchase the original addon
-- 🏪 [PME on SuperHive Market](https://superhivemarket.com/products/pie-menu-editor) - Alternative marketplace
-
-### 🔀 PME-F (Community Fork)
-
-- [GitHub Repository](https://github.com/Pluglug/pie-menu-editor-fork) - Source code & downloads
-- [Issues](https://github.com/Pluglug/pie-menu-editor-fork/issues) - Bug reports & feature requests
-- [Releases](https://github.com/Pluglug/pie-menu-editor-fork/releases) - Download latest version
-- [Pull Requests](https://github.com/Pluglug/pie-menu-editor-fork/pulls) - Contributions
-
-### 📖 Resources
-
-- 📕 [PME Documentation](https://pluglug.github.io/pme-docs/) - Official documentation (WIP)
-- 💬 [Blender Artists Thread](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456) - Original forum
-- 📚 [Archived Documentation](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/) - Legacy docs (Blender 2.79 era)
-
-### ☕ Support
-
-- [Ko-fi (Pluglug)](https://ko-fi.com/pluglug) - Support PME-F development
-
----
-
-## Contributing
-
-Found an incorrectly tagged post? Want to suggest improvements?
-
-- 🐛 [Report Issues](https://github.com/Pluglug/ba-pme-treasure/issues) - Report tagging errors, broken links, or suggestions
-- 🔧 [Pull Requests](https://github.com/Pluglug/ba-pme-treasure/pulls) - Submit corrections directly
-
-> **Note**: Tags were auto-generated using AI classification. Some posts may have incorrect or missing tags. Your contributions help improve the accuracy of this archive!
-
-### 📋 Planned Improvements
-
-The following improvements are planned for this archive:
-
-- [ ] **AI Re-analysis**: Re-run AI classification with improved prompts to fix tagging errors
-- [ ] **Regular Menu tagging**: Add `#editor/regular-menu` tag to posts discussing Regular Menu Editor
-- [ ] **Tag cleanup**: Review and correct commonly misapplied tags
-- [ ] **Guide expansion**: Add more detailed guides based on user feedback
-
----
+- [Current PME documentation](https://pie-menu-editor.github.io/pme-docs/)
+- [Original Blender Artists thread](https://blenderartists.org/t/pie-menu-editor-1-18-8/662456)
+- [Archived original documentation](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/)
+- [Legacy PME-F 1.x source archive](https://github.com/Pluglug/pie-menu-editor-fork)
 
 <div class="footer-note">
 
-*Built with [Quartz](https://quartz.jzhao.xyz/) | Data extracted from Blender Artists forum*
-
-*Use `Ctrl+K` / `Cmd+K` to search*
+_Built with [Quartz](https://quartz.jzhao.xyz/) · Use `Ctrl+K` / `Cmd+K` to search_
 
 </div>

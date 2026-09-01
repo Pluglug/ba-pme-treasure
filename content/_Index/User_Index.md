@@ -1,6 +1,6 @@
 # User Index
 
-*All contributors to the PME forum*
+_Top contributors by preserved post count. The archive contains 380 contributor pages in total._
 
 ## Top Contributors
 

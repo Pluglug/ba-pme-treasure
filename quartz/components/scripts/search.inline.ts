@@ -18,7 +18,6 @@ interface Item {
 // Can be expanded with things like "term" in the future
 type SearchType = "basic" | "tags"
 type SearchScope = "answers" | "archive"
-let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
 const encoder = (str: string): string[] => {
   const tokens: string[] = []
@@ -240,6 +239,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
   const closeButton = searchElement.querySelector(".search-close") as HTMLButtonElement | null
   let currentSearchScope: SearchScope = "answers"
   let searchInvoker: HTMLElement = searchButton
+  let searchRevision = 0
 
   const idDataMap = Object.entries(data)
     .filter(
@@ -271,6 +271,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
   }
 
   const setSearchScope = (scope: SearchScope, rerun = true) => {
+    searchRevision++
     currentSearchScope = scope
     updateScopeButtons()
     if (rerun && searchBar.value.trim() !== "") {
@@ -279,6 +280,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
   }
 
   function hideSearch() {
+    searchRevision++
     container.classList.remove("active")
     searchBar.value = "" // clear the input when we dismiss the search
     if (sidebar) sidebar.style.zIndex = ""
@@ -287,15 +289,13 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       removeAllChildren(preview)
     }
     searchLayout.classList.remove("display-results")
-    searchType = "basic" // reset search type after closing
     currentHover = null
     setSearchScope("answers", false)
     const focusTarget = searchInvoker.isConnected ? searchInvoker : searchButton
     focusTarget.focus()
   }
 
-  function showSearch(searchTypeNew: SearchType, invoker?: HTMLElement) {
-    searchType = searchTypeNew
+  function showSearch(invoker?: HTMLElement) {
     searchInvoker =
       invoker ??
       (document.activeElement instanceof HTMLElement ? document.activeElement : searchButton)
@@ -306,24 +306,10 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
 
   let currentHover: HTMLInputElement | null = null
   async function shortcutHandler(e: HTMLElementEventMap["keydown"]) {
-    if (e.key === "k" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
+    if (e.key.toLowerCase() === "k" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
       e.preventDefault()
       const searchBarOpen = container.classList.contains("active")
-      searchBarOpen ? hideSearch() : showSearch("basic", document.activeElement as HTMLElement)
-      return
-    } else if (e.shiftKey && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-      // Hotkey to open tag search
-      e.preventDefault()
-      const searchBarOpen = container.classList.contains("active")
-      if (searchBarOpen) {
-        hideSearch()
-        return
-      }
-      showSearch("tags", document.activeElement as HTMLElement)
-
-      // add "#" prefix for tag search
-      setSearchScope("archive", false)
-      searchBar.value = "#"
+      searchBarOpen ? hideSearch() : showSearch(document.activeElement as HTMLElement)
       return
     }
 
@@ -398,26 +384,26 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     }
   }
 
-  const formatForDisplay = (term: string, id: number) => {
+  const formatForDisplay = (term: string, id: number, type: SearchType) => {
     const slug = idDataMap[id]
     const details = data[slug]
     return {
       id,
       slug,
       title:
-        searchType === "tags"
+        type === "tags"
           ? escapeHTML(details.displayTitle)
           : highlight(term, details.displayTitle ?? details.title ?? ""),
       content: highlight(term, details.content ?? "", true),
       summary: escapeHTML(details.description ?? ""),
-      tags: highlightTags(term.substring(1), details.tags),
+      tags: highlightTags(term, details.tags, type),
       verificationStatus: details.verificationStatus,
       searchScope: details.searchScope as SearchScope,
     }
   }
 
-  function highlightTags(term: string, tags: string[]) {
-    if (!tags || searchType !== "tags") {
+  function highlightTags(term: string, tags: string[], type: SearchType) {
+    if (!tags || type !== "tags") {
       return []
     }
 
@@ -478,15 +464,21 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     return itemTile
   }
 
-  async function displayResults(finalResults: Item[]) {
+  async function displayResults(
+    finalResults: Item[],
+    scope: SearchScope,
+    revision: number,
+    term: string,
+  ) {
+    if (revision !== searchRevision || scope !== currentSearchScope) return
     removeAllChildren(results)
     if (finalResults.length === 0) {
       const archiveAction =
-        currentSearchScope === "answers"
+        scope === "answers"
           ? `<button type="button" class="search-archive-action">Search the forum archive</button>`
           : `<p>Try a shorter term or search by a PME feature name.</p>`
       results.innerHTML = `<div class="result-card no-match" role="status">
-          <h3>No matching ${currentSearchScope === "answers" ? "answer" : "forum post"}.</h3>
+          <h3>No matching ${scope === "answers" ? "answer" : "forum post"}.</h3>
           ${archiveAction}
       </div>`
       results.querySelector(".search-archive-action")?.addEventListener("click", () => {
@@ -504,7 +496,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       const firstChild = results.firstElementChild as HTMLElement
       firstChild.classList.add("focus")
       currentHover = null
-      await displayPreview(firstChild)
+      await displayPreview(firstChild, revision, term)
     }
   }
 
@@ -529,12 +521,17 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     return contents
   }
 
-  async function displayPreview(el: HTMLElement | null) {
+  async function displayPreview(
+    el: HTMLElement | null,
+    revision = searchRevision,
+    term = currentSearchTerm,
+  ) {
     if (!searchLayout || !enablePreview || !el || !preview) return
     const slug = el.id as FullSlug
     const innerDiv = await fetchContent(slug).then((contents) =>
-      contents.flatMap((el) => [...highlightHTML(currentSearchTerm, el as HTMLElement).children]),
+      contents.flatMap((el) => [...highlightHTML(term, el as HTMLElement).children]),
     )
+    if (revision !== searchRevision) return
     previewInner = document.createElement("div")
     previewInner.classList.add("preview-inner")
     previewInner.append(...innerDiv)
@@ -549,19 +546,22 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
 
   async function onType(e: HTMLElementEventMap["input"]) {
     if (!searchLayout) return
-    currentSearchTerm = (e.target as HTMLInputElement).value
-    searchLayout.classList.toggle("display-results", currentSearchTerm !== "")
-    searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
+    const revision = ++searchRevision
+    const scope = currentSearchScope
+    const rawTerm = (e.target as HTMLInputElement).value
+    let term = rawTerm
+    let resultType: SearchType = scope === "answers" && rawTerm.startsWith("#") ? "tags" : "basic"
+    searchLayout.classList.toggle("display-results", rawTerm !== "")
 
-    let searchResults: DefaultDocumentSearchResults<Item>
-    const activeIndex = indexes[currentSearchScope]
-    if (searchType === "tags") {
-      currentSearchTerm = currentSearchTerm.substring(1).trim()
-      const separatorIndex = currentSearchTerm.indexOf(" ")
+    let searchResults: DefaultDocumentSearchResults<Item> = []
+    const activeIndex = indexes[scope]
+    if (resultType === "tags") {
+      term = term.substring(1).trim()
+      const separatorIndex = term.indexOf(" ")
       if (separatorIndex != -1) {
         // search by title and content index and then filter by tag (implemented in flexsearch)
-        const tag = currentSearchTerm.substring(0, separatorIndex)
-        const query = currentSearchTerm.substring(separatorIndex + 1).trim()
+        const tag = term.substring(0, separatorIndex)
+        const query = term.substring(separatorIndex + 1).trim()
         searchResults = await activeIndex.searchAsync({
           query: query,
           // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
@@ -573,23 +573,26 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
           searchResult.result = searchResult.result.slice(0, numSearchResults)
         }
         // set search type to basic and remove tag from term for proper highlightning and scroll
-        searchType = "basic"
-        currentSearchTerm = query
+        resultType = "basic"
+        term = query
       } else {
         // default search by tags index
         searchResults = await activeIndex.searchAsync({
-          query: currentSearchTerm,
+          query: term,
           limit: numSearchResults,
           index: ["tags"],
         })
       }
-    } else if (searchType === "basic") {
+    } else {
       searchResults = await activeIndex.searchAsync({
-        query: currentSearchTerm,
+        query: term,
         limit: numSearchResults,
         index: ["title", "content"],
       })
     }
+
+    if (revision !== searchRevision || scope !== currentSearchScope) return
+    currentSearchTerm = term
 
     const getByField = (field: string): number[] => {
       const results = searchResults.filter((x) => x.field === field)
@@ -602,19 +605,24 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       ...getByField("content"),
       ...getByField("tags"),
     ])
-    const finalResults = [...allIds].map((id) => formatForDisplay(currentSearchTerm, id))
-    await displayResults(finalResults)
+    const finalResults = [...allIds].map((id) => formatForDisplay(term, id, resultType))
+    await displayResults(finalResults, scope, revision, term)
   }
 
+  await fillDocument(data)
   document.addEventListener("keydown", shortcutHandler)
   window.addCleanup(() => document.removeEventListener("keydown", shortcutHandler))
-  const searchButtonHandler = () => showSearch("basic", searchButton)
+  const searchButtonHandler = () => showSearch(searchButton)
   searchButton.addEventListener("click", searchButtonHandler)
   window.addCleanup(() => searchButton.removeEventListener("click", searchButtonHandler))
   const externalSearchHandler = (event: MouseEvent) => {
     if (!(event.target instanceof Element)) return
     const button = event.target.closest<HTMLElement>("[data-open-pme-search]")
-    if (button) showSearch("basic", button)
+    if (!button) return
+
+    const requestedScope = button.dataset.openPmeSearch
+    setSearchScope(requestedScope === "archive" ? "archive" : "answers", false)
+    showSearch(button)
   }
   document.addEventListener("click", externalSearchHandler)
   window.addCleanup(() => document.removeEventListener("click", externalSearchHandler))
@@ -629,7 +637,6 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
   window.addCleanup(() => searchBar.removeEventListener("input", onType))
 
   registerEscapeHandler(container, hideSearch)
-  await fillDocument(data)
 }
 
 /**

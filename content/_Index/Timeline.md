@@ -1,6 +1,6 @@
 # PME Forum Timeline
 
-*Chronological view of all posts*
+_Selected chronological entry points—20 preserved posts from each year. Use Forum archive search for all 5,599 posts._
 
 ## 2025 (321 posts)
 
@@ -25,7 +25,7 @@
 - [[post_05379]] - 2025-01-10 - by [[Motiomancy]]
 - [[post_05380]] - 2025-01-10 - by [[Pluglug]]
 
-*... and 301 more posts*
+_... and 301 more posts_
 
 ## 2024 (362 posts)
 
@@ -50,7 +50,7 @@
 - [[post_05010]] - 2024-01-17 - by [[Pluglug]]
 - [[post_05011]] - 2024-01-17 - by [[Pluglug]]
 
-*... and 342 more posts*
+_... and 342 more posts_
 
 ## 2023 (374 posts)
 
@@ -75,7 +75,7 @@
 - [[post_04632]] - 2023-02-09 - by [[ismailov.dima]]
 - [[post_04633]] - 2023-02-17 - by [[Pluglug]]
 
-*... and 354 more posts*
+_... and 354 more posts_
 
 ## 2022 (445 posts)
 
@@ -100,7 +100,7 @@
 - [[post_04176]] - 2022-01-26 - by [[impacman]]
 - [[post_04177]] - 2022-01-27 - by [[roaoao]]
 
-*... and 425 more posts*
+_... and 425 more posts_
 
 ## 2021 (419 posts)
 
@@ -125,7 +125,7 @@
 - [[post_03741]] - 2021-01-16 - by [[roaoao]]
 - [[post_03742]] - 2021-01-16 - by [[roaoao]]
 
-*... and 399 more posts*
+_... and 399 more posts_
 
 ## 2020 (762 posts)
 
@@ -150,7 +150,7 @@
 - [[post_02954]] - 2020-01-09 - by [[sleeplessmind]]
 - [[post_02955]] - 2020-01-09 - by [[anphung]]
 
-*... and 742 more posts*
+_... and 742 more posts_
 
 ## 2019 (1122 posts)
 
@@ -175,7 +175,7 @@
 - [[post_01816]] - 2019-01-05 - by [[roaoao]]
 - [[post_01817]] - 2019-01-05 - by [[obsurveyor]]
 
-*... and 1102 more posts*
+_... and 1102 more posts_
 
 ## 2018 (629 posts)
 
@@ -200,7 +200,7 @@
 - [[post_01184]] - 2018-01-16 - by [[rhyging5]]
 - [[post_01185]] - 2018-01-17 - by [[roaoao]]
 
-*... and 609 more posts*
+_... and 609 more posts_
 
 ## 2017 (671 posts)
 
@@ -225,7 +225,7 @@
 - [[post_00513]] - 2017-01-10 - by [[roaoao]]
 - [[post_00514]] - 2017-01-10 - by [[Leafar]]
 
-*... and 651 more posts*
+_... and 651 more posts_
 
 ## 2016 (494 posts)
 
@@ -250,5 +250,4 @@
 - [[post_00019]] - 2016-02-29 - by [[roaoao]]
 - [[post_00020]] - 2016-02-29 - by [[aMars]]
 
-*... and 474 more posts*
-
+_... and 474 more posts_

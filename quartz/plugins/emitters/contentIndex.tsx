@@ -57,9 +57,19 @@ function humanizePostType(value: string | undefined): string | undefined {
     .join(" ")
 }
 
-function getSearchScope(filePath: FilePath): ContentDetails["searchScope"] {
-  if (/^Guides\/(qa|how-to|reference|diagnostics)\//.test(filePath)) return "answers"
+export function getSearchScope(
+  filePath: FilePath,
+  frontmatter: Record<string, unknown> = {},
+): ContentDetails["searchScope"] {
   if (/^Posts\//.test(filePath)) return "archive"
+
+  const explicitScope = scalarFrontmatterValue(frontmatter.search_scope)
+  if (explicitScope === "answers" || explicitScope === "other") return explicitScope
+
+  // Existing curated answer directories remain searchable without requiring a
+  // metadata migration. Other public routes opt in explicitly so old guides
+  // and operational notes do not silently enter the Answers scope.
+  if (/^Guides\/(qa|how-to|reference|diagnostics)\//.test(filePath)) return "answers"
   return "other"
 }
 
@@ -164,7 +174,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             description: getSearchDescription(file.data.relativePath!, file.data.description ?? ""),
             contentType: scalarFrontmatterValue(frontmatter.content_type),
             verificationStatus: scalarFrontmatterValue(frontmatter.verification_status),
-            searchScope: getSearchScope(file.data.relativePath!),
+            searchScope: getSearchScope(file.data.relativePath!, frontmatter),
           })
         }
       }

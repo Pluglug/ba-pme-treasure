@@ -1,7 +1,8 @@
 ---
 title: Getting Started with PME
-description: See what Pie Menu Editor can build, choose a useful first project, and find the right path through the PME archive.
+description: See what Pie Menu Editor can build, choose one useful first project, and learn only the building blocks you need.
 content_type: guide
+search_scope: answers
 tags:
   - knowledge/guide
   - browse/getting-started
@@ -9,47 +10,66 @@ created: 2026-09-01
 modified: 2026-09-01
 draft: false
 review_status: owner-review-pending
-verification_status: current-source-checked
-verified_on: 2026-09-01
 provenance_version: 1
 source_posts:
   - Posts/2016/post_00001
 ---
 
-Pie Menu Editor is not only a tool for making radial menus. It is a workflow builder for Blender: start with menus and hotkeys, then combine operations, expose useful controls, or build a small interface around the way you work. You can begin without writing Python.
+Pie Menu Editor is a workflow builder for Blender. A Pie Menu is the easiest place to begin, but the same system can combine operations, expose useful properties, change behavior by context, or create a small working surface around the way you use Blender.
 
-Do not try to learn every PME editor at once. Pick one small result you would actually use today.
+Do not learn every PME feature first. Choose one piece of friction you would like to remove.
 
-## See why PME is interesting
+## Choose one small win
 
-| Start here | What it is useful for |
-| --- | --- |
-| [[Posts/2016/post_00001|What is PME? — the original Post #1]] | The clearest single tour of the ideas behind PME and the range of things it can build. |
-| [YouTube tutorial playlist](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg) | Seeing menus, dialogs, Macros, Stack Keys, and Sticky Keys in motion before choosing what to make. |
-| [Original PME documentation archive](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/) | Understanding the editors and terminology in more detail. |
-| [Current PME documentation](https://pie-menu-editor.github.io/pme-docs/) | Current installation, supported versions, and reference material. |
+<div class="card-grid">
 
-Post #1, the archived documentation, and the videos show earlier PME and Blender interfaces. Their value here is the design ideas and feature overview; use the current documentation for version-specific installation and UI details.
-
-## Choose your first result
+<div class="nav-card beginner">
 
 ### Put frequent commands around one key
 
-Start with a **Pie Menu**. Choose four to eight Blender actions you use repeatedly and place them around one memorable shortcut. This teaches the core PME loop without requiring scripting.
+Build a small Pie Menu for one job: transforms, selection, viewport display, or sculpt brushes.
 
-A good first menu is intentionally small. Build it around one job—selection, transforms, viewport display, sculpt brushes—not around every command you know.
+- [[Guides/getting-started|Build the first useful menu step by step]]
+- [See the compact first-project checklist](#a-useful-first-project)
+- [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Make its hotkey work in Object and Edit Mode]]
+
+</div>
+
+<div class="nav-card beginner">
 
 ### Turn a repeated sequence into one action
 
-Use a **Macro** when the same two or three Blender operations are performed together. Once the basic menu works, see [[Guides/qa/run-a-macro-from-a-pme-item|how a PME item calls a Macro]].
+Use a Macro when the same two or three Blender operations naturally belong together.
+
+- [[Guides/qa/run-a-macro-from-a-pme-item|Run a Macro from a menu or panel item]]
+- [[Guides/how-to/run-external-script-from-pme|Move longer logic into an external script]]
+
+</div>
+
+<div class="nav-card showcase">
 
 ### Gather related controls into one surface
 
-Use a **Popup Dialog** or **Side Panel** when the useful result is a group of buttons, properties, or settings rather than a list of commands. The [[Posts/2024/post_05000|Transform Preset showcase]] is a good example of several related Blender controls being treated as one tool.
+PME can expose properties and panels, not only launch commands.
+
+- [[Posts/2024/post_05000|See the 2024 Transform Preset showcase · current import not checked]]
+- [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a Sidebar Panel Group]]
+- [[Guides/how-to/make-a-property-editor-slider|Make a Property slider]]
+
+</div>
+
+<div class="nav-card explore">
 
 ### Get more behavior from one shortcut
 
-Use **Stack Key** for repeated presses that cycle through actions. Use **Sticky Key** for press-and-release behavior or temporary state. These are better second projects than first projects because input timing and Blender keymap context matter.
+Once the basic menu feels natural, try repeated presses or press-and-release behavior.
+
+- [[Guides/how-to/cycle-actions-with-a-stack-key|Cycle actions with a Stack Key]]
+- [[Guides/how-to/temporarily-change-a-property-with-sticky-key|Temporarily change a property with a Sticky Key]]
+
+</div>
+
+</div>
 
 ## A useful first project
 
@@ -59,30 +79,62 @@ Build one small Pie Menu for a real Blender task:
 2. Give the menu a job-based name such as `Transform`, `Sculpt Brushes`, or `Viewport`.
 3. Add only those actions and assign an unused shortcut.
 4. Use the menu during an actual work session.
-5. Remove anything you never choose; add a submenu only when the first menu becomes crowded.
+5. Remove anything you never choose. Add a submenu only when the first menu becomes crowded.
 
-The goal is not to reproduce Blender's interface. The goal is to remove one piece of friction from your own workflow.
+The goal is not to reproduce Blender’s interface. The goal is to remove one piece of friction from your own workflow.
 
-## Know the building blocks
+## See the range before choosing
 
-| PME feature | Reach for it when… |
-| --- | --- |
-| Pie Menu | A small set of frequent actions should be fast and spatially memorable. |
-| Regular Menu | A longer list or nested hierarchy matters more than radial access. |
-| Popup Dialog | Related controls should appear together only when needed. |
-| Macro | Several operations form one repeatable action. |
-| Stack Key | Repeated presses should advance through actions or states. |
-| Sticky Key | Press, hold, and release should have different behavior. |
-| Side Panel | A custom tool surface should remain available in Blender's sidebar. |
-| Property Editor | A Blender value needs a reusable control, Getter, or Setter. |
+- [[Guides/examples|Examples and Showcases]] starts from concrete setups and explains the pattern behind them.
+- The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) introduces menus, dialogs, shortcut behaviors, automation, panels, and properties.
+- [[Posts/2016/post_00001|The original Post #1]] is still the clearest historical tour of the ideas behind PME.
+- The [original PME documentation archive](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/) preserves the historical editor reference and terminology.
+- The [original video playlist](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg) shows menus, dialogs, Macros, Stack Keys, and Sticky Keys in motion.
+
+The original post and videos show earlier PME and Blender interfaces. Use them for ideas, and use the current documentation for version-specific controls.
 
 ## Continue by interest
 
-- **Something does not work:** [[Guides/troubleshooting|Find the problem by symptom]].
-- **You want scripts or reusable patterns:** [[Guides/code-examples|Open the code examples route]].
-- **You want to see what people built:** [[Posts/2024/post_05000|Transform Preset]], [[Posts/2025/post_05489|Context Browser]], then browse [[tags/editor/pie-menu|Pie Menu posts]].
-- **You want the full history:** [[_Index/Timeline|Follow the archive timeline]] or [[_Index/User_Index|browse contributors]].
+<div class="card-grid">
+
+<div class="nav-card problem">
+
+### Something does not work
+
+- [[Guides/routes/solve-a-problem|Choose the symptom]]
+- [[Guides/how-to/restore-pme-menus-from-auto-backup|Recover missing menus]]
+
+</div>
+
+<div class="nav-card code">
+
+### You want more control
+
+- [[Guides/code-examples|Browse code examples and reusable patterns]]
+- [[Guides/reference/conditional-execution-patterns|Choose a conditional execution pattern]]
+
+</div>
+
+<div class="nav-card explore">
+
+### You want to wander
+
+- [[_Index/Browse|Explore by capability or idea]]
+- [[_Index/Timeline|Travel through the archive timeline]]
+
+</div>
+
+<div class="nav-card showcase">
+
+### You want something to borrow
+
+- [[Guides/examples|Open the examples collection]]
+- [Read the original PME documentation archive](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/)
+
+</div>
+
+</div>
 
 ## Installation and updates
 
-Use the [current installation and update instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html) for the PME version you are installing. Installation and migration change across Blender and PME generations; they are reference tasks, not the starting point for understanding what PME can do.
+Use the [current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html) for the PME version you are installing. If you already have an older PME setup, use [[Guides/how-to/migrate-pme-to-2-1-safely|the migration and backup procedure]] after you have seen what PME can build—not as the introduction to it.
