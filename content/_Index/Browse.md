@@ -10,7 +10,7 @@ draft: false
 review_status: owner-review-pending
 ---
 
-PME Treasure is more useful when you explore by what you want Blender to do—not by hundreds of imported forum Tags. Pick a capability, follow an idea through time, or search the complete conversation archive.
+PME Treasure is more useful when you explore by what you want Blender to do—not by hundreds of forum tags. Pick a capability, follow an idea through time, or search the complete conversation archive.
 
 The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) is the public reference for the features available now. The routes below connect those capabilities to selected community answers and examples.
 
@@ -33,6 +33,8 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 ### Build your own interface
 
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a Sidebar Panel Group]]
+- [[Guides/how-to/add-blender-ui-with-interactive-panels|Capture an existing Blender menu, panel, or header]]
+- [[Guides/how-to/build-a-multi-button-pie-with-popup-dialogs|Put several controls in one Pie direction]]
 - [[Guides/how-to/make-a-property-editor-slider|Expose a Blender value as a slider]]
 - [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Draw editable object dimensions in a PME layout]]
 - [[Guides/how-to/put-blender-header-menus-in-a-pie|Put Blender's header menus inside a Pie Menu]]
@@ -45,6 +47,7 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 ### Automate a workflow
 
 - [[Guides/qa/run-a-macro-from-a-pme-item|Call a Macro from a menu or panel]]
+- [[Guides/how-to/call-a-pme-macro-from-python|Call a named PME Macro from Python]]
 - [[Guides/reference/share-state-between-macro-steps|Share temporary state between Macro steps]]
 - [[Guides/how-to/run-external-script-from-pme|Run a trusted external script]]
 - [[Guides/how-to/resize-a-blender-area-from-pme|Resize the current Blender area]]
@@ -56,6 +59,8 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 ### React to context and state
 
 - [[Guides/reference/conditional-execution-patterns|Choose a conditional execution pattern]]
+- [[Guides/how-to/enable-an-action-with-a-pme-property|Disable an action until its prerequisite is enabled]]
+- [[Guides/how-to/make-a-state-aware-property-button|Make an action button reflect live Blender state]]
 - [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu]]
 - [[Guides/qa/use-a-different-pie-in-each-node-editor|Separate Geometry, Shader, and Compositor node menus]]
 - [[Guides/qa/use-modifier-keys-in-one-pme-item|Branch one item with modifier keys]]
@@ -114,9 +119,9 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 
 <div class="nav-card beginner">
 
-### Follow a problem solver's trail
+### Meet the people behind the answers
 
-[[Guides/trails/from-shortcuts-to-workflow-tools|Read eight Motiomancer support arcs as one learning route]], then use [[User_Index|the contributor index]] to open other preserved forum trails.
+[[User_Index|The contributor index]] opens each person's preserved forum trail when you want to follow a particular builder, maintainer, or problem solver.
 
 </div>
 
@@ -132,6 +137,10 @@ These pages preserve strong design ideas whose exact implementation belongs to a
 - [[Guides/how-to/hold-key-to-temporarily-switch-sculpt-brush|Temporary Sculpt brush]] — borrow a tool while a key is held, then restore the previous state.
 - [[Guides/showcases/keyframe-aware-property-control|Keyframe-aware Property control]] — let a control reflect the animation state it edits.
 - [[Guides/showcases/modal-viewport-controls|Modal viewport controls]] — adjust a live viewport value without opening a dialog.
+- [[Guides/showcases/properties-editor-under-the-pointer|Properties under the pointer]] — summon a large context-aware editor instead of permanently docking it.
+- [[Guides/showcases/sculpt-from-one-pen-button|Sculpt from one pen-display button]] — fit the shortcut vocabulary to the physical input device.
+- [[Guides/showcases/workspace-controls-in-blender-headers|Workspace controls in Blender headers]] — put controls beside the regions they change.
+- [[Guides/showcases/modifier-preset-shelf|Modifier Preset Shelf]] — place reusable recipes beside Blender's native modifier stack.
 
 ## Search the complete archive
 

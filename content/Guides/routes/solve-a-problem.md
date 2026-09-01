@@ -35,8 +35,26 @@ Start with what you can observe. “PME is broken” is not enough to distinguis
 ### A command reports a context or poll error
 
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose the editor, region, mode, and selection context]]
+- [[Guides/diagnostics/menu-changes-with-active-object-type|Guard a layout that changes or breaks with the active object]]
 - [[Guides/qa/use-a-different-pie-in-each-node-editor|Give Geometry, Shader, and Compositor nodes different menus on one hotkey]]
 - [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu for the current context]]
+
+</div>
+
+<div class="nav-card problem">
+
+### A script works in Blender's Text Editor but not in PME
+
+- [[Guides/diagnostics/script-works-in-text-editor-but-not-pme|Find missing imports and session-only dependencies]]
+- [[Guides/how-to/run-external-script-from-pme|Use the supported external-script boundary]]
+
+</div>
+
+<div class="nav-card problem">
+
+### The value changed, but Blender still looks stale
+
+- [[Guides/diagnostics/command-changes-data-but-ui-looks-stale|Refresh the smallest Blender area that still shows old state]]
 
 </div>
 
@@ -46,6 +64,14 @@ Start with what you can observe. “PME is broken” is not enough to distinguis
 
 - [[Guides/qa/where-pme-stores-menu-definitions|Find menus, scripts, icons, JSON exports, and backups]]
 - [[Guides/how-to/restore-pme-menus-from-auto-backup|Restore menus from an automatic backup]]
+
+</div>
+
+<div class="nav-card problem">
+
+### A menu broke after another add-on was removed
+
+- [[Guides/diagnostics/menu-fails-after-another-addon-is-removed|Find and replace the saved operator reference]]
 
 </div>
 

@@ -79,8 +79,8 @@ A current implementation needs to be redesigned around the supported PME 2.1 pub
 
 ## Sources
 
-- [[Posts/2023/post_04785|Post #4785 — initial PME Property direction]]
-- [[Posts/2023/post_04786|Post #4786 — alpha-animation use case and GIF]]
-- [[Posts/2023/post_04787|Post #4787 — keyframe requirement clarified]]
-- [[Posts/2023/post_04797|Post #4797 — helper, Property, and state-aware control]]
-- [[Posts/2023/post_04798|Post #4798 — requester confirmation]]
+- [[Posts/2023/post_04785|Post 4785 — initial PME Property direction]]
+- [[Posts/2023/post_04786|Post 4786 — alpha-animation use case and GIF]]
+- [[Posts/2023/post_04787|Post 4787 — keyframe requirement clarified]]
+- [[Posts/2023/post_04797|Post 4797 — helper, Property, and state-aware control]]
+- [[Posts/2023/post_04798|Post 4798 — requester confirmation]]

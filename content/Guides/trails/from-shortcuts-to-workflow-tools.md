@@ -160,7 +160,7 @@ Read in order to see the design build up, or jump directly to the problem that r
 
 **Reusable idea.** Treat a property as a reusable component rather than embedding the same state logic in every button. The Property owns the value contract; a Popup Dialog owns its presentation; a Macro or menu decides when the user encounters it.
 
-**Current PME route.** Define a correctly typed Property Editor item with a context-safe getter and setter, place that Property in the desired Popup Dialog, then invoke or compose the dialog from the surrounding menu. For scripted access to registered PME properties, use the current [[Guides/reference/pme-property-props-accessor|PME `props()` accessor]]; [[Guides/how-to/make-a-property-editor-slider|Build a Property Editor slider]] shows the current editor pattern.
+**Current PME route.** Define a correctly typed Property Editor item with a context-safe getter and setter, place that Property in the desired Popup Dialog, then invoke or compose the dialog from the surrounding menu. For scripted access to registered PME properties, use the current [[Guides/reference/pme-property-props-accessor|PME props() accessor]]; [[Guides/how-to/make-a-property-editor-slider|Build a Property Editor slider]] shows the current editor pattern.
 
 > [!warning] Historical construction
 > The 2021 active-object path, screenshots, and attached JSON files belong to an older PME and Blender UI. Rebuild the component in the current Property Editor and verify its type and empty-context behavior.

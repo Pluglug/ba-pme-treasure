@@ -58,7 +58,7 @@ This recipe targets PME 2.1 with Blender 4.5–5.2. The original report was a Bl
 ## Related
 
 - [[Guides/how-to/add-complex-template-widget-to-popup|Add a complex Blender widget to a PME Popup Dialog]]
-- [[Guides/reference/pme-property-props-accessor|PME Property `props()` accessor reference]]
+- [[Guides/reference/pme-property-props-accessor|PME Property props() accessor reference]]
 - [[Posts/2018/post_01728|Original custom-control question, post 1728]]
-- [[Posts/2018/post_01729|`prop_enum(..., text=...)` answer, post 1729]]
+- [[Posts/2018/post_01729|prop_enum(..., text=...) answer, post 1729]]
 - [[Posts/2018/post_01732|Follow-up showing the old pivot path still failed, post 1732]]

@@ -67,4 +67,4 @@ PME 2.1 on Blender 4.5–5.2. The current runtime supports linked Macro targets 
 ## Sources
 
 - [[Posts/2017/post_00642|Question about calling a Macro from a Pie slot, post 642]]
-- [[Posts/2017/post_00643|Menu-tab and `open_menu()` answer, post 643]]
+- [[Posts/2017/post_00643|Menu-tab and open_menu() answer, post 643]]

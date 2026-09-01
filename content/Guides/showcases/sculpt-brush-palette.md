@@ -76,6 +76,6 @@ The old command is evidence of the design, not copy-ready PME 2.1 guidance.
 
 ## Sources
 
-- [[Posts/2022/post_04473|Post #4473 — request for Blender sculpt-brush icons]]
-- [[Posts/2022/post_04475|Post #4475 — historical icon and tool-selection construction]]
-- [[Posts/2022/post_04478|Post #4478 — completed palette and success confirmation]]
+- [[Posts/2022/post_04473|Post 4473 — request for Blender sculpt-brush icons]]
+- [[Posts/2022/post_04475|Post 4475 — historical icon and tool-selection construction]]
+- [[Posts/2022/post_04478|Post 4478 — completed palette and success confirmation]]

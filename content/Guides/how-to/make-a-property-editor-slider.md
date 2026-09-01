@@ -62,7 +62,7 @@ This recipe targets PME 2.1 with Blender 4.5–5.2. The original example used th
 
 ## Related
 
-- [[Guides/reference/pme-property-props-accessor|PME Property `props()` accessor reference]]
+- [[Guides/reference/pme-property-props-accessor|PME Property props() accessor reference]]
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Why does an operator fail from a PME menu or panel?]]
 - [[Posts/2023/post_04919|Original retopology-theme control question, post 4919]]
 - [[Posts/2023/post_04920|Finding a preference RNA path, post 4920]]

@@ -21,7 +21,7 @@ Find an answer by the job you are trying to complete.
 
 - [[Guides/qa/use-modifier-keys-in-one-pme-item|Use Alt, Ctrl, or Shift for different actions in one item]] — branch without duplicating the menu.
 - [[Guides/how-to/run-external-script-from-pme|Run an external Python script from PME]] — keep non-trivial code readable and reusable.
-- [[Guides/reference/panel-function-current-reference|Current `panel()` reference for Popup Dialogs]] — panel ID, editor context, framing, header, and initial expansion state.
+- [[Guides/reference/panel-function-current-reference|Current panel() reference for Popup Dialogs]] — panel ID, editor context, framing, header, and initial expansion state.
 
 ## Diagnose a problem
 

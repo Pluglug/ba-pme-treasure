@@ -1,155 +1,91 @@
 ---
-title: Curated Posts by Pluglug
-tags: ["#guide", "#curated", "#pluglug"]
+title: Selected PME Answers
+description: A compact shelf of strong PME guides, grouped by the result you want rather than by author or forum tag.
+content_type: guide
+search_scope: answers
+tags:
+  - knowledge/guide
+  - browse/explore
+created: 2026-09-01
+modified: 2026-09-01
+draft: false
+review_status: owner-review-pending
+provenance_version: 1
 ---
 
-# Curated Posts
+This page is a short route through useful answers, recipes, and examples from the forum archive. Open a guide for the answer first; each one keeps its source conversation nearby when the surrounding discussion matters.
 
-Hand-picked posts by **Pluglug** (PME-F maintainer).
+## Four strong places to begin
 
----
+<div class="card-grid">
 
-## Keymap & Hotkey
+<div class="nav-card beginner">
 
-| Post | Content |
-|------|---------|
-| [#4908](../Posts/2023/post_04908.md) | Proper Hotkey Settings |
-| [#5516](../Posts/2025/post_05516.md) | Keymap hierarchy explanation |
-| [#5520](../Posts/2025/post_05520.md) | Keymap continued |
-| [#5527](../Posts/2025/post_05527.md) | Keymap resolution |
-| [#5415](../Posts/2025/post_05415.md) | Script to clean up PME keymaps multiplied by Blender errors |
+### Build one useful menu
 
----
+[[Guides/getting-started|Getting Started Guide]] turns PME's feature range into one small first project you can test in real work.
 
-## PME Property
+</div>
 
-| Post | Content |
-|------|---------|
-| [#4719](../Posts/2023/post_04719.md) | PME Property introduction |
-| [#4922](../Posts/2023/post_04922.md) | PME Property Guide Part 1 |
-| [#4924](../Posts/2023/post_04924.md) | PME Property Guide Part 2 |
-| [#5006](../Posts/2024/post_05006.md) | PME Property deep dive |
-| [#5034](../Posts/2024/post_05034.md) | PME Property advanced |
-| [#4920](../Posts/2023/post_04920.md) | Preferences Properties Access |
+<div class="nav-card problem">
 
----
+### Diagnose the visible symptom
 
-## PME Functions & API
+[[Guides/routes/solve-a-problem|Troubleshooting PME]] separates hotkey, context, storage, and recovery problems before you change the setup.
 
-| Post | Content |
-|------|---------|
-| [#4726](../Posts/2023/post_04726.md) | `pme.timeout()` |
-| [#4748](../Posts/2023/post_04748.md) | `overlay()` |
-| [#4996](../Posts/2024/post_04996.md) | `pme.exec()` |
-| [#5039](../Posts/2024/post_05039.md) | `props()` |
-| [#5210](../Posts/2024/post_05210.md) | `wm.pme_user_pie_menu_call` details |
-| [#5177](../Posts/2024/post_05177.md) | `wm.pmi_edit_auto` |
+</div>
 
----
+<div class="nav-card code">
 
-## Menus & UI
+### Adapt working code
 
-| Post | Content |
-|------|---------|
-| [#5102](../Posts/2024/post_05102.md) | Context Sensitive Menu v1 |
-| [#5103](../Posts/2024/post_05103.md) | Context Sensitive Menu v2 |
-| [#4722](../Posts/2023/post_04722.md) | Create Tab Menu |
-| [#4808](../Posts/2023/post_04808.md) | UILayout reference Part 1 |
-| [#4811](../Posts/2023/post_04811.md) | UILayout reference Part 2 |
-| [#4979](../Posts/2023/post_04979.md) | bl_ui_widgets module |
-| [#5000](../Posts/2024/post_05000.md) | Transform Preset showcase |
-| [#5128](../Posts/2024/post_05128.md) | Color Select Flat Shade |
+[[Guides/code-examples|Code Examples]] preserves the compact PME patterns and connects them to focused answers with explicit scope and sources.
 
----
+</div>
 
-## Recipes
+<div class="nav-card showcase">
 
-| Post | Content |
-|------|---------|
-| [#4755](../Posts/2023/post_04755.md) | switch_collection_visibility |
-| [#4995](../Posts/2024/post_04995.md) | Select bones by name |
-| [#4982](../Posts/2023/post_04982.md) | Edge crease toggle |
-| [#5105](../Posts/2024/post_05105.md) | Mesh attributes |
-| [#5189](../Posts/2024/post_05189.md) | pme_autorun_get_mesh_selection |
-| [#5217](../Posts/2024/post_05217.md) | command_mesh_attr_resetter |
-| [#5111](../Posts/2024/post_05111.md) | Overlay off during animation |
-| [#5018](../Posts/2024/post_05018.md) | ctypes.windll window control |
+### Borrow a control-surface idea
 
----
+[[Guides/examples|Examples and Showcases]] starts with visible results, then explains the reusable design choice behind each setup.
 
-## Learning
+</div>
 
-| Post | Content |
-|------|---------|
-| [#5385](../Posts/2025/post_05385.md) | How to study Python |
-| [#5148](../Posts/2024/post_05148.md) | When to specify INVOKE_DEFAULT |
-| [#4862](../Posts/2023/post_04862.md) | The Vanishing Arguments |
-| [Blender 4.0 Release Notes](https://developer.blender.org/docs/release_notes/4.0/python_api/#blender-operators-bpyops) | Context dict removal |
+</div>
 
----
+## Practical answers worth keeping close
 
-## Side Area Toggle
+- [[Guides/qa/choose-command-property-menu-hotkey-or-custom|Choose Command, Property, Menu, Hotkey, or Custom]] — put behavior in the slot type that runs at the right time.
+- [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Make one hotkey work in Object and Edit Mode]] — preserve one shortcut while respecting Blender's keymap scopes.
+- [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose an operator context failure]] — identify the area, region, mode, or selection an operator actually needs.
+- [[Guides/qa/where-pme-stores-menu-definitions|Find PME menus, scripts, exports, and backups]] — know which data must be copied or recovered.
+- [[Guides/how-to/run-external-script-from-pme|Run a trusted external script]] — move non-trivial logic out of a cramped Command field.
+- [[Guides/how-to/use-properties-as-macro-options|Use properties as Macro options]] — turn a fixed sequence into a reusable action with visible choices.
+- [[Guides/how-to/open-a-temporary-editor-with-popup-area|Open a temporary Blender editor]] — summon a workspace surface only when the task needs it.
 
-| Post | Content |
-|------|---------|
-| [#4902](../Posts/2023/post_04902.md) | First problem statement |
-| [#4941](../Posts/2023/post_04941.md) | Side area proliferation |
-| [#4947](../Posts/2023/post_04947.md) | Line width fix |
+## Ideas that become larger tools
 
----
+- [[Guides/showcases/transform-preset-control-surface|Transform Preset control surface]] — group orientation, pivot, snapping, and proportional editing around one job.
+- [[Guides/showcases/context-browser-for-pme-scripting|Turn Blender's live context into PME building material]] — discover the real property path and values before designing a control around them.
+- [[Guides/showcases/keyframe-aware-property-control|Keyframe-aware Property control]] — make a compact control show the animation state it edits.
+- [[Guides/showcases/modal-viewport-controls|Modal viewport controls]] — adjust a continuous value without leaving the viewport.
+- [[Guides/trails/from-shortcuts-to-workflow-tools|From Shortcuts to Workflow Tools]] — follow eight resolved conversations as isolated tricks become reusable PME patterns.
 
-## Historical
+## When the original post is the interesting part
 
-| Post | Content |
-|------|---------|
-| [#4799](../Posts/2023/post_04799.md) | The Landmine Chronicles |
-| [#4797](../Posts/2023/post_04797.md) | Fun experiment |
-| [#5265](../Posts/2024/post_05265.md) | The Last Letter (bl4.3b) |
-| [#4672](../Posts/2023/post_04672.md) | Echoes of a Developer |
+- [[Posts/2016/post_00001|Post 1 — the original PME introduction]] is the historical feature tour and origin point for the ten-year thread. Its Blender versions and interface are old; use it to understand the breadth of the original idea, then use the current guides for controls.
+- [[Posts/2024/post_05000|Post 5000 — Transform Preset source]] contains the original screenshot and downloadable preset behind the promoted showcase. Open it when you want the artifact and author's explanation; its JSON has not been validated against current PME.
 
----
+## Keep exploring
 
-## Feature Ideas
+- [[Guides/terminology|Decode PME terms and scripting shortcuts]]
+- [[_Index/Browse|Explore by capability, idea, year, or contributor]]
+- [[_Index/Timeline|Browse the archive by year]]
 
-| Post | Content |
-|------|---------|
-| [#5154](../Posts/2024/post_05154.md) | Feature suggestions by Solum_Night |
-| [#5322](../Posts/2024/post_05322.md) | Click and Drag |
+<div class="route-actions">
 
----
+<button type="button" class="home-search-button" data-open-pme-search="answers">Search practical answers</button>
 
-## Developer Notes
+<button type="button" class="home-search-button archive" data-open-pme-search="archive">Search all 5,599 forum posts</button>
 
-Issues and TODOs for PME-F development.
-
-| Post | Issue |
-|------|-------|
-| [#4799](../Posts/2023/post_04799.md) | Roaoao's Trap - document |
-| [#4872](../Posts/2023/post_04872.md) | Command tab hack |
-| [#4941](../Posts/2023/post_04941.md) | Side area proliferation |
-| [#4947](../Posts/2023/post_04947.md) | pme.popup_area fix |
-| [#5099](../Posts/2024/post_05099.md) | Missing Tag |
-| [#5125](../Posts/2024/post_05125.md) | None area |
-| [#5127](../Posts/2024/post_05127.md) | Edit Slots conflict |
-| [#5161](../Posts/2024/post_05161.md) | Icon identifier error |
-| [#5177](../Posts/2024/post_05177.md) | wm.pmi_edit_auto fix |
-| [#5225](../Posts/2024/post_05225.md) | Keymap Callmenu |
-| [#5250](../Posts/2024/post_05250.md) | Missing Keymap |
-| [#5282](../Posts/2024/post_05282.md) | pme.print_exc() fix |
-
----
-
-## Latest Release
-
-| Post | Content |
-|------|---------|
-| [#5660](../Posts/2025/post_05660.md) | PME 1.19.1 |
-
----
-
-## Related
-
-- [[code-examples|Code Examples]]
-- [[terminology|Terminology]]
-- [[hotkey-conflicts|Hotkey Conflicts]]
-- [PME Scripting Reference](https://pluglug.github.io/pme-docs/reference/scripting.html)
+</div>

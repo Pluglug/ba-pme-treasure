@@ -77,7 +77,7 @@ The source includes a [PME JSON example](https://blenderartists.org/uploads/shor
 ## Related
 
 - [[Guides/qa/run-a-macro-from-a-pme-item|Run a Macro from a menu or panel item]]
-- [[Guides/reference/pme-property-props-accessor|Use `props()` to access a PME Property]]
+- [[Guides/reference/pme-property-props-accessor|Use props() to access a PME Property]]
 - [[Guides/how-to/change-selected-values-relative-to-active-object|Change selected values relative to the active object]]
 
 ## Sources

@@ -111,7 +111,7 @@ PME 2.1 contains the `pme.area_move` operator and the bundled `command_area_move
 
 ## Related
 
-- [[Guides/how-to/open-a-temporary-editor-with-popup-area|Open a temporary Blender editor with PME `popup_area`]]
+- [[Guides/how-to/open-a-temporary-editor-with-popup-area|Open a temporary Blender editor with PME popup_area]]
 - [[Guides/how-to/run-external-script-from-pme|Run an external Python script from PME]]
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose Blender context failures]]
 

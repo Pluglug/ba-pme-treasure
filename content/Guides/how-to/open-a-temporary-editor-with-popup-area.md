@@ -75,8 +75,8 @@ This recipe targets PME 2.1 with Blender 4.5–5.2. The original discussion used
 
 ## Related
 
-- [[Guides/reference/panel-function-current-reference|Current `panel()` reference for Popup Dialogs]]
+- [[Guides/reference/panel-function-current-reference|Current panel() reference for Popup Dialogs]]
 - [[Guides/how-to/run-external-script-from-pme|Run an external Python script from PME]]
 - [[Posts/2018/post_01730|Original Timeline and Popup Area question, post 1730]]
-- [[Posts/2018/post_01733|`popup_area(area='CURRENT')` answer, post 1733]]
+- [[Posts/2018/post_01733|popup_area(area='CURRENT') answer, post 1733]]
 - [[Posts/2018/post_01734|Follow-up on the generated command, post 1734]]

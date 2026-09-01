@@ -92,7 +92,7 @@ Use the editor that owns the panel. A `VIEW3D_PT_*` panel usually expects `area=
 ## Sources
 
 - [[Posts/2020/post_03347|Historical materials-panel problem, post 3347]]
-- [[Posts/2020/post_03349|noKeyframes' `area` and Poll recipe, post 3349]]
+- [[Posts/2020/post_03349|noKeyframes' area and Poll recipe, post 3349]]
 - [Collapsed-panel question and initial answer, posts 5952–5953](https://blenderartists.org/t/pie-menu-editor-v2/662456/5953)
 - [Confirmed 2.0.3 reproduction, posts 5954–5957](https://blenderartists.org/t/pie-menu-editor-v2/662456/5957)
 - [PME2 2.0.4 fix announcement, post 5964](https://blenderartists.org/t/pie-menu-editor-v2/662456/5964)

@@ -83,7 +83,7 @@ A ratio instead multiplies the other values by `value / old_active`. It needs an
 ## Related
 
 - [[Guides/how-to/make-a-property-editor-slider|Bind a PME Property to a Blender value]]
-- [[Guides/reference/pme-property-props-accessor|Use `props()` to access a PME Property]]
+- [[Guides/reference/pme-property-props-accessor|Use props() to access a PME Property]]
 - [[Guides/how-to/use-properties-as-macro-options|Use Properties as options for one Macro]]
 
 ## Sources

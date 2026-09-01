@@ -72,5 +72,5 @@ The design is reusable now; the historical configuration is not yet a current do
 
 ## Sources
 
-- [[Posts/2024/post_04999|Post #4999 — request for an advanced PME Property example]]
-- [[Posts/2024/post_05000|Post #5000 — Transform Preset, image, and JSON]]
+- [[Posts/2024/post_04999|Post 4999 — request for an advanced PME Property example]]
+- [[Posts/2024/post_05000|Post 5000 — Transform Preset, image, and JSON]]

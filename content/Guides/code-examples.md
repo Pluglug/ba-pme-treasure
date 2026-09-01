@@ -12,6 +12,8 @@ review_status: owner-review-pending
 
 PME code is most useful when it removes a specific piece of Blender workflow friction. Start with a goal below; use the syntax collection when you need to understand or adapt the command itself.
 
+The archive often uses compact names such as `C`, `L`, `E`, and `U`. [[Guides/terminology|PME Terms You Will Meet]] explains where each name is available before you copy a snippet into a different slot type.
+
 ## Choose what you want to build
 
 <div class="card-grid">
@@ -22,7 +24,6 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 
 - [[Guides/reference/conditional-execution-patterns|Choose between a Command branch, Poll, or a live Custom control]]
 - [[Guides/qa/use-modifier-keys-in-one-pme-item|Use Alt, Ctrl, or Shift for different actions]]
-- [[Guides/qa/use-a-different-pie-in-each-node-editor|Use one hotkey for different Node Editor menus]]
 - [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger by mode, selection, or object type]]
 
 </div>
@@ -33,7 +34,6 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 
 - [[Guides/qa/run-a-macro-from-a-pme-item|Run a Macro from a menu or panel item]]
 - [[Guides/how-to/run-external-script-from-pme|Run trusted Python from an external file]]
-- [[Guides/how-to/resize-a-blender-area-from-pme|Resize the current Blender area with PME's current operator]]
 - [[Guides/reference/share-state-between-macro-steps|Capture and restore state across Macro steps]]
 
 </div>
@@ -43,11 +43,18 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 ### Build a control or custom interface
 
 - [[Guides/how-to/make-a-property-editor-slider|Bind a PME Property to a Blender value]]
-- [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Draw editable object dimensions with `L.prop()`]]
-- [[Guides/how-to/put-blender-header-menus-in-a-pie|Draw Blender header menus with `header_menu()`]]
-- [[Guides/how-to/add-complex-template-widget-to-popup|Add a Blender template widget to a Popup Dialog]]
-- [[Guides/how-to/label-enum-buttons-in-custom-layout|Give enum buttons explicit labels]]
+- [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Draw editable object dimensions with L.prop()]]
 - [[Guides/reference/panel-function-current-reference|Use the current panel() helper]]
+
+</div>
+
+<div class="nav-card code">
+
+### Reflect live state and give feedback
+
+- [[Guides/how-to/make-a-state-aware-property-button|Show a Blender property's state on an action button]]
+- [[Guides/reference/overlay-function-current-reference|Show brief feedback with overlay()]]
+- [[Guides/diagnostics/command-changes-data-but-ui-looks-stale|Redraw the right Blender area after changing data]]
 
 </div>
 
@@ -56,6 +63,7 @@ PME code is most useful when it removes a specific piece of Blender workflow fri
 ### Diagnose code that works only in some places
 
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose operator context and poll failures]]
+- [[Guides/diagnostics/script-works-in-text-editor-but-not-pme|Find imports or state that exist only in the Text Editor session]]
 - [[Guides/how-to/export-blender-keymaps-without-ghost-pme-entries|Separate a command problem from stale keymap data]]
 
 </div>
@@ -73,6 +81,29 @@ These pages preserve useful designs whose exact historical setup still needs a c
 </div>
 
 </div>
+
+## Focused recipes
+
+Use these after you know which kind of behavior or surface you are building.
+
+### Context and availability
+
+- [[Guides/how-to/enable-an-action-with-a-pme-property|Keep an action disabled until its option is enabled]]
+- [[Guides/qa/use-a-different-pie-in-each-node-editor|Use one hotkey for different Node Editor menus]]
+- [[Guides/diagnostics/menu-changes-with-active-object-type|Guard a Custom layout against object type and no selection]]
+
+### Calling and integrating automation
+
+- [[Guides/how-to/call-a-pme-macro-from-python|Call a named PME Macro from an external script]]
+- [[Guides/how-to/resize-a-blender-area-from-pme|Resize the current Blender area with PME's current operator]]
+
+### Custom-layout details
+
+- [[Guides/how-to/expose-one-axis-of-a-vector-property|Draw only X, Y, or Z from a vector property]]
+- [[Guides/how-to/show-a-blender-custom-property-in-pme|Draw an Object, Bone, or Scene custom property]]
+- [[Guides/how-to/put-blender-header-menus-in-a-pie|Draw Blender header menus with header_menu()]]
+- [[Guides/how-to/add-complex-template-widget-to-popup|Add a Blender template widget to a Popup Dialog]]
+- [[Guides/how-to/label-enum-buttons-in-custom-layout|Give enum buttons explicit labels]]
 
 ## Essential syntax collection
 

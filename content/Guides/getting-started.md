@@ -53,7 +53,7 @@ The goal is not to reproduce a Blender menu. It is to make one repeated decision
 | Viewport menu  | shading, overlays, local view, framing             | A single shortcut can replace scattered UI travel.                 |
 | Selection menu | the few selection actions you use most             | A compact menu is easier to learn than a complete command catalog. |
 
-[[Posts/2024/post_05000|The Transform Preset in Post #5000]] is a useful 2024 example of grouping stateful controls around one job. Its JSON has not been checked with current PME; borrow the design idea rather than assuming the old import is current.
+[[Posts/2024/post_05000|The Transform Preset in Post 5000]] is a useful 2024 example of grouping stateful controls around one job. Its JSON has not been checked with current PME; borrow the design idea rather than assuming the old import is current.
 
 ## Improve the menu after using it
 

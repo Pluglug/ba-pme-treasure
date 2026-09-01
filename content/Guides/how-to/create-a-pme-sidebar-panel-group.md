@@ -61,8 +61,8 @@ This recipe targets PME 2.1 with Blender 4.5–5.2. The source episode used PME 
 
 ## Related
 
-- [[Guides/reference/panel-function-current-reference|Current `panel()` reference for Popup Dialogs]]
+- [[Guides/reference/panel-function-current-reference|Current panel() reference for Popup Dialogs]]
 - [[Posts/2024/post_05043|Original custom N-panel question, post 5043]]
-- [[Posts/2024/post_05044|Panel Group `UI (Side Panel)` answer, post 5044]]
+- [[Posts/2024/post_05044|Panel Group UI (Side Panel) answer, post 5044]]
 - [[Posts/2024/post_05045|Adding commands to a panel, post 5045]]
 - [[Posts/2024/post_05046|Follow-up about composing Panel Groups, post 5046]]

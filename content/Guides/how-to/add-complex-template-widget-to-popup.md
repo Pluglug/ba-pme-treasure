@@ -61,7 +61,7 @@ This recipe targets PME 2.1 with Blender 4.5–5.2. The source episode used Blen
 
 ## Related
 
-- [[Guides/reference/panel-function-current-reference|Current `panel()` reference for Popup Dialogs]]
+- [[Guides/reference/panel-function-current-reference|Current panel() reference for Popup Dialogs]]
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Why does an operator fail from a PME menu or panel?]]
 - [[Posts/2018/post_01651|Original unavailable-widget question, post 1651]]
-- [[Posts/2018/post_01652|`template_ID` answer, post 1652]]
+- [[Posts/2018/post_01652|template_ID answer, post 1652]]

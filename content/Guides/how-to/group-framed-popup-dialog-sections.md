@@ -68,5 +68,5 @@ The original answer also noted that a menu invocation normally leads to one acti
 - [[Posts/2020/post_03702|The request for bounded panel groups, post 3702]]
 - [[Posts/2020/post_03703|The nested Popup Dialog structure, post 3703]]
 - [[Posts/2020/post_03704|The request for explicit section bounds, post 3704]]
-- [[Posts/2020/post_03705|Motiomancer's framed `draw_menu()` construction, post 3705]]
+- [[Posts/2020/post_03705|Motiomancer's framed draw_menu() construction, post 3705]]
 - [[Posts/2020/post_03706|The requester's success confirmation, post 3706]]

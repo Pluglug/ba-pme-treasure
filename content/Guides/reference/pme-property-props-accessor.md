@@ -74,5 +74,5 @@ This reference targets PME 2.1 with Blender 4.5–5.2. The linked community exam
 - [[Guides/how-to/run-external-script-from-pme|Run an external Python script from PME]]
 - [[Posts/2023/post_04920|Property path and registration context, post 4920]]
 - [[Posts/2023/post_04922|Property Getter/Setter example, post 4922]]
-- [[Posts/2024/post_05030|Current `props()` layout example, post 5030]]
-- [[Posts/2024/post_05039|Current `props()` usage discussion, post 5039]]
+- [[Posts/2024/post_05030|Current props() layout example, post 5030]]
+- [[Posts/2024/post_05039|Current props() usage discussion, post 5039]]

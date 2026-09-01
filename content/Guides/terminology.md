@@ -1,289 +1,177 @@
 ---
-title: Terminology & Concepts
-tags: ["#guide", "#difficulty/beginner"]
+title: PME Terms You Will Meet
+description: Understand the editor names, slots, Poll conditions, Blender context, and scripting shortcuts used across PME and this archive.
+content_type: reference
+search_scope: answers
+tags:
+  - knowledge/reference
+  - browse/getting-started
+  - browse/scripting
+created: 2026-09-01
+modified: 2026-09-01
+draft: false
+review_status: owner-review-pending
+verification_status: current-source-checked
+verified_on: 2026-09-01
+provenance_version: 1
+pme_versions:
+  - "2.1.0-beta.5"
+blender_versions:
+  - "4.5–5.2"
+source_code_revision: "9fb992798b98"
+source_code_paths:
+  - src/pie_menu_editor/blender_manifest.toml
+  - src/pie_menu_editor/__init__.py
+  - src/pie_menu_editor/bl_utils.py
+  - src/pie_menu_editor/core/mode_contract.py
+  - src/pie_menu_editor/core/namespace.py
+  - src/pie_menu_editor/core/constants.py
+  - src/pie_menu_editor/infra/runtime_context.py
+  - src/pie_menu_editor/pme_types.py
 ---
 
-# PME Terminology & Concepts
+Use this page as a field guide while reading PME screens, guides, and older forum posts. It names the parts you need to recognize; it is not a complete API reference.
 
-This page explains key terms and concepts used in Blender and PME, aimed at beginners and those seeking deeper understanding.
+## The 30-second model
 
----
+A saved PME entry has an **editor type**: Pie Menu, Popup Dialog, Macro Operator, and so on. Most visible menu types contain **slots**. A slot can run a command, expose a property, call another menu, invoke a hotkey, or draw a custom layout.
 
-## Blender Core Concepts
+A hotkey decides **how you reach** an entry. **Poll** decides **whether that entry is available in the current Blender context**. The slot decides **what happens after you reach it**.
 
-### Data (`bpy.data`)
+## Editor names
 
-Provides access to all data stored in a Blender file (`.blend`). Organized in collections by type like `bpy.data.objects` and `bpy.data.materials`. This is a **static database** where you can access data directly by name or index.
+These are the current labels in PME 2.1. Older posts may use a nearby name such as “Pop-up Dialog Editor” or refer to every saved entry simply as a “menu.”
 
-```python
-D.objects['Cube']           # Access specific object
-D.materials.new("Gold")     # Create new material
-D.meshes[0]                 # Access by index
-```
+### Surfaces
 
-**In PME**: Use `D` as shorthand for `bpy.data`.
+| PME editor                | What it is for                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Pie Menu**              | Arrange a small set of choices around the pointer for directional access.                         |
+| **Vector Menu**           | Use direction-first input to reach actions or nested content, with a visible surface when needed. |
+| **Regular Menu**          | Present choices as a conventional list or dropdown.                                               |
+| **Popup Dialog**          | Compose controls into a temporary pie, popup, or persistent dialog presentation.                  |
+| **Floating Panel (beta)** | Keep a Popup-Dialog-style control surface floating in the current Blender area.                   |
 
-### Context (`bpy.context`)
+### Shortcut behavior
 
-Provides **dynamic references** based on the user's current state. Knows about selected objects, active tools, current mode, mouse position, and more. Context changes moment-to-moment based on user actions.
+| PME editor     | What it is for                                                                    |
+| -------------- | --------------------------------------------------------------------------------- |
+| **Stack Key**  | Put several actions on one shortcut and advance through them on repeated presses. |
+| **Sticky Key** | Give key press and key release different actions, often for a temporary change.   |
 
-```python
-C.active_object            # Currently active object
-C.selected_objects         # All selected objects
-C.mode                     # Current mode (OBJECT/EDIT/etc.)
-C.area.type                # Current area type
-```
+### Automation and state
 
-**In PME**: Use `C` as shorthand for `bpy.context`.
+| PME editor         | What it is for                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------ |
+| **Macro Operator** | Combine several existing actions into one reusable operation.                                    |
+| **Modal Operator** | Build an interactive operation that continues to react to mouse or keyboard input while it runs. |
+| **Property**       | Define a custom Blender property with configurable read and write behavior.                      |
 
-> [!note] Data vs Context
-> - **bpy.data**: "What exists" - static database of all Blender data
-> - **bpy.context**: "What's happening now" - dynamic state of user interaction
+### Routing and integration
 
-### Operators (`bpy.ops`)
+| PME editor             | What it is for                                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------- |
+| **Property Stack**     | Expose a condition as a Boolean-like control and optionally apply the state that satisfies it. |
+| **Context Router**     | Choose the first matching target for the current Blender context.                              |
+| **Panel Group**        | Add or organize PME-linked content in supported Blender interface locations.                   |
+| **Hidden Panel Group** | Hide selected Blender panels or panel groups.                                                  |
 
-Functional units that execute specific actions in Blender. Everything from adding objects to adjusting bevels is defined as an operator.
+You do not need to learn all of these at once. **Pie Menu**, **Popup Dialog**, and **Macro Operator** cover many first projects. Open [[Guides/routes/new-to-pme|Getting Started with PME]] when you want to choose by result instead of feature name.
 
-- Assignable to hotkeys
-- Displayable in menus/buttons
-- Callable from Python scripts
-- Executable in macros
-
-```python
-O.mesh.subdivide()         # Subdivide mesh
-O.object.duplicate()       # Duplicate object
-```
-
-**In PME**: Use `O` as shorthand for `bpy.ops`.
-
-### Keymap
-
-A collection of **hotkey assignments** that change based on area type and edit mode.
-
-Example: The **G** key triggers "Move" in Object Mode, but "Grab" in Sculpt Mode.
-
-PME helps customize these keymaps for your personal workflow.
-
-### Properties
-
-Data items in Blender (object positions, material settings, etc.) typically displayed as sliders, checkboxes, and fields in the UI.
-
-With PME you can:
-- Display and edit properties in menus/panels
-- Reference properties in scripts and Poll functions
-- Add custom properties via Property Editor
-
-### Mode
-
-Blender's **operational state** (Object Mode, Edit Mode, etc.). Each mode has its own set of tools and actions.
-
-PME's **Poll** feature allows showing/hiding specific tools based on the active mode.
-
-```python
-C.mode == 'EDIT_MESH'      # Check if in Mesh Edit Mode
-C.mode == 'SCULPT'         # Check if in Sculpt Mode
-```
-
----
-
-## Screen Layout Concepts
-
-### Area
-
-A major workspace region in the Blender interface. Different editor types (3D Viewport, Outliner, etc.) each occupy an **Area**.
-
-### Region
-
-Subdivided sections within an **Area** containing specific UI elements (tools, properties, etc.).
-
-PME's **Panel Group** feature can add custom content to regions.
-
-### Header
-
-A horizontal bar at the top or bottom of an area, typically containing menus and frequently used tool icons.
-
-### Panel
-
-Collapsible groups of UI widgets commonly found in sidebars and properties areas.
-
-With PME you can:
-- Create new panels
-- Extend existing panels
-- Group panels
-- Hide unused panels
-
----
-
-## PME-Specific Concepts
-
-### Menu (in PME context)
-
-A broad term for customizable UI components created in PME:
-- Pie Menus
-- Regular Menus
-- Popup Dialogs
-- Macro Operators
-- Modal Operators
-- And more...
-
-Each menu consists of multiple **Slots**, each providing different functions.
+## Slot, item, PM, and PMI
 
 ### Slot
 
-An individual **element** within a menu. Each slot can be configured to:
-- Execute commands
-- Display or edit properties
-- Call submenus
-- Draw custom layouts
+A **slot** is one editable unit inside a slot-based PME entry. The common Slot Editor choices are:
 
-### Command Tab
+| Slot type    | Result                                               |
+| ------------ | ---------------------------------------------------- |
+| **Command**  | Run Python or a Blender operator call.               |
+| **Property** | Draw or edit a Blender property.                     |
+| **Menu**     | Link to another PME entry.                           |
+| **Hotkey**   | Invoke the action assigned to a Blender keymap item. |
+| **Custom**   | Draw a layout with Blender's `UILayout` API.         |
 
-A tab in the Slot Editor for executing Python code or calling operators directly.
+Not every editor accepts every slot type. Modal Operator, Panel Group, Property Stack, and Context Router each add their own structure or restrictions.
 
-```python
-C.active_object.location.x += 1.0
-```
+If the five common choices sound interchangeable, open [[Guides/qa/choose-command-property-menu-hotkey-or-custom|Choose Command, Property, Menu, Hotkey, or Custom]] before adding code. In particular, Custom owns UI drawing; it is not a more powerful Command slot.
 
-Remember: All code must be on a **single line**! See [[code-examples|Code Examples]] for details.
+### Item
 
-### Custom Tab
+**Item** is the broad user-facing word for an entry inside a menu, dialog, Macro, or similar editor. In ordinary guides, “slot” and “item” can describe the same visible unit; **slot** is more precise when position or Slot Editor configuration matters.
 
-Another tab in the Slot Editor for creating visually-defined UI layouts.
+### PM and PMI
 
-```python
-L.box().label(text="Custom Layout")
-```
+Older posts and implementation-oriented discussions often use these abbreviations:
 
-### Poll Method
+- **PM** means one saved PME entry, even when its editor type is not Pie Menu.
+- **PMI** means one stored PME item or slot inside a slot-based entry.
 
-A Python function that determines **whether a menu or tool is currently available**. Must return `True` (available) or `False` (not available).
+You rarely need the abbreviations to author a menu, but recognizing them makes older troubleshooting threads easier to follow.
 
-```python
-# Only show when a mesh object is selected
-ao = C.active_object; return ao and ao.type == 'MESH'
-```
+## Poll is an availability guard
 
-Common uses:
-- Enable/disable UI elements based on current mode
-- Restrict features to specific object types
-- Hide invalid tools to prevent errors
-
-### Slot Editor
-
-The **central UI** for defining PME menu/button behavior. Contains multiple tabs:
-
-| Tab | Purpose |
-|-----|---------|
-| **Command** | Execute code |
-| **Property** | Display properties |
-| **Menu** | Call other PME menus |
-| **Hotkey** | Call shortcuts |
-| **Custom** | Custom layouts |
-
-### Interactive Panels Mode
-
-A PME mode that displays additional PME tool buttons inside all UI elements, making it easy to:
-- Identify menu IDs
-- Configure panel extensions
-- Customize the UI
-
-Particularly useful when learning PME!
-
----
-
-## Advanced Concepts
-
-### Macro Operator
-
-Allows **executing multiple operators in sequence**. PME's Macro Operator Editor lets you:
-- Record operator sequences
-- Adjust operator parameters
-- Manage execution flow
-
-Great for combining complex workflows into a single click!
-
-### Modal Operator
-
-Real-time, interactive operators that respond to continuous user input. PME's Modal Operator Editor enables:
-- Responding to mouse movement
-- Key events and state changes
-- Real-time feedback and updates
-
-Ideal for building **custom interactive tools**.
-
-### Event System (`E`)
-
-Blender's input handling mechanism that tracks keyboard and mouse events.
+A **Poll** expression returns a Boolean result for the current Blender context. When it returns `False`, PME treats the entry as unavailable on the routes that consult its Poll. Poll is not a second Command slot and should not perform an action.
 
 ```python
-E.ctrl                     # Is Ctrl pressed?
-E.shift                    # Is Shift pressed?
-E.type                     # Event type
-E.value                    # Event value (PRESS/RELEASE)
+return C.active_object is not None
 ```
 
-**In PME**: Use `E` to access the current event.
-
-### Layout System (`L`)
-
-Blender's system for building UI layouts. PME uses this to:
-- Place labels, buttons, and property fields
-- Position operators and custom widgets
-- Structure UI element hierarchies
+Context members can be absent on some execution routes. Guard them before reading a nested value:
 
 ```python
-L.label(text="Hello")
-L.operator("mesh.subdivide")
-L.prop(C.scene, "frame_current")
+return C.area is not None and C.area.type == 'VIEW_3D'
 ```
 
-**In PME**: Use `L` to access the current layout (in Custom slots).
+**Poll** and **Context Router** solve different problems: Poll answers “may this run here?”; Context Router answers “which target should this context choose?” For a concrete subtype example, see [[Guides/qa/use-a-different-pie-in-each-node-editor|Use a different Pie Menu in each Node Editor]].
 
-### Operator Execution Context
+## Blender context words
 
-Determines how an operator executes:
+| Term            | Meaning                                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Window**      | A top-level Blender window. A window contains a screen.                                                                                       |
+| **Area**        | One tile in a Blender screen. An area currently hosts an editor such as the 3D Viewport or Outliner.                                          |
+| **Editor type** | The kind of Blender editor hosted by an area. This is separate from a PME editor type.                                                        |
+| **Region**      | A sub-part of an area, such as its main window region, header, toolbar, or sidebar.                                                           |
+| **Mode**        | Blender's current working state, such as Object, Edit Mesh, Pose, or Sculpt Mode.                                                             |
+| **Keymap**      | A scoped collection of shortcut assignments. The same key can resolve differently by editor, region, and mode.                                |
+| **Operator**    | A Blender action exposed through `bpy.ops`, often with context requirements and an execution mode such as `INVOKE_DEFAULT` or `EXEC_DEFAULT`. |
+| **Property**    | A value exposed by Blender data, context, or an add-on, often drawn as a checkbox, field, menu, or slider.                                    |
 
-| Context | Description |
-|---------|-------------|
-| **INVOKE_DEFAULT** | Interactive mode - waits for user input (mouse position, popup confirmation) |
-| **EXEC_DEFAULT** | Immediate execution with preset parameters - common in scripts/macros |
+When an operator works from Blender's UI but not from PME, compare the area, region, mode, and selection first. [[Guides/diagnostics/operator-needs-correct-blender-context|Operator context failures]] explains that boundary.
+
+## Scripting shortcuts in PME posts
+
+The archive contains compact PME scripts written with single-letter names. Their availability is not identical:
+
+| Name | Meaning                       | Availability                                                                                                                                                       |
+| ---- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `C`  | Current Blender context proxy | Installed as a core PME scripting name; its members still depend on the active context.                                                                            |
+| `D`  | `bpy.data`                    | The current blend-file data registry. It is not a static snapshot.                                                                                                 |
+| `O`  | `bpy.ops`                     | Still installed for compatibility and common in older snippets; current PME classifies it as an internal shortcut, so `bpy.ops` is clearer in new long-lived code. |
+| `L`  | Current `UILayout`            | Available only while PME is drawing UI, such as a Custom slot.                                                                                                     |
+| `E`  | Current Blender event         | Available only when the execution route owns a scoped input event.                                                                                                 |
+| `U`  | PME user-data container       | Session-only scratch data; it is reset when PME is re-registered or Blender restarts.                                                                              |
+
+Examples:
 
 ```python
-# Move interactively based on mouse input
-O.transform.translate('INVOKE_DEFAULT')
+# Command or Poll context
+obj = C.active_object
 
-# Move immediately by (5, 0, 0) without user input
-O.transform.translate('EXEC_DEFAULT', value=(5.0, 0.0, 0.0))
+# Custom-slot drawing context
+L.label(text="Current frame"); L.prop(C.scene, "frame_current")
+
+# Temporary state shared during the current PME session
+U.last_tool = "Inset"
 ```
 
----
+The presence of a name in one example does not make it valid everywhere. In particular, do not use `L` outside UI drawing, do not assume `E` exists for a menu opened without an event, and do not use `U` for data that must survive a restart.
 
-## PME Global Variables Quick Reference
+## Continue from here
 
-| Variable | Equivalent | Description |
-|----------|------------|-------------|
-| `C` | `bpy.context` | Current context |
-| `D` | `bpy.data` | Blender data |
-| `O` | `bpy.ops` | Operators |
-| `T` | `bpy.types` | Type definitions |
-| `P` | `bpy.props` | Property definitions |
-| `L` | UILayout | Current layout (Custom slot) |
-| `E` | Event | Current event |
-| `U` | UserData | Persistent user data storage |
-
----
-
-## Related Guides
-
-- [[getting-started|Getting Started]] - PME basics
-- [[code-examples|Code Examples]] - Scripting patterns
-- [[hotkey-conflicts|Hotkey Conflicts]] - Keymap issues
-
----
-
-## External Resources
-
-- [Blender Python API](https://docs.blender.org/api/current/)
-- [Context Documentation](https://docs.blender.org/api/current/bpy.context.html)
-- [Operators Documentation](https://docs.blender.org/api/current/bpy.ops.html)
-- [PME Documentation](https://pluglug.github.io/pme-docs/)
+- [[Guides/getting-started|Build a first useful Pie Menu]]
+- [[Guides/qa/choose-command-property-menu-hotkey-or-custom|Choose the right slot type]]
+- [[Guides/code-examples|Adapt a PME code example]]
+- [[Guides/qa/choose-pie-popup-or-dialog|Choose Pie, Popup, or Dialog Mode]]
+- [Open the current PME documentation](https://pie-menu-editor.github.io/pme-docs/)

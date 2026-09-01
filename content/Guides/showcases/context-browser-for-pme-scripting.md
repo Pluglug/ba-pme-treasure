@@ -1,0 +1,72 @@
+---
+title: "Context Browser: Find the Property Behind a Blender Control"
+description: "A Context Browser workflow for discovering Blender property paths and real enum values before turning them into focused PME controls."
+content_type: example
+search_scope: answers
+tags:
+  - knowledge/example
+  - browse/examples
+  - browse/scripting
+  - browse/properties-context
+created: 2026-09-01
+modified: 2026-09-01
+draft: false
+review_status: owner-review-pending
+verification_status: historical-unverified
+curation_status: featured
+provenance_version: 1
+pme_versions:
+  - "not stated"
+blender_versions:
+  - "not stated"
+featured_image: "https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png"
+featured_image_alt: "Context Browser inspecting Blender's active area, with controls for copying a property's path and current value."
+media_sources:
+  - "https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png"
+source_posts:
+  - Posts/2025/post_05489
+source_urls:
+  - "https://blenderartists.org/t/662456/5489"
+  - "https://blenderartists.org/t/context-browser-1-4-0/1101756/13"
+---
+
+> **Historical example · current compatibility unverified**
+> Original context: April 2025; exact Blender and PME versions were not stated.
+
+## What it shows
+
+PME scripting often starts with a deceptively difficult question: **what is the Blender property I am actually looking at, and what values does it accept here?**
+
+The linked Context Browser customization added actions for copying a complete property path, a property's current value, and a function path including its arguments. The screenshot shows the browser inspecting the active 3D View area and exposing the value-copy action beside the live property list.
+
+![Context Browser inspecting Blender's active area, with controls for copying a property's path and current value.](https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png)
+
+For a property such as the viewport perspective, this makes the actual enum values visible in context instead of forcing the user to infer them from a tooltip or repeatedly search the API reference.
+
+## Pattern to borrow
+
+Treat inspection as the first stage of PME authoring:
+
+1. Open the Blender editor and state where the desired control already works.
+2. Inspect that area's live context.
+3. Capture the narrowest useful property path and its real values.
+4. Prototype one PME Property or command around that result.
+5. Test it again in every context where the menu will appear.
+
+This turns Context Browser into a bridge between **seeing a Blender setting** and **building a focused PME control for it**. The goal is not to paste every discovered path into a menu. It is to remove guesswork before designing the smallest useful control.
+
+## What would need translating today
+
+The 2025 enhancement was distributed as a replacement Python file for Context Browser. That patch, Context Browser itself, and its interaction with PME 2.1 have not been tested here. Replacing files inside another add-on is therefore historical installation information, not a current recommendation.
+
+A current guide should first confirm a compatible Context Browser release or supported equivalent. Any copied path must still be checked for area, mode, active-object, and data-block assumptions before it is published as a PME example.
+
+## Media and linked tool
+
+- [Open the original Context Browser screenshot](https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png)
+- [Read the Context Browser customization post](https://blenderartists.org/t/context-browser-1-4-0/1101756/13)
+- [Open the Context Browser product page linked by the source post](https://roaoao.gumroad.com/l/context_browser)
+
+## Source
+
+- [[Posts/2025/post_05489|Post 5489 — why Context Browser is useful beside PME]]

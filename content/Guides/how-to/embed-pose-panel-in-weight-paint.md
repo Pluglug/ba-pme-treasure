@@ -70,7 +70,7 @@ Do not use this pattern to bypass a panel's safety requirements. If a native pan
 
 ## Related
 
-- [[Guides/reference/panel-function-current-reference|Use PME's `panel()` helper for a native panel that already has a valid context]]
+- [[Guides/reference/panel-function-current-reference|Use PME's panel() helper for a native panel that already has a valid context]]
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Diagnose Blender context and Poll failures]]
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a persistent Panel Group instead of a temporary dialog]]
 

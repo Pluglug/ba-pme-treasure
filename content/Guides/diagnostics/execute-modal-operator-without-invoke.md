@@ -65,4 +65,4 @@ The original source context is a 2018 PME discussion; the PME and Blender versio
 
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Why does an operator fail from a PME menu or panel?]]
 - [[Posts/2018/post_01758|Original one-click modal question, post 1758]]
-- [[Posts/2018/post_01759|`EXEC_DEFAULT` answer, post 1759]]
+- [[Posts/2018/post_01759|EXEC_DEFAULT answer, post 1759]]

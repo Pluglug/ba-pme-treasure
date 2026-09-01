@@ -77,5 +77,5 @@ Until then, the downloads are historical reference material rather than current 
 
 ## Sources
 
-- [[Posts/2019/post_02155|Post #2155 — modal viewport demonstration and downloads]]
-- [[Posts/2019/post_02159|Post #2159 — positive follow-up and an unrelated viewport question]]
+- [[Posts/2019/post_02155|Post 2155 — modal viewport demonstration and downloads]]
+- [[Posts/2019/post_02159|Post 2159 — positive follow-up and an unrelated viewport question]]
