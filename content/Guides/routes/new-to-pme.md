@@ -7,7 +7,7 @@ tags:
   - knowledge/guide
   - browse/getting-started
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-02
 draft: false
 review_status: owner-review-pending
 provenance_version: 1
@@ -29,8 +29,9 @@ Do not learn every PME feature first. Choose one piece of friction you would lik
 
 Build a small Pie Menu for one job: transforms, selection, viewport display, or sculpt brushes.
 
+- [[Guides/how-to/build-first-customization-with-capture|Understand one customization and capture its first two slots]]
 - [[Guides/getting-started|Build the first useful menu step by step]]
-- [[Guides/qa/choose-command-property-menu-hotkey-or-custom|Choose what each menu item should be]]
+- [[Guides/qa/choose-command-property-menu-hotkey-or-custom|Use the Slot Editor tab reference when you need it]]
 - [[Guides/qa/choose-pie-popup-or-dialog|Choose Pie, Popup, or Dialog Mode]]
 - [[Guides/how-to/build-a-multi-button-pie-with-popup-dialogs|Put several related buttons in one Pie direction]]
 
@@ -79,7 +80,7 @@ Once the basic menu feels natural, try repeated presses or press-and-release beh
 Small usability changes matter once a menu becomes part of daily work.
 
 - [[Guides/how-to/adjust-pie-menu-spacing-and-theme|Adjust Pie Menu spacing and Blender theme colours]]
-- [[Guides/how-to/add-blender-ui-with-interactive-panels|Capture a Blender menu, panel, or header without guessing its ID]]
+- [[Guides/how-to/add-blender-ui-with-interactive-panels|Point at Blender UI and reuse or extend it with PME]]
 - [[Guides/how-to/add-custom-icons-to-pme|Give your own controls recognizable icons]]
 - [[Guides/examples|Borrow a visual pattern from selected setups]]
 

@@ -86,7 +86,7 @@ Keep destructive and reversible actions visually distinct. A tiny icon in a crow
 
 The exact area operators, header arrangement, and screenshots belong to the 2022 setup. They have not been reproduced with PME 2.1 and Blender 4.5+.
 
-Rebuild one small extension against the target Blender version, then use it before adding another. [[Guides/how-to/add-blender-ui-with-interactive-panels|Interactive Panels can discover compatible Blender panels, menus, and headers]]; its current authoring tools also distinguish adding Blender UI to PME from extending native UI with PME content.
+Rebuild one small extension against the target Blender version, then use it before adding another. [[Guides/how-to/add-blender-ui-with-interactive-panels|Interactive Panels can target compatible Blender panels, menus, and headers without making you find their identifiers first]].
 
 ## More views
 

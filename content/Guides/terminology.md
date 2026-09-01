@@ -8,7 +8,7 @@ tags:
   - browse/getting-started
   - browse/scripting
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-02
 draft: false
 review_status: owner-review-pending
 verification_status: current-source-checked
@@ -34,7 +34,7 @@ Use this page as a field guide while reading PME screens, guides, and older foru
 
 ## The 30-second model
 
-A saved PME entry has an **editor type**: Pie Menu, Popup Dialog, Macro Operator, and so on. Most visible menu types contain **slots**. A slot can run a command, expose a property, call another menu, invoke a hotkey, or draw a custom layout.
+A PME **customization** is one saved tool you build: a Pie Menu, Popup Dialog, Macro Operator, and so on. Most visible customization types contain **slots**. A slot can run a command, expose a property, link another customization, invoke a hotkey, or draw a custom layout.
 
 A hotkey decides **how you reach** an entry. **Poll** decides **whether that entry is available in the current Blender context**. The slot decides **what happens after you reach it**.
 

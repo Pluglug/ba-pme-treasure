@@ -7,7 +7,7 @@ tags:
   - knowledge/guide
   - browse/getting-started
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-02
 draft: false
 review_status: owner-review-pending
 verification_status: current-source-checked
@@ -37,11 +37,12 @@ If you are upgrading an existing setup, preserve it first with [[Guides/how-to/m
 
 ## Build your first useful Pie Menu
 
-1. Create a **Pie Menu** in PME and name it after the job, not the commands—for example `Transform`, `Viewport`, or `Sculpt Brushes`.
-2. Add the actions you wrote down. Keep the first version small enough to remember without reading every label.
-3. Arrange related or opposite actions in positions that make sense together.
-4. Assign the shortcut and test it in the Blender editor and mode where you actually need it.
-5. Use the menu during a real work session. Remove entries you never choose before adding more.
+1. Use [[Guides/how-to/build-first-customization-with-capture|Capture to create a Pie Menu with one operator button and one property widget]].
+2. Name the customization after the job, not the controls—for example `Transform`, `Viewport`, or `Sculpt Brushes`.
+3. Capture only the additional actions you already know you need. Keep the first version small enough to remember without reading every label.
+4. Arrange related or opposite slots in positions that make sense together.
+5. Assign the shortcut and test it in the Blender editor and mode where you actually need it.
+6. Use the menu during a real work session. Remove entries you never choose before adding more.
 
 The goal is not to reproduce a Blender menu. It is to make one repeated decision faster and easier to remember.
 
