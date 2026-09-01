@@ -10,7 +10,7 @@ Choose the route that matches what you want to do. Each route starts with select
 
 <div class="nav-card beginner">
 
-### [[routes/new-to-pme|🌱 I’m new to PME]]
+### [[Guides/routes/new-to-pme|🌱 I’m new to PME]]
 
 Choose one useful first project and learn only the PME building blocks it needs.
 
@@ -18,7 +18,7 @@ Choose one useful first project and learn only the PME building blocks it needs.
 
 <div class="nav-card problem">
 
-### [[routes/solve-a-problem|🔧 I have a problem]]
+### [[Guides/routes/solve-a-problem|🔧 I have a problem]]
 
 Start from a visible symptom, then open a focused diagnosis or recovery procedure.
 
