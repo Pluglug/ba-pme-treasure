@@ -200,7 +200,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 </div>
 
-## Design around how you press keys
+## Design around how you trigger it
 
 <div class="card-grid">
 
