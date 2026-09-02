@@ -44,48 +44,46 @@ source_urls:
 
 ## The constraint came first
 
-AlfredBaudisch was using Blender on a 24-inch pen display and could not comfortably reach a keyboard while drawing. Their PME setup did not begin as a prettier menu. It began as an answer to a physical input problem: keep the pen in hand, keep attention on the sculpture, and bring the working controls to one display button.
+AlfredBaudisch was using Blender on a 24-inch pen display and could not comfortably reach a keyboard while drawing. The setup answers that physical problem: keep the pen in hand and put the working controls on one display button.
 
 ![A Blender sculpting workspace with a large PME Pie Menu of brush and sculpt actions centered near the stylus cursor.](https://blenderartists.org/uploads/default/original/4X/b/2/1/b2113dc3a43ac36c4d82f2f1bfb167da864de626.jpeg)
 
 One express key sent `Q`:
 
 - a normal press opened the primary sculpt Pie;
-- a double tap opened a second surface for less frequent settings.
+- a double tap opened a second panel with less frequent settings.
 
 ![A secondary PME panel of sculpting controls opened from the same pen-display button with a double tap.](https://blenderartists.org/uploads/default/original/4X/4/7/b/47bda98557d73b76cf5f9c92392201be922c6562.png)
 
 ## Why the arrangement works
 
-This is **one control, two tempos**.
-
-The normal press owns the fast loop: tools and actions chosen repeatedly during a stroke session. The double tap owns the slower loop: settings worth having nearby but not worth crowding into the radial targets.
+The normal press holds the tools used repeatedly during a stroke session. The double tap holds settings worth having nearby but not worth crowding into the pie.
 
 That division has three benefits:
 
 1. the pen hand does not have to alternate constantly between display and keyboard;
-2. high-frequency actions keep large, stable targets around the cursor;
-3. secondary settings remain discoverable without weakening the first menu.
+2. frequent actions keep large, stable targets around the cursor;
+3. secondary settings stay reachable without crowding the first menu.
 
 The menu is therefore organized by interaction frequency, not by the order of Blender's panels.
 
-## The follow-up shows how a personal UI grows
+## The follow-up
 
 Once the primary layout was working, AlfredBaudisch asked how to expose Mesh Filter strength and type—operator properties that were not obvious from Blender's visible UI or console output. Motiomancer answered with a historical Custom-item route through the active Sculpt tool's operator properties.
 
-That episode reveals the right way to grow a control surface: start with the ergonomic bottleneck, use it, then add the missing control proven by real work. Do not begin by copying every Sculpt setting into a giant menu.
+The control was added after real use showed it was missing, rather than copied in from the start.
 
 ## What to borrow today
 
-Treat the screenshots as design evidence, not as a PME 2.1 preset:
+The screenshots show the design, not a PME 2.1 preset. To rebuild:
 
 1. Choose the one physical button that is easiest to reach while drawing.
-2. Give the normal press only the actions used repeatedly with the pen down.
-3. Put slower configuration behind a deliberate second gesture.
+2. Put the actions you use with the pen down on the normal press.
+3. Put slower settings behind a second gesture such as double tap.
 4. Preserve Blender's recognizable labels or icons for visual tools.
 5. Test accidental double taps, shortcut conflicts, handedness, and target size on the actual display.
 
-The old Sculpt tool identifiers and operator-property route must be re-captured in the target Blender version. For an icon-focused example, continue to [[Guides/showcases/sculpt-brush-palette|A Sculpt Brush Palette Under One Key]]. The lesson here is different: design the shortcut around the body and device before designing the menu contents.
+The old Sculpt tool identifiers and operator-property route must be re-captured in the target Blender version. For an icon-focused example, continue to [[Guides/showcases/sculpt-brush-palette|A Sculpt Brush Palette Under One Key]]. This page is about the input device; that one is about icons.
 
 ## Sources
 

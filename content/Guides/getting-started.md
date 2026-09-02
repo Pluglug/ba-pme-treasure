@@ -24,37 +24,35 @@ blender_versions:
   - "4.5–5.2"
 ---
 
-The quickest way to understand Pie Menu Editor is to remove one small piece of friction from your own Blender workflow. Start with a menu you can use today; learn Macros, Properties, Stack Keys, and scripting only when the job asks for them.
+The quickest way to understand Pie Menu Editor is to build one menu you will use today. Macros, Properties, Stack Keys, and scripting can wait until you need them.
 
 ## Before you build
 
 - Install and enable PME using the [current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html).
 - Pick one Blender task you already repeat, such as transforming objects, changing viewport display, switching selection tools, or choosing sculpt brushes.
-- Write down four to eight actions you reach for during that task.
-- Choose a shortcut that is not already important to your Blender workflow.
+- List the four to eight actions you use during that task.
+- Pick a shortcut you are not already using.
 
-If you are upgrading an existing setup, preserve it first with [[Guides/how-to/migrate-pme-to-2-1-safely|the migration and backup procedure]]. A migration is maintenance work, not the best first tour of PME.
+If you are upgrading an existing setup, preserve it first with [[Guides/how-to/migrate-pme-to-2-1-safely|the migration and backup procedure]].
 
 ## Build your first useful Pie Menu
 
 1. Use [[Guides/how-to/build-first-customization-with-capture|Capture to create a Pie Menu with one operator button and one property widget]].
-2. Name the customization after the job, not the controls—for example `Transform`, `Viewport`, or `Sculpt Brushes`.
-3. Capture only the additional actions you already know you need. Keep the first version small enough to remember without reading every label.
+2. Name it after the job, for example `Transform`, `Viewport`, or `Sculpt Brushes`.
+3. Add the other actions you know you need. A small first version is easier to remember.
 4. Arrange related or opposite slots in positions that make sense together.
 5. Assign the shortcut and test it in the Blender editor and mode where you actually need it.
-6. Use the menu during a real work session. Remove entries you never choose before adding more.
-
-The goal is not to reproduce a Blender menu. It is to make one repeated decision faster and easier to remember.
+6. Use it in real work for a while, then remove entries you never pick.
 
 ## Three good first projects
 
 | Project        | Put in the first version                           | What it teaches                                                    |
 | -------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
-| Transform menu | orientation, pivot, snapping, proportional editing | Related controls can become one task surface.                      |
-| Viewport menu  | shading, overlays, local view, framing             | A single shortcut can replace scattered UI travel.                 |
-| Selection menu | the few selection actions you use most             | A compact menu is easier to learn than a complete command catalog. |
+| Transform menu | orientation, pivot, snapping, proportional editing | Related controls from different panels fit in one menu.            |
+| Viewport menu  | shading, overlays, local view, framing             | One shortcut replaces several trips across the UI.                 |
+| Selection menu | the few selection actions you use most             | A short menu is easier to learn than a full command list.          |
 
-[[Posts/2024/post_05000|The Transform Preset in Post 5000]] is a useful 2024 example of grouping stateful controls around one job. Its JSON has not been checked with current PME; borrow the design idea rather than assuming the old import is current.
+[[Posts/2024/post_05000|The Transform Preset in Post 5000]] is a useful 2024 example of grouping stateful controls around one job. Its JSON has not been checked with current PME; borrow the idea; the old import may not work as-is.
 
 ## Improve the menu after using it
 
@@ -68,11 +66,11 @@ Use a Macro instead of hiding a long script in the first menu. [[Guides/qa/run-a
 
 ### You keep reopening a panel to change one value
 
-Expose that value where you use it. Start with [[Guides/how-to/make-a-property-editor-slider|a Property slider]], then consider [[Guides/how-to/create-a-pme-sidebar-panel-group|a Sidebar Panel Group]] when several related controls deserve a stable surface.
+Expose that value where you use it. Start with [[Guides/how-to/make-a-property-editor-slider|a Property slider]], then consider [[Guides/how-to/create-a-pme-sidebar-panel-group|a Sidebar Panel Group]] when several related controls should stay visible.
 
 ### One shortcut should behave differently by context
 
-Keep the first menu simple until the need is clear, then use [[Guides/reference/conditional-execution-patterns|a conditional execution pattern]] or [[Guides/how-to/route-to-a-context-specific-menu|route to a context-specific menu]].
+Use [[Guides/reference/conditional-execution-patterns|a conditional execution pattern]] or [[Guides/how-to/route-to-a-context-specific-menu|route to a context-specific menu]].
 
 ## See what PME can become
 
@@ -85,6 +83,6 @@ The historical post and videos use earlier PME and Blender interfaces. Use them 
 
 ## If the first result is not right
 
-- [[Guides/routes/solve-a-problem|Start from the symptom]] instead of guessing which feature failed.
+- [[Guides/routes/solve-a-problem|Start from the symptom]].
 - [[Guides/how-to/restore-pme-menus-from-auto-backup|Restore missing or damaged menus]] before rebuilding them.
 - [[Guides/diagnostics/operator-needs-correct-blender-context|Check Blender context]] when an operator works from one place but not another.

@@ -50,9 +50,9 @@ The result puts frequently used brushes around one shortcut while retaining Blen
 
 ## Pattern to borrow
 
-Reuse familiar host-application icons when a menu selects visual tools. Recognition is faster than reading repeated labels, and the menu feels like part of Blender rather than a separate control system.
+Reuse Blender's own icons when a menu picks visual tools. They are faster to recognize than labels, and the menu looks like part of Blender.
 
-The broader pattern is a **task palette**: keep only the tools used during one activity, arrange them spatially, and place secondary actions in a compact child panel.
+Keep only the brushes you use during one activity; put secondary actions in a small child panel.
 
 ## What would need translating today
 

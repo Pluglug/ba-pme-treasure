@@ -60,18 +60,16 @@ fiendish55's experiment began with a simple question: if PME could draw Blender 
 
 ![A Blender 2.79 viewport filling the workspace while a PME popup recreates context-sensitive Properties panels under the pointer.](https://i.imgur.com/iHX1Vto.gif)
 
-The resulting setup kept the 3D View fullscreen and summoned a dense Properties surface at the pointer. It followed the current selection, so a light, armature, font object, or mesh exposed the same kind of controls the artist expected from Blender's docked editor. The popup could close automatically or remain floating, depending on the task.
+The resulting setup kept the 3D View fullscreen and opened a dense Properties panel at the pointer. It followed the current selection, so a light, armature, font object, or mesh exposed the same kind of controls the artist expected from Blender's docked editor. The popup could close automatically or remain floating, depending on the task.
 
-This was more ambitious than putting a few favorite buttons in a Pie. It treated screen space as a working material: the viewport stayed large during direct manipulation, while detailed settings appeared only for the short interval in which they were useful.
+The viewport stayed large while modelling, and detailed settings appeared only while they were needed.
 
-## Why the pattern is useful
+## Why it is useful
 
-The strongest idea is **information follows attention**:
-
-- the control surface opens where the artist is already looking;
+- the panel opens where you are already looking;
 - the selected object decides which information is relevant;
 - dense settings do not compete with the canvas when they are not in use;
-- familiar Blender panels reduce the cost of learning a second interface.
+- familiar Blender panels mean nothing new to learn.
 
 It works best for inspection and occasional adjustment. A permanently visible editor is still better when values must be monitored continuously or compared while another operation runs.
 
@@ -79,19 +77,19 @@ It works best for inspection and occasional adjustment. A permanently visible ed
 
 The archive did not prove that every Properties panel could be transplanted safely. The first shared version had missing Texture sections. Later work fixed Material and World texture subcategories, but an "Other" category was described as hardcoded. A later missing-panel report was traced to the Cycles add-on being disabled; roaoao suggested enabling it and planned to hide those red buttons when debug mode is off in the next version. fiendish55's follow-up after that answer is not preserved here.
 
-That failure mode matters: a panel is not just its visible controls. It can depend on its original editor, render engine, active object, add-ons, and Blender's internal polling rules. Recreating an entire Properties editor therefore accumulates compatibility work much faster than borrowing a few stable panels.
+A panel can depend on its original editor, render engine, active object, add-ons, and Blender's poll rules. Recreating the whole Properties editor collects far more of that than borrowing a few stable panels.
 
 ## What to borrow today
 
-Do not import the old JSON as a current PME preset. Borrow the interaction model and rebuild only the parts that earn their space:
+The old JSON is not a current preset. Rebuild only the panels you need:
 
 1. Start with one task, such as material inspection or modifier setup.
 2. Add only the Blender panels used during that task.
-3. Open the surface near the pointer and choose deliberate close behavior.
+3. Open the panel near the pointer and decide how it should close.
 4. Verify every panel against the intended Blender editor, mode, object type, and render engine.
 5. Keep a docked editor for information that must remain visible.
 
-For current PME 2.1 building blocks, see [[Guides/reference/panel-function-current-reference|the current panel() reference]]. If the goal is a temporary copy of a complete Blender editor rather than a custom control surface, use [[Guides/how-to/open-a-temporary-editor-with-popup-area|popup_area instead]].
+For current PME 2.1 building blocks, see [[Guides/reference/panel-function-current-reference|the current panel() reference]]. If you want a temporary copy of a complete Blender editor instead of a custom panel, use [[Guides/how-to/open-a-temporary-editor-with-popup-area|popup_area instead]].
 
 ## Media
 

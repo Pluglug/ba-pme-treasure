@@ -42,7 +42,7 @@ The result resembles a Maya- or 3ds Max-style shelf. The post was a demonstratio
 
 ## Pattern to borrow
 
-Use different surfaces for different information densities:
+Use different menu types for different amounts of content:
 
 - keep the Pie Menu for a small set of fast directional choices;
 - use a Popup Dialog when labels, rows, or several related settings need room;
@@ -50,15 +50,15 @@ Use different surfaces for different information densities:
 
 The 42 buttons here are the Physics panel contents. If you build your own version, the count matters less than whether each row is a recognizable group; forty unrelated buttons would merely move the clutter.
 
-## A better current interpretation
+## Rebuilding it today
 
-The source is a visual prototype, not a current preset. Rebuilding the idea today should start smaller:
+The source is a screenshot, not a preset. A rebuild should start smaller:
 
 1. Choose one Blender job, such as retopology cleanup or render diagnostics.
-2. List only the controls repeatedly used during that job.
+2. List the controls you use during that job.
 3. Divide them into short labelled rows with consistent ordering.
 4. Keep destructive or context-sensitive actions visually separate.
-5. Test whether the deck is still useful at a narrow window width.
+5. Check that it still fits at a narrow window width.
 
 The old snippet in the same post for opening PME Preferences targets Blender 2.79-era data and operators. It should not be copied into PME 2.1. The Popup Dialog, context rules, icon references, and area lifecycle all need a fresh implementation and a current Blender test.
 

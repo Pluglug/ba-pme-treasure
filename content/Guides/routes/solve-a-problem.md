@@ -13,7 +13,7 @@ review_status: owner-review-pending
 provenance_version: 1
 ---
 
-Start with what you can observe. “PME is broken” is not enough to distinguish a hotkey conflict, the wrong Blender context, an invalid operator call, or missing stored data.
+Start from what you can see. A dead shortcut, a context error, a script that only works in the Text Editor, and missing menus have different causes and different fixes.
 
 ## Choose the symptom
 
@@ -46,7 +46,7 @@ Start with what you can observe. “PME is broken” is not enough to distinguis
 ### A script works in Blender's Text Editor but not in PME
 
 - [[Guides/diagnostics/script-works-in-text-editor-but-not-pme|Find missing imports and session-only dependencies]]
-- [[Guides/how-to/run-external-script-from-pme|Use the supported external-script boundary]]
+- [[Guides/how-to/run-external-script-from-pme|Move the script to an external file and call it from PME]]
 
 </div>
 
@@ -100,9 +100,9 @@ Record these facts first:
 
 This separates “the PME item cannot run” from “Blender never routed the event to it.”
 
-## Do not destroy the evidence
+## Before reinstalling or overwriting anything
 
-If data appears to be missing, do not reinstall PME or overwrite files first. Menu definitions, exported JSON, user scripts, icons, and automatic backups live at different boundaries. Start with [[Guides/qa/where-pme-stores-menu-definitions|the storage map]], then use the [[Guides/how-to/restore-pme-menus-from-auto-backup|backup recovery procedure]] if necessary.
+If menus or files seem to be missing, check where they are stored before reinstalling PME or overwriting anything. Menu definitions, exported JSON, user scripts, icons, and automatic backups live in different places. Start with [[Guides/qa/where-pme-stores-menu-definitions|the storage map]], then use the [[Guides/how-to/restore-pme-menus-from-auto-backup|backup recovery procedure]] if necessary.
 
 ## Search when the symptom is different
 

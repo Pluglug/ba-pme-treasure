@@ -22,11 +22,11 @@ title: PME Treasure
 
 ### 🌱 I’m new to PME
 
-Start with one useful result, then learn only the PME building blocks you need.
+Pick a first project and learn the parts of PME it needs.
 
 - [[Guides/routes/new-to-pme|Choose a first project]]
 - [[Guides/getting-started|Getting Started Guide]]
-- [[Guides/showcases/transform-preset-control-surface|Transform Preset — one task, one control surface]]
+- [[Guides/showcases/transform-preset-control-surface|Transform Preset — the controls for one task in one pie]]
 - [[Guides/examples|See more things people built]]
 
 </div>
@@ -35,7 +35,7 @@ Start with one useful result, then learn only the PME building blocks you need.
 
 ### 🔧 I have a problem
 
-Start from the symptom and move to a focused answer or recovery procedure.
+Find your symptom and open the matching answer or recovery steps.
 
 - [[Guides/routes/solve-a-problem|Choose the symptom]]
 - [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|A hotkey works in the wrong mode]]
@@ -48,7 +48,7 @@ Start from the symptom and move to a focused answer or recovery procedure.
 
 ### 💻 I need code examples
 
-Choose a goal, copy the useful pattern, and follow the source conversation when needed.
+Pick a goal, copy the pattern, and open the source thread if you need more.
 
 - [[Guides/code-examples|Open the code examples collection]]
 - [[Guides/reference/conditional-execution-patterns|Branch an action by context or state]]
@@ -61,7 +61,7 @@ Choose a goal, copy the useful pattern, and follow the source conversation when 
 
 ### 🗺️ I want to explore
 
-Wander by capability, idea, year, or contributor without starting from a raw Tag dump.
+Browse by capability, idea, year, or contributor.
 
 - [[_Index/Browse|Explore PME Treasure]]
 - [[Guides/examples|Borrow a workflow pattern]]
@@ -74,12 +74,12 @@ Wander by capability, idea, year, or contributor without starting from a raw Tag
 
 ### 🎨 I want to see examples
 
-Open selected PME setups and the reusable design idea behind each one.
+Open selected PME setups and see the idea behind each one.
 
 - [[Guides/examples|Open examples and showcases]]
-- [[Guides/showcases/transform-preset-control-surface|Transform Preset — one task, one control surface]]
+- [[Guides/showcases/transform-preset-control-surface|Transform Preset — the controls for one task in one pie]]
 - [[Guides/showcases/sculpt-brush-palette|Sculpt Brush Palette — familiar tools around one key]]
-- [[Guides/how-to/create-a-pme-sidebar-panel-group|Sidebar Panel Group — a custom working surface]]
+- [[Guides/how-to/create-a-pme-sidebar-panel-group|Sidebar Panel Group — your own controls in the sidebar]]
 
 </div>
 
@@ -101,7 +101,7 @@ Use **Answers** for selected explanations, recipes, and troubleshooting. Switch 
 
 ## The archive at a glance
 
-PME Treasure preserves **5,599 posts** and **380 contributor pages** spanning **2016–2025**. The routes above promote useful answers and examples; the original posts remain available as their source and context.
+PME Treasure preserves **5,599 posts** and **380 contributor pages** from **2016–2025**. The routes above lead to selected answers and examples; the original posts stay available as their source.
 
 - [[_Index/Browse|Browse by PME capability and idea]]
 - [[_Index/Timeline|Browse 20 preserved posts from each year]]

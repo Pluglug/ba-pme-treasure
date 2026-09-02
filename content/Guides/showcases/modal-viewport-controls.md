@@ -49,13 +49,13 @@ Shared by artleontiev, this experiment uses PME Modal controls to keep two viewp
   <a href="https://blenderartists.org/uploads/default/original/4X/c/7/0/c70f1eefd501cb64c7afa9e5b11726d6cdf3fc3b.mp4">Watch the original viewport-control recording.</a>
 </video>
 
-artleontiev modelled the light-rotation gesture on Marmoset Toolbag and Substance Painter. The point is not another popup. The gesture changes a live value while the artist stays in a fullscreen viewport. A later reply from StroBlend specifically called out the light-rotation gesture as useful, but it did not verify compatibility beyond the original setup.
+artleontiev modelled the light-rotation gesture on Marmoset Toolbag and Substance Painter. The gesture changes a live value while the artist stays in a fullscreen viewport. A later reply from StroBlend specifically called out the light-rotation gesture as useful, but it did not verify compatibility beyond the original setup.
 
 ## Pattern to borrow
 
-Use a modal interaction when the user benefits from continuous visual feedback and the adjusted value is naturally mapped to pointer movement. The best candidates are values that artists repeatedly tune by feel rather than enter numerically.
+Use a Modal operator for values you tune by eye rather than type: the pointer moves, the value changes, the viewport shows the result.
 
-Keep the gesture narrow: one motion, one value, a predictable sensitivity, and an obvious way to finish or cancel.
+One motion, one value, a predictable sensitivity, and a clear way to finish or cancel.
 
 ## What would need translating today
 

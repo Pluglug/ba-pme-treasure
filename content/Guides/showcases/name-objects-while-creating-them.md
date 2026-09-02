@@ -44,7 +44,7 @@ source_code_paths:
 
 ## What it solves
 
-MickHanks kept leaving newly added objects with generic names, then paid for it later when a scene became difficult to navigate. Their first solution combined an external script, a custom Tools panel, and a PME Popup Dialog. It worked, but the machinery was larger than the habit it was meant to correct.
+MickHanks kept leaving newly added objects with generic names, then paid for it later when a scene became difficult to navigate. Their first solution combined an external script, a custom Tools panel, and a PME Popup Dialog. It worked, but it was a lot of machinery for a small habit.
 
 roaoao, PME's original author, reduced the entire workflow to two actions with `input_box`: create the object, then ask for its name.
 
@@ -55,7 +55,7 @@ roaoao, PME's original author, reduced the entire workflow to two actions with `
 
 ## Current PME 2.1 recipe
 
-Put this in a trusted PME Command item:
+Put this in a PME Command item:
 
 ```python
 bpy.ops.mesh.primitive_cube_add(); input_box(prop="C.active_object.name")
@@ -63,22 +63,22 @@ bpy.ops.mesh.primitive_cube_add(); input_box(prop="C.active_object.name")
 
 PME 2.1 still exposes `input_box(func=None, prop=None)`. The current implementation invokes PME's input-box operator, and the current scripting reference uses `C.active_object.name` as its rename example. This was checked at `origin/pme2-dev@9fb992798b98` for PME 2.1, whose manifest requires Blender 4.5.0 or newer.
 
-Replace the cube operator with the object-creation action you actually use. Keep the naming prompt immediately after creation, while the intended object is still active.
+Replace the cube operator with the creation action you use. The prompt must come right after creation, while the new object is still active.
 
-## Why this is better than a cleanup command
+## Why prompt at creation
 
-This is a **commit-point prompt**. Naming is attached to the moment when the user has the most context and the object identity is unambiguous.
+You name the object while you still know what it is for, and there is no doubt which object is meant.
 
-- The prompt arrives before the user mentally leaves the creation task.
-- The active object supplies the target; there is no later selection hunt.
-- Naming becomes part of the successful action, not an optional housekeeping session.
-- One small interruption prevents a much larger search cost in Outliner, drivers, constraints, and scripts.
+- The prompt arrives before you move on.
+- The active object is the target, so there is nothing to select later.
+- Naming happens as part of the action instead of as later cleanup.
+- One small pause saves searching in the Outliner, drivers, constraints, and scripts later.
 
-MickHanks described the prompt's inconvenience as “the whole point.” That is the useful design judgment: add friction where it prevents a predictable, more expensive mistake.
+MickHanks described the prompt's inconvenience as “the whole point.”
 
-## When not to interrupt
+## When not to prompt
 
-Do not prompt after every generated object if the names are deterministic or objects are created in a batch. In those cases, derive names from a rule or collect naming once at the start. A micro-prompt is valuable only when the user can supply a meaningful name faster than automation can infer one.
+Skip the prompt when names follow a rule or objects are created in a batch. Derive the names from the rule, or ask once at the start.
 
 For validation, prefixes, or another custom response, current PME also accepts a callback:
 
@@ -86,7 +86,7 @@ For validation, prefixes, or another custom response, current PME also accepts a
 input_box(func=lambda value: overlay(value))
 ```
 
-Move substantial validation or scene mutation into a reviewed function or [[Guides/how-to/run-external-script-from-pme|external script]] rather than hiding it in a long one-line command.
+Put longer validation or scene changes in a function or [[Guides/how-to/run-external-script-from-pme|external script]] instead of a long one-line command.
 
 ## Original evolution
 

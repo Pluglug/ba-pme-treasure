@@ -45,13 +45,13 @@ mcjamall07 (post #4999) asked for a more advanced PME Property example. The answ
 
 ![A Blender viewport with a PME Transform Preset pie that combines orientation choices, snapping, and proportional-editing controls.](https://blenderartists.org/uploads/default/original/4X/1/6/1/161e70144b545e101e724e3aee548531116efdd9.jpeg)
 
-The menu mixes choices, live state, and property controls. It demonstrates that a Pie Menu can become a compact working surface rather than a ring of command shortcuts.
+The menu mixes choices, live state, and property controls in one pie instead of a ring of command shortcuts.
 
 ## Pattern to borrow
 
-Group controls by the Blender job they serve, even when Blender normally places those controls in different parts of the interface. Let the menu expose the current state where that state affects the next action.
+Group controls by the job, even when Blender keeps them in different panels, and show the current state where it affects the next action.
 
-This pattern transfers well to viewport display, sculpt settings, selection behavior, or any workflow built from a small family of related options.
+The same idea fits viewport display, sculpt settings, or selection options.
 
 ## What would need translating today
 
@@ -63,7 +63,7 @@ The attached JSON has not been imported into PME 2.1. Before treating it as a cu
 4. Rebuild the bindings when an old serialized item no longer maps cleanly to PME 2.1.
 5. Capture a current Blender result before promoting the example to current guidance.
 
-The design is reusable now; the historical configuration is not yet a current download recommendation.
+The idea is reusable now; the JSON has not been checked.
 
 ## Media and attachment
 

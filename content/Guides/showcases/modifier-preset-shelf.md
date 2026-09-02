@@ -55,13 +55,13 @@ The shelf places frequent modifier recipes—Bevel, Remesh, Decimate, Shrinkwrap
 
 ## Pattern to borrow
 
-Put a shortcut to a **recipe** beside the native object it will produce.
+Put a preset button next to the stack it adds to.
 
-This is more useful than a generic add-on toolbar because the result remains anchored to Blender's modifier context. It reduces repeated setup while leaving the real modifier stack visible for inspection and refinement.
+The preset saves repeated setup, and the real modifier stack stays visible below it.
 
 A good preset shelf should:
 
-- contain only recipes that save several repeated choices;
+- contain only presets that save several clicks;
 - use names and icons that match the resulting Blender concept;
 - keep destructive whole-stack actions separate from add-preset actions;
 - disappear or disable itself when the active object cannot use modifiers.
@@ -70,7 +70,7 @@ A good preset shelf should:
 
 The source conversation involved two other add-ons—Modifier List, used by both posters, and Modifier Tools, the source of the Apply All row—and Blender's 2.90 transition. Panel-extension behavior, custom-icon storage, button ordering, and restart behavior have not been reproduced with PME 2.1.
 
-A current version should rebuild the shelf as a supported PME panel surface, verify each modifier operator and default, and define what each “preset” changes beyond adding the modifier. It should also avoid depending on another add-on unless that dependency is stated on the page and handled when absent.
+A current version should rebuild the shelf as a PME panel, verify each modifier operator and default, and state what each preset changes beyond adding the modifier. If it depends on another add-on, say so.
 
 ## Media
 

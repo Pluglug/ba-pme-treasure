@@ -50,13 +50,11 @@ Shared by Gregg_Hartley in post 4327, which combined two things: screenshots of 
 
 ![A customized Blender workspace with PME buttons in editor headers and controls for opening and closing side areas.](https://blenderartists.org/uploads/default/original/4X/4/2/3/423a6ddd4718c3fa010707a9158397640435fd37.jpeg)
 
-The result was not one large command center. Each control was placed beside the region it affected, so the workspace itself became the map.
+Each control sits next to the region it affects.
 
 ## Why this can beat another shortcut
 
-A shortcut is fast after it has been learned, but invisible while it is being learned. A global menu is discoverable, but it makes users translate from a central list back to the affected editor.
-
-This setup used **location as the label**:
+A shortcut is invisible until learned. A global menu is visible, but you have to map each entry back to the editor it affects. Here the location does that job:
 
 | Control          | Location                         | What the placement communicates               |
 | ---------------- | -------------------------------- | --------------------------------------------- |
@@ -64,31 +62,31 @@ This setup used **location as the label**:
 | Viewport display | In the 3D View header            | The visible viewport will change immediately. |
 | Side-area toggle | Beside the owning workspace area | This boundary is what will open or close.     |
 
-That relationship reduces memorization. It also makes the control's result easy to inspect before taking the next action.
+You see what the control will change before you press it.
 
-## The deeper pattern
+## When to use which
 
-Use a visible extension when users benefit from seeing the target before and after activation. Use a Pie for high-frequency actions that should appear under the pointer and disappear immediately. Use a Popup Dialog for a compact task with several temporary parameters.
+Use a header button when seeing the target matters. Use a Pie for frequent actions that should appear under the pointer and vanish. Use a Popup Dialog for a small task with several temporary settings.
 
-A well-placed visible control usually has all three properties:
+A header control earns its place when:
 
 1. it has an obvious relationship to one editor or panel;
-2. it is used often enough to justify permanent pixels;
+2. it is used often enough to stay visible all the time;
 3. its label or icon remains understandable without opening documentation.
 
-This is how PME can make Blender feel more personal without making it feel like a different application.
+Blender still looks like Blender; only your own controls are added.
 
-## Do not turn every header into a toolbar
+## Headers fill up quickly
 
-Contextual placement can become clutter just as quickly as a giant Pie. If a row wraps, pushes Blender's native controls away, or mixes several unrelated jobs, move the lower-frequency actions back into a Pie or Popup Dialog.
+If a header row wraps, pushes Blender's own controls aside, or mixes unrelated jobs, move the less frequent actions into a Pie or Popup Dialog.
 
-Keep destructive and reversible actions visually distinct. A tiny icon in a crowded header is a poor place for an action whose scope is not obvious.
+Keep destructive actions visually distinct; a tiny icon in a crowded header is a poor place for one.
 
 ## What to borrow today
 
 The exact area operators, header arrangement, and screenshots belong to the 2022 setup. They have not been reproduced with PME 2.1 and Blender 4.5+.
 
-Rebuild one small extension against the target Blender version, then use it before adding another. [[Guides/how-to/add-blender-ui-with-interactive-panels|Interactive Panels can target compatible Blender panels, menus, and headers without making you find their identifiers first]].
+Rebuild one extension against your Blender version and use it before adding another. [[Guides/how-to/add-blender-ui-with-interactive-panels|Interactive Panels can target compatible Blender panels, menus, and headers without making you find their identifiers first]].
 
 ## More views
 

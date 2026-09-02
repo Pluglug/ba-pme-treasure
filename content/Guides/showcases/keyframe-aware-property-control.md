@@ -55,14 +55,14 @@ The solution is the maintainer's own example: Pluglug replied with a setup that 
 
 ## Pattern to borrow
 
-A useful control can combine four responsibilities without forcing all four into the menu item itself:
+One control can do four things, with the logic kept in a helper rather than in the menu item:
 
 1. read the Blender value;
 2. compare it with the current animation state;
 3. perform a focused action such as inserting a key;
 4. reflect the result with a state-aware icon.
 
-That separation can be reused for keyed custom properties, visibility controls, rig settings, and other values whose state matters as much as the action.
+The same split works for keyed custom properties, visibility, rig settings, and any value whose keyed state you want to see.
 
 ## What would need translating today
 

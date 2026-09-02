@@ -35,31 +35,29 @@ source_urls:
 
 ## What it shows
 
-PME scripting often starts with a deceptively difficult question: **what is the Blender property I am actually looking at, and what values does it accept here?**
+PME scripting often starts with one question: **which Blender property am I looking at, and what values does it accept here?**
 
 Shared by Pluglug, PME's current maintainer, as a customized build of roaoao's Context Browser add-on. The customization added actions for copying a complete property path, a property's current value, and a function path including its arguments. The screenshot shows the browser inspecting the active 3D View area and exposing the value-copy action beside the live property list.
 
 ![Context Browser inspecting Blender's active area, with controls for copying a property's path and current value.](https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png)
 
-For a property such as the viewport perspective, this makes the actual enum values visible in context instead of forcing the user to infer them from a tooltip or repeatedly search the API reference.
+For a property such as the viewport perspective, you see the real enum values in place instead of guessing from a tooltip or searching the API reference.
 
 ## Pattern to borrow
 
-Treat inspection as the first stage of PME authoring:
+Before building a control:
 
-1. Open the Blender editor and state where the desired control already works.
+1. Open the editor and state where the control already works in Blender.
 2. Inspect that area's live context.
-3. Capture the narrowest useful property path and its real values.
-4. Prototype one PME Property or command around that result.
-5. Test it again in every context where the menu will appear.
-
-This turns Context Browser into a bridge between **seeing a Blender setting** and **building a focused PME control for it**. The goal is not to paste every discovered path into a menu. It is to remove guesswork before designing the smallest useful control.
+3. Copy the property path and note its real values.
+4. Build one PME Property or command around it.
+5. Test it in every context where the menu will appear.
 
 ## What would need translating today
 
 The 2025 enhancement was distributed as a replacement Python file for Context Browser. That patch, Context Browser itself, and its interaction with PME 2.1 have not been tested here. Replacing files inside another add-on is therefore historical installation information, not a current recommendation.
 
-A current guide should first confirm a compatible Context Browser release or supported equivalent. Any copied path must still be checked for area, mode, active-object, and data-block assumptions before it is published as a PME example.
+Check for a compatible Context Browser release first. A copied path can still depend on the area, mode, active object, or data-block it was read from.
 
 ## Media and linked tool
 

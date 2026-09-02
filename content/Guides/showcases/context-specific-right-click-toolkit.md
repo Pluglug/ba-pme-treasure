@@ -64,11 +64,11 @@ In the follow-up, felipetorrents explained that everything was built from Popup 
 
 ## Pattern to borrow
 
-Keep the **location and grammar** stable while letting the content respond to context.
+Keep the menu's layout stable while its contents change with context.
 
 For example, snapping can remain on the same side in Object and Edit modes, while the detailed mesh or curve operations occupy the context-specific region. That consistency reduces search time without forcing irrelevant commands into every menu.
 
-The five screenshots also show why a showcase is useful: they expose the design system behind the setup—shared spacing, repeated groups, restrained labels, and mode-specific omissions—not just a list of commands.
+The five screenshots keep the same spacing and grouping in every variant; only the mode-specific commands change.
 
 ## What would need translating today
 
@@ -80,7 +80,7 @@ A current rebuild should:
 2. test every object-mode and object-type filter;
 3. separate PME-native actions from external add-on commands;
 4. remove unavailable actions without leaving empty visual groups;
-5. preserve the spatial grammar across each contextual variant.
+5. keep the same layout in each variant.
 
 ## Gallery
 

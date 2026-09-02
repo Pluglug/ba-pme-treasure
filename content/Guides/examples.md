@@ -13,9 +13,9 @@ review_status: owner-review-pending
 provenance_version: 1
 ---
 
-PME becomes easier to imagine when you can see a result before learning a feature name. Open whichever setup catches your eye; every card explains the reusable idea and leads back to the source conversation.
+These are real PME setups from the forum. Each card names the idea worth reusing and links to the source thread.
 
-## Pick a control surface you would like to steal
+## Group the controls for one task
 
 <div class="card-grid">
 
@@ -27,7 +27,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/showcases/transform-preset-control-surface|Open the showcase]] · shared by Pluglug (maintainer's own example) in reply to mcjamall07
 
-**Borrow this:** collect the live controls for one Blender task instead of scattering more command shortcuts around it.
+**Borrow this:** put the controls for one task in one menu instead of adding more separate shortcuts.
 
 **Historical · current compatibility unverified**
 
@@ -41,7 +41,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/showcases/sculpt-brush-palette|Open the showcase]] · question by you16_0823, solution by Motiomancer
 
-**Borrow this:** make a task palette feel native by reusing the host application's visual language.
+**Borrow this:** reuse Blender's own icons so the menu looks like part of Blender.
 
 **Historical · current compatibility unverified**
 
@@ -55,13 +55,13 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/how-to/create-a-pme-sidebar-panel-group|Build the current version]]
 
-**Borrow this:** organize a persistent surface by the job it supports, not by which add-on originally owns each control.
+**Borrow this:** group a sidebar panel by job, not by which add-on each control comes from.
 
 </div>
 
 </div>
 
-## Make the interface explain its own state
+## Show state in the control
 
 <div class="card-grid">
 
@@ -73,7 +73,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/showcases/keyframe-aware-property-control|Open the showcase]] · question by Nanomanpro, solution by Pluglug (maintainer's own example)
 
-**Borrow this:** let one compact control read, edit, key, and visibly report the state that matters.
+**Borrow this:** one small control can read a value, edit it, key it, and show whether it is keyed.
 
 **Historical · current compatibility unverified**
 
@@ -87,7 +87,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/how-to/make-a-property-editor-slider|Build the current version]]
 
-**Borrow this:** expose a useful Blender value beside the action that depends on it.
+**Borrow this:** put a Blender value next to the action that uses it.
 
 </div>
 
@@ -99,13 +99,13 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/how-to/adjust-pie-menu-spacing-and-theme|Tune the current settings]]
 
-**Borrow this:** simplify the menu first, then use spacing and Blender's theme to make its groups legible.
+**Borrow this:** trim the menu, then use spacing and theme colours to make its groups readable.
 
 </div>
 
 </div>
 
-## Stay in the work instead of opening another panel
+## Adjust without leaving the viewport
 
 <div class="card-grid">
 
@@ -120,7 +120,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/showcases/modal-viewport-controls|Open the showcase]] · shared by artleontiev
 
-**Borrow this:** map one continuously adjusted value to a gesture and keep visual feedback in the viewport.
+**Borrow this:** drive one value with a mouse gesture and watch it change in the viewport.
 
 **Historical · current compatibility unverified**
 
@@ -134,7 +134,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/how-to/open-pme-preferences-directly|Add the current command]]
 
-**Borrow this:** put the authoring surface one action away when a tiny popup is not enough room.
+**Borrow this:** open PME Preferences in a full window with one command.
 
 </div>
 
@@ -146,13 +146,13 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/qa/use-a-different-pie-in-each-node-editor|Build the current version]]
 
-**Borrow this:** preserve one piece of muscle memory while each editor receives the tools that belong there.
+**Borrow this:** keep one hotkey and give each Node Editor its own menu.
 
 </div>
 
 </div>
 
-## Bring controls to where the work is
+## Put controls where you use them
 
 <div class="card-grid">
 
@@ -162,9 +162,9 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A historical Blender workspace where context-sensitive Properties panels appear over the viewport](https://i.imgur.com/iHX1Vto.gif)](Guides/showcases/properties-editor-under-the-pointer)
 
-[[Guides/showcases/properties-editor-under-the-pointer|See how the summoned editor follows the selection]] · shared by fiendish55, with roaoao
+[[Guides/showcases/properties-editor-under-the-pointer|Open the showcase]] · shared by fiendish55, with roaoao
 
-**Borrow this:** call a large editor only when the task needs it, and let the current selection choose its first useful context.
+**Borrow this:** open a large panel only when needed, and let the selection decide what it shows.
 
 **Historical · current compatibility unverified**
 
@@ -176,9 +176,9 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![Modifier preset buttons placed beside Blender's native modifier stack](https://blenderartists.org/uploads/default/original/4X/3/1/9/319bdaa0f10f67144030ce99e3f05ce5b02a17fb.png)](Guides/showcases/modifier-preset-shelf)
 
-[[Guides/showcases/modifier-preset-shelf|See how presets sit beside the modifier stack]] · shared by Metin_Seven, with StroBlend
+[[Guides/showcases/modifier-preset-shelf|Open the showcase]] · shared by Metin_Seven, with StroBlend
 
-**Borrow this:** keep reusable recipes beside the native stack they create instead of hiding them in a distant menu.
+**Borrow this:** keep modifier presets next to the modifier stack they add to.
 
 **Historical · current compatibility unverified**
 
@@ -190,9 +190,9 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A customized Blender workspace with PME controls placed in several editor headers](https://blenderartists.org/uploads/default/original/4X/4/2/3/423a6ddd4718c3fa010707a9158397640435fd37.jpeg)](Guides/showcases/workspace-controls-in-blender-headers)
 
-[[Guides/showcases/workspace-controls-in-blender-headers|See how placement makes each control legible]] · shared by Gregg_Hartley
+[[Guides/showcases/workspace-controls-in-blender-headers|Open the showcase]] · shared by Gregg_Hartley
 
-**Borrow this:** place a control beside the region it changes so the workspace explains itself.
+**Borrow this:** put a control next to the area it changes.
 
 **Historical · current compatibility unverified**
 
@@ -200,7 +200,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 </div>
 
-## Design around the input habit
+## Design around how you press keys
 
 <div class="card-grid">
 
@@ -210,9 +210,9 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A large right-click PME toolkit with object, mesh, curve, transform, and shading actions](https://blenderartists.org/uploads/default/original/4X/f/0/7/f070053bf1033f6cf749bdb3cd4d14d3ac27cd8a.jpeg)](Guides/showcases/context-specific-right-click-toolkit)
 
-[[Guides/showcases/context-specific-right-click-toolkit|See how one right-click vocabulary follows context]] · shared by felipetorrents
+[[Guides/showcases/context-specific-right-click-toolkit|Open the showcase]] · shared by felipetorrents
 
-**Borrow this:** preserve one invocation habit while the available tools follow Blender's object and mode context.
+**Borrow this:** keep one right-click habit while the tools change with object type and mode.
 
 **Historical · current compatibility unverified**
 
@@ -224,9 +224,9 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A sculpting workspace with a large PME Pie Menu centered near the stylus cursor](https://blenderartists.org/uploads/default/original/4X/b/2/1/b2113dc3a43ac36c4d82f2f1bfb167da864de626.jpeg)](Guides/showcases/sculpt-from-one-pen-button)
 
-[[Guides/showcases/sculpt-from-one-pen-button|See how one pen button controls sculpting]] · shared by AlfredBaudisch
+[[Guides/showcases/sculpt-from-one-pen-button|Open the showcase]] · shared by AlfredBaudisch
 
-**Borrow this:** design the shortcut vocabulary around the physical device and keep the artist's other hand free.
+**Borrow this:** design around the device you actually hold; here, one pen button.
 
 **Historical · current compatibility unverified**
 
@@ -243,13 +243,13 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [[Guides/showcases/name-objects-while-creating-them|Build the current version]] · question by MickHanks, solution by roaoao
 
-**Borrow this:** add a small prompt at the moment it prevents a predictable, more expensive cleanup task.
+**Borrow this:** ask for a name right after creating the object, while it is still active.
 
 </div>
 
 </div>
 
-## Turn complexity into a readable surface
+## Large layouts and authoring aids
 
 <div class="card-grid">
 
@@ -259,7 +259,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![The Physics properties section shown as a wide Popup Dialog of about 42 labelled buttons above the Blender viewport](https://blenderartists.org/uploads/default/original/4X/a/8/e/a8e1536a16e04ca850afa003bb6026d7cb41d41b.PNG)](Guides/showcases/forty-two-button-popup-task-deck)
 
-[[Guides/showcases/forty-two-button-popup-task-deck|See emboo2's big-toolbar experiment]] · shared by emboo2
+[[Guides/showcases/forty-two-button-popup-task-deck|Open the showcase]] · shared by emboo2
 
 **Borrow this:** a Popup Dialog in an empty window can hold a large labelled panel. The 42 buttons were a capacity demonstration using the Physics panel, not a curated toolbar.
 
@@ -273,9 +273,9 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![Context Browser inspecting Blender's active area and exposing a property's path and value](https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png)](Guides/showcases/context-browser-for-pme-scripting)
 
-[[Guides/showcases/context-browser-for-pme-scripting|See how live inspection becomes a focused PME control]] · shared by Pluglug (maintainer's own example), based on roaoao's Context Browser
+[[Guides/showcases/context-browser-for-pme-scripting|Open the showcase]] · shared by Pluglug (maintainer's own example), based on roaoao's Context Browser
 
-**Borrow this:** inspect the live Blender value first, then build the smallest PME control around a path you have actually observed.
+**Borrow this:** find the property path and its real values first, then build the control.
 
 **Historical · current compatibility unverified**
 
@@ -289,7 +289,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 - [[Guides/how-to/temporarily-change-a-property-with-sticky-key|Borrow a property value while a key is held, then restore it]].
 - [[Guides/how-to/put-blender-header-menus-in-a-pie|Put Blender's familiar header menus inside a Pie Menu]].
 - [[Guides/how-to/group-framed-popup-dialog-sections|Compose a large Popup Dialog from framed child sections]] — **Historical · current compatibility unverified**.
-- [[Guides/how-to/open-a-temporary-editor-with-popup-area|Summon a temporary Blender editor only when the workflow needs it]].
+- [[Guides/how-to/open-a-temporary-editor-with-popup-area|Open a temporary Blender editor in a popup]].
 - [[Guides/trails/from-shortcuts-to-workflow-tools|Follow eight resolved conversations from shortcuts to stateful workflow tools]].
 
 ## Find another example

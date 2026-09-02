@@ -15,9 +15,9 @@ source_posts:
   - Posts/2016/post_00001
 ---
 
-Pie Menu Editor is a workflow builder for Blender. A Pie Menu is the easiest place to begin, but the same system can combine operations, expose useful properties, change behavior by context, or create a small working surface around the way you use Blender.
+Pie Menu Editor is a workflow builder for Blender. A Pie Menu is the easiest place to begin, but the same system can combine operations, expose useful properties, change behavior by context, or put a small panel of your own controls where you work.
 
-Do not learn every PME feature first. Choose one piece of friction you would like to remove.
+Pick one thing that slows you down in Blender and start there.
 
 ## Choose one small win
 
@@ -41,7 +41,7 @@ Build a small Pie Menu for one job: transforms, selection, viewport display, or 
 
 ### Turn a repeated sequence into one action
 
-Use a Macro when the same two or three Blender operations naturally belong together.
+Use a Macro when you always run the same two or three operations together.
 
 - [[Guides/qa/run-a-macro-from-a-pme-item|Run a Macro from a menu or panel item]]
 - [[Guides/how-to/run-external-script-from-pme|Move longer logic into an external script]]
@@ -50,11 +50,11 @@ Use a Macro when the same two or three Blender operations naturally belong toget
 
 <div class="nav-card showcase">
 
-### Gather related controls into one surface
+### Gather related controls in one place
 
 PME can expose properties and panels, not only launch commands.
 
-- [[Guides/showcases/transform-preset-control-surface|See the Transform Preset control surface]]
+- [[Guides/showcases/transform-preset-control-surface|See the Transform Preset]]
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a Sidebar Panel Group]]
 - [[Guides/how-to/make-a-property-editor-slider|Make a Property slider]]
 - [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Put editable object dimensions in a PME layout]]
@@ -77,7 +77,7 @@ Once the basic menu feels natural, try repeated presses or press-and-release beh
 
 ### Make authoring pleasant
 
-Small usability changes matter once a menu becomes part of daily work.
+Small adjustments that help once you use a menu every day.
 
 - [[Guides/how-to/adjust-pie-menu-spacing-and-theme|Adjust Pie Menu spacing and Blender theme colours]]
 - [[Guides/how-to/add-blender-ui-with-interactive-panels|Point at Blender UI and reuse or extend it with PME]]
@@ -96,18 +96,16 @@ Build one small Pie Menu for a real Blender task:
 2. Give the menu a job-based name such as `Transform`, `Sculpt Brushes`, or `Viewport`.
 3. Add only those actions and assign an unused shortcut.
 4. Use the menu during an actual work session.
-5. Remove anything you never choose. Add a submenu only when the first menu becomes crowded.
+5. Drop anything you never pick. Add a submenu when the first menu gets crowded.
 
-The goal is not to reproduce Blender’s interface. The goal is to remove one piece of friction from your own workflow.
-
-When a PME label or an older forum abbreviation is unfamiliar, use [[Guides/terminology|PME Terms You Will Meet]] after choosing the project; you do not need to learn the vocabulary first.
+If a PME label or an old forum abbreviation is unfamiliar, look it up in [[Guides/terminology|PME Terms You Will Meet]].
 
 ## See the range before choosing
 
 - [[Guides/examples|Examples and Showcases]] starts from concrete setups and explains the pattern behind them.
 - [[Guides/showcases/name-objects-while-creating-them|Name an object while creating it]] shows how a two-action idea can prevent later cleanup.
 - The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) introduces menus, dialogs, shortcut behaviors, automation, panels, and properties.
-- [[Posts/2016/post_00001|The original Post 1]] is still the clearest historical tour of the ideas behind PME.
+- [[Posts/2016/post_00001|The original Post 1]] is a good historical tour of the ideas behind PME.
 - The [original PME documentation archive](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/) preserves the historical editor reference and terminology.
 - The [original video playlist](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg) shows menus, dialogs, Macros, Stack Keys, and Sticky Keys in motion.
 
@@ -157,4 +155,4 @@ The original post and videos show earlier PME and Blender interfaces. Use them f
 
 ## Installation and updates
 
-Use the [current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html) for the PME version you are installing. If you already have an older PME setup, use [[Guides/how-to/migrate-pme-to-2-1-safely|the migration and backup procedure]] after you have seen what PME can build—not as the introduction to it.
+Use the [current installation instructions](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html) for the PME version you are installing. If you already have an older PME setup, use [[Guides/how-to/migrate-pme-to-2-1-safely|the migration and backup procedure]].
