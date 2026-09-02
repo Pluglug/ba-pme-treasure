@@ -47,11 +47,11 @@ source_urls:
 
 ## What it shows
 
-This result emerged through a useful five-post progression: notice an appealing modifier toolbar, ask whether PME can extend the panel, learn how to arrange a horizontal row and use custom icons, then share the working result.
+This result emerged through a five-post exchange: Metin_Seven noticed StroBlend's modifier toolbar, asked whether PME can extend the panel, learned from StroBlend how to arrange a horizontal row and use custom icons, then shared the working result.
 
 ![Blender's Modifier Properties with a two-column shelf of Bevel, Remesh, Decimate, Shrinkwrap, Mirror, and other preset actions above the native stack.](https://blenderartists.org/uploads/default/original/4X/3/1/9/319bdaa0f10f67144030ce99e3f05ce5b02a17fb.png)
 
-The shelf places frequent modifier recipes—Bevel, Remesh, Decimate, Shrinkwrap, Displace, Solidify, Mirror, and Subdivision—above the native stack. It also collects stack-wide actions such as Apply All and Toggle Stack. Custom icons make the recipes recognizable without inventing a separate visual language.
+The shelf places frequent modifier recipes—Bevel, Remesh, Decimate, Shrinkwrap, Displace, Solidify, Mirror, and Subdivision—above the native stack. The Apply All and other stack-wide buttons visible below the presets belong to Blender's Modifier Tools add-on, not to the PME shelf; after a restart they moved beneath Metin_Seven's preset row. Custom icons make the recipes recognizable without inventing a separate visual language.
 
 ## Pattern to borrow
 
@@ -68,7 +68,7 @@ A good preset shelf should:
 
 ## What would need translating today
 
-The source conversation involved the third-party Modifier List add-on and Blender's 2.90 transition. Panel-extension behavior, custom-icon storage, button ordering, and restart behavior have not been reproduced with PME 2.1.
+The source conversation involved two other add-ons—Modifier List, used by both posters, and Modifier Tools, the source of the Apply All row—and Blender's 2.90 transition. Panel-extension behavior, custom-icon storage, button ordering, and restart behavior have not been reproduced with PME 2.1.
 
 A current version should rebuild the shelf as a supported PME panel surface, verify each modifier operator and default, and define what each “preset” changes beyond adding the modifier. It should also avoid depending on another add-on unless that dependency is stated on the page and handled when absent.
 
@@ -80,8 +80,8 @@ A current version should rebuild the shelf as a supported PME panel surface, ver
 
 ## Sources
 
-- [[Posts/2020/post_03387|Post 3387 — asking how the modifier favourites were made]]
-- [[Posts/2020/post_03388|Post 3388 — panel-extension direction]]
-- [[Posts/2020/post_03389|Post 3389 — row and icon questions]]
-- [[Posts/2020/post_03390|Post 3390 — row-layout GIF and custom-icon answer]]
-- [[Posts/2020/post_03391|Post 3391 — finished modifier preset shelf]]
+- [[Posts/2020/post_03387|Post 3387 — Metin_Seven asks how the modifier favourites were made]]
+- [[Posts/2020/post_03388|Post 3388 — StroBlend points to panel extension]]
+- [[Posts/2020/post_03389|Post 3389 — Metin_Seven's row and icon questions]]
+- [[Posts/2020/post_03390|Post 3390 — StroBlend's row-layout GIF and custom-icon answer]]
+- [[Posts/2020/post_03391|Post 3391 — Metin_Seven's finished modifier preset shelf]]

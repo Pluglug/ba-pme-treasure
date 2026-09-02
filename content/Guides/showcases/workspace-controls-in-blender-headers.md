@@ -27,10 +27,12 @@ media_sources:
   - "https://blenderartists.org/uploads/default/original/4X/2/d/7/2d77b39251c0ec78431a99ffd18462cac798a671.jpeg"
 source_posts:
   - Posts/2022/post_04327
+  - Posts/2022/post_04328
   - Posts/2022/post_04329
   - Posts/2022/post_04330
 source_urls:
   - "https://blenderartists.org/t/662456/4327"
+  - "https://blenderartists.org/t/662456/4328"
   - "https://blenderartists.org/t/662456/4329"
   - "https://blenderartists.org/t/662456/4330"
 ---
@@ -40,7 +42,7 @@ source_urls:
 
 ## What it shows
 
-This setup used PME to distribute a few workspace controls around the Blender interface:
+Shared by Gregg_Hartley in post 4327, which combined two things: screenshots of an existing PME customization, and a separate request for a way to open an area at the bottom of the screen as well. When impacman asked how the buttons were made, Gregg_Hartley explained in post 4329 that PME distributed a few workspace controls around the Blender interface:
 
 - buttons opened and closed left and right side areas;
 - import and export actions sat above the Outliner;
@@ -95,6 +97,7 @@ Rebuild one small extension against the target Blender version, then use it befo
 
 ## Sources
 
-- [[Posts/2022/post_04327|Post 4327 — side-area request and workspace screenshots]]
-- [[Posts/2022/post_04329|Post 4329 — explanation of the distributed controls]]
-- [[Posts/2022/post_04330|Post 4330 — another user confirms the idea was reproducible]]
+- [[Posts/2022/post_04327|Post 4327 — Gregg_Hartley's workspace screenshots and bottom-area request]]
+- [[Posts/2022/post_04328|Post 4328 — impacman asks how the buttons were made]]
+- [[Posts/2022/post_04329|Post 4329 — Gregg_Hartley explains the distributed controls]]
+- [[Posts/2022/post_04330|Post 4330 — impacman thanks Gregg_Hartley for the idea]]

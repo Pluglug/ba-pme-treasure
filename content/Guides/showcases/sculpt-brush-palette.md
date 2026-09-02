@@ -42,11 +42,11 @@ source_urls:
 
 ## What it shows
 
-A user wanted Blender's own sculpt-brush icons in PME instead of small imported PNGs. The answer located the brush icon through Blender's tool system and paired it with the matching brush-selection command. The follow-up shows the completed palette in use:
+you16_0823 wanted Blender's own sculpt-brush icons in PME instead of imported PNGs, which came out too small. Motiomancer's answer located the brush icon through Blender's tool system and paired it with the matching brush-selection command. The follow-up shows the completed palette in use:
 
 ![A character sculpt in Blender with an icon-labelled PME Pie Menu for Draw, Grab, Clay Strips, Scrape, Inflate, and other sculpt brushes.](https://blenderartists.org/uploads/default/original/4X/6/2/c/62c108ac4cd5c71973842aadde5d6dd302c9cca5.jpeg)
 
-The result puts frequently used brushes around one shortcut while retaining Blender's visual vocabulary. The requester confirmed that the menu worked and shared additional brush examples.
+The result puts frequently used brushes around one shortcut while retaining Blender's visual vocabulary. you16_0823 confirmed that the menu worked and shared additional brush examples.
 
 ## Pattern to borrow
 
@@ -76,6 +76,6 @@ The old command is evidence of the design, not copy-ready PME 2.1 guidance.
 
 ## Sources
 
-- [[Posts/2022/post_04473|Post 4473 — request for Blender sculpt-brush icons]]
-- [[Posts/2022/post_04475|Post 4475 — historical icon and tool-selection construction]]
-- [[Posts/2022/post_04478|Post 4478 — completed palette and success confirmation]]
+- [[Posts/2022/post_04473|Post 4473 — you16_0823 asks for Blender's sculpt-brush icons]]
+- [[Posts/2022/post_04475|Post 4475 — Motiomancer's icon and tool-selection construction]]
+- [[Posts/2022/post_04478|Post 4478 — you16_0823's completed palette and confirmation]]

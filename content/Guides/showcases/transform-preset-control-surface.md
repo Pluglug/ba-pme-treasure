@@ -36,7 +36,7 @@ source_urls:
 
 ## What it shows
 
-Post #4999 asked for a more advanced PME Property example. The answer was not an abstract demonstration, but a usable **Transform Preset** that collects four parts of one Blender task:
+mcjamall07 (post #4999) asked for a more advanced PME Property example. The answer is the maintainer's own example: Pluglug replied with a **Transform Preset** built mostly from PME Properties and created primarily to show how boolean properties can visually highlight the active state. It collects four parts of one Blender task:
 
 - transform orientation;
 - transform pivot point;
@@ -72,5 +72,5 @@ The design is reusable now; the historical configuration is not yet a current do
 
 ## Sources
 
-- [[Posts/2024/post_04999|Post 4999 — request for an advanced PME Property example]]
-- [[Posts/2024/post_05000|Post 5000 — Transform Preset, image, and JSON]]
+- [[Posts/2024/post_04999|Post 4999 — mcjamall07's request for an advanced PME Property example]]
+- [[Posts/2024/post_05000|Post 5000 — Pluglug's Transform Preset, image, and JSON]]

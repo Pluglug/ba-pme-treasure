@@ -46,11 +46,11 @@ source_urls:
 
 ## What it shows
 
-This is not one enormous menu reused everywhere. It is a family of menus that preserves one right-click vocabulary while changing the available tools for the current Blender task.
+Shared by felipetorrents as their own version of Wazou's right-click pie menu, with Wazou's operators being migrated into a personal add-on. This is not one enormous menu reused everywhere. It is a family of menus that preserves one right-click vocabulary while changing the available tools for the current Blender task.
 
 ![A large right-click PME toolkit for Blender Object Mode, combining snapping, parenting, modifiers, object creation, imports, and related actions.](https://blenderartists.org/uploads/default/original/4X/f/0/7/f070053bf1033f6cf749bdb3cd4d14d3ac27cd8a.jpeg)
 
-The author published separate views for:
+felipetorrents published separate views for:
 
 - Object Mode;
 - Mesh Edit Mode;
@@ -60,7 +60,7 @@ The author published separate views for:
 
 ![A right-click PME toolkit for Mesh Edit Mode with mesh operations grouped around a consistent central layout.](https://blenderartists.org/uploads/default/original/4X/b/4/9/b4911b4ae8c9d69a542a4fe689f0f83fd1525021.jpeg)
 
-The follow-up clarifies the construction: most groups were Popup Dialogs filtered by object mode and type; the Camera Lister was a panel. Some modal actions came from the author's separate add-on and were not claimed as PME-only behavior.
+In the follow-up, felipetorrents explained that everything was built from Popup Dialogs except the Camera Lister, which is a panel, and that the pie menus were filtered by object mode and type. The modal actions came from felipetorrents's own add-on and were not claimed as PME-only behavior.
 
 ## Pattern to borrow
 
@@ -72,7 +72,7 @@ The five screenshots also show why a showcase is useful: they expose the design 
 
 ## What would need translating today
 
-The source reports a 2022 keymap problem in which a configured click-drag binding could appear as press after PME edits. It also combines PME content with HOps and a personal add-on. None of those dependencies or bindings have been reproduced with PME 2.1.
+The source reports a 2022 keymap problem in which a configured click-drag binding could appear as press after PME edits. felipetorrents also described migrating Wazou's operators into a personal add-on, so some actions may rely on that add-on rather than on PME alone. None of those dependencies or bindings have been reproduced with PME 2.1.
 
 A current rebuild should:
 
@@ -92,8 +92,8 @@ A current rebuild should:
 
 ## Sources
 
-- [[Posts/2022/post_04527|Post 4527 — five-menu showcase and interaction notes]]
-- [[Posts/2022/post_04535|Post 4535 — question about the building blocks]]
-- [[Posts/2022/post_04536|Post 4536 — Popup Dialog, panel, and context-filter explanation]]
-- [[Posts/2022/post_04542|Post 4542 — question about modal actions]]
-- [[Posts/2022/post_04543|Post 4543 — external modal dependency clarified]]
+- [[Posts/2022/post_04527|Post 4527 — felipetorrents's five-menu showcase and interaction notes]]
+- [[Posts/2022/post_04535|Post 4535 — tmcthree asks about the building blocks]]
+- [[Posts/2022/post_04536|Post 4536 — felipetorrents explains the Popup Dialogs, the panel, and the context filters]]
+- [[Posts/2022/post_04542|Post 4542 — samblendersam asks about the modal actions]]
+- [[Posts/2022/post_04543|Post 4543 — felipetorrents clarifies the external modal dependency]]

@@ -25,7 +25,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A Transform Preset pie combining orientation, pivot, snapping, and proportional editing](https://blenderartists.org/uploads/default/original/4X/1/6/1/161e70144b545e101e724e3aee548531116efdd9.jpeg)](Guides/showcases/transform-preset-control-surface)
 
-[[Guides/showcases/transform-preset-control-surface|Open the showcase]]
+[[Guides/showcases/transform-preset-control-surface|Open the showcase]] · shared by Pluglug (maintainer's own example) in reply to mcjamall07
 
 **Borrow this:** collect the live controls for one Blender task instead of scattering more command shortcuts around it.
 
@@ -39,7 +39,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A character sculpt with an icon-labelled Pie Menu for Blender sculpt brushes](https://blenderartists.org/uploads/default/original/4X/6/2/c/62c108ac4cd5c71973842aadde5d6dd302c9cca5.jpeg)](Guides/showcases/sculpt-brush-palette)
 
-[[Guides/showcases/sculpt-brush-palette|Open the showcase]]
+[[Guides/showcases/sculpt-brush-palette|Open the showcase]] · question by you16_0823, solution by Motiomancer
 
 **Borrow this:** make a task palette feel native by reusing the host application's visual language.
 
@@ -71,7 +71,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![An animated alpha control changing transparency and reflecting keyframe state](https://blenderartists.org/uploads/default/original/4X/8/0/7/8075b369c982d396a59aab6da12cd2f0238aece2.gif)](Guides/showcases/keyframe-aware-property-control)
 
-[[Guides/showcases/keyframe-aware-property-control|Open the showcase]]
+[[Guides/showcases/keyframe-aware-property-control|Open the showcase]] · question by Nanomanpro, solution by Pluglug (maintainer's own example)
 
 **Borrow this:** let one compact control read, edit, key, and visibly report the state that matters.
 
@@ -118,7 +118,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
   <a href="https://blenderartists.org/uploads/default/original/4X/c/7/0/c70f1eefd501cb64c7afa9e5b11726d6cdf3fc3b.mp4">Watch the original recording.</a>
 </video>
 
-[[Guides/showcases/modal-viewport-controls|Open the showcase]]
+[[Guides/showcases/modal-viewport-controls|Open the showcase]] · shared by artleontiev
 
 **Borrow this:** map one continuously adjusted value to a gesture and keep visual feedback in the viewport.
 
@@ -162,7 +162,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A historical Blender workspace where context-sensitive Properties panels appear over the viewport](https://i.imgur.com/iHX1Vto.gif)](Guides/showcases/properties-editor-under-the-pointer)
 
-[[Guides/showcases/properties-editor-under-the-pointer|See how the summoned editor follows the selection]]
+[[Guides/showcases/properties-editor-under-the-pointer|See how the summoned editor follows the selection]] · shared by fiendish55, with roaoao
 
 **Borrow this:** call a large editor only when the task needs it, and let the current selection choose its first useful context.
 
@@ -176,7 +176,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![Modifier preset buttons placed beside Blender's native modifier stack](https://blenderartists.org/uploads/default/original/4X/3/1/9/319bdaa0f10f67144030ce99e3f05ce5b02a17fb.png)](Guides/showcases/modifier-preset-shelf)
 
-[[Guides/showcases/modifier-preset-shelf|See how presets sit beside the modifier stack]]
+[[Guides/showcases/modifier-preset-shelf|See how presets sit beside the modifier stack]] · shared by Metin_Seven, with StroBlend
 
 **Borrow this:** keep reusable recipes beside the native stack they create instead of hiding them in a distant menu.
 
@@ -190,7 +190,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A customized Blender workspace with PME controls placed in several editor headers](https://blenderartists.org/uploads/default/original/4X/4/2/3/423a6ddd4718c3fa010707a9158397640435fd37.jpeg)](Guides/showcases/workspace-controls-in-blender-headers)
 
-[[Guides/showcases/workspace-controls-in-blender-headers|See how placement makes each control legible]]
+[[Guides/showcases/workspace-controls-in-blender-headers|See how placement makes each control legible]] · shared by Gregg_Hartley
 
 **Borrow this:** place a control beside the region it changes so the workspace explains itself.
 
@@ -210,7 +210,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A large right-click PME toolkit with object, mesh, curve, transform, and shading actions](https://blenderartists.org/uploads/default/original/4X/f/0/7/f070053bf1033f6cf749bdb3cd4d14d3ac27cd8a.jpeg)](Guides/showcases/context-specific-right-click-toolkit)
 
-[[Guides/showcases/context-specific-right-click-toolkit|See how one right-click vocabulary follows context]]
+[[Guides/showcases/context-specific-right-click-toolkit|See how one right-click vocabulary follows context]] · shared by felipetorrents
 
 **Borrow this:** preserve one invocation habit while the available tools follow Blender's object and mode context.
 
@@ -224,7 +224,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![A sculpting workspace with a large PME Pie Menu centered near the stylus cursor](https://blenderartists.org/uploads/default/original/4X/b/2/1/b2113dc3a43ac36c4d82f2f1bfb167da864de626.jpeg)](Guides/showcases/sculpt-from-one-pen-button)
 
-[[Guides/showcases/sculpt-from-one-pen-button|See how one pen button controls sculpting]]
+[[Guides/showcases/sculpt-from-one-pen-button|See how one pen button controls sculpting]] · shared by AlfredBaudisch
 
 **Borrow this:** design the shortcut vocabulary around the physical device and keep the artist's other hand free.
 
@@ -241,7 +241,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
   <a href="https://blenderartists.org/uploads/default/original/4X/9/7/2/97260c4bbe1ffd922d34b58998381f081f2771ec.mp4">Watch the create-and-name demonstration.</a>
 </video>
 
-[[Guides/showcases/name-objects-while-creating-them|Build the current version]]
+[[Guides/showcases/name-objects-while-creating-them|Build the current version]] · question by MickHanks, solution by roaoao
 
 **Borrow this:** add a small prompt at the moment it prevents a predictable, more expensive cleanup task.
 
@@ -255,13 +255,13 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 <div class="nav-card showcase">
 
-### A 42-button task deck
+### A 42-button Popup Dialog
 
-[![A wide six-row task deck containing 42 labelled buttons above the Blender viewport](https://blenderartists.org/uploads/default/original/4X/a/8/e/a8e1536a16e04ca850afa003bb6026d7cb41d41b.PNG)](Guides/showcases/forty-two-button-popup-task-deck)
+[![The Physics properties section shown as a wide Popup Dialog of about 42 labelled buttons above the Blender viewport](https://blenderartists.org/uploads/default/original/4X/a/8/e/a8e1536a16e04ca850afa003bb6026d7cb41d41b.PNG)](Guides/showcases/forty-two-button-popup-task-deck)
 
-[[Guides/showcases/forty-two-button-popup-task-deck|See how a temporary task deck replaces menu overload]]
+[[Guides/showcases/forty-two-button-popup-task-deck|See emboo2's big-toolbar experiment]] · shared by emboo2
 
-**Borrow this:** borrow the temporary, task-specific surface—not the button count. Move a dense labelled toolset into a deliberate popup instead of forcing every action into a Pie.
+**Borrow this:** a Popup Dialog in an empty window can hold a large labelled panel. The 42 buttons were a capacity demonstration using the Physics panel, not a curated toolbar.
 
 **Historical · current compatibility unverified**
 
@@ -273,7 +273,7 @@ PME becomes easier to imagine when you can see a result before learning a featur
 
 [![Context Browser inspecting Blender's active area and exposing a property's path and value](https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png)](Guides/showcases/context-browser-for-pme-scripting)
 
-[[Guides/showcases/context-browser-for-pme-scripting|See how live inspection becomes a focused PME control]]
+[[Guides/showcases/context-browser-for-pme-scripting|See how live inspection becomes a focused PME control]] · shared by Pluglug (maintainer's own example), based on roaoao's Context Browser
 
 **Borrow this:** inspect the live Blender value first, then build the smallest PME control around a path you have actually observed.
 

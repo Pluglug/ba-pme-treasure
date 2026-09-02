@@ -56,7 +56,7 @@ source_urls:
 
 ## What it changed
 
-The experiment began with a simple question: if PME could draw Blender panels in a popup, did the Properties editor need to occupy a permanent column at all?
+fiendish55's experiment began with a simple question: if PME could draw Blender panels in a popup, did the Properties editor need to occupy a permanent column at all? The stated goal was a full replacement of the Properties panel, called by hotkey under the cursor, that takes the current selection into account.
 
 ![A Blender 2.79 viewport filling the workspace while a PME popup recreates context-sensitive Properties panels under the pointer.](https://i.imgur.com/iHX1Vto.gif)
 
@@ -77,7 +77,7 @@ It works best for inspection and occasional adjustment. A permanently visible ed
 
 ## The conversation found the boundary
 
-The archive did not prove that every Properties panel could be transplanted safely. The first shared version had missing Texture sections. Later work fixed Material and World texture subcategories, but an "Other" category was described as hardcoded. A later missing-panel report was traced to the Cycles add-on being disabled; the maintainer suggested enabling it immediately and planned to hide those unavailable red buttons outside debug mode in the next version. The requester’s follow-up after that answer is not preserved here.
+The archive did not prove that every Properties panel could be transplanted safely. The first shared version had missing Texture sections. Later work fixed Material and World texture subcategories, but an "Other" category was described as hardcoded. A later missing-panel report was traced to the Cycles add-on being disabled; roaoao suggested enabling it and planned to hide those red buttons when debug mode is off in the next version. fiendish55's follow-up after that answer is not preserved here.
 
 That failure mode matters: a panel is not just its visible controls. It can depend on its original editor, render engine, active object, add-ons, and Blender's internal polling rules. Recreating an entire Properties editor therefore accumulates compatibility work much faster than borrowing a few stable panels.
 
@@ -101,14 +101,14 @@ For current PME 2.1 building blocks, see [[Guides/reference/panel-function-curre
 
 ## Sources
 
-- [[Posts/2017/post_00850|Post 850 — panels collected in a popup and a request for a quieter header]]
-- [[Posts/2017/post_00851|Post 851 — the all-Properties popup recognized as a useful direction]]
-- [[Posts/2017/post_00855|Post 855 — fullscreen interface demonstration]]
-- [[Posts/2017/post_00860|Post 860 — optional auto-hide and floating behavior]]
-- [[Posts/2017/post_00873|Post 873 — the context-sensitive replacement goal]]
-- [[Posts/2017/post_00880|Post 880 — first shared configuration and known Texture limitation]]
-- [[Posts/2018/post_01200|Post 1200 — request to revisit the unfinished replacement]]
-- [[Posts/2018/post_01202|Post 1202 — hardcoded-panel limit and planned fixes]]
-- [[Posts/2018/post_01210|Post 1210 — Material and World subcategory fix]]
-- [[Posts/2018/post_01211|Post 1211 — updated configuration and demonstration]]
-- [[Posts/2018/post_01213|Post 1213 — example-page promotion and missing-panel troubleshooting]]
+- [[Posts/2017/post_00850|Post 850 — fiendish55 collects panels in a popup and asks for a quieter header]]
+- [[Posts/2017/post_00851|Post 851 — roaoao recognizes the all-Properties popup as a useful direction]]
+- [[Posts/2017/post_00855|Post 855 — fiendish55's fullscreen interface demonstration]]
+- [[Posts/2017/post_00860|Post 860 — fiendish55 on optional auto-hide and floating behavior]]
+- [[Posts/2017/post_00873|Post 873 — fiendish55 states the context-sensitive replacement goal]]
+- [[Posts/2017/post_00880|Post 880 — fiendish55's first shared configuration and known Texture limitation]]
+- [[Posts/2018/post_01200|Post 1200 — fiendish55 revisits the unfinished replacement]]
+- [[Posts/2018/post_01202|Post 1202 — roaoao on the hardcoded-panel limit and planned fixes]]
+- [[Posts/2018/post_01210|Post 1210 — roaoao's Material and World subcategory fix]]
+- [[Posts/2018/post_01211|Post 1211 — fiendish55's updated configuration and demonstration]]
+- [[Posts/2018/post_01213|Post 1213 — roaoao promotes the example and troubleshoots the missing panels]]

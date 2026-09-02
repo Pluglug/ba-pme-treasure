@@ -37,7 +37,7 @@ source_urls:
 
 PME scripting often starts with a deceptively difficult question: **what is the Blender property I am actually looking at, and what values does it accept here?**
 
-The linked Context Browser customization added actions for copying a complete property path, a property's current value, and a function path including its arguments. The screenshot shows the browser inspecting the active 3D View area and exposing the value-copy action beside the live property list.
+Shared by Pluglug, PME's current maintainer, as a customized build of roaoao's Context Browser add-on. The customization added actions for copying a complete property path, a property's current value, and a function path including its arguments. The screenshot shows the browser inspecting the active 3D View area and exposing the value-copy action beside the live property list.
 
 ![Context Browser inspecting Blender's active area, with controls for copying a property's path and current value.](https://blenderartists.org/uploads/default/original/4X/1/b/3/1b3275dd7f75c65346b671c060b492b62f6e6df4.png)
 
@@ -69,4 +69,4 @@ A current guide should first confirm a compatible Context Browser release or sup
 
 ## Source
 
-- [[Posts/2025/post_05489|Post 5489 — why Context Browser is useful beside PME]]
+- [[Posts/2025/post_05489|Post 5489 — Pluglug shares the Context Browser customization and explains why it is useful beside PME]]

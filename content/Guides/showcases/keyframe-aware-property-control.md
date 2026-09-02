@@ -47,11 +47,11 @@ source_issues:
 
 ## What it shows
 
-The conversation begins with a practical animation need: adjust only an object's alpha channel, key that value, and see whether the current value matches the key at the current frame.
+The conversation begins with Nanomanpro's animation need: adjust only an object's alpha channel, key that value, and see whether the current value matches the key at the current frame.
 
 ![An animated Blender Shading workspace where a custom alpha control changes an object's transparency while its material node setup remains visible.](https://blenderartists.org/uploads/default/original/4X/8/0/7/8075b369c982d396a59aab6da12cd2f0238aece2.gif)
 
-The proposed setup moved the complex logic into a Python helper, exposed an instance to PME, and used a Boolean PME Property as a compact keyframe control. A custom menu item then chose its icon from the current keyframe state. The requester confirmed that the result improved the workflow.
+The solution is the maintainer's own example: Pluglug replied with a setup that moved the complex logic into a Python helper, exposed an instance to PME, and used a Boolean PME Property as a compact keyframe control. A custom menu item then chose its icon from the current keyframe state. Nanomanpro confirmed that the result improved the workflow.
 
 ## Pattern to borrow
 
@@ -79,8 +79,8 @@ A current implementation needs to be redesigned around the supported PME 2.1 pub
 
 ## Sources
 
-- [[Posts/2023/post_04785|Post 4785 — initial PME Property direction]]
-- [[Posts/2023/post_04786|Post 4786 — alpha-animation use case and GIF]]
-- [[Posts/2023/post_04787|Post 4787 — keyframe requirement clarified]]
-- [[Posts/2023/post_04797|Post 4797 — helper, Property, and state-aware control]]
-- [[Posts/2023/post_04798|Post 4798 — requester confirmation]]
+- [[Posts/2023/post_04785|Post 4785 — Pluglug's initial PME Property direction]]
+- [[Posts/2023/post_04786|Post 4786 — Nanomanpro's alpha-animation use case and GIF]]
+- [[Posts/2023/post_04787|Post 4787 — Pluglug clarifies the keyframe requirement]]
+- [[Posts/2023/post_04797|Post 4797 — Pluglug's helper, Property, and state-aware control]]
+- [[Posts/2023/post_04798|Post 4798 — Nanomanpro's confirmation]]

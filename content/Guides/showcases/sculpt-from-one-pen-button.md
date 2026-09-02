@@ -44,7 +44,7 @@ source_urls:
 
 ## The constraint came first
 
-The author was using Blender on a 24-inch pen display and could not comfortably reach a keyboard while drawing. Their PME setup did not begin as a prettier menu. It began as an answer to a physical input problem: keep the pen in hand, keep attention on the sculpture, and bring the working controls to one display button.
+AlfredBaudisch was using Blender on a 24-inch pen display and could not comfortably reach a keyboard while drawing. Their PME setup did not begin as a prettier menu. It began as an answer to a physical input problem: keep the pen in hand, keep attention on the sculpture, and bring the working controls to one display button.
 
 ![A Blender sculpting workspace with a large PME Pie Menu of brush and sculpt actions centered near the stylus cursor.](https://blenderartists.org/uploads/default/original/4X/b/2/1/b2113dc3a43ac36c4d82f2f1bfb167da864de626.jpeg)
 
@@ -71,7 +71,7 @@ The menu is therefore organized by interaction frequency, not by the order of Bl
 
 ## The follow-up shows how a personal UI grows
 
-Once the primary layout was working, the author asked how to expose Mesh Filter strength and type—operator properties that were not obvious from Blender's visible UI or console output. A community answer showed a historical Custom-item route through the active Sculpt tool's operator properties.
+Once the primary layout was working, AlfredBaudisch asked how to expose Mesh Filter strength and type—operator properties that were not obvious from Blender's visible UI or console output. Motiomancer answered with a historical Custom-item route through the active Sculpt tool's operator properties.
 
 That episode reveals the right way to grow a control surface: start with the ergonomic bottleneck, use it, then add the missing control proven by real work. Do not begin by copying every Sculpt setting into a giant menu.
 
@@ -89,7 +89,7 @@ The old Sculpt tool identifiers and operator-property route must be re-captured 
 
 ## Sources
 
-- [[Posts/2022/post_04203|Post 4203 — the pen-display constraint and motivation]]
+- [[Posts/2022/post_04203|Post 4203 — AlfredBaudisch's pen-display constraint and motivation]]
 - [[Posts/2022/post_04204|Post 4204 — the missing Mesh Filter controls]]
 - [[Posts/2022/post_04205|Post 4205 — the press and double-tap sculpt setup]]
-- [[Posts/2022/post_04219|Post 4219 — historical route to active Sculpt tool properties]]
+- [[Posts/2022/post_04219|Post 4219 — Motiomancer's route to active Sculpt tool properties]]

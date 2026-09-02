@@ -39,7 +39,7 @@ source_urls:
 
 ## What it shows
 
-This experiment uses PME Modal controls to keep two viewport adjustments under the pointer:
+Shared by artleontiev, this experiment uses PME Modal controls to keep two viewport adjustments under the pointer:
 
 - **Ctrl + Alt + Right Mouse drag** adjusts focal length.
 - **Shift + Right Mouse drag** rotates the studio light.
@@ -49,7 +49,7 @@ This experiment uses PME Modal controls to keep two viewport adjustments under t
   <a href="https://blenderartists.org/uploads/default/original/4X/c/7/0/c70f1eefd501cb64c7afa9e5b11726d6cdf3fc3b.mp4">Watch the original viewport-control recording.</a>
 </video>
 
-The point is not another popup. The gesture changes a live value while the artist stays in a fullscreen viewport. A later reply specifically called out the light-rotation gesture as useful, but it did not verify compatibility beyond the original setup.
+artleontiev modelled the light-rotation gesture on Marmoset Toolbag and Substance Painter. The point is not another popup. The gesture changes a live value while the artist stays in a fullscreen viewport. A later reply from StroBlend specifically called out the light-rotation gesture as useful, but it did not verify compatibility beyond the original setup.
 
 ## Pattern to borrow
 
@@ -77,5 +77,5 @@ Until then, the downloads are historical reference material rather than current 
 
 ## Sources
 
-- [[Posts/2019/post_02155|Post 2155 — modal viewport demonstration and downloads]]
-- [[Posts/2019/post_02159|Post 2159 — positive follow-up and an unrelated viewport question]]
+- [[Posts/2019/post_02155|Post 2155 — artleontiev's modal viewport demonstration and downloads]]
+- [[Posts/2019/post_02159|Post 2159 — StroBlend's positive follow-up and an unrelated viewport question]]

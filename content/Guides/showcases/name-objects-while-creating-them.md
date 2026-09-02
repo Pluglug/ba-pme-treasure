@@ -44,9 +44,9 @@ source_code_paths:
 
 ## What it solves
 
-The original author kept leaving newly added objects with generic names, then paid for it later when a scene became difficult to navigate. Their first solution combined an external script, a custom Tools panel, and a PME Popup Dialog. It worked, but the machinery was larger than the habit it was meant to correct.
+MickHanks kept leaving newly added objects with generic names, then paid for it later when a scene became difficult to navigate. Their first solution combined an external script, a custom Tools panel, and a PME Popup Dialog. It worked, but the machinery was larger than the habit it was meant to correct.
 
-The maintainer reduced the entire workflow to two actions: create the object, then ask for its name.
+roaoao, PME's original author, reduced the entire workflow to two actions with `input_box`: create the object, then ask for its name.
 
 <video controls preload="metadata" aria-label="A cube is added in Blender, then PME immediately opens a small field for naming the new object.">
   <source src="https://blenderartists.org/uploads/default/original/4X/9/7/2/97260c4bbe1ffd922d34b58998381f081f2771ec.mp4" type="video/mp4">
@@ -74,7 +74,7 @@ This is a **commit-point prompt**. Naming is attached to the moment when the use
 - Naming becomes part of the successful action, not an optional housekeeping session.
 - One small interruption prevents a much larger search cost in Outliner, drivers, constraints, and scripts.
 
-The source author described the prompt's mild inconvenience as intentional. That is the useful design judgment: add friction where it prevents a predictable, more expensive mistake.
+MickHanks described the prompt's inconvenience as “the whole point.” That is the useful design judgment: add friction where it prevents a predictable, more expensive mistake.
 
 ## When not to interrupt
 
@@ -95,6 +95,6 @@ Move substantial validation or scene mutation into a reviewed function or [[Guid
 
 ## Sources
 
-- [[Posts/2019/post_02241|Post 2241 — the original create-and-name tool]]
-- [[Posts/2019/post_02242|Post 2242 — the smaller input_box construction]]
-- [[Posts/2019/post_02243|Post 2243 — confirmation and the deliberate-friction rationale]]
+- [[Posts/2019/post_02241|Post 2241 — MickHanks's original create-and-name tool]]
+- [[Posts/2019/post_02242|Post 2242 — roaoao's smaller input_box construction]]
+- [[Posts/2019/post_02243|Post 2243 — MickHanks confirms and explains the deliberate friction]]
