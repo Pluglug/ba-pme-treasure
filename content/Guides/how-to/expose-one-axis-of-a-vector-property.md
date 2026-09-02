@@ -16,7 +16,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 source_posts:
@@ -77,7 +77,7 @@ The repeated guards keep every `row.prop()` call away from a missing active obje
 
 ## Applies to
 
-PME 2.1.0-beta.5 exposes the current Blender `UILayout` as `L` in Custom items. The indexed `Object.lock_rotation` example applies to Blender 4.5–5.2.
+PME 2.1 exposes the current Blender `UILayout` as `L` in Custom items. The indexed `Object.lock_rotation` example applies to Blender 4.5–5.2.
 
 ## Related
 

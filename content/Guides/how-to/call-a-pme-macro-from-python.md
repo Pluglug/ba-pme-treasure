@@ -16,7 +16,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 source_posts:
@@ -78,7 +78,7 @@ This entry point resolves the PME Macro; it does not manufacture a Blender conte
 
 ## Applies to
 
-`pme.invoke_macro` is present in PME 2.1.0-beta.5 and resolves a Macro by `pm_name` or `pm_uid`, checks that it is enabled and context-valid, then hands it to the current Macro runtime. It is not a promise for PME 1.18/1.19 installations.
+`pme.invoke_macro` is present in PME 2.1 and resolves a Macro by `pm_name` or `pm_uid`, checks that it is enabled and context-valid, then hands it to the current Macro runtime. It is not a promise for PME 1.18/1.19 installations.
 
 ## Related
 

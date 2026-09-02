@@ -15,7 +15,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-02
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 source_code_revision: "61b24c857c2c7b93d0b2eea6f3cbebf5456d99ec"
@@ -83,6 +83,8 @@ Do not fill every direction immediately. Two controls that save real interface t
 After one small customization works, the **Menu** tab becomes useful. It does not copy another menu's contents. It links a slot to another saved PME customization, so the child can evolve without duplicating its buttons everywhere it is used.
 
 This is how a small first menu can grow into a set of reusable pieces instead of one crowded menu.
+
+Continue with [[Guides/how-to/build-a-multi-button-pie-with-popup-dialogs|several related controls in one Pie direction]] to build that first linked piece from the parent slot.
 
 ## Leave these for later
 

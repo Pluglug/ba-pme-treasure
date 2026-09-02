@@ -17,7 +17,7 @@ verified_on: 2026-09-01
 curation_status: featured
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 featured_image: null
@@ -61,7 +61,7 @@ Put this in a trusted PME Command item:
 bpy.ops.mesh.primitive_cube_add(); input_box(prop="C.active_object.name")
 ```
 
-PME 2.1 still exposes `input_box(func=None, prop=None)`. The current implementation invokes PME's input-box operator, and the current scripting reference uses `C.active_object.name` as its rename example. This was checked at `origin/pme2-dev@9fb992798b98` for PME 2.1.0-beta.5, whose manifest requires Blender 4.5.0 or newer.
+PME 2.1 still exposes `input_box(func=None, prop=None)`. The current implementation invokes PME's input-box operator, and the current scripting reference uses `C.active_object.name` as its rename example. This was checked at `origin/pme2-dev@9fb992798b98` for PME 2.1, whose manifest requires Blender 4.5.0 or newer.
 
 Replace the cube operator with the object-creation action you actually use. Keep the naming prompt immediately after creation, while the intended object is still active.
 

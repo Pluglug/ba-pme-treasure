@@ -13,7 +13,7 @@ review_status: owner-review-pending
 verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
-pme_versions: ["1.18", "1.19", "2.0.5", "2.1.0-beta.5"]
+pme_versions: ["1.18", "1.19", "2.0.5", "2.1"]
 blender_versions: ["4.5", "5.0", "5.1", "5.2"]
 source_posts:
   - Posts/2025/post_05555
@@ -26,7 +26,7 @@ source_urls:
 ## Applies to
 
 - Source setup: PME 1.18.x, PME-F 1.19.x, or PME 2.0.5.x
-- Target setup: PME 2.1 Extension (2.1.0-beta.5 codebase)
+- Target setup: PME 2.1 Extension
 - Blender: 4.5–5.2
 
 ## Answer

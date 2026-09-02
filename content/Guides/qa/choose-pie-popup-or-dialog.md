@@ -15,7 +15,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "5.2"
 source_posts:

@@ -16,7 +16,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 source_posts:
@@ -88,7 +88,7 @@ Overlay text and timer state are shared by Blender editor area type, not by each
 
 ## Applies to
 
-The signature, alignments, timer behavior, and supported editor-area implementation were checked against PME 2.1.0-beta.5 source. The original 2023–2024 examples remain good use cases, while `CENTER` is an additional current alignment.
+The signature, alignments, timer behavior, and supported editor-area implementation were checked against PME 2.1 source. The original 2023–2024 examples remain good use cases, while `CENTER` is an additional current alignment.
 
 ## Related
 

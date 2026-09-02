@@ -12,7 +12,7 @@ review_status: owner-review-pending
 verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
-pme_versions: ["2.1.0-beta.5"]
+pme_versions: ["2.1"]
 blender_versions: ["4.5", "5.0", "5.1", "5.2"]
 source_posts:
   - Posts/2019/post_02491
@@ -21,7 +21,7 @@ source_posts:
 
 ## Applies to
 
-- PME 2.1 (2.1.0-beta.5 codebase)
+- PME 2.1
 - Blender 4.5–5.2
 - Hotkeys used over the main 3D View region
 

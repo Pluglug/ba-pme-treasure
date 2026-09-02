@@ -17,7 +17,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 source_posts:
@@ -100,7 +100,7 @@ Use the state-aware operator button when you need custom action semantics, a del
 
 ## Applies to
 
-PME 2.1.0-beta.5 exposes `C` and `L` during Custom-item drawing and provides the `operator()` helper with `depress=` and operator-property forwarding. The pivot path and Blender's public `wm.context_set_enum` operator match Blender 4.5–5.2. PME still contains the internal legacy `pme.exec` convenience operator, but this current pattern does not depend on it.
+PME 2.1 exposes `C` and `L` during Custom-item drawing and provides the `operator()` helper with `depress=` and operator-property forwarding. The pivot path and Blender's public `wm.context_set_enum` operator match Blender 4.5–5.2. PME still contains the internal legacy `pme.exec` convenience operator, but this current pattern does not depend on it.
 
 ## Related
 

@@ -17,7 +17,7 @@ verification_status: current-source-checked
 verified_on: 2026-09-01
 provenance_version: 1
 pme_versions:
-  - "2.1.0-beta.5"
+  - "2.1"
 blender_versions:
   - "4.5–5.2"
 source_posts:
@@ -73,7 +73,7 @@ Use Poll-gated or conditional drawing when the control is meaningless in the cur
 
 ## Applies to
 
-PME 2.1.0-beta.5 exposes registered Property values through `props()`, provides the `operator()` Custom-layout helper, and provides `pme.invoke_macro` for a deferred named-Macro action. The source episode used `pme.exec`; the pattern above keeps its useful enabled-row design while using the current dedicated Macro entry point.
+PME 2.1 exposes registered Property values through `props()`, provides the `operator()` Custom-layout helper, and provides `pme.invoke_macro` for a deferred named-Macro action. The source episode used `pme.exec`; the pattern above keeps its useful enabled-row design while using the current dedicated Macro entry point.
 
 ## Related
 
