@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 203814
 - **Display Name**: adamearle
-- **Trust Level**: 2
 - **Total Posts**: 6
 
 ## Posts by This User
 
-*Use Obsidian search: `author:adamearle` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 292409
 - **Display Name**: Ghostil
-- **Trust Level**: 2
 - **Total Posts**: 14
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Ghostil` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

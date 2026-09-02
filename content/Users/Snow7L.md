@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 288046
 - **Display Name**: Snow7L
-- **Trust Level**: 1
 - **Total Posts**: 4
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Snow7L` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

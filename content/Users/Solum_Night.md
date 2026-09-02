@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 415088
 - **Display Name**: Solum Night
-- **Trust Level**: 1
 - **Total Posts**: 18
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Solum_Night` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

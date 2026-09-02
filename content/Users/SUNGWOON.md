@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 357503
 - **Display Name**: SUNGWOON
-- **Trust Level**: 1
 - **Total Posts**: 9
 
 ## Posts by This User
 
-*Use Obsidian search: `author:SUNGWOON` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

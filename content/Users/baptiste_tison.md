@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 337832
 - **Display Name**: baptiste tison
-- **Trust Level**: 1
 - **Total Posts**: 1
 
 ## Posts by This User
 
-*Use Obsidian search: `author:baptiste_tison` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

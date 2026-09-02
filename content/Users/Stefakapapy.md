@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 316136
 - **Display Name**: Stef
-- **Trust Level**: 2
 - **Total Posts**: 17
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Stefakapapy` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 303152
 - **Display Name**: None
-- **Trust Level**: 2
 - **Total Posts**: 29
 
 ## Posts by This User
 
-*Use Obsidian search: `author:blndrusr` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

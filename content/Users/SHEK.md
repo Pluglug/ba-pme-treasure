@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 314954
-- **Display Name**: 
-- **Trust Level**: 2
 - **Total Posts**: 25
 
 ## Posts by This User
 
-*Use Obsidian search: `author:SHEK` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

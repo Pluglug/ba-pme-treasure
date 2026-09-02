@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 46210
 - **Display Name**: Michael Knubben
-- **Trust Level**: 3
 - **Total Posts**: 108
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Michael_Knubben` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

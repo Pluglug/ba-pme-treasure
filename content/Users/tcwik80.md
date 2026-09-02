@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 266294
 - **Display Name**: tcwik80
-- **Trust Level**: 1
 - **Total Posts**: 4
 
 ## Posts by This User
 
-*Use Obsidian search: `author:tcwik80` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 40655
 - **Display Name**: Lluc3D
-- **Trust Level**: 2
 - **Total Posts**: 1
 
 ## Posts by This User
 
-*Use Obsidian search: `author:lluc84` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

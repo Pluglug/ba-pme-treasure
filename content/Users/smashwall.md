@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 255979
 - **Display Name**: smashwall
-- **Trust Level**: 1
 - **Total Posts**: 6
 
 ## Posts by This User
 
-*Use Obsidian search: `author:smashwall` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

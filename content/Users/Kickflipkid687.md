@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 302675
 - **Display Name**: Matt
-- **Trust Level**: 2
 - **Total Posts**: 23
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Kickflipkid687` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

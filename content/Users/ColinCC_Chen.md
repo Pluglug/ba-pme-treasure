@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 437902
 - **Display Name**: ColinCC Chen
-- **Trust Level**: 1
 - **Total Posts**: 1
 
 ## Posts by This User
 
-*Use Obsidian search: `author:ColinCC_Chen` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

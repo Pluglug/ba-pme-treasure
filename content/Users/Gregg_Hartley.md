@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 315363
 - **Display Name**: Gregg Hartley
-- **Trust Level**: 2
 - **Total Posts**: 19
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Gregg_Hartley` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

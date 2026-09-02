@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 414807
 - **Display Name**: HR
-- **Trust Level**: 1
 - **Total Posts**: 1
 
 ## Posts by This User
 
-*Use Obsidian search: `author:retnuh` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

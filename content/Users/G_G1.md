@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 395988
-- **Display Name**: 
-- **Trust Level**: 0
 - **Total Posts**: 2
 
 ## Posts by This User
 
-*Use Obsidian search: `author:G_G1` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

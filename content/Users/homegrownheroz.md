@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 404371
 - **Display Name**: Sam
-- **Trust Level**: 1
 - **Total Posts**: 3
 
 ## Posts by This User
 
-*Use Obsidian search: `author:homegrownheroz` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

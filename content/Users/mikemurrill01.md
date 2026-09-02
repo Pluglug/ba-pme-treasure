@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 384227
-- **Display Name**: 
-- **Trust Level**: 0
 - **Total Posts**: 4
 
 ## Posts by This User
 
-*Use Obsidian search: `author:mikemurrill01` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

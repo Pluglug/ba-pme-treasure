@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 301815
 - **Display Name**: Rafael Coppola Defelippe
-- **Trust Level**: 1
 - **Total Posts**: 2
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Rafael_Coppola_Defel` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

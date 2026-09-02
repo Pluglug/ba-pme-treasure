@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 346764
 - **Display Name**: Craig Holland
-- **Trust Level**: 1
 - **Total Posts**: 6
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Craig_Holland` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

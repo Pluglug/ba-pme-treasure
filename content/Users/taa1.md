@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 434581
-- **Display Name**: 
-- **Trust Level**: 1
 - **Total Posts**: 14
 
 ## Posts by This User
 
-*Use Obsidian search: `author:taa1` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

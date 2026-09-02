@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 232489
 - **Display Name**: Julien Kaspar
-- **Trust Level**: 2
 - **Total Posts**: 17
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Julien_Kaspar` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

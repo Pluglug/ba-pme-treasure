@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 305553
 - **Display Name**: radi0n
-- **Trust Level**: 2
 - **Total Posts**: 119
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Pinhead` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

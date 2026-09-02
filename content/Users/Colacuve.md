@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 246993
 - **Display Name**: Nomo
-- **Trust Level**: 2
 - **Total Posts**: 11
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Colacuve` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

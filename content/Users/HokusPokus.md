@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 277219
 - **Display Name**: HokusPokus
-- **Trust Level**: 2
 - **Total Posts**: 30
 
 ## Posts by This User
 
-*Use Obsidian search: `author:HokusPokus` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

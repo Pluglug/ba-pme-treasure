@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 317619
 - **Display Name**: Sergey Kritskiy
-- **Trust Level**: 2
 - **Total Posts**: 4
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Sergey_Kritskiy` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

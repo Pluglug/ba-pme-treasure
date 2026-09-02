@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 133510
-- **Display Name**: 
-- **Trust Level**: 2
 - **Total Posts**: 109
 
 ## Posts by This User
 
-*Use Obsidian search: `author:fjg3d` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

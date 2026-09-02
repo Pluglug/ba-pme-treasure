@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 314448
 - **Display Name**: Konstantin Zankov
-- **Trust Level**: 1
 - **Total Posts**: 5
 
 ## Posts by This User
 
-*Use Obsidian search: `author:ertaro` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

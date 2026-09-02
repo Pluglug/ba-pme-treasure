@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 261993
 - **Display Name**: Metemer
-- **Trust Level**: 1
 - **Total Posts**: 1
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Metemer` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

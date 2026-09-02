@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 252895
 - **Display Name**: CLuss
-- **Trust Level**: 2
 - **Total Posts**: 8
 
 ## Posts by This User
 
-*Use Obsidian search: `author:CLuss` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

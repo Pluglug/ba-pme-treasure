@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 275643
 - **Display Name**: SpdB3d
-- **Trust Level**: 1
 - **Total Posts**: 10
 
 ## Posts by This User
 
-*Use Obsidian search: `author:SpdB3d` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

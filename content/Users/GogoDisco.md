@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 281818
-- **Display Name**: 
-- **Trust Level**: 2
 - **Total Posts**: 6
 
 ## Posts by This User
 
-*Use Obsidian search: `author:GogoDisco` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

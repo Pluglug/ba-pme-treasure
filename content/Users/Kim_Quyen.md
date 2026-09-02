@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 308889
 - **Display Name**: Kim Quyen
-- **Trust Level**: 2
 - **Total Posts**: 6
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Kim_Quyen` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

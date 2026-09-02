@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 324958
-- **Display Name**: 
-- **Trust Level**: 2
 - **Total Posts**: 3
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Frostensen` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

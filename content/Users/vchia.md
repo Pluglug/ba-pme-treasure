@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 309423
-- **Display Name**: 
-- **Trust Level**: 2
 - **Total Posts**: 5
 
 ## Posts by This User
 
-*Use Obsidian search: `author:vchia` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

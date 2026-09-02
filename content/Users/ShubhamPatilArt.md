@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 303665
 - **Display Name**: Shubham Patil
-- **Trust Level**: 2
 - **Total Posts**: 1
 
 ## Posts by This User
 
-*Use Obsidian search: `author:ShubhamPatilArt` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

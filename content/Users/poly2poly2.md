@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 273980
 - **Display Name**: poly2poly2
-- **Trust Level**: 2
 - **Total Posts**: 32
 
 ## Posts by This User
 
-*Use Obsidian search: `author:poly2poly2` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

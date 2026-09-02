@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 282847
 - **Display Name**: Danny McGrath
-- **Trust Level**: 2
 - **Total Posts**: 10
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Musashidan` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

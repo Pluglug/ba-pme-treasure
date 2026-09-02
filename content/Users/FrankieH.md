@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 99206
 - **Display Name**: FrankieH
-- **Trust Level**: 2
 - **Total Posts**: 10
 
 ## Posts by This User
 
-*Use Obsidian search: `author:FrankieH` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

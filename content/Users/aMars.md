@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 254854
 - **Display Name**: aMars
-- **Trust Level**: 2
 - **Total Posts**: 13
 
 ## Posts by This User
 
-*Use Obsidian search: `author:aMars` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

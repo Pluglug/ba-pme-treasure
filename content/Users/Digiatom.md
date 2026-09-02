@@ -2,14 +2,11 @@
 
 ## User Information
 
-- **User ID**: 384452
-- **Display Name**: 
-- **Trust Level**: 0
 - **Total Posts**: 3
 
 ## Posts by This User
 
-*Use Obsidian search: `author:Digiatom` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

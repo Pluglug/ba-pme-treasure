@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 344267
 - **Display Name**: jochen fong
-- **Trust Level**: 2
 - **Total Posts**: 3
 
 ## Posts by This User
 
-*Use Obsidian search: `author:jochen_fong` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 

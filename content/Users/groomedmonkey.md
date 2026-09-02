@@ -2,14 +2,12 @@
 
 ## User Information
 
-- **User ID**: 37773
 - **Display Name**: groomedmonkey
-- **Trust Level**: 2
 - **Total Posts**: 5
 
 ## Posts by This User
 
-*Use Obsidian search: `author:groomedmonkey` to find all posts*
+Preserved posts by this contributor are listed under **Backlinks**.
 
 ## Links
 
