@@ -44,14 +44,7 @@ The horizontal buttons were therefore a stable index into an explicitly maintain
 
 This was intentionally described as a convoluted proof of concept. Initial setup took time, and every new section required another group plus an entry in the reset logic.
 
-The payoff was control: unused add-on panels could be omitted, icons could replace vertical labels, and buttons no longer moved because another add-on had registered a panel.
-
-## What remains useful
-
-- Model tabs as a mutually exclusive set: clear the set, then activate one member.
-- Keep navigation order under your control instead of deriving it from add-on registration order.
-- Store mode-specific selection only when the same toolbar genuinely needs different working sets.
-- Prefer a small curated surface over reproducing every installed panel.
+The payoff was control: unused add-on panels could be omitted, icons could replace vertical labels, and buttons no longer moved because another add-on had registered a panel. The same design works best as a small, curated set: clear the active group, enable one member, and remember separate mode-specific selections only when the toolbar truly needs different working sets.
 
 ## Sources
 

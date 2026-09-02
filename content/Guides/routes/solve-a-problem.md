@@ -23,7 +23,8 @@ Start from what you can see. A dead shortcut, a context error, a script that onl
 
 ### The shortcut does nothing—or works in the wrong place
 
-- [[Guides/hotkey-conflicts|Run the full hotkey-conflict checklist]]
+Check the same shortcut in the exact editor and mode where it fails. Then search **Preferences → Keymap** for the same key and modifiers, compare the PME keymap scope, and look in the Info editor or System Console for an operator call, report, or error Blender logged. If nothing appears, continue with the keymap checks below.
+
 - [[Guides/qa/make-one-hotkey-work-in-object-and-edit-mode|Make one hotkey work in Object and Edit Mode]]
 - [[Guides/diagnostics/pme-hold-tweak-shows-press-in-blender-keymap|Why Hold or Tweak appears as Press in Blender]]
 - [[Guides/how-to/export-blender-keymaps-without-ghost-pme-entries|Avoid ghost PME entries when exporting or importing keymaps]]

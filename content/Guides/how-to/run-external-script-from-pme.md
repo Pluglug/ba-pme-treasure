@@ -27,14 +27,14 @@ source_urls:
 
 ## Outcome
 
-Keep non-trivial Python in a readable file, then call it from a PME item with `execute_script()`.
+Put longer Python in a readable file, then call it from a PME item with `execute_script()`.
 
-This is preferable to compressing multi-step logic into a long Command one-liner: the file can be formatted, reviewed, reused, and tested independently.
+This keeps multi-step logic out of a long Command one-liner. The file can be formatted, reviewed, reused, and tested independently.
 
 ## Prerequisites
 
 - PME 2.1 installed and enabled.
-- A script from a source you trust and have reviewed.
+- A script whose source and effects you have checked.
 - The PME user resource folder initialized.
 
 ## Steps
@@ -83,9 +83,9 @@ The message box should display `External script is working`. If it does not:
 
 ## Limits and safety
 
-Python scripts can modify Blender data, preferences, and files on disk. Only run code you understand. Test destructive or batch operations in a copy of the `.blend` file.
+Python scripts can modify Blender data, preferences, and files on disk. Review unfamiliar code before running it, and test destructive or batch operations in a copy of the `.blend` file.
 
-The 2019 source episode includes a useful multi-object modifier example, but that old snippet is deliberately not copied here as current code: its object-mode assumptions and Blender API calls require a separate modern validation.
+The 2019 forum discussion includes a multi-object modifier example. Its object-mode assumptions and Blender API calls need fresh validation before reuse, so this guide keeps the example focused on `execute_script()` itself.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 ---
 title: Why a PME Hold or Tweak hotkey appears as Press in Blender
-description: Diagnose the normal dispatcher representation behind PME Hold, Tweak, and Chords input modes without editing the generated Blender keymap item.
+description: Understand why PME Hold, Tweak, and Chords hotkeys appear as Press in Blender's Keymap preferences.
 content_type: troubleshooting
 tags:
   - knowledge/troubleshooting
@@ -19,19 +19,13 @@ source_posts:
   - Posts/2024/post_05210
 ---
 
-## Applies to
-
-- PME 2.1
-- Blender 4.5–5.2
-- PME input modes Press, Hold, Tweak, and Chords
-
 ## Answer
 
-Seeing **Press** in Blender's Keymap preferences is expected for PME **Hold**, **Tweak**, and **Chords** hotkeys. Blender's keymap entry starts PME's dispatcher on the initial press; PME then interprets timing, movement, release, or chord input at runtime.
+In PME 2.1, seeing **Press** in Blender's Keymap preferences is expected for PME **Hold**, **Tweak**, and **Chords** hotkeys. The initial press hands the input to PME, which then watches the timing, movement, release, or chord.
 
-The displayed Blender event is therefore not the authoritative PME mode. Check the hotkey inside PME.
+Blender's Keymap preferences show only that first event. Check the hotkey inside PME to see the mode PME will use.
 
-## What the current dispatcher registers
+## What Blender records for each PME mode
 
 | PME input mode          | Blender keymap event |
 | ----------------------- | -------------------- |
@@ -43,23 +37,23 @@ The displayed Blender event is therefore not the authoritative PME mode. Check t
 | Experimental Click      | Click                |
 | Experimental Click Drag | Click Drag           |
 
-The last two are experimental modes in the current source. They are exceptions to the usual PME dispatcher projection.
+The last two are experimental PME modes. Unlike Hold, Tweak, and Chords, they register Blender's matching event directly.
 
 ## Diagnose an input that behaves incorrectly
 
 1. Open the relevant hotkey in PME and confirm its PME mode is **Hold**, **Tweak**, or **Chords**.
-2. Confirm the keymap scope is correct for the current editor and mode.
+2. Confirm that the keymap scope matches the editor and mode where you use it.
 3. Search PME for another menu using the same key, modifiers, and keymap. A competing Press registration can make the result look immediate.
 4. For Hold or Tweak, review PME's configured timing or movement thresholds and test with a clearly longer hold or larger drag.
 5. Test outside active modal tools, which can consume input before the normal keymap handler.
 
-Do not change the generated Blender keymap item from Press to Release or another event to “fix” it. That bypasses the dispatch model and can prevent PME from seeing the complete gesture lifecycle.
+Keep the generated Blender keymap item on Press. Changing it to Release or another event can prevent PME from seeing the initial press and the rest of the gesture.
 
-## Pitfalls
+## Also check
 
-- Blender's Keymap UI shows the host registration, not all gesture semantics owned by PME.
+- Blender's Keymap UI shows the event that starts PME; the full Hold, Tweak, or Chords behavior remains configured in PME.
 - A correct Hold registration can still fail because of scope, collision, modal handling, or threshold configuration.
-- Double Click and experimental Click modes should not be generalized from the Press/Hold/Tweak behavior; the current implementation registers those host-native events directly.
+- Double Click and the experimental Click modes register their matching Blender events directly, so their entries differ from Hold and Tweak.
 
 ## Related answers
 

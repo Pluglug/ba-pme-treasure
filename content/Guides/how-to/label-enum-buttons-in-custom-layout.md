@@ -34,11 +34,11 @@ When a Custom item uses `prop_enum`, pass the button label through the keyword a
 L.prop_enum(C.scene.tool_settings, "transform_pivot_point", "MEDIAN_POINT", text="Median")
 ```
 
-`L` is PME's layout object and `C` is the current Blender context. The explicit label is especially useful in compact headers and Popup Dialog rows. The data path above follows Blender 4.5–5.2; it intentionally does not reuse the obsolete `C.space_data.pivot_point` path from the 2018 discussion.
+`L` is PME's layout object and `C` is Blender's active context. The explicit label is especially useful in compact headers and Popup Dialog rows. The data path above follows Blender 4.5–5.2; the 2018 discussion used the obsolete `C.space_data.pivot_point` path.
 
 ## Steps
 
-1. Confirm the target enum on the current Blender RNA owner. For the transform pivot, that owner is `C.scene.tool_settings`.
+1. Confirm the target enum on its Blender RNA owner. For the transform pivot, that owner is `C.scene.tool_settings`.
 2. Add a Custom item and call `L.prop_enum(data, property, value, text="...")`.
 3. Use the enum identifier (`MEDIAN_POINT` in the example), not its display label.
 4. Add one item per choice, or use a regular `L.prop(..., expand=True)` when the whole enum should be expanded automatically.
@@ -47,13 +47,11 @@ L.prop_enum(C.scene.tool_settings, "transform_pivot_point", "MEDIAN_POINT", text
 ## Pitfalls
 
 - Omitting `text=` can leave the button unlabeled or produce a Blender API argument error in older copied snippets.
-- Do not copy an old context path without checking its current RNA owner. Blender's transform pivot is `C.scene.tool_settings.transform_pivot_point` in the supported versions.
+- Check an old context path against the supported Blender version. The transform pivot is `C.scene.tool_settings.transform_pivot_point`.
 - Keep enum identifiers exact; `prop_enum` does not accept the translated display name as the value argument.
 - A header is horizontal by design. If several controls need vertical space, use a Popup Dialog or side panel.
 
-## Applies to
-
-This recipe targets PME 2.1 with Blender 4.5–5.2. The original report was a Blender 2.80 migration problem; current Blender API signatures should win if an enum has changed.
+The original report concerned Blender 2.80. If an enum has changed since then, use the identifier from the Blender API for the version you use.
 
 ## Related
 

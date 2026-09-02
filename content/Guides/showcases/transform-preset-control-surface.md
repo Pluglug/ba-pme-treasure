@@ -1,6 +1,6 @@
 ---
-title: "Transform Preset: One Control Surface for a Blender Task"
-description: "A 2024 PME setup that brings transform orientation, pivot, snapping, and proportional editing into one visual control surface."
+title: "Transform Preset: One Menu for a Blender Task"
+description: "A 2024 PME setup that brings transform orientation, pivot, snapping, and proportional editing into one visual menu."
 content_type: example
 search_scope: answers
 tags:
@@ -9,7 +9,7 @@ tags:
   - browse/menus
   - browse/properties-context
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -53,17 +53,9 @@ Group controls by the job, even when Blender keeps them in different panels, and
 
 The same idea fits viewport display, sculpt settings, or selection options.
 
-## What would need translating today
+## About the attached preset
 
-The attached JSON has not been imported into PME 2.1. Before treating it as a current preset:
-
-1. Import it into a disposable PME profile.
-2. Check that every Property item and referenced enum still resolves.
-3. Replace any Blender identifiers or icon names that have changed.
-4. Rebuild the bindings when an old serialized item no longer maps cleanly to PME 2.1.
-5. Capture a current Blender result before promoting the example to current guidance.
-
-The idea is reusable now; the JSON has not been checked.
+The attached JSON has not been imported into PME 2.1. Test it in a copy of your Blender profile, then check its Property items, enum values, Blender identifiers, icons, and bindings against the Blender and PME versions you use.
 
 ## Media and attachment
 

@@ -75,7 +75,6 @@ Use [[Guides/reference/conditional-execution-patterns|a conditional execution pa
 ## See what PME can become
 
 - [[Guides/examples|Examples and Showcases]] collects reusable workflow patterns.
-- [[Guides/routes/new-to-pme|The newcomer route]] lets you choose a different first project.
 - [[Posts/2016/post_00001|The original announcement]] and the [original video playlist](https://www.youtube.com/playlist?list=PLsowJ3v5QWhE9db_GcPnSrTXWJrA5poWg) show the breadth of the original idea.
 - [[Guides/code-examples|Code Examples]] is there when a normal Command, Macro, or Property is no longer enough.
 

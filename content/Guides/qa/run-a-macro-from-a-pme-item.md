@@ -50,13 +50,9 @@ open_menu("Edit Cleanup") if C.mode == "EDIT_MESH" else open_menu("Object Cleanu
 
 ## Pitfalls
 
-- Do not hard-code `bpy.ops.pme.macro_*`: PME owns that generated idname and can recreate it when the Macro changes.
-- A Menu link does not give an operator a new Blender context. An Edit-mode Macro still needs an editable mesh in a valid editor.
+- Link the Macro by name instead of hard-coding `bpy.ops.pme.macro_*`; PME can recreate that generated idname when the Macro changes.
+- A Menu link preserves the caller's Blender context. An Edit-mode Macro still needs an editable mesh in a valid editor.
 - Give the Macro a stable, descriptive name before linking it from several places.
-
-## Applies to
-
-PME 2.1 on Blender 4.5–5.2. The current runtime supports linked Macro targets and `open_menu(name)` returns whether a target was opened.
 
 ## Related answers
 

@@ -39,17 +39,17 @@ Use this page after you understand the basic shape: one PME customization contai
 
 ## What each tab owns
 
-The tabs are not five levels of power. They describe different responsibilities:
+The tabs describe five different jobs:
 
 | Item type    | Use it for                                                 | What happens at runtime                                     |
 | ------------ | ---------------------------------------------------------- | ----------------------------------------------------------- |
 | **Command**  | An operator or action                                      | PME draws a button; the action runs after you choose it.    |
 | **Property** | A Blender or PME value                                     | PME draws the native control for that value.                |
 | **Menu**     | Another saved PME customization                            | PME opens or, where supported, expands the linked tool.     |
-| **Hotkey**   | An existing Blender shortcut whose context you want        | PME dispatches that key combination in the current context. |
+| **Hotkey**   | An existing Blender shortcut whose behavior you want       | PME resolves the saved shortcut in the active area and invokes its matching operator. |
 | **Custom**   | Labels, rows, multiple controls, and other `UILayout` code | PME executes the layout code while the menu is being drawn. |
 
-**Command** and **Property** cover much of ordinary authoring. **Menu** is the important composition tool: it links an existing customization instead of copying its slots. **Hotkey** is for deliberately preserving a keymap-resolved shortcut. **Custom** is the route into Blender's `UILayout` API and is easier to learn after the first three are familiar.
+**Command** and **Property** cover much of ordinary authoring. **Menu** links an existing customization instead of copying its slots. **Hotkey** preserves the behavior of an existing Blender shortcut. **Custom** opens Blender's `UILayout` API and is easier to learn after the first three are familiar.
 
 ## Choose by the content of the slot
 
@@ -59,7 +59,7 @@ The tabs are not five levels of power. They describe different responsibilities:
 - Reuse an existing Blender keymap shortcut with **Hotkey**.
 - Draw rows, labels, templates, or several controls with **Custom**.
 
-The most important failure boundary is **Command versus Custom**. If opening the menu should do nothing until the user clicks an item, use Command. Custom code runs while PME constructs the visible layout, so action-only code placed there can fire as soon as the menu opens.
+The important distinction is **Command versus Custom**. Use Command when the action should wait for a click. Custom code runs while PME draws the menu, so action-only code placed there can fire as soon as the menu opens.
 
 ## Check Command versus Custom
 
@@ -73,17 +73,17 @@ After changing an item's type:
 
 If step 3 changes the scene, the action is probably in **Custom** when it belongs in **Command**.
 
-## Hotkey is not the default Command tab
+## When to use Hotkey
 
-A Hotkey slot inherits Blender's current keymap resolution. Use it when the shortcut itself—and the context-sensitive behavior Blender resolves from it—is what you want to preserve. It also inherits conflicts and future keymap changes. A beginner can build useful customizations without using this tab.
+A Hotkey slot parses its saved key combination, finds an active matching **Press** keymap item for the current area, and invokes that item's operator. Use it when you want the behavior already assigned to a Blender shortcut. It also inherits shortcut conflicts and future keymap changes. Most first customizations need only Command, Property, and Menu.
 
 ## Pitfalls
 
-- Custom is not a “more powerful Command.” It owns layout construction and therefore runs during drawing. [[Guides/code-examples|The code examples guide]] introduces the `UILayout` names and patterns it expects.
+- Custom builds the layout and therefore runs during drawing. [[Guides/code-examples|The code examples guide]] introduces its `UILayout` names and patterns.
 - Property needs the correct data owner and context. A valid property path can still be unavailable in the editor where the menu opens.
-- Menu reuses another PME definition. Do not copy the target's commands into the parent unless the two should evolve independently.
-- A Command that starts an interactive Blender operator may need the correct invocation mode; changing it to Custom does not solve that problem.
-- Use Empty/layout items for spacing and structure, not as a place to hide behavior.
+- Menu reuses another PME definition, keeping its commands in one place unless you deliberately want two independent copies.
+- A Command that starts an interactive Blender operator may need the correct invocation mode; its item type and invocation mode solve different problems.
+- Use Empty/layout items for spacing and structure.
 
 ## Related answers
 

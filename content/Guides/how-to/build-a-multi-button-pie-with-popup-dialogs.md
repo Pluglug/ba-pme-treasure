@@ -58,7 +58,7 @@ media_sources:
 
 I can already make a simple Pie Menu and put one action in each direction. How do community examples show several buttons in a single direction?
 
-The missing idea is not a special multi-button slot. A Pie direction is still one slot, but that slot can link to another PME customization.
+A Pie direction can link its single slot to another PME customization. The linked child supplies the group of controls.
 
 ## Answer
 
@@ -77,7 +77,7 @@ Pie Menu: Viewport
 
 ![A 2020 community example uses linked and expanded Popup Dialogs to put several view controls in the diagonal directions of one pie.](https://blenderartists.org/uploads/default/original/4X/5/2/2/522c6b478c76ad281eb25554ecb38ca9069b1b47.png)
 
-The screenshot shows the composition idea in an older PME interface. The current workflow is shorter.
+The screenshot shows the composition idea in an older PME interface. PME 2.1 needs fewer steps.
 
 ## Build it from the parent Pie
 
@@ -95,13 +95,13 @@ If the Popup Dialog already exists, skip **New Linked Menu** and select it in th
 
 ## What Expand changes
 
-Without **Expand Popup Dialog**, the pie direction opens the linked dialog as another surface. With it enabled, current PME draws the dialog's controls directly in that direction.
+Without **Expand Popup Dialog**, the pie direction opens the linked dialog separately. With it enabled, PME 2.1 draws the dialog's controls directly in that direction.
 
-This distinction also explains why the parent direction does not gain several independent Pie slots. It still contains one Menu reference; the child owns the visible controls.
+The parent direction still contains one Menu reference; the child owns the visible controls.
 
 ## Expand a Regular Menu in PME 2.1
 
-A Popup Dialog is not the only child that can appear directly in the parent. To reuse a command-oriented group:
+A Regular Menu can also appear directly in the parent when you want to reuse a command-oriented group:
 
 1. Edit the direction in the parent Pie and choose **Menu**.
 2. Select an existing **Regular Menu**, or choose **New Linked Menu** and set its Mode to **Regular Menu**.
@@ -109,7 +109,7 @@ A Popup Dialog is not the only child that can appear directly in the parent. To 
 
 PME draws that Regular Menu's contents directly in the Pie direction. Without Expand, the direction opens it as a submenu instead. The direct Expand route is also available when the parent is a Popup Dialog or another Regular Menu. Other compatible parent types expose **Open on Mouse Over** instead.
 
-Expand belongs to this Menu item, not to the Regular Menu itself. The same Regular Menu can therefore appear expanded in one parent and as a normal submenu in another. This route does not expose **Use Frame**, **Width**, or **Radial Offset**.
+Expand belongs to the parent Menu item. The same Regular Menu can therefore appear expanded in one parent and as a normal submenu in another. Regular Menu expansion has no **Use Frame**, **Width**, or **Radial Offset** controls; use a Popup Dialog for those layout options, or the advanced Custom route below for a frame and local offset.
 
 Choose between the two child types by what the user should recognize:
 
@@ -135,9 +135,9 @@ Use the normal **Menu** and **Expand** controls first. They preserve an explicit
 draw_menu("Overlays", frame=True, dx=0, dy=-30)
 ```
 
-`dx` adds horizontal spacing and `dy` adds vertical spacing around the expanded UI. Positive `dx` nudges it right and negative `dx` left; positive `dy` nudges it up and negative `dy` down. These values scale Blender UI spacing rather than specify absolute screen pixels, so tune them while invoking the Pie in its real editor and mode. Set `frame=False` or omit it if the group does not need a box.
+`dx` adds horizontal spacing and `dy` adds vertical spacing around the expanded UI. Positive `dx` nudges it right and negative `dx` left; positive `dy` nudges it up and negative `dy` down. The values scale Blender UI spacing instead of specifying absolute screen pixels, so tune them while invoking the Pie in its real editor and mode. Set `frame=False` or omit it for an unframed group.
 
-This code belongs in the Pie slot's **Custom** tab. The current `draw_menu()` implementation can expand PME UI types—including Pie Menu, Regular Menu, Popup Dialog, Floating Panel, and Panel Group—and applies `dx` and `dy` only to those UI types. The menu name is looked up from the quoted string, so update the code if the child is renamed.
+This code belongs in the Pie slot's **Custom** tab. In PME 2.1, `draw_menu()` can expand Pie Menus, Regular Menus, Popup Dialogs, Floating Panels, and Panel Groups; `dx` and `dy` apply to those UI types. The menu name comes from the quoted string, so update the code if the child is renamed.
 
 This is the advanced escape hatch, not the default construction method. It answers the positioning request that roaoao addressed directly in post 1422, revisited in post 2420, and that appeared again in 2024.
 
@@ -148,16 +148,16 @@ An expanded Popup Dialog answers “show several controls together.” If the go
 - **Nested Pie Menu:** link the slot to another Pie Menu. There is no literal “Nest” button; PME treats the Pie-to-Pie Menu reference as a nested Pie. The linked PME 2.1 forum reply recommends **Confirm Threshold** for this transition. With **Confirm on Release** enabled, a positive value lets the selected direction confirm after you move far enough and the gesture settles, opening the child Pie; `0` disables this automatic confirmation.
 - **Vector Menu:** build the interaction as a Vector Menu when the path itself should be chosen by successive directions. It supports nested directional choices. The August 2026 forum reply presents this route as still in progress.
 
-These are alternatives to the expanded Popup Dialog, not ways to display all child controls in the parent direction. A Pie Menu's Menu target list also does not currently include Vector Menu, so create the Vector Menu as its own interaction rather than looking for it as a Pie child.
+Nest and Vector Menu are directional alternatives to the expanded Popup Dialog. In PME 2.1, create a Vector Menu as its own interaction because it is absent from a Pie Menu's target list.
 
 ## Pitfalls
 
 - Use a **Popup Dialog** when the choices should remain visible together. Linking another Pie Menu creates a second directional choice instead.
-- Do not put action-only code in a Custom item just to obtain several buttons. A Popup Dialog keeps every control individually editable.
+- Use a Popup Dialog for a group of editable controls; reserve Custom items for layout behavior the normal editor cannot express.
 - When copying a `draw_menu()` example from a formatted forum post, use straight Python quotes (`"`), not smart quotes (`“` and `”`).
 - A broken or deleted linked menu leaves the parent item without a valid target. Open the linked target from the item editor before debugging its contents.
 - The child keeps its own Poll, which PME evaluates in the Blender context where the parent Pie is drawn. Test the completed Pie in the editor and mode where it will actually be used.
-- More controls are not automatically more useful. If you must read every label before choosing, split the group or remove items.
+- If every choice requires reading its label, split the group or remove less useful items.
 - A linked menu reuses one source of truth. Copying the same controls into several pies creates versions that drift apart.
 
 ## Related answers

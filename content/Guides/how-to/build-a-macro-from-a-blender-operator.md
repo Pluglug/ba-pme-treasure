@@ -53,9 +53,7 @@ If the action requires an on-screen interactive adjustment, keep that interactio
 - Do not copy a nested operator-property dictionary blindly. Test the action by itself before combining it with selection or mode changes.
 - If a Macro works only after splitting mode switching into another Macro, record that boundary as a context dependency rather than hiding it with unrelated commands.
 
-## Applies to
-
-Historical PME 1.18.7 / Blender 4.1 workflow. Re-capture and validate every operator call on Blender 4.5–5.2.
+Re-capture and test each operator call before using this PME 1.18.7 / Blender 4.1 example in a newer setup.
 
 ## Related answers
 

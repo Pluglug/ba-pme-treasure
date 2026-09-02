@@ -9,7 +9,7 @@ tags:
   - browse/scripting
   - browse/properties-context
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -53,9 +53,9 @@ Before building a control:
 4. Build one PME Property or command around it.
 5. Test it in every context where the menu will appear.
 
-## What would need translating today
+## About the historical replacement file
 
-The 2025 enhancement was distributed as a replacement Python file for Context Browser. That patch, Context Browser itself, and its interaction with PME 2.1 have not been tested here. Replacing files inside another add-on is therefore historical installation information, not a current recommendation.
+The replacement file is attached to the linked 2025 forum post. Treat it as historical installation material: the patch, Context Browser, and its interaction with PME 2.1 have not been tested here.
 
 Check for a compatible Context Browser release first. A copied path can still depend on the area, mode, active object, or data-block it was read from.
 

@@ -54,9 +54,7 @@ For a larger family of menus, use PME's bundled context-sensitive-menu pattern. 
 - A missing fallback turns an ordinary unsupported context into an error path. Always decide what no selection and no matching menu should do.
 - Keep the naming convention in one place. If names are free-form, a small explicit conditional is safer than a large name-driven router.
 
-## Applies to
-
-PME 2.1 on Blender 4.5–5.2. The shipped context-sensitive-menu example and autorun helper use the ordered mode/type/fallback pattern above.
+PME 2.1's bundled `command_context_sensitive_menu.py` example uses the ordered selection, mode, type, and fallback pattern above.
 
 ## Related answers
 

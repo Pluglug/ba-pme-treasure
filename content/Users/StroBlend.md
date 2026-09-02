@@ -1,14 +1,21 @@
 # StroBlend
 
-## User Information
+StroBlend shared practical answers about extending Blender panels, arranging controls in rows, and using custom icons. The modifier preset exchange shows those ideas carried through to a finished setup.
 
-- **Display Name**: StroBlend
-- **Total Posts**: 111
+## Start with
 
-## Posts by This User
+- [[Guides/showcases/modifier-preset-shelf|Build a modifier preset shelf above Blender's stack]]
+- [[Posts/2020/post_03388|The panel-extension answer]]
+- [[Posts/2020/post_03390|The row-layout and custom-icon follow-up]]
 
-Preserved posts by this contributor are listed under **Backlinks**.
+## In this archive
 
-## Links
+- **Preserved posts**: 111
+
+## More from StroBlend
+
+Open **Backlinks** for the complete preserved forum trail.
+
+## Elsewhere
 
 - [Profile on Blender Artists](https://blenderartists.org/u/StroBlend)

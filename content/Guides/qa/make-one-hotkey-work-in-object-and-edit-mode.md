@@ -19,17 +19,11 @@ source_posts:
   - Posts/2019/post_02493
 ---
 
-## Applies to
-
-- PME 2.1
-- Blender 4.5–5.2
-- Hotkeys used over the main 3D View region
-
 ## Answer
 
 Use the **3D View** keymap when the same menu should naturally work across Object Mode and Edit Mode. Use separate **Object Mode** and **Mesh** registrations when the command set should be mode-specific or when a more specific mapping must win.
 
-PME hotkeys are Blender keymap entries. Their scope is decided by the selected Blender keymap, not by the name of the PME menu.
+PME hotkeys are Blender keymap entries. The selected Blender keymap decides their scope; the menu name has no effect on it.
 
 ## Setup
 
@@ -45,14 +39,14 @@ For mode-specific behavior:
 2. Register the Edit Mode behavior in **Mesh**.
 3. Reuse the same physical key only if each menu is valid in its own scope.
 
-The historical solution was to select both Object Mode and Mesh. That remains valid for explicit mode-level control, but **3D View** is the simpler current choice when the same menu is intended to span modes.
+The historical solution was to select both Object Mode and Mesh. That still gives explicit mode-level control, but **3D View** is simpler when one menu is meant to span both modes.
 
-## If it still does not fire
+## If the hotkey is still missing
 
-- Test with the pointer over the 3D View's main view region. The **3D View** keymap does not automatically cover the header, toolbar, or sidebar.
+- Test with the pointer over the 3D View's main view region. Header, toolbar, and sidebar input can use different keymap scopes.
 - Look for a mode-specific, active-tool, modal, or add-on keymap using the same key. A more specific handler can take precedence over a broad scope.
 - Use **Window** only when the hotkey truly belongs across editors. It is broad and can still lose to more specific keymaps.
-- Avoid **Screen Editing** as a general fallback; it is not a substitute for selecting the correct editor or mode scope.
+- Reserve **Screen Editing** for shortcuts that genuinely belong at that broad scope.
 
 ## Pitfalls
 

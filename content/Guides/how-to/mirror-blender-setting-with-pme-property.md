@@ -44,20 +44,11 @@ C.scene.tool_settings.use_keyframe_insert_auto = value
 
 The property's **On Update** callback changed the top-bar header color according to `props().autokey`, and **On Init** established an initial color. Other PME menus could read the same adapter through `props().autokey`.
 
-## Important boundary
+## Keep feedback in sync
 
-The update callback belonged to the PME Property, not to Blender's underlying Auto Keying property. Toggling Auto Keying through Blender's native button did not automatically run PME's callback.
+The getter/setter pair makes the PME Property an adapter over Blender's value rather than a duplicate. Its update callback runs when the PME control changes, but Blender's native Auto Keying button does not call it. If several interfaces can change the setting, the visible feedback needs a refresh path for each one.
 
-That distinction makes this a control-path pattern, not a universal state observer. If several UIs can change the underlying value, visible feedback can become stale unless every path is accounted for.
-
-The episode also changed the active theme. Theme colors are shared preferences, so a production version needs a deliberate restore strategy and must not assume one hard-coded color is every user's default.
-
-## What remains useful
-
-- A getter/setter pair can make a PME Property an adapter over existing Blender state rather than a duplicate value.
-- Put feedback updates next to the state-changing control that owns them.
-- Do not mistake an update callback for observation of changes made elsewhere.
-- Make a changed state visually unmistakable, while preserving the user's original presentation settings.
+The forum example also changed the active theme. Theme colors are shared preferences, so save the user's original presentation and restore it when the feedback is no longer needed.
 
 ## Sources
 

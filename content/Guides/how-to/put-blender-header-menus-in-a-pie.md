@@ -1,6 +1,6 @@
 ---
 title: "Put Blender's header menus inside a PME pie"
-description: "Open the familiar menus from the current Blender editor—or another editor—directly from a Pie Menu Editor layout."
+description: "Open the familiar menus from the active Blender editor—or another editor—directly from a Pie Menu Editor layout."
 content_type: how_to
 search_scope: answers
 tags:
@@ -67,16 +67,14 @@ header_menu(["VIEW_3D", "NODE_EDITOR"])
 
 ## Pitfalls
 
-- Use a **Custom** item. `header_menu()` draws into PME's current layout; it is not an operator for a Command item.
+- Use a **Custom** item. `header_menu()` draws into PME's layout object, so it belongs in a Custom item.
 - An explicit area type does not change Blender's active editor. It only asks PME to draw that editor's registered header menus.
 - Not every Blender area exposes a compatible `*_MT_editor_menus` class. If an area produces nothing, try `CURRENT` from that editor first.
 - A full header menu can contain many entries. One editor per pie item is usually easier to scan than several long strips in one slot.
-- If a third-party add-on changes a native header menu, its entries may also appear here because PME calls Blender's current menu class.
-- Do not install `custom_header_menu.zip` from the 2016 post for this workflow. It documents the origin of the idea, not the current setup.
+- If a third-party add-on changes a native header menu, its entries may also appear here because PME calls Blender's registered menu class.
+- The `custom_header_menu.zip` attached to the 2016 post documents the idea's origin. PME 2.1 already includes the helper it provided.
 
-## Applies to
-
-PME 2.1 registers `header_menu()` in its scripting namespace and resolves `CURRENT` from Blender's active area while drawing. The original post targeted Blender 2.77; its screenshot remains useful, but its external-script installation steps have been superseded.
+The original post targeted Blender 2.77. Its screenshot still illustrates the result, but PME 2.1 provides `header_menu()` directly, so the old external-script installation is unnecessary.
 
 ## Related
 

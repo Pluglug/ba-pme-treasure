@@ -1,6 +1,6 @@
 ---
 title: Code Examples
-description: Choose a PME coding goal, open a current recipe, or use the retained syntax collection for compact command patterns.
+description: Choose a PME coding goal, open a focused recipe, or adapt a compact command pattern.
 content_type: guide
 search_scope: answers
 tags:
@@ -44,7 +44,7 @@ The archive often uses compact names such as `C`, `L`, `E`, and `U`. [[Guides/te
 
 - [[Guides/how-to/make-a-property-editor-slider|Bind a PME Property to a Blender value]]
 - [[Guides/how-to/show-object-dimensions-in-a-pme-layout|Draw editable object dimensions with L.prop()]]
-- [[Guides/reference/panel-function-current-reference|Use the current panel() helper]]
+- [[Guides/reference/panel-function-current-reference|Draw an existing Blender panel with panel()]]
 
 </div>
 
@@ -72,7 +72,7 @@ The archive often uses compact names such as `C`, `L`, `E`, and `U`. [[Guides/te
 
 ### Revisit a community technique
 
-These pages preserve useful designs whose exact historical setup still needs a current compatibility test.
+These pages preserve useful designs whose historical setup still needs a compatibility test.
 
 - [[Guides/how-to/change-selected-values-relative-to-active-object|Apply one value, a delta, or a ratio across selected objects]]
 - [[Guides/how-to/use-properties-as-macro-options|Give one Macro visible Property options]]
@@ -84,7 +84,7 @@ These pages preserve useful designs whose exact historical setup still needs a c
 
 ## Focused recipes
 
-Use these after you know which kind of behavior or surface you are building.
+Use these after you know which kind of behavior or interface you are building.
 
 ### Context and availability
 
@@ -95,7 +95,7 @@ Use these after you know which kind of behavior or surface you are building.
 ### Calling and integrating automation
 
 - [[Guides/how-to/call-a-pme-macro-from-python|Call a named PME Macro from an external script]]
-- [[Guides/how-to/resize-a-blender-area-from-pme|Resize the current Blender area with PME's current operator]]
+- [[Guides/how-to/resize-a-blender-area-from-pme|Resize the active Blender area from PME]]
 
 ### Custom-layout details
 
@@ -109,10 +109,9 @@ Use these after you know which kind of behavior or surface you are building.
 
 The compact patterns below are retained because PME’s standard Command, Custom, and Poll authoring fields are single-line controls. Use semicolons and expressions for short commands; use [[Guides/how-to/run-external-script-from-pme|an external script]] when the logic deserves normal multiline Python.
 
-## ⚠️ Critical: Standard PME command fields use one line
+## Standard PME command fields use one line
 
-> [!warning] Code entered into a standard PME command field must fit on one line
-> Keep short commands in the field; move longer or reusable logic into a Python file.
+> [!warning] Keep short commands in the field; move longer or reusable logic into a Python file.
 >
 > - Use `;` (semicolon) to separate statements
 > - Use ternary expressions `a if condition else b` instead of `if/else` blocks
@@ -252,7 +251,7 @@ obj = C.active_object; obj is not None and setattr(obj, "show_wire", not obj.sho
 
 ### Undo Boundaries for Multi-Step Actions
 
-Undo behavior is operator-, mode-, and Blender-version-specific. Do not add a manual undo push as a general PME reliability fix. See [[Guides/reference/undo-boundaries-for-multi-step-actions|Plan undo boundaries for multi-step PME actions]] for the historical observation, its limits, and the required test procedure.
+Undo behavior varies by operator, mode, and Blender version. Test the sequence before adding a manual undo push; [[Guides/reference/undo-boundaries-for-multi-step-actions|Plan undo boundaries for multi-step PME actions]] explains the historical observation and test procedure.
 
 ---
 
@@ -363,7 +362,7 @@ prefs = C.preferences.addons['my_addon'].preferences; value = prefs.my_property
 
 ### Using UserData (U) for Session-Scoped Scratch State
 
-`U` is a runtime scratch container shared by PME commands during the current registered session. It is recreated when PME registers and does not survive disabling and re-enabling PME or restarting Blender. Use a PME Property or Blender data when the value must persist.
+`U` is a scratch container shared by PME commands during one registered session. Disabling PME or restarting Blender recreates it. Use a PME Property or Blender data when the value must persist.
 
 ```python
 # Store data for the current PME session:
@@ -419,7 +418,7 @@ dir(bpy.context.active_object)
 
 ---
 
-## Keep exploring
+## Where next
 
 - [[tags/browse/scripting|Curated scripting answers]]
 - [[Guides/examples|Examples and reusable design patterns]]
@@ -433,20 +432,7 @@ dir(bpy.context.active_object)
 
 </div>
 
----
-
-## External Resources
+### External references
 
 - [Blender Python API Docs](https://docs.blender.org/api/current/)
-- [Blender Stack Exchange](https://blender.stackexchange.com/questions/tagged/python)
-- [[Jakro]]'s [Scripts Collection](http://polycount.com/discussion/191787/jaks-blender-scripts-a-bunch-of-time-saving-tools-for-blender-free/)
-- [Current PME scripting documentation](https://pie-menu-editor.github.io/pme-docs/reference/scripting.html)
-
----
-
-## Continue by interest
-
-- [[Guides/routes/new-to-pme|Return to the beginner route]]
-- [[Guides/routes/solve-a-problem|Diagnose a PME problem]]
-- [[_Index/Browse|Explore PME Treasure]]
-- [[Guides/examples|See what people built]]
+- [PME scripting documentation](https://pie-menu-editor.github.io/pme-docs/reference/scripting.html)

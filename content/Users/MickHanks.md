@@ -1,14 +1,20 @@
 # MickHanks
 
-## User Information
+MickHanks brought concrete Blender workflow problems and interface experiments to the thread. Preserved examples include prompting for an object's name at creation and suggesting a collapsible window for emboo2's large Popup Dialog.
 
-- **Display Name**: MickHanks
-- **Total Posts**: 118
+## Start with
 
-## Posts by This User
+- [[Guides/showcases/name-objects-while-creating-them|Name objects while creating them]]
+- [[Guides/showcases/forty-two-button-popup-task-deck|The 42-button example and collapsible-window follow-up]]
 
-Preserved posts by this contributor are listed under **Backlinks**.
+## In this archive
 
-## Links
+- **Preserved posts**: 118
+
+## More from MickHanks
+
+Open **Backlinks** for the complete preserved forum trail.
+
+## Elsewhere
 
 - [Profile on Blender Artists](https://blenderartists.org/u/MickHanks)

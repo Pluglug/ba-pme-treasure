@@ -1,6 +1,6 @@
 ---
 title: "Can one hotkey open a different Pie Menu in Geometry, Shader, and Compositor nodes?"
-description: "Use a Poll method based on the current Node Editor ui_type to keep each node-tree menu in its own context."
+description: "Use a Poll method based on the active Node Editor ui_type to keep each node-tree menu in its own context."
 content_type: qa
 search_scope: answers
 tags:
@@ -71,13 +71,13 @@ The test is deliberately local to the active area. A Geometry Nodes editor open 
 - `C.area.type == "NODE_EDITOR"` is too broad: it cannot distinguish Geometry Nodes from Shader Editor.
 - Keep the `C.area` guard so the Poll fails closed when no Blender area is available.
 - A Poll only decides whether the menu is available. Its commands still need their own valid Blender context.
-- Do not copy a smart quote from a forum post into Python. Use ordinary quote characters: `"` or `'`.
+- Python needs ordinary quote characters (`"` or `'`); smart quotes copied from formatted text cause a syntax error.
 - Keep a general Node Editor menu without this Poll when some tools really are shared.
 
 ## Related
 
 - [[Guides/reference/conditional-execution-patterns|Choose between a Command branch, Poll-gated items, or a Custom control]]
-- [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu for the current context]]
+- [[Guides/how-to/route-to-a-context-specific-menu|Route one trigger to the right menu for its context]]
 
 ## Sources
 

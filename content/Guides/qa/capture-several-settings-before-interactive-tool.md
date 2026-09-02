@@ -46,18 +46,15 @@ invoke the interactive drawing operator
 
 In the one-command version, the interactive operator was invoked explicitly rather than executed as an ordinary one-shot operation. That allowed Blender to continue receiving mouse and keyboard events for the tool.
 
-## Choosing the form
+## Choose Macro or Command
 
 Use a Macro when each setting should remain visible, editable, and independently reorderable in PME. Use a single Command only when the sequence is short enough to review safely.
 
 The interactive operator belongs last. Starting it earlier can hand control back to Blender before the remaining state changes run in the intended context.
 
-## What remains useful
+Capture may record the clicked operator without the surrounding UI settings. Add those settings before the final tool step. A Macro is easier to inspect and adapt when Blender changes a property or argument; a short Command is useful when the whole sequence still fits comfortably on one line.
 
-- Separate configuration from interaction: prepare state first, invoke the tool last.
-- A capture operation may record only the clicked operator, not every surrounding UI setting.
-- A macro is usually easier to adapt when Blender renames a property or an operator argument.
-- Interactive tools require invocation semantics; treating them as ordinary execute-only commands changes their behavior.
+Interactive tools must be invoked so Blender can continue receiving mouse and keyboard input. Executing them as one-shot commands changes their behavior.
 
 ## Sources
 

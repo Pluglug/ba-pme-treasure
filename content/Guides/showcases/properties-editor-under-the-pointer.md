@@ -9,7 +9,7 @@ tags:
   - browse/menus
   - browse/panels-ui
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -37,6 +37,9 @@ source_posts:
   - Posts/2018/post_01210
   - Posts/2018/post_01211
   - Posts/2018/post_01213
+  - Posts/2018/post_01214
+  - Posts/2018/post_01217
+  - Posts/2018/post_01218
 source_urls:
   - "https://blenderartists.org/t/662456/850"
   - "https://blenderartists.org/t/662456/851"
@@ -49,6 +52,9 @@ source_urls:
   - "https://blenderartists.org/t/662456/1210"
   - "https://blenderartists.org/t/662456/1211"
   - "https://blenderartists.org/t/662456/1213"
+  - "https://blenderartists.org/t/662456/1214"
+  - "https://blenderartists.org/t/662456/1217"
+  - "https://blenderartists.org/t/662456/1218"
 ---
 
 > **Historical example · current JSON compatibility unverified**
@@ -73,15 +79,15 @@ The viewport stayed large while modelling, and detailed settings appeared only w
 
 It works best for inspection and occasional adjustment. A permanently visible editor is still better when values must be monitored continuously or compared while another operation runs.
 
-## The conversation found the boundary
+## What the thread learned
 
-The archive did not prove that every Properties panel could be transplanted safely. The first shared version had missing Texture sections. Later work fixed Material and World texture subcategories, but an "Other" category was described as hardcoded. A later missing-panel report was traced to the Cycles add-on being disabled; roaoao suggested enabling it and planned to hide those red buttons when debug mode is off in the next version. fiendish55's follow-up after that answer is not preserved here.
+The first shared version was missing some Texture sections. Later work restored the Material and World texture subcategories, while an "Other" category remained hardcoded. When Zimlorog later reported missing panels, roaoao first suspected that Cycles was disabled. Zimlorog confirmed it was enabled; roaoao then traced the mismatch to renamed Cycles panels, supplied an updated JSON, and Zimlorog confirmed that it worked.
 
-A panel can depend on its original editor, render engine, active object, add-ons, and Blender's poll rules. Recreating the whole Properties editor collects far more of that than borrowing a few stable panels.
+The exchange shows why this ambitious setup took several rounds to refine: each Blender panel can depend on its editor, render engine, active object, add-ons, and poll rules. A smaller popup built around one task has fewer of those dependencies.
 
 ## What to borrow today
 
-The old JSON is not a current preset. Rebuild only the panels you need:
+The old JSON has not been tested with PME 2.1. The useful starting point is the part of fiendish55's idea that fits your work:
 
 1. Start with one task, such as material inspection or modifier setup.
 2. Add only the Blender panels used during that task.
@@ -89,7 +95,7 @@ The old JSON is not a current preset. Rebuild only the panels you need:
 4. Verify every panel against the intended Blender editor, mode, object type, and render engine.
 5. Keep a docked editor for information that must remain visible.
 
-For current PME 2.1 building blocks, see [[Guides/reference/panel-function-current-reference|the current panel() reference]]. If you want a temporary copy of a complete Blender editor instead of a custom panel, use [[Guides/how-to/open-a-temporary-editor-with-popup-area|popup_area instead]].
+For PME 2.1 building blocks, see [[Guides/reference/panel-function-current-reference|the panel() reference]]. If you want a temporary copy of a complete Blender editor instead of a custom panel, use [[Guides/how-to/open-a-temporary-editor-with-popup-area|popup_area instead]].
 
 ## Media
 
@@ -110,3 +116,6 @@ For current PME 2.1 building blocks, see [[Guides/reference/panel-function-curre
 - [[Posts/2018/post_01210|Post 1210 — roaoao's Material and World subcategory fix]]
 - [[Posts/2018/post_01211|Post 1211 — fiendish55's updated configuration and demonstration]]
 - [[Posts/2018/post_01213|Post 1213 — roaoao promotes the example and troubleshoots the missing panels]]
+- [[Posts/2018/post_01214|Post 1214 — Zimlorog confirms Cycles is enabled and reports the Blender version]]
+- [[Posts/2018/post_01217|Post 1217 — roaoao traces the mismatch to renamed Cycles panels and supplies updated JSON]]
+- [[Posts/2018/post_01218|Post 1218 — Zimlorog confirms that the update works]]

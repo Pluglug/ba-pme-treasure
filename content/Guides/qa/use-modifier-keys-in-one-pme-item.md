@@ -1,6 +1,6 @@
 ---
 title: "Can one PME item use Alt, Ctrl, or Shift for different actions?"
-description: "Use PME's current event object to branch one Command item by modifier key without duplicating the menu."
+description: "Use PME's event object to branch one Command item by modifier key without duplicating the menu."
 content_type: qa
 tags:
   - knowledge/qa
@@ -30,7 +30,7 @@ Can one PME menu item run a different action when Alt, Ctrl, or Shift is held?
 
 ## Answer
 
-Yes. In a PME **Command** item, `E` is the current Blender event. Read `E.alt`, `E.ctrl`, and `E.shift`, then choose the action to run.
+Yes. In a PME **Command** item, `E` is the current Blender event supplied when the Command runs. Read `E.alt`, `E.ctrl`, and `E.shift`, then choose the action to run.
 
 For example, this opens one of four PME menus:
 
@@ -57,9 +57,9 @@ Move the logic to [[Guides/how-to/run-external-script-from-pme|an external scrip
 
 ## Event lifetime matters
 
-`E` represents the event owned by the current PME invocation. It is available to Command execution and retained where PME explicitly carries that event into Macro, Modal, Sticky, or Stack-Key execution.
+`E` belongs to one PME invocation. It is available to Command execution and follows that invocation into Macro, Modal, Sticky, or Stack-Key execution where PME supports it.
 
-Do not assume that a raw `E` exists in an unrelated startup script, background task, or arbitrary Blender-console code. Pass the values you need into longer-lived code instead.
+Startup scripts, background tasks, and arbitrary Blender-console code have no PME opening event. Pass the needed modifier values into longer-lived code instead.
 
 ## Verify
 

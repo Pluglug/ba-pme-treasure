@@ -33,7 +33,7 @@ Compose several logical control groups into one Popup Dialog while preserving a 
 
 ## Historical construction
 
-The working episode used one child Popup Dialog per section and a final Popup Dialog as their container:
+The working forum example used one child Popup Dialog per section and a final Popup Dialog as their container:
 
 1. Build the left section as its own Popup Dialog.
 2. Build the right section as another Popup Dialog.
@@ -52,16 +52,9 @@ The requester confirmed that the framed child-dialog construction produced the d
 
 ## Composition boundary
 
-The child dialogs own their controls; the container owns their arrangement and framing. Keeping those roles separate makes each section reusable and prevents one large dialog from becoming an unstructured list of commands.
+The child dialogs own their controls; the container owns their arrangement and framing. Keeping those roles separate makes each section reusable and prevents one large dialog from becoming an unstructured list of commands. Apply the frame where the child is drawn, and leave it off when the extra boundary adds more weight than clarity.
 
-The original answer also noted that a menu invocation normally leads to one action. Nesting is useful for presenting related controls, but it does not turn one menu activation into a batch of unrelated operations.
-
-## What remains useful
-
-- Build complex UI from small, named child dialogs.
-- Apply visual framing where the child is drawn, not inside every child control.
-- Keep grouping and execution semantics separate.
-- Prefer the unframed variant when boundaries add more visual weight than clarity.
+The original answer also noted that each menu invocation normally leads to one action. Nesting presents related controls together; batch operations still belong in a Macro or script.
 
 ## Sources
 

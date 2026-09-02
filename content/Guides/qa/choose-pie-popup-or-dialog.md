@@ -1,6 +1,6 @@
 ---
 title: Choose Pie, Popup, or Dialog Mode
-description: Pick the Popup Dialog presentation that matches a directional choice, a transient control surface, or a persistent form.
+description: Pick the Popup Dialog presentation that matches a directional choice, a temporary panel, or a form that stays open.
 content_type: qa
 search_scope: answers
 tags:
@@ -30,15 +30,15 @@ source_urls:
 
 ## Answer
 
-For a **Popup Dialog** menu, choose its **Mode** from the job you want the surface to do:
+For a **Popup Dialog** menu, choose its **Mode** from how you want to use it:
 
 | Choose          | Use it when                                                                      | Runtime behaviour                                           |
 | --------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | **Pie Mode**    | A small, directional choice is faster than reading a form.                       | Draws the Popup Dialog in a pie-style presentation.         |
-| **Popup Mode**  | You want a short-lived control surface that should get out of the way.           | Opens with automatic close enabled.                         |
-| **Dialog Mode** | You need to inspect or adjust several controls without the surface disappearing. | Opens as a persistent dialog with automatic close disabled. |
+| **Popup Mode**  | You want a short-lived panel that should get out of the way.                      | Opens with automatic close enabled.                         |
+| **Dialog Mode** | You need to inspect or adjust several controls without the dialog disappearing.  | Opens as a persistent dialog with automatic close disabled. |
 
-The useful correction from the source conversation is simple: a surface that stays open was not a broken popup. It had been configured as a dialog. In current PME, make that choice deliberately instead of treating every Popup Dialog as the same interaction.
+The forum question came from a menu that stayed open because it was configured as a dialog. Choose the mode deliberately; each one gives the same Popup Dialog a different interaction.
 
 ## Steps
 
@@ -56,10 +56,10 @@ The useful correction from the source conversation is simple: a surface that sta
 
 ## Pitfalls
 
-- These three choices are **Popup Dialog** presentation modes. They are not a global conversion between every PME editor type.
-- Do not use a persistent Dialog Mode merely to make a crowded layout fit. First remove controls that do not belong to the task.
+- These three choices change the presentation of a **Popup Dialog**; other PME editor types have their own behavior.
+- Dialog Mode helps when several controls need to remain visible. If the layout still feels crowded, split unrelated controls into another menu.
 - Popup Mode's automatic close is useful for transient work, but it is the wrong fit for a form whose values you need to review before continuing.
-- If the menu opens in the wrong Blender editor or mode, solve the context or hotkey problem separately; changing presentation mode does not change operator context.
+- If the menu opens in the wrong Blender editor or mode, check its context or hotkey separately. Presentation mode changes how the dialog behaves after opening.
 
 ## Related answers
 

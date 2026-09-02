@@ -45,9 +45,9 @@ First confirm that the same PME menu is being called. A context router, duplicat
 
 If the menu identity is the same, a common cause is a **Custom** item drawing a property that does not exist on every possible data owner. For example, `C.object.data` is a `Mesh` for a mesh object, different data for a curve, and `None` for an Empty. A valid mesh property path is therefore not automatically a valid menu-wide path.
 
-That was the source episode: one layout followed the current Blender context and reached a different data type.
+The forum example followed Blender's active context and therefore reached a different kind of data when the selected object changed.
 
-## Fix the ownership boundary
+## Check the object before drawing its property
 
 Check the owner and property before drawing it. Written readably, the pattern is:
 
@@ -67,19 +67,19 @@ PME's standard Custom field is a compact code field, so the equivalent stored ex
 obj = C.active_object; data = getattr(obj, "data", None); L.prop(data, "your_property") if data is not None and hasattr(data, "your_property") else L.label(text="Not available for this object")
 ```
 
-Replace `your_property` only after confirming the current Blender RNA identifier in the Python Console or API documentation.
+Replace `your_property` after confirming its Blender RNA identifier in the Python Console or API documentation.
 
 ## Choose between two designs
 
 - **One menu, optional controls:** guard each object-specific row and show a short unavailable label or separator.
 - **Different workflows by object or mode:** route to separate menus with a Poll or context-sensitive menu. This is clearer when most controls differ, not just one row.
 
-## Pitfalls
+## Also check
 
-- Checking only `C.active_object` is not enough. An Empty has an active object but no object data block.
-- Do not copy the historical `auto_smooth_angle` example. Blender's mesh-normal API changed; the reusable lesson is the guarded owner check.
-- A Poll on the whole menu can hide valid common controls along with one invalid row. Prefer a row-level guard when most of the menu is still useful.
-- If a property exists but its operator still fails, investigate editor, region, and mode context separately.
+- An Empty can be the active object while having no object data block, so check both the object and its data.
+- The historical example used `auto_smooth_angle`, but Blender's mesh-normal API has since changed. Reuse the guarded check, not that property name.
+- A Poll on the whole menu can hide valid common controls along with one invalid row. A row-level guard works better when most of the menu remains useful.
+- If a property exists but its operator still fails, investigate the editor, region, and mode separately.
 
 ## Related answers
 

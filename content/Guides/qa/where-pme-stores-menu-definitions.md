@@ -39,7 +39,7 @@ For a portable backup or transfer, use **Export → All Menus** and keep the res
 
 ## What lives where
 
-| Data                        | Current location                                 | Recommended transfer method              |
+| Data                        | Stored in                                        | Recommended transfer method              |
 | --------------------------- | ------------------------------------------------ | ---------------------------------------- |
 | Active PME menu definitions | Blender's version-specific `userpref.blend`      | Export → All Menus, then import the JSON |
 | User scripts                | `Pie Menu Editor/scripts/`                       | Copy or sync the resource folder         |
@@ -60,13 +60,13 @@ The default resource root is `%USERPROFILE%\Documents\Pie Menu Editor\` on Windo
 
 ## Should I sync `userpref.blend` directly?
 
-Only if you intend to synchronize the rest of Blender's preferences too. `userpref.blend` contains more than PME data and is separated by Blender version. JSON export/import is the narrower and safer PME transfer boundary.
+Only if you intend to synchronize the rest of Blender's preferences too. `userpref.blend` contains more than PME data and is separated by Blender version. PME JSON moves menu definitions and their assigned hotkeys; it does not carry global PME settings, current User Property values, the resource-root configuration, or unrelated Blender preferences.
 
 ## Sources
 
 - [[Posts/2021/post_03761|The recurring “where are my menus stored?” question, post 3761]]
 - [[Posts/2025/post_05554|Cross-environment configuration question, post 5554]]
 - [[Posts/2025/post_05555|Pluglug's storage and JSON-transfer answer, post 5555]]
-- [Current storage and resource-folder discussion, posts 5846–5847](https://blenderartists.org/t/pie-menu-editor-v2/662456/5847)
+- [Storage and resource-folder discussion, posts 5846–5847](https://blenderartists.org/t/pie-menu-editor-v2/662456/5847)
 - [Official PME Scripts & Data Location reference](https://pie-menu-editor.github.io/pme-docs/reference/file_locations.html)
 - [Official PME 2.1 installation and migration guide](https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html)

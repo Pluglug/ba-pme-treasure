@@ -52,17 +52,13 @@ C.space_data.pivot_point = saved_pivot
 - remember a selection mode before an operator requires another one;
 - retain a derived value that later Macro steps need.
 
-Use names with a narrow purpose, such as `saved_pivot` or `original_mode`. A Macro's shared state is execution-local; it is not durable configuration and should not be used to communicate with a later hotkey press.
+Use specific names such as `saved_pivot` or `original_mode`. The values belong to that Macro run; they are gone when it ends and cannot carry information to a later hotkey press.
 
 ## Pitfalls
 
 - Put restoration after the operation that needs the temporary state, not immediately after setting it.
-- A failing or cancelled Blender operator can stop a sequence before its cleanup step. For a critical workflow, test cancellation and prefer an idempotent cleanup action.
+- A failing or cancelled Blender operator can stop a sequence before its cleanup step. Test cancellation, and make restoration safe to run more than once.
 - `C.space_data` is editor-specific. The pivot recipe belongs in a 3D View context.
-
-## Applies to
-
-PME 2.1 on Blender 4.5–5.2. Each Macro invocation owns its own temporary state; simultaneous or subsequent invocations must not rely on prior values.
 
 ## Related answers
 

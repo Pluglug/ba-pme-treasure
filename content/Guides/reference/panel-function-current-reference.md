@@ -1,5 +1,5 @@
 ---
-title: "Current panel() reference for PME Popup Dialogs"
+title: "Draw Blender Panels in PME with panel()"
 description: "How PME draws Blender panels with the correct editor context, frame, header, and initial expansion state."
 content_type: reference
 tags:
@@ -87,7 +87,7 @@ panel("MATERIAL_PT_context_material", root=True)
 
 Use the editor that owns the panel. A `VIEW3D_PT_*` panel usually expects `area="VIEW_3D"`; a Properties panel may expect `area="PROPERTIES"`.
 
-`area` helps the panel's own `poll()` and `draw()` resolve their expected context. It is not a universal way to make every nested operator valid in every region. If an operator still fails, use the [[Guides/diagnostics/operator-needs-correct-blender-context|Blender context troubleshooting guide]].
+`area` helps the panel's own `poll()` and `draw()` find the editor they expect. Operators nested inside the panel can have additional region or mode requirements; use the [[Guides/diagnostics/operator-needs-correct-blender-context|Blender context troubleshooting guide]] if one still fails.
 
 ## Sources
 

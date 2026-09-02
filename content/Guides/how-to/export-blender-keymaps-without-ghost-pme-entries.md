@@ -20,12 +20,6 @@ source_posts:
   - Posts/2025/post_05521
 ---
 
-## Applies to
-
-- PME 2.1
-- Blender 4.5–5.2
-- Blender **Keymap Export**, **Import**, and **Save as Preset** workflows
-
 ## Answer
 
 Disable PME and other add-ons that register keymaps before exporting, importing, or saving a Blender keymap preset. Re-enable them afterward and let each add-on register its own current entries.

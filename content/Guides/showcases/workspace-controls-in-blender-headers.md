@@ -9,7 +9,7 @@ tags:
   - browse/menus
   - browse/panels-ui
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -60,7 +60,7 @@ A shortcut is invisible until learned. A global menu is visible, but you have to
 | ---------------- | -------------------------------- | --------------------------------------------- |
 | Import/export    | Above the Outliner               | The hierarchy and scene data are the target.  |
 | Viewport display | In the 3D View header            | The visible viewport will change immediately. |
-| Side-area toggle | Beside the owning workspace area | This boundary is what will open or close.     |
+| Side-area toggle | Beside the owning workspace area | The adjacent area will open or close.        |
 
 You see what the control will change before you press it.
 

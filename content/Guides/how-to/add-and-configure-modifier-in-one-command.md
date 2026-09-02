@@ -52,14 +52,7 @@ The follow-up explains the index: collection positions begin at zero, so a colle
 
 ## Why the original attempt failed
 
-The question tried `bpy.ops.object.decimate(...)`, which referred to a different operation rather than “add a Decimate modifier with these settings.” Creating a modifier data-block and configuring it are separate actions.
-
-## What remains useful
-
-- Distinguish a destructive mesh operator from a non-destructive modifier data-block.
-- Retain the modifier you just created before assigning its options.
-- Keep creation before configuration in a Macro or script.
-- Avoid looking up a newly created modifier by a display name that Blender may suffix or localize.
+The attempted `bpy.ops.object.decimate(...)` call does not add a modifier. Add one with `bpy.ops.object.modifier_add(...)`, retain a reference to the newly created modifier, then set its properties. This is more reliable than looking it up by a display name that Blender may suffix or localize.
 
 ## Sources
 

@@ -40,32 +40,32 @@ After moving to a clean Blender installation or uninstalling another add-on, one
 
 PME saved the operator call that you asked it to run. Removing the add-on that registered that operator does not automatically tell PME whether the item should be deleted, replaced, or kept for a future reinstall.
 
-The historical report described a reference error and crash in a PME 1.18-era setup. Current PME 2.1 checks direct Command operator calls and surfaces **Operator not found** instead of treating the old crash behavior as normal.
+The historical report described a reference error and crash in a PME 1.18-era setup. PME 2.1 checks direct Command operator calls and reports **Operator not found**, making the saved reference easier to locate.
 
 ## Fix
 
-1. Export or back up the current PME configuration before cleaning it.
+1. Export or back up your PME configuration before cleaning it.
 2. Open PME's **Health** view and inspect **Missing operators**.
 3. Open the reported menu and item. Record the missing operator id, such as `some_addon.some_action`.
 4. Choose one resolution:
    - reinstall a compatible version of the owning add-on;
-   - recapture the replacement action from that add-on's current UI;
+   - recapture the replacement action from the add-on's UI;
    - disable or delete the obsolete PME item.
 5. Invoke the containing menu again and check the System Console.
 6. Only investigate Blender's keymap if the old shortcut still exists after the PME item itself is clean.
 
-## What Health can and cannot see
+## What Health checks
 
-Current PME's missing-operator scan covers enabled, direct operator calls stored in **Command** items. It deliberately does not execute commands while scanning.
+In PME 2.1, the missing-operator scan covers enabled, direct operator calls stored in **Command** items. Health reads those calls without executing them.
 
 An operator hidden inside arbitrary Python, an external script, or a dynamically assembled expression may not appear in that list. For those cases, run the smallest failing item and use the exact exception from the System Console.
 
-## Pitfalls
+## Also check
 
-- Do not reinstall PME first. That can obscure which saved item contains the stale reference.
-- Do not delete every hotkey because one operator is missing. Command validity and keymap registration are separate layers.
-- If the add-on is installed but the operator is still missing, its id may have changed between versions. Capture the action again rather than guessing the new identifier.
-- A disabled menu or slot is intentionally muted by the current Health scan.
+- Inspect the saved item before reinstalling PME, so you retain the exact missing reference.
+- Keep unrelated hotkeys in place. A missing command and its keymap registration are separate issues.
+- If the add-on is installed but the operator is still missing, its ID may have changed between versions. Capture the action again instead of guessing the new identifier.
+- Health leaves disabled menus and slots out of this scan.
 
 ## Related answers
 

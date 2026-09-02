@@ -45,7 +45,7 @@ For a custom property named `my_control` on the active object:
 obj = C.active_object; L.prop(obj, '["my_control"]', text="Control") if obj and "my_control" in obj else L.label(text="Control unavailable")
 ```
 
-This draws the real Blender property. It does not create a second PME-owned copy.
+This draws the real Blender property, so there is no second PME-owned value to synchronize.
 
 ## Pose Bone example
 
@@ -79,9 +79,9 @@ Keeping that ownership clear prevents two controls from drifting apart.
 
 ## Pitfalls
 
-- The full copied data path is not the property identifier. `L.prop()` needs the owner and `'["name"]'` separately.
+- Split the copied data path into the owner and the `'["name"]'` identifier expected by `L.prop()`.
 - A Pose Bone property requires the correct armature and bone. Guard the lookup before drawing it.
-- Do not assume every selected object has the same custom property.
+- Guard multi-object layouts because selected objects may have different custom properties.
 - A property provided by another add-on can disappear when that add-on is disabled or changes its data model.
 - Complex logic belongs in an external script; keep a Custom layout item focused on drawing controls.
 

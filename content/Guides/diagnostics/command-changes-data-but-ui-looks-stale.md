@@ -36,9 +36,9 @@ source_code_paths:
 
 A PME Command changes a Blender setting, but its native button, icon, or header still shows the previous state. Moving the mouse over that editor suddenly makes the UI correct.
 
-## First prove the value changed
+## First check whether the value changed
 
-Read the target property in Blender's Python Console immediately after running the command. If the value did not change, this is not a redraw problem; fix the property path, assignment, or context first.
+Read the target property in Blender's Python Console immediately after running the command. If the value is unchanged, check the property path, assignment, and Blender context first.
 
 If the value is correct and only the display is stale, ask Blender to redraw the affected area.
 
@@ -52,7 +52,7 @@ C.scene.tool_settings.use_keyframe_insert_auto = not C.scene.tool_settings.use_k
 
 Use the assignment you actually need; the important part is the guarded `C.area.tag_redraw()`.
 
-If the same state is displayed by every 3D View, current PME exposes a filtered redraw helper that visits matching areas in all Blender windows:
+If the same state is displayed by every 3D View, PME 2.1 provides a filtered redraw helper that visits matching areas in all Blender windows:
 
 ```python
 tag_redraw(area="VIEW_3D", region="WINDOW")
@@ -64,7 +64,7 @@ Omit the filters only when every reachable area and region truly needs a redraw:
 tag_redraw()
 ```
 
-Use `redraw_screen()` only as a last resort when targeted redraws are insufficient. Current PME keeps it as a broad compatibility fallback, not as the default answer to every update problem.
+Use `redraw_screen()` only when a targeted redraw is insufficient. It is a broad compatibility fallback and refreshes more of Blender than most commands need.
 
 ## Diagnostic sequence
 
@@ -72,12 +72,12 @@ Use `redraw_screen()` only as a last resort when targeted redraws are insufficie
 2. Read the property directly and confirm its new value.
 3. Identify which area owns the stale display.
 4. Add a redraw for that area.
-5. Use the broader helper only if another area or window also needs invalidation.
+5. Use the broader helper only if another area or window also needs refreshing.
 6. Test undo, save/reopen, and a second toggle. A repaint can make a control look correct without proving that the state is durable.
 
-## Pitfalls
+## Also check
 
-- Redraw does not repair a wrong property path.
+- A redraw only updates the display. An unchanged property still needs its path, assignment, or context fixed.
 - A button that uses a hard-coded icon will remain misleading even after redraw. Bind its presentation to the real property state.
 - Repeated full-screen redraws inside a modal or timer can be expensive. Redraw once after a discrete state change.
 - If Blender immediately changes the value back, investigate an update callback, handler, driver, or competing add-on rather than adding more redraw calls.

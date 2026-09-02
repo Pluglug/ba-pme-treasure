@@ -40,9 +40,9 @@ A hotkey decides **how you reach** an entry. **Poll** decides **whether that ent
 
 ## Editor names
 
-These are the current labels in PME 2.1. Older posts may use a nearby name such as “Pop-up Dialog Editor” or refer to every saved entry simply as a “menu.”
+These are the labels used in PME 2.1. Older posts may use a nearby name such as “Pop-up Dialog Editor” or refer to every saved entry simply as a “menu.”
 
-### Surfaces
+### Menus and visible layouts
 
 | PME editor                | What it is for                                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -166,7 +166,7 @@ L.label(text="Current frame"); L.prop(C.scene, "frame_current")
 U.last_tool = "Inset"
 ```
 
-The presence of a name in one example does not make it valid everywhere. In particular, do not use `L` outside UI drawing, do not assume `E` exists for a menu opened without an event, and do not use `U` for data that must survive a restart.
+Each name is available only in the situations listed above. Use `L` while drawing UI, check that `E` exists when a script depends on an input event, and reserve `U` for temporary data that can be reset when PME is re-registered or Blender restarts.
 
 ## Continue from here
 

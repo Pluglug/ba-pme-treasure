@@ -10,7 +10,7 @@ tags:
   - browse/hotkeys
   - browse/scripting
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -54,18 +54,11 @@ Reuse Blender's own icons when a menu picks visual tools. They are faster to rec
 
 Keep only the brushes you use during one activity; put secondary actions in a small child panel.
 
-## What would need translating today
+## About the old commands
 
-The source used Blender 3.2 paths and an internal helper from `bl_ui.space_toolsystem_common`. Brush assets, tool identifiers, and icon-resolution internals can change between Blender generations.
+The source used Blender 3.2 tool identifiers and the private `ToolSelectPanelHelper._icon_value_from_icon_handle()` helper. Motiomancer browsed Blender's installation icons to find names, but the command itself resolves the chosen name through that helper.
 
-For a current version:
-
-1. Resolve each active sculpt tool and icon using the target Blender build.
-2. Verify every `wm.tool_set_by_id` identifier.
-3. Avoid depending on an installation-directory icon path when Blender or PME exposes a supported current route.
-4. Test the Pie in Sculpt Mode and confirm that it does not leak into unrelated modes.
-
-The old command is evidence of the design, not copy-ready PME 2.1 guidance.
+A new palette needs its brush icons and `wm.tool_set_by_id` identifiers resolved in the target Blender build. It should appear only in Sculpt Mode, and the private icon helper needs to be rechecked or replaced with a supported route.
 
 ## Media
 

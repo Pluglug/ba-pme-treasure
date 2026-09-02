@@ -9,7 +9,7 @@ tags:
   - browse/menus
   - browse/hotkeys
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -46,7 +46,7 @@ source_urls:
 
 ## What it shows
 
-Shared by felipetorrents as their own version of Wazou's right-click pie menu, with Wazou's operators being migrated into a personal add-on. This is not one enormous menu reused everywhere. It is a family of menus that preserves one right-click vocabulary while changing the available tools for the current Blender task.
+Shared by felipetorrents as their own version of Wazou's right-click pie menu, with Wazou's operators being migrated into a personal add-on. The setup uses a family of menus: the right-click habit stays the same while the available tools follow the active Blender task.
 
 ![A large right-click PME toolkit for Blender Object Mode, combining snapping, parenting, modifiers, object creation, imports, and related actions.](https://blenderartists.org/uploads/default/original/4X/f/0/7/f070053bf1033f6cf749bdb3cd4d14d3ac27cd8a.jpeg)
 
@@ -70,17 +70,11 @@ For example, snapping can remain on the same side in Object and Edit modes, whil
 
 The five screenshots keep the same spacing and grouping in every variant; only the mode-specific commands change.
 
-## What would need translating today
+## Before rebuilding it
 
-The source reports a 2022 keymap problem in which a configured click-drag binding could appear as press after PME edits. felipetorrents also described migrating Wazou's operators into a personal add-on, so some actions may rely on that add-on rather than on PME alone. None of those dependencies or bindings have been reproduced with PME 2.1.
+The source reports a 2022 keymap problem in which a configured click-drag binding could appear as press after PME edits. felipetorrents was also moving Wazou's operators into a personal add-on, so some pictured actions may not come from PME alone. The binding and those dependencies have not been reproduced with PME 2.1.
 
-A current rebuild should:
-
-1. verify native right-click context menus and the chosen PME gesture can coexist;
-2. test every object-mode and object-type filter;
-3. separate PME-native actions from external add-on commands;
-4. remove unavailable actions without leaving empty visual groups;
-5. keep the same layout in each variant.
+For a new version, first make the right-click gesture coexist with Blender's native menu, then add the Object, Mesh, and Curve variants one at a time. Keeping their shared actions in the same positions is the part of this setup worth preserving.
 
 ## Gallery
 

@@ -54,7 +54,7 @@ return C.active_object.color[3] if C.active_object and hasattr(C.active_object, 
 [o.color.__setitem__(3, value) for o in C.selected_objects if hasattr(o, "color")]
 ```
 
-This is a compact PME form, but it is not automatically safe for every property. For a new target, first test the assignment against one object in Blender's Python Console.
+This is a compact PME form. Test a new target against one object in Blender's Python Console before applying it to a selection.
 
 ## Delta and ratio are different promises
 
@@ -74,9 +74,9 @@ A ratio instead multiplies the other values by `value / old_active`. It needs an
 
 ## Pitfalls
 
-- The active object provides the getter value. It does not prove that every selected object supports the target property.
+- The active object provides the getter value; filter the selection to objects that support the target property.
 - Avoid hiding a type error with a broad `except`. Filter or validate the target objects before writing.
-- Do not use a ratio for values that can be negative or cross zero unless you have defined the intended result.
+- Define the intended zero-crossing behavior before using a ratio with values that can be negative.
 - One-line setters are hard to audit. Move a non-trivial rule to [[Guides/how-to/run-external-script-from-pme|an external Python script]] before it becomes a maintenance burden.
 - Test Undo, keyframing, linked data, and mixed object types with a disposable `.blend` file.
 

@@ -1,13 +1,21 @@
 # Pluglug
 
-## User Information
+Pluglug maintains Pie Menu Editor Fork (PME-F). The forum posts preserved here also include original examples for state-aware controls, transform presets, and a customized version of roaoao's Context Browser.
 
-- **Total Posts**: 363
+## Start with
 
-## Posts by This User
+- [[Guides/showcases/transform-preset-control-surface|Transform Preset controls in one Pie]]
+- [[Guides/showcases/keyframe-aware-property-control|A keyframe-aware property control]]
+- [[Guides/showcases/context-browser-for-pme-scripting|Context Browser for PME scripting]]
 
-Preserved posts by this contributor are listed under **Backlinks**.
+## In this archive
 
-## Links
+- **Preserved posts**: 363
+
+## More from Pluglug
+
+Open **Backlinks** for the complete preserved forum trail.
+
+## Elsewhere
 
 - [Profile on Blender Artists](https://blenderartists.org/u/Pluglug)

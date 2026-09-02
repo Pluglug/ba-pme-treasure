@@ -37,7 +37,7 @@ An operator works from Blender's native UI, but fails or silently cancels when i
 
 Blender operators run in a context: editor area, region, mode, active object, and other state. A command that requires the actual 3D Viewport can fail when it is invoked from Preferences, a sidebar region, or an overly broad keymap such as **3D View Generic**.
 
-This is not fixed by repeating the command. The operator must be invoked from a context that satisfies its requirements.
+The same command can therefore work in one part of Blender and cancel in another. It needs an editor, region, mode, and selection that satisfy its requirements.
 
 ## Checks
 
@@ -57,11 +57,11 @@ This is not fixed by repeating the command. The operator must be invoked from a 
 
 Move or invoke the command from the editor and region it belongs to, narrow the keymap, and gate the menu by mode or object type.
 
-For the current `3D View Generic` case, PME2 2.0.5.1 and later safely cancel an operator in an invalid region. That prevents an unsafe failure; it does **not** make the operator valid in the N-panel. The configuration still needs the correct **3D View** scope.
+In the reported Macro case, PME2 2.0.5.1 and later catch Blender's native poll failure and cancel the Macro. This does not make the operator valid outside the Viewport. Choose the narrower **3D View** scope when the operator needs the Viewport rather than the N-panel or another region.
 
 ## Historical continuity
 
-The same boundary appeared in 2018 when a Local View button was placed in a toolbar hosted by the User Preferences editor. Moving the Popup Dialog into a 3D View Panel Group resolved it, and the requester confirmed success. The UI names have evolved, but Blender's context rule remains the same.
+The same rule appeared in a 2018 discussion about a Local View button in a toolbar hosted by the User Preferences editor. Moving the Popup Dialog into a 3D View Panel Group resolved it, and the requester confirmed success. The UI names have changed, but Blender still checks the context in which an operator runs.
 
 ## Still not explained by context?
 
@@ -72,7 +72,7 @@ If the operator works from the same area and mode but not through PME, investiga
 - a Macro contains a missing or renamed operator;
 - the recipe targets an older Blender API.
 
-Keep these as separate diagnoses. A generic “PME bug” tag is not a useful resolution.
+Each clue points to a different next check, so keep the exact keymap, Poll, operator ID, or API error with the report.
 
 ## Sources
 

@@ -32,7 +32,7 @@ Hold a modifier key to use a Sculpt mask brush, perform the stroke, and return t
 
 ## Historical construction
 
-The working episode combined a PME **Sticky Key** with a matching Sculpt keymap:
+The working forum example combined a PME **Sticky Key** with a matching Sculpt keymap:
 
 1. Create a Sticky Key for the chosen modifier.
 2. On press, select the Mask brush from PME's menu tools.
@@ -53,14 +53,7 @@ The requester confirmed that the combined Sticky Key and stroke invocation worke
 
 The answer used additional modifier combinations for add, subtract, or smooth behavior. Brush settings such as mask tool and strength could be assigned before invoking the stroke.
 
-Those extra settings were not restored by merely restoring the previous brush selection. They changed the Mask brush data itself and therefore persisted into later uses. A more complete adaptation must save and restore every property it temporarily owns.
-
-## What remains useful
-
-- A temporary tool needs both state substitution and an interactive operator in the same event flow.
-- Restoring the selected brush is different from restoring properties mutated on that brush.
-- Modifier-based strokes may require a Blender keymap entry in addition to the PME Sticky Key.
-- Design the cleanup list from the state actually changed, not from the state users happen to notice first.
+Those extra settings were not restored by merely restoring the previous brush selection. They changed the Mask brush data itself and therefore persisted into later uses. A more complete adaptation must save and restore every property it changes. Modifier-based strokes may also require a Blender keymap entry in addition to the PME Sticky Key.
 
 ## Sources
 

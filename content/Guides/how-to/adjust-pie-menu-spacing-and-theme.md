@@ -49,7 +49,7 @@ Make a crowded Pie Menu easier to scan without changing its commands. PME contro
 3. Increase it a few units at a time, then invoke the Pie Menu in the Blender area where you actually use it.
 4. Stop when neighbouring groups are distinct at your normal UI scale. A larger value is not automatically clearer if it makes the menu require more pointer travel.
 
-This is a current PME preference in 2.1. It changes the extra visual gap; it does not add commands or change the underlying Blender Pie Menu theme.
+In PME 2.1, this preference changes the extra visual gap. Commands and Blender's underlying Pie Menu theme stay unchanged.
 
 ## Change the Pie Menu colours
 

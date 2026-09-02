@@ -9,7 +9,7 @@ tags:
   - browse/panels-ui
   - browse/properties-context
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -66,11 +66,11 @@ A good preset shelf should:
 - keep destructive whole-stack actions separate from add-preset actions;
 - disappear or disable itself when the active object cannot use modifiers.
 
-## What would need translating today
+## About the old setup
 
-The source conversation involved two other add-ons—Modifier List, used by both posters, and Modifier Tools, the source of the Apply All row—and Blender's 2.90 transition. Panel-extension behavior, custom-icon storage, button ordering, and restart behavior have not been reproduced with PME 2.1.
+The conversation took place during Blender's 2.90 transition and involved two other add-ons: Modifier List, used by both posters, and Modifier Tools, which supplied the Apply All row. The panel extension, custom icons, button order, and restart behavior have not been reproduced with PME 2.1.
 
-A current version should rebuild the shelf as a PME panel, verify each modifier operator and default, and state what each preset changes beyond adding the modifier. If it depends on another add-on, say so.
+A new shelf can keep the same idea while using the modifier operators and defaults from its target Blender version. Any buttons supplied by another add-on should be identified beside the preset.
 
 ## Media
 

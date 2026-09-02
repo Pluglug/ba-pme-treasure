@@ -51,7 +51,7 @@ Or combine feedback with a short action:
 bpy.ops.wm.tool_set_by_id(name="builtin.select_box"); overlay("Tool: Select Box")
 ```
 
-`overlay()` is for transient feedback: a mode chosen, a preset applied, or a Macro step reached. It is not a persistent status panel.
+`overlay()` gives transient feedback: a mode chosen, a preset applied, or a Macro step reached. Use another UI element for status that must remain visible.
 
 ## Arguments
 
@@ -71,24 +71,20 @@ Omitted presentation values use the user's PME Overlay preferences.
 
 ## Design the message for recognition
 
-- State the result, not the implementation: `"Pivot: Cursor"` is better than `"Command complete"`.
+- State the result: `"Pivot: Cursor"` is more useful than `"Command complete"`.
 - Keep the text short enough to read without stopping the task.
 - Use one placement consistently for the same kind of feedback.
-- Announce a meaningful change once. Do not emit a message for every internal step of a Macro.
+- Announce a meaningful change once rather than every internal Macro step.
 
 Overlay text and timer state are shared by Blender editor area type, not by each individual editor area. Calling `overlay()` again from the same area type updates that shared message and resets its timer. This makes successive choices readable without stacking a column of stale notifications.
 
 ## Limits
 
-- There is no public “dismiss this overlay now” argument. Choose a short duration; do not use a very long overlay as a substitute for live status UI.
-- The helper draws in supported Blender editor areas and needs a valid interactive area. It is not a background notification service.
-- An overlay does not prove the action succeeded. Compute the resulting state first, then display the message that describes it.
+- The public API has no immediate-dismiss argument, so choose a short duration. Use live UI when the status must remain visible.
+- The helper draws in supported Blender editor areas and needs a valid interactive area.
+- Compute the resulting state first, then display a message that describes it.
 - Long conditional expressions that both mutate data and compose a message are hard to trust. Move that logic to [[Guides/how-to/run-external-script-from-pme|a readable external script]].
 - For a state that must remain visible until it changes, use a Popup Dialog, Panel Group, or a dedicated Blender drawing handler rather than extending `duration`.
-
-## Applies to
-
-The signature, alignments, timer behavior, and supported editor-area implementation were checked against PME 2.1 source. The original 2023–2024 examples remain good use cases, while `CENTER` is an additional current alignment.
 
 ## Related
 

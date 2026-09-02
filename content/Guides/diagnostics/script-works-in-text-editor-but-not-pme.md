@@ -45,13 +45,13 @@ The System Console reports an exception such as:
 NameError: name 'Vector' is not defined
 ```
 
-## Separate the historical bug from a current script error
+## An old bug and today's likely cause
 
-The 2017 source episode exposed an old PME execution-scope bug: an import visible to the file was not visible inside one of its functions. The requester confirmed the function-local import workaround, and the bug was scheduled for a PME update.
+The 2017 discussion exposed an old PME bug: an import visible to the file was missing inside one of its functions. The requester confirmed that moving the import into the function worked around it, and the bug was scheduled for a PME update.
 
-Current PME 2.1 executes a file with one freshly generated globals dictionary. A normal import at the top of the file is therefore visible to functions defined by that run. Do not move every import into its function as a current PME rule.
+PME 2.1 runs each file with one fresh set of global names, so a normal import at the top of the file is visible to functions defined during that run. There is no need to move every import into its function.
 
-If `NameError` occurs now, first suspect a dependency that the file never imports or defines. The missing name may have existed only because another Text block or console command was run earlier. Current `execute_script()` starts from PME's globals for the calling route, then adds `kwargs` and `__file__`; it does not copy arbitrary variables from Text Editor history.
+For a new `NameError`, check whether the file imports or defines the missing name. It may have been left behind by another Text block or console command during the successful test. `execute_script()` starts with PME's standard names for that call, then adds `kwargs` and `__file__`; variables left in the Text Editor session are not copied into the run.
 
 ## Fix
 
@@ -67,9 +67,9 @@ def remap(value, old_min, old_max, new_min, new_max):
     # Continue with the calculation...
 ```
 
-Then invoke that same file again from PME. Do not “prepare” the script by running another Text block first; that only hides the dependency.
+Then invoke that same file again from PME, without first running another Text block that could hide a missing dependency.
 
-If a top-level import is present and succeeds but the imported name is still missing inside a function on PME 2.1, reduce it to a minimal file and report it. That would not match the current execution contract.
+If a top-level import succeeds but the imported name is still missing inside a function on PME 2.1, reduce the problem to a minimal file and report it. PME 2.1 should make the import visible to functions created in the same run.
 
 ## Diagnostic sequence
 
@@ -77,14 +77,14 @@ If a top-level import is present and succeeds but the imported name is still mis
 2. For `NameError`, find where that name should be imported or defined.
 3. For `ModuleNotFoundError`, confirm that the dependency is available to Blender's Python, not merely to a separate system Python.
 4. Reduce the file to its imports and one harmless statement, then add the real work back a section at a time.
-5. Re-test from the actual PME menu, editor, and mode. A clean Text Editor run does not prove that the operator context is valid.
+5. Re-test from the actual PME menu, editor, and mode as well as the Text Editor, because Blender's operator context can differ.
 
 ## What PME does provide
 
 - `kwargs`, containing values passed by the PME item;
 - `__file__`, containing the resolved script path;
 - core execution names such as `C`, `D`, `bpy`, and session-only `U`;
-- route-owned names only when that route has them—`L` while drawing UI and `E` while handling a scoped input event.
+- context-specific names when available—`L` while drawing UI and `E` while handling an input event.
 
 `O` remains available as a compatibility shortcut, but `bpy.ops` is clearer in new long-lived scripts. `return_value` is not supplied in advance: assign it in the script when the caller needs a result. If the script does not assign it and execution succeeds, `execute_script()` returns `True`.
 

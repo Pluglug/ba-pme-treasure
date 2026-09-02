@@ -57,23 +57,23 @@ Replace `Transform` with the exact name of your target menu.
    ```
 
 4. Assign the Stack Key's hotkey and keymap context.
-5. Leave Stack Key options such as **Remember Slot** off; a one-command wrapper does not need cycling behavior.
+5. Leave Stack Key options such as **Remember Slot** off for this one-command wrapper.
 6. Test both triggers in their intended Blender editors and modes.
 
 The menu content remains in one place. Editing `Transform` changes what both shortcuts open.
 
 ## When the same key should open different menus
 
-Blender keymaps are contextual. The same physical key can lead to different PME menus in different compatible keymap contexts—for example, one in Object Mode and another in Mesh Edit Mode. Keep those contexts explicit and test each one; do not register two indistinguishable bindings in the same keymap and hope ordering will decide.
+Blender keymaps are contextual. The same physical key can lead to different PME menus in different compatible keymap contexts—for example, one in Object Mode and another in Mesh Edit Mode. Keep those contexts explicit, test each one, and give bindings in the same keymap distinguishable conditions.
 
 For more complex decisions inside one trigger, use [[Guides/how-to/route-to-a-context-specific-menu|a context-specific menu route]] instead of multiplying wrappers.
 
 ## Pitfalls
 
 - `open_menu()` uses the target's name. If you rename the target menu, update each wrapper command.
-- A wrapper creates another Blender keymap entry. It does not bypass keymap priority or resolve a conflict automatically.
-- Do not duplicate the whole Pie Menu merely to change its shortcut. The copies will eventually differ.
-- Do not enable Stack Key cycling options for a single wrapper command; they add no value here.
+- A wrapper creates another Blender keymap entry, so keymap priority and conflicts still apply.
+- Point every wrapper at the same Pie Menu so its contents stay synchronized.
+- Leave Stack Key cycling options disabled for a single wrapper command.
 - When reusing the menu inside another PME menu rather than from a keyboard shortcut, add a **Menu** item instead. That creates a managed link and is easier to navigate while editing.
 
 ## Related answers

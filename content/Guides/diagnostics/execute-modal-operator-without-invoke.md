@@ -1,6 +1,6 @@
 ---
 title: "Execute a modal-style operator without reopening its interaction"
-description: "A historical PME recipe for one-click operator completion using Blender's EXEC_DEFAULT execution context."
+description: "A 2018 PME recipe for running an operator immediately with Blender's EXEC_DEFAULT context."
 content_type: troubleshooting
 tags:
   - knowledge/troubleshooting
@@ -25,19 +25,15 @@ source_urls:
 
 > **Historical · current compatibility unverified**
 
-## Original context
+The linked 2018 posts discuss a Macro/Modal setup for `transform.tosphere` with `value=1.0`. They do not state the PME or Blender version, so test this recipe before using it in a current setup.
 
-The linked 2018 posts do not state a PME version or Blender version. They discuss a Macro/Modal setup for `transform.tosphere` with `value=1.0`.
-
-## Answer
-
-The historical answer was to call the operator with `EXEC_DEFAULT` rather than `INVOKE_DEFAULT`:
+The answer was to call the operator with `EXEC_DEFAULT`:
 
 ```python
 bpy.ops.transform.tosphere("EXEC_DEFAULT", value=1.0)
 ```
 
-`INVOKE_DEFAULT` starts an interactive operator flow, which can wait for another click or mouse confirmation. `EXEC_DEFAULT` asks Blender to execute with the supplied properties immediately when the operator supports that path.
+`INVOKE_DEFAULT` starts the interactive flow and may wait for another click or mouse confirmation. `EXEC_DEFAULT` runs immediately with the supplied properties when the operator supports direct execution.
 
 ## Steps
 
@@ -49,17 +45,13 @@ bpy.ops.transform.tosphere("EXEC_DEFAULT", value=1.0)
    ```
 
 3. Test on a copy of the blend file. Confirm the result and undo behavior.
-4. If the operator requires a valid editor, mode, or active object, fix that context separately; execution mode does not bypass Blender's `poll()` requirements.
+4. Test from the editor and mode where you intend to use it. Blender still checks the operator's `poll()` requirements.
 
-## Pitfalls
+## When to keep interactive execution
 
-- `EXEC_DEFAULT` is not a universal replacement. Operators that need mouse coordinates, a modal handler, or an invoke-only setup may cancel.
-- Supplying an execution context does not make an invalid operator context valid.
-- A Macro step that deliberately needs interactive adjustment should remain `INVOKE_DEFAULT`.
-
-## Applies to
-
-The original source context is a 2018 PME discussion; the PME and Blender versions are **not stated**. Treat the recipe as historical until tested against the current Blender and PME versions.
+- Operators that need mouse coordinates, a modal handler, or other invoke-only setup may cancel under `EXEC_DEFAULT`.
+- The editor, mode, selection, and active object must still satisfy the operator's requirements.
+- Keep `INVOKE_DEFAULT` for a Macro step that should let you adjust the result interactively.
 
 ## Related
 

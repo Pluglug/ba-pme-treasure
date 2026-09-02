@@ -58,15 +58,13 @@ The setter form returns `True` when PME accepts a write to a registered property
 
 ## Pitfalls
 
-- `props()` is not scratch storage. Define the property in PME's Property Editor before reading or writing it.
-- Use the property identifier, not an arbitrary label, for the stable named form. Current PME permits supported legacy display-name aliases for reads, but writes are restricted to registered storage IDs.
-- `props()` values are PME preferences, not automatically the same as `bpy.context` data. If the target is Blender data, address that RNA path directly.
-- A property is only available after PME has finished loading its Property Editor. Do not assume it exists during arbitrary startup code.
-- Keep the expression type-compatible with the widget. A float used as `scale_x` should not be replaced by an enum or string.
+- Define the property in PME's Property Editor before reading or writing it with `props()`; use `U` for session scratch values.
+- Use the property identifier rather than an arbitrary label. PME accepts supported legacy display-name aliases when reading, but writes require a registered storage ID.
+- `props()` reads PME preferences. Address the RNA path directly when the target is Blender data.
+- Registered properties become available after PME has loaded its Property Editor; arbitrary startup code can run earlier.
+- Keep the expression type-compatible with the widget. For example, `scale_x` expects a float rather than an enum or string.
 
-## Applies to
-
-This reference targets PME 2.1 with Blender 4.5–5.2. The linked community examples use PME 1.18.x-era naming; the accessor contract above follows the current runtime implementation.
+The accessor behavior above describes PME 2.1. The linked examples use PME 1.18.x-era naming.
 
 ## Related
 
@@ -74,5 +72,5 @@ This reference targets PME 2.1 with Blender 4.5–5.2. The linked community exam
 - [[Guides/how-to/run-external-script-from-pme|Run an external Python script from PME]]
 - [[Posts/2023/post_04920|Property path and registration context, post 4920]]
 - [[Posts/2023/post_04922|Property Getter/Setter example, post 4922]]
-- [[Posts/2024/post_05030|Current props() layout example, post 5030]]
-- [[Posts/2024/post_05039|Current props() usage discussion, post 5039]]
+- [[Posts/2024/post_05030|props() layout example, post 5030]]
+- [[Posts/2024/post_05039|props() usage discussion, post 5039]]

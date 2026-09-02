@@ -91,47 +91,14 @@ The [current PME capability tour](https://pie-menu-editor.github.io/pme-docs/) i
 
 ## Follow a different trail
 
-<div class="card-grid">
-
-<div class="nav-card showcase">
-
-### Start from a concrete setup idea
-
-[[Guides/examples|Examples and Showcases]] explains the reusable design idea behind each selected setup.
-
-</div>
-
-<div class="nav-card explore">
-
-### Follow an idea as it becomes a tool
-
-[[Guides/trails/from-shortcuts-to-workflow-tools|From Shortcuts to Workflow Tools]] connects eight resolved conversations: composing UI, borrowing state, remembering choices, execution mode, and Blender context.
-
-</div>
-
-<div class="nav-card explore">
-
-### Sample ten years of conversation
-
-[[Timeline|Timeline 2016–2025]] opens the first 20 preserved posts from each year. Use Forum archive search for the complete conversation.
-
-</div>
-
-<div class="nav-card beginner">
-
-### Meet the people behind the answers
-
-[[User_Index|The contributor index]] opens each person's preserved forum trail when you want to follow a particular builder, maintainer, or problem solver.
-
-</div>
-
-</div>
+- [[Guides/trails/from-shortcuts-to-workflow-tools|Follow eight forum solutions as they become workflow tools]]
+- [[Timeline|Browse the conversation by year]]
+- [[User_Index|Meet the contributors behind the answers]]
 
 ## Historical ideas worth revisiting
 
 These pages preserve strong design ideas whose exact implementation belongs to an earlier PME or Blender era.
 
-- [[Guides/reference/searchable-workspace-switcher-pattern|Searchable workspace switcher]] — turn a long list into an invocation-time search.
 - [[Guides/how-to/build-stable-panel-group-toolbar|Stable Panel Group toolbar]] — make structure more durable than individual buttons.
 - [[Guides/how-to/group-framed-popup-dialog-sections|Framed Popup Dialog sections]] — use visual grouping to make a large custom tool readable.
 - [[Guides/how-to/hold-key-to-temporarily-switch-sculpt-brush|Temporary Sculpt brush]] — borrow a tool while a key is held, then restore the previous state.

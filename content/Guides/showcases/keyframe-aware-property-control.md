@@ -10,7 +10,7 @@ tags:
   - browse/automation
   - browse/scripting
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -64,11 +64,11 @@ One control can do four things, with the logic kept in a helper rather than in t
 
 The same split works for keyed custom properties, visibility, rig settings, and any value whose keyed state you want to see.
 
-## What would need translating today
+## About the historical helper
 
-The source bootstraps its helper through the old `pme.context.add_global("my_alpha", my_alpha)` pattern. PME 2.1 retains `pme.context.add_global()` for backward compatibility, but current development treats examples built on that legacy API as migration work—not as copy-ready guidance for a new integration.
+The source bootstraps its helper through the old `pme.context.add_global("my_alpha", my_alpha)` pattern. PME 2.1 retains `pme.context.add_global()` for backward compatibility, but a new version should give the helper clear registration, reload, and cleanup behavior.
 
-A current implementation needs to be redesigned around the supported PME 2.1 public surface, with explicit registration, reload, and cleanup behavior. It also needs a fresh check of Blender's material alpha, animation-data, and keyframe APIs. Do not install the historical helper as an autorun script without that translation.
+The downloaded helper also depends on Blender's object-colour, animation-data, and keyframe APIs as they existed when it was shared. Those calls need checking before the helper is used with a newer Blender build.
 
 ## Media and attachment
 

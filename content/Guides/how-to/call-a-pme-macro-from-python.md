@@ -39,13 +39,13 @@ import bpy
 bpy.ops.pme.invoke_macro("EXEC_DEFAULT", pm_name="My Cleanup Macro")
 ```
 
-PME 2.1 resolves the current Macro and executes it through its normal Macro runtime.
+PME 2.1 resolves the named Macro and executes it through the normal Macro runtime.
 
 ## Why this is safer than the old approach
 
-The 2025 forum question discovered that a complete generated call copied from Blender's Info editor could execute a Macro. That works only as long as the generated `bpy.ops.pme.macro_*` identifier and child-property payload still match the current Macro.
+The 2025 forum question discovered that a complete generated call copied from Blender's Info editor could execute a Macro. That call breaks if the generated `bpy.ops.pme.macro_*` identifier or child-property payload no longer matches the Macro.
 
-Do not build new integrations around that generated identifier. PME owns it and may recreate it when the Macro changes. `pme.invoke_macro` is the explicit 2.1 entry point for name- or UID-based invocation.
+For a durable integration, use PME 2.1's explicit `pme.invoke_macro` entry point. PME owns the generated identifier and may recreate it when the Macro changes.
 
 ## Steps
 
@@ -60,25 +60,23 @@ Do not build new integrations around that generated identifier. PME owns it and 
    result = bpy.ops.pme.invoke_macro("EXEC_DEFAULT", pm_name="My Cleanup Macro")
    ```
 
-5. Treat a cancelled result or reported error as a failed invocation; do not continue as if the Macro finished.
+5. Stop the surrounding script when the invocation is cancelled or reports an error.
 
-The current operator also accepts `pm_uid=`. UID-based lookup can survive a rename when the caller already owns that exact identity, but a hand-authored script normally starts with the visible `pm_name`.
+The operator also accepts `pm_uid=`. UID-based lookup can survive a rename when the caller already owns that exact identity, but a hand-authored script normally starts with the visible `pm_name`.
 
 ## Context still matters
 
-This entry point resolves the PME Macro; it does not manufacture a Blender context for its steps. A Macro that begins with a Mesh Edit operator still needs an editable mesh and a compatible editor. If the same script must work in several contexts, route deliberately before invoking it or create separate context-appropriate Macros.
+This entry point resolves the PME Macro and runs it in Blender's existing context. A Macro that begins with a Mesh Edit operator still needs an editable mesh and a compatible editor. If the same script must work in several contexts, route deliberately before invoking it or create separate context-appropriate Macros.
 
 ## Pitfalls
 
-- Do not copy `bpy.ops.pme.macro_*` calls from the Info editor into durable code.
-- Do not call the operator during Blender startup before PME is registered.
+- Use `pme.invoke_macro` instead of copying `bpy.ops.pme.macro_*` calls from the Info editor into durable code.
+- Invoke the operator after PME has registered, rather than during early Blender startup.
 - A matching name that belongs to a non-Macro PME menu is rejected.
 - Disabled, missing, or context-invalid Macros cancel rather than partially falling through to another menu.
 - From another PME item, prefer the **Menu** link or `open_menu("Macro Name")`; this external operator is for Python integrations outside that normal authoring path.
 
-## Applies to
-
-`pme.invoke_macro` is present in PME 2.1 and resolves a Macro by `pm_name` or `pm_uid`, checks that it is enabled and context-valid, then hands it to the current Macro runtime. It is not a promise for PME 1.18/1.19 installations.
+In PME 2.1, `pme.invoke_macro` resolves a Macro by `pm_name` or `pm_uid`, checks that it is enabled and valid in the active context, then runs it. Older PME 1.18/1.19 installations use different entry points.
 
 ## Related
 

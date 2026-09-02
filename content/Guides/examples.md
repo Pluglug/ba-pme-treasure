@@ -7,7 +7,7 @@ tags:
   - knowledge/guide
   - browse/examples
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 provenance_version: 1
@@ -53,7 +53,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 [![PME controls arranged in a Blender sidebar Panel Group](https://blenderartists.org/uploads/default/original/4X/4/4/e/44e54e693141de856019e220bf4af58e6c8da3bb.png)](Guides/how-to/create-a-pme-sidebar-panel-group)
 
-[[Guides/how-to/create-a-pme-sidebar-panel-group|Build the current version]]
+[[Guides/how-to/create-a-pme-sidebar-panel-group|Open the panel-group guide]]
 
 **Borrow this:** group a sidebar panel by job, not by which add-on each control comes from.
 
@@ -85,7 +85,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 [![A PME Property Editor control for a Blender value](https://blenderartists.org/uploads/default/original/4X/3/8/5/385e3b30b372e989fc3eb9ec2100325c8dc71aee.png)](Guides/how-to/make-a-property-editor-slider)
 
-[[Guides/how-to/make-a-property-editor-slider|Build the current version]]
+[[Guides/how-to/make-a-property-editor-slider|Open the Property slider guide]]
 
 **Borrow this:** put a Blender value next to the action that uses it.
 
@@ -97,7 +97,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 [![Two Pie Menu groups before their additional gap is increased](https://blenderartists.org/uploads/default/original/4X/b/5/a/b5a5e0aa6177e4f4d5830330a5862d1425a63926.png)](Guides/how-to/adjust-pie-menu-spacing-and-theme)
 
-[[Guides/how-to/adjust-pie-menu-spacing-and-theme|Tune the current settings]]
+[[Guides/how-to/adjust-pie-menu-spacing-and-theme|Open the spacing and colour guide]]
 
 **Borrow this:** trim the menu, then use spacing and theme colours to make its groups readable.
 
@@ -132,7 +132,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 [![Blender Preferences opened with the Pie Menu Editor entry selected](https://blenderartists.org/uploads/default/original/4X/a/5/5/a557a707b2adb3c7e70b94b3787bf454cf817a6c.jpeg)](Guides/how-to/open-pme-preferences-directly)
 
-[[Guides/how-to/open-pme-preferences-directly|Add the current command]]
+[[Guides/how-to/open-pme-preferences-directly|Open the command guide]]
 
 **Borrow this:** open PME Preferences in a full window with one command.
 
@@ -144,7 +144,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 [![A Poll field restricting a PME menu to one Node Editor subtype](https://blenderartists.org/uploads/default/original/4X/e/5/b/e5ba259251316849eaaa1444efb9470a6b05374f.png)](Guides/qa/use-a-different-pie-in-each-node-editor)
 
-[[Guides/qa/use-a-different-pie-in-each-node-editor|Build the current version]]
+[[Guides/qa/use-a-different-pie-in-each-node-editor|Open the Node Editor guide]]
 
 **Borrow this:** keep one hotkey and give each Node Editor its own menu.
 
@@ -241,7 +241,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
   <a href="https://blenderartists.org/uploads/default/original/4X/9/7/2/97260c4bbe1ffd922d34b58998381f081f2771ec.mp4">Watch the create-and-name demonstration.</a>
 </video>
 
-[[Guides/showcases/name-objects-while-creating-them|Build the current version]] · question by MickHanks, solution by roaoao
+[[Guides/showcases/name-objects-while-creating-them|Open the PME 2.1 recipe]] · question by MickHanks, solution by roaoao
 
 **Borrow this:** ask for a name right after creating the object, while it is still active.
 
@@ -261,7 +261,7 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 
 [[Guides/showcases/forty-two-button-popup-task-deck|Open the showcase]] · shared by emboo2
 
-**Borrow this:** a Popup Dialog in an empty window can hold a large labelled panel. The 42 buttons were a capacity demonstration using the Physics panel, not a curated toolbar.
+**Borrow this:** a Popup Dialog in an empty window can hold a large labelled panel. This example contains about 42 buttons from the Physics panel.
 
 **Historical · current compatibility unverified**
 
@@ -282,6 +282,12 @@ These are real PME setups from the forum. Each card names the idea worth reusing
 </div>
 
 </div>
+
+## Using a historical example
+
+The historical cards preserve an idea, its author, and the original material. When rebuilding one, read the showcase for any known version or add-on dependency, test imports or keymap changes in a copy of your Blender profile, and recapture commands or property paths from the Blender version you use.
+
+Start with the smallest part that would help your own work. If it behaves correctly in the editors and modes where you need it, add the next part.
 
 ## More patterns to explore
 

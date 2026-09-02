@@ -20,12 +20,6 @@ source_posts:
   - Posts/2020/post_02937
 ---
 
-## Applies to
-
-- PME 2.1
-- Blender 4.5–5.2
-- Stack Key menus containing Command or Hotkey items
-
 ## Answer
 
 Create a **Stack Key** menu, place one action in each slot in the desired order, and assign one hotkey to the Stack Key. Each invocation selects the next enabled slot according to the Stack Key's advance settings.

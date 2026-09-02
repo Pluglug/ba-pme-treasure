@@ -51,14 +51,14 @@ Use a PME **Float Property** as the UI-facing value, then connect it to Blender 
 ## Pitfalls
 
 - The Getter must return the current value; returning a label or a code string makes the control display the wrong type.
-- The Setter receives `value`; do not replace it with a hard-coded number unless the control is intentionally a one-way action.
+- The Setter receives `value`; assign that value to the Blender property for a two-way control.
 - The property path must exist in the active Blender version and preferences theme. If a path is version-specific, guard it or choose a more stable target.
-- A Factor subtype changes presentation; it does not clamp or convert the underlying Blender value. Set valid min/max bounds explicitly.
+- A Factor subtype changes presentation; it does not clamp or convert the underlying Blender value. Set valid minimum and maximum bounds explicitly.
 - If the control is visible but does not update, test the target path directly in Blender's Python Console before debugging PME.
 
-## Applies to
+The historical example used the `face_retopology` theme setting. Choose a property that exists in your Blender build.
 
-This recipe targets PME 2.1 with Blender 4.5–5.2. The original example used the `face_retopology` theme setting; use it only when that property exists in the active Blender build.
+The steps above were source-checked with PME 2.1 and Blender 4.5–5.2.
 
 ## Related
 

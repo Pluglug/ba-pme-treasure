@@ -20,12 +20,6 @@ source_posts:
   - Posts/2019/post_02596
 ---
 
-## Applies to
-
-- PME 2.1
-- Blender 4.5–5.2
-- Stack Key menus using Remember Slot or Quick Repeat
-
 ## Answer
 
 Enable **Remember Slot** when later invocations should continue from the Stack Key's last runtime position. Then choose **Advance On** according to the interaction you want:
@@ -57,7 +51,7 @@ Set **Repeat Timeout** to the largest gap that still feels like a deliberate rep
 ## Examples
 
 - **Every Press + Remember Slot:** cycle viewport states and continue where the previous invocation stopped.
-- **Quick Repeat + Remember Slot:** keep invoking the current tool/action on normal presses, but rapidly tap to select the next action.
+- **Quick Repeat + Remember Slot:** keep invoking the selected tool or action on normal presses, but rapidly tap to select the next action.
 - **Remember Slot off:** begin from the initial slot instead of carrying the last runtime position into the next invocation.
 
 ## Pitfalls

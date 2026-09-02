@@ -23,21 +23,15 @@ source_urls:
   - https://pie-menu-editor.github.io/pme-docs/getting_started/installation.html
 ---
 
-## Applies to
-
-- Source setup: PME 1.18.x, PME-F 1.19.x, or PME 2.0.5.x
-- Target setup: PME 2.1 Extension
-- Blender: 4.5–5.2
-
 ## Answer
 
-Export **All Menus** from the old PME, preserve any external resources, remove the old add-on completely, and only then install PME 2.1. Do not enable a legacy PME and the PME 2.1 Extension together.
+Export **All Menus**, preserve external resources, remove the old add-on, and then install PME 2.1. Do not enable a legacy PME and the PME 2.1 Extension together.
 
-The JSON export carries menu definitions and each menu's PME hotkeys. It is not a complete copy of every PME preference or external file.
+The JSON export carries menu definitions and each menu's PME hotkeys. Record preferences separately, and copy scripts, icons, and other external files.
 
 ## Steps
 
-1. **Update an older legacy install before exporting when practical.** PME 1.19.0 or newer records disabled menu and item states in the export; earlier exporters do not preserve that state reliably.
+1. **Update an older legacy install before exporting when practical.** PME-F 1.19.0 added export of each menu's Enabled state; earlier exports do not preserve that state.
 2. In the old PME, use **Export → All Menus** and keep the JSON somewhere outside the add-on directory.
 3. If the source is PME 1.18.x or 1.19.x, copy custom scripts, icons, and useful files from the old `pie_menu_editor` directory before uninstalling. Also keep its `pie_menu_editor_data/backups` directory if present. PME 2.0.5 already stores these resources outside the add-on package.
 4. Record settings that JSON does not carry: the global PME hotkey, general preferences, current User Property values, resource-root choice, and boot/import configuration.
@@ -49,10 +43,10 @@ The JSON export carries menu definitions and each menu's PME hotkeys. It is not 
 
 ## Pitfalls
 
-- A PME 2.1 JSON is not a rollback file for PME 2.0. Keep the last export made by the old version.
+- Keep the last export made by the source version. A PME 2.1 export is not a rollback file for PME 2.0 or earlier.
 - Uninstalling a legacy PME before copying its in-package scripts and icons can remove the only copy.
 - Importing with overwrite enabled can hide collisions while you are still comparing old and new data. Rename first; consolidate only after verification.
-- Menu hotkeys in the JSON do not include Blender's unrelated keymap customizations.
+- Export Blender's keymap separately when you also need its non-PME customizations.
 
 ## Related answers
 

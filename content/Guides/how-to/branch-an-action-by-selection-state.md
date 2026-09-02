@@ -24,7 +24,7 @@ source_urls:
 ---
 
 > **Historical · current compatibility unverified**
-> Original context: 2020 forum episode; PME and Blender versions were not stated.
+> Original context: 2020 forum discussion; PME and Blender versions were not stated.
 
 ## Outcome
 
@@ -51,10 +51,6 @@ When two alternative controls are visible at once, the same predicate can be pla
 - `bmesh.from_edit_mesh()` requires an edit mesh. It is not safe to evaluate in Object mode or on a non-mesh object.
 - Do not use selection count as a proxy for a more specific requirement. Count selected edges when the operator requires edges; query faces or vertices when it requires those.
 - Keep destructive actions behind an explicit operation, not an implicit fallback.
-
-## Applies to
-
-Historical 2020 workflow; the source posts do not state PME or Blender versions. Revalidate the exact operator and data access on your current Blender version.
 
 ## Related answers
 

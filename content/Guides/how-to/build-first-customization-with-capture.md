@@ -61,7 +61,7 @@ PME can capture many supported Blender buttons and properties from the interface
 
 Repeat the same route on a property such as a toggle, slider, or enum. PME carries the property into the Slot Editor so you can place a native Blender control without first finding its data path.
 
-If a widget cannot be captured, use the explanation shown by the capture popup before reaching for Python. Some Blender UI is assembled dynamically or does not expose enough information to reconstruct the control safely.
+If a widget cannot be captured, read the explanation shown by the capture popup before reaching for Python. Some Blender UI is assembled dynamically or exposes too little information to reconstruct the control safely.
 
 ## What Capture created
 
@@ -70,17 +70,17 @@ The two captured items normally arrive through different Slot Editor tabs:
 - a Blender action becomes a **Command** button;
 - a Blender value becomes a **Property** control, or a prepared value-setting command when that better matches the clicked widget.
 
-You do not need to choose the tab before capturing. Capture gets you to the Slot Editor; the tabs let you inspect or change what the slot means.
+Capture opens the Slot Editor for you; use its tabs to inspect or change what the slot means.
 
 ## Add the shortcut and use the menu
 
-Open PME, select the new Pie Menu, and assign a shortcut that is not already important to your Blender workflow. Test it in the editor and mode where you actually need it.
+Open PME, select the new Pie Menu, and assign an available shortcut. Test it in the editor and mode where you actually need it.
 
-Do not fill every direction immediately. Two controls that save real interface travel are a better first customization than eight controls chosen only to complete the circle.
+Start with two controls that save real interface travel. Add more directions when real work gives you a reason.
 
 ## The next important idea: link customizations
 
-After one small customization works, the **Menu** tab becomes useful. It does not copy another menu's contents. It links a slot to another saved PME customization, so the child can evolve without duplicating its buttons everywhere it is used.
+After one small customization works, the **Menu** tab can link a slot to another saved PME customization. The child can then evolve without duplicating its buttons everywhere it is used.
 
 This is how a small first menu can grow into a set of reusable pieces instead of one crowded menu.
 
@@ -88,7 +88,7 @@ Continue with [[Guides/how-to/build-a-multi-button-pie-with-popup-dialogs|severa
 
 ## Leave these for later
 
-- **Hotkey** replays a Blender keymap shortcut. It is available when that exact keymap behavior matters, but it is not required for a first setup.
+- **Hotkey** replays a Blender keymap shortcut when that exact keymap behavior matters. Most first setups can begin with Command and Property.
 - **Custom** draws Blender UI through the `UILayout` API. It can build rows, labels, templates, and multiple controls, but it makes more sense after ordinary Command, Property, and Menu slots feel familiar.
 
-Use [[Guides/qa/choose-command-property-menu-hotkey-or-custom|the Slot Editor tab reference]] when you need the exact boundary between the five tabs. Continue with [[Guides/getting-started|the first useful Pie Menu project]] when you are ready to arrange and test the customization during real Blender work.
+Use [[Guides/qa/choose-command-property-menu-hotkey-or-custom|the Slot Editor tab reference]] when you need the exact difference between the five tabs.

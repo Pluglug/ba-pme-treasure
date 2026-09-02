@@ -36,7 +36,7 @@ source_code_paths:
 
 Use your own PNG as a PME item icon without storing it inside the add-on installation.
 
-The folder button in PME's Custom icon selector opens the active `icons` resource folder. It is not an image-import button: copy the file into that folder, then reload the icon collection.
+The folder button in PME's Custom icon selector opens the active `icons` resource folder. Copy the file into that folder, then reload the icon collection.
 
 ## Steps
 
@@ -63,18 +63,18 @@ L.label(text="Mask", icon_value=custom_icon("sculpt_mask"))
 
 The same name can be used anywhere a Blender `UILayout` call accepts `icon_value`.
 
-## File rules in current PME
+## File rules in PME 2.1
 
 - The loader reads `.png` files from the active user resource `icons` directory.
-- Use a lowercase `.png` extension; the current filename filter is exact.
-- Do not start a user-facing icon filename with `_`; underscore-prefixed names are hidden from the selector.
+- Use a lowercase `.png` extension; the filename filter is exact.
+- Use a visible filename without a leading `_`; underscore-prefixed names are hidden from the selector.
 - The `_intr_` prefix is reserved for PME's internal icons.
 - Replacing a file on disk requires a reload before PME swaps to the new preview collection.
 
 ## Pitfalls
 
-- Browsing to an image elsewhere and seeing its operating-system preview does not add it to PME.
-- Do not put user icons inside the installed extension directory. An update can replace that directory.
+- An operating-system preview only displays an image; copy it into the active `icons` folder to add it to PME.
+- Keep user icons in the resource folder because an extension update can replace files inside the installed extension directory.
 - If no icon appears, verify the active resource root first; an old and a new Blender profile can point to different folders.
 - A failed image can leave the previous icon generation active. Fix the PNG, then reload again rather than repeatedly changing the menu item.
 

@@ -92,15 +92,13 @@ Use the state-aware operator button when you need custom action semantics, a del
 
 ## Pitfalls
 
-- A Custom item is redrawn repeatedly. Read state while drawing; do not assign to scene data while the layout code runs.
+- A Custom item is redrawn repeatedly. Read state while drawing, and assign scene data only when the operator runs.
 - `depress=` changes presentation, not availability. Use `row.enabled` or a Poll method when the action must be unavailable.
 - Editor-specific state such as `C.space_data.shading` is valid only in the matching Blender editor.
 - The button should use the current RNA owner. Old copied paths can stay syntactically valid while pointing at obsolete state.
-- Do not compress a long workflow into the layout expression. Call a Macro or [[Guides/how-to/run-external-script-from-pme|a trusted external script]].
+- Put long workflows in a Macro or [[Guides/how-to/run-external-script-from-pme|a trusted external script]] and keep the layout expression readable.
 
-## Applies to
-
-PME 2.1 exposes `C` and `L` during Custom-item drawing and provides the `operator()` helper with `depress=` and operator-property forwarding. The pivot path and Blender's public `wm.context_set_enum` operator match Blender 4.5–5.2. PME still contains the internal legacy `pme.exec` convenience operator, but this current pattern does not depend on it.
+This PME 2.1 example uses `C`, `L`, and the public `wm.context_set_enum` operator. It avoids the internal legacy `pme.exec` convenience operator.
 
 ## Related
 

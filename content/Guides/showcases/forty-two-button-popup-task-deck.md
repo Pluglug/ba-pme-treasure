@@ -9,7 +9,7 @@ tags:
   - browse/menus
   - browse/panels-ui
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -34,11 +34,11 @@ source_urls:
 
 ## What it shows
 
-Shared by emboo2 as a side note for anyone wanting bigger toolbars like Maya or 3ds Max: an empty Blender window holds a Popup Dialog, which gives “tons of button space”—about 42 buttons in the screenshot, with their text visible. The buttons are simply the Physics section of the Properties window placed in the popup.
+emboo2 shared this while discussing larger toolbars like those in Maya or 3ds Max. An empty Blender window holds a Popup Dialog containing the Physics section of the Properties editor—about 42 labelled buttons in the screenshot.
 
 ![Blender 2.79 with the Physics properties section shown as a wide Popup Dialog of about 42 labelled buttons above the 3D View.](https://blenderartists.org/uploads/default/original/4X/a/8/e/a8e1536a16e04ca850afa003bb6026d7cb41d41b.PNG)
 
-The result resembles a Maya- or 3ds Max-style shelf. The post was a demonstration of capacity, not a curated per-workflow toolbar: it shows that PME can present a large panel without permanently filling Blender's standard header or sidebar.
+The empty window gives the panel room without permanently filling Blender's standard header or sidebar. emboo2 described it as “tons of button space” and also suggested pairing the idea with MickHanks's collapsible-window setup from the same thread.
 
 ## Pattern to borrow
 
@@ -48,21 +48,11 @@ Use different menu types for different amounts of content:
 - use a Popup Dialog when labels, rows, or several related settings need room;
 - use a persistent panel only when the controls must remain visible between actions.
 
-The 42 buttons here are the Physics panel contents. If you build your own version, the count matters less than whether each row is a recognizable group; forty unrelated buttons would merely move the clutter.
+Here, the large Physics section is the example. A personal version could use the same room for controls that benefit from visible labels and rows.
 
-## Rebuilding it today
+## About the old files
 
-The source is a screenshot, not a preset. A rebuild should start smaller:
-
-1. Choose one Blender job, such as retopology cleanup or render diagnostics.
-2. List the controls you use during that job.
-3. Divide them into short labelled rows with consistent ordering.
-4. Keep destructive or context-sensitive actions visually separate.
-5. Check that it still fits at a narrow window width.
-
-The old snippet in the same post for opening PME Preferences targets Blender 2.79-era data and operators. It should not be copied into PME 2.1. The Popup Dialog, context rules, icon references, and area lifecycle all need a fresh implementation and a current Blender test.
-
-emboo2 also suggested combining this with MickHanks's collapsible-window setup from the same thread.
+The source provides a screenshot rather than the displayed Popup Dialog as a preset. Its separate snippet for opening PME Preferences uses Blender 2.79-era data and operators, so that snippet needs a new implementation for PME 2.1.
 
 ## Media
 

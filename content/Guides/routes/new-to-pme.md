@@ -29,7 +29,6 @@ Pick one thing that slows you down in Blender and start there.
 
 Build a small Pie Menu for one job: transforms, selection, viewport display, or sculpt brushes.
 
-- [[Guides/how-to/build-first-customization-with-capture|Understand one customization and capture its first two slots]]
 - [[Guides/getting-started|Build the first useful menu step by step]]
 - [[Guides/qa/choose-command-property-menu-hotkey-or-custom|Use the Slot Editor tab reference when you need it]]
 - [[Guides/qa/choose-pie-popup-or-dialog|Choose Pie, Popup, or Dialog Mode]]
@@ -73,32 +72,7 @@ Once the basic menu feels natural, try repeated presses or press-and-release beh
 
 </div>
 
-<div class="nav-card beginner">
-
-### Make authoring pleasant
-
-Small adjustments that help once you use a menu every day.
-
-- [[Guides/how-to/adjust-pie-menu-spacing-and-theme|Adjust Pie Menu spacing and Blender theme colours]]
-- [[Guides/how-to/add-blender-ui-with-interactive-panels|Point at Blender UI and reuse or extend it with PME]]
-- [[Guides/how-to/add-custom-icons-to-pme|Give your own controls recognizable icons]]
-- [[Guides/examples|Borrow a visual pattern from selected setups]]
-
 </div>
-
-</div>
-
-## A useful first project
-
-Build one small Pie Menu for a real Blender task:
-
-1. Notice four actions you repeatedly search for or reach across the interface to use.
-2. Give the menu a job-based name such as `Transform`, `Sculpt Brushes`, or `Viewport`.
-3. Add only those actions and assign an unused shortcut.
-4. Use the menu during an actual work session.
-5. Drop anything you never pick. Add a submenu when the first menu gets crowded.
-
-If a PME label or an old forum abbreviation is unfamiliar, look it up in [[Guides/terminology|PME Terms You Will Meet]].
 
 ## See the range before choosing
 
@@ -111,47 +85,11 @@ If a PME label or an old forum abbreviation is unfamiliar, look it up in [[Guide
 
 The original post and videos show earlier PME and Blender interfaces. Use them for ideas, and use the current documentation for version-specific controls.
 
-## Continue by interest
+## Where to go next
 
-<div class="card-grid">
-
-<div class="nav-card problem">
-
-### Something does not work
-
-- [[Guides/routes/solve-a-problem|Choose the symptom]]
-- [[Guides/how-to/restore-pme-menus-from-auto-backup|Recover missing menus]]
-
-</div>
-
-<div class="nav-card code">
-
-### You want more control
-
-- [[Guides/code-examples|Browse code examples and reusable patterns]]
-- [[Guides/reference/conditional-execution-patterns|Choose a conditional execution pattern]]
-
-</div>
-
-<div class="nav-card explore">
-
-### You want to wander
-
-- [[_Index/Browse|Explore by capability or idea]]
-- [[_Index/Timeline|Travel through the archive timeline]]
-
-</div>
-
-<div class="nav-card showcase">
-
-### You want something to borrow
-
-- [[Guides/examples|Open the examples collection]]
-- [Read the original PME documentation archive](https://archive.blender.org/wiki/index.php/User:Raa/Addons/Pie_Menu_Editor/)
-
-</div>
-
-</div>
+- [[Guides/routes/solve-a-problem|Start from a symptom]] when something does not work.
+- [[Guides/code-examples|Browse code examples]] when the normal editors no longer cover the job.
+- [[_Index/Browse|Explore by capability, year, or contributor]] when you want to wander.
 
 ## Installation and updates
 

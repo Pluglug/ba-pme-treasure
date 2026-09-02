@@ -46,7 +46,7 @@ The disabled button tells users that the action exists and shows which option co
 ## Steps
 
 1. Create a **Boolean Property** in PME's Property Editor. Give it a stable identifier such as `EnableAdvanced`.
-2. Place that Property control in the same Popup Dialog or nearby settings surface.
+2. Place that Property control in the same Popup Dialog or a nearby settings panel.
 3. Add a **Custom** item for the dependent action.
 4. Create a row, set `row.enabled` from `props("EnableAdvanced")`, then draw the action into that row.
 5. Test the layout with the option off and on. The action should remain visible in both states and become clickable only when enabled.
@@ -66,14 +66,12 @@ Use Poll-gated or conditional drawing when the control is meaningless in the cur
 ## Pitfalls
 
 - Use the registered Property identifier. An unknown name reads as `None`, so `bool(...)` disables the row instead of creating scratch state.
-- Do not execute the action while drawing the Custom item. Draw an operator and set its properties so it runs on click.
-- Disabling the button is a UI guard, not a security boundary. A reusable external script should validate its own prerequisites too.
+- Draw the operator and set its properties in the Custom item so the action runs on click rather than while the UI is drawn.
+- Treat the disabled state as a UI hint; reusable external scripts should also validate their prerequisites.
 - Keep the enabling option close enough that users can discover how to unlock the action.
-- Do not add a Boolean Property when Blender already owns the relevant state. In that case, read the actual Blender property so the button cannot drift out of sync.
+- When Blender already owns the relevant state, read that property directly so the button stays in sync.
 
-## Applies to
-
-PME 2.1 exposes registered Property values through `props()`, provides the `operator()` Custom-layout helper, and provides `pme.invoke_macro` for a deferred named-Macro action. The source episode used `pme.exec`; the pattern above keeps its useful enabled-row design while using the current dedicated Macro entry point.
+The source post used `pme.exec`. The example above keeps its enabled-row design while using PME 2.1's dedicated `pme.invoke_macro` entry point.
 
 ## Related
 

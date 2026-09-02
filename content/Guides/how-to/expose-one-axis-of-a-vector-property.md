@@ -64,7 +64,7 @@ The repeated guards keep every `row.prop()` call away from a missing active obje
 
 - one transform-lock axis;
 - one component of a color or vector property;
-- a compact control surface where the complete multi-value widget is too wide;
+- a compact layout where the complete multi-value widget is too wide;
 - a task-specific panel that should expose only the component users are expected to change.
 
 ## Pitfalls
@@ -74,10 +74,6 @@ The repeated guards keep every `row.prop()` call away from a missing active obje
 - `C.object` is the active object, not every selected object.
 - Use a Custom item because `L` is PME's current `UILayout`; a Command item does not draw persistent controls.
 - Do not replace a single indexed control with three independent PME Properties unless you actually need separate stored values. The native RNA property is already the source of truth.
-
-## Applies to
-
-PME 2.1 exposes the current Blender `UILayout` as `L` in Custom items. The indexed `Object.lock_rotation` example applies to Blender 4.5–5.2.
 
 ## Related
 

@@ -60,20 +60,16 @@ For a compact aligned row with a little more horizontal room:
 row = L.row(align=True); row.scale_x = 0.8; row.prop(C.object, "dimensions", text="") if C.object else row.label(text="Select an object")
 ```
 
-The 2021 discussion used PME's old Interactive Menus workflow to extend an existing Blender menu. That capture route is not required for this result: the useful part is the Custom-layout expression, which can be placed directly in a current PME menu.
+The 2021 discussion used PME's old Interactive Menus workflow to extend an existing Blender menu. In PME 2.1, place the Custom-layout expression directly in a menu.
 
 ## Pitfalls
 
 - Keep the `if C.object` guard. A Pie Menu can be opened with no active object, and `L.prop()` requires a real Blender data owner.
-- Use a **Custom** item, not a Command item. `L` is PME's current `UILayout` and exists for drawing controls.
-- `C.object` means the active object in the invocation context. It does not draw one dimensions row for every selected object.
-- Blender defines `Object.dimensions` as the object's absolute bounding-box dimensions. It is not a direct display of raw mesh vertex extents.
+- Use a **Custom** item because `L` supplies PME's `UILayout` object for drawing controls.
+- `C.object` means the active object in the invocation context, so the expression draws one dimensions row for that object.
+- Blender defines `Object.dimensions` as the object's absolute bounding-box dimensions rather than raw mesh vertex extents.
 - Editing dimensions changes Blender's object property. Constraints, evaluated geometry, and object transforms can affect the resulting size.
 - Very narrow pie slots may compress the three fields. Use a Popup Dialog, shorten the label, or give the row more space when readability matters.
-
-## Applies to
-
-PME 2.1 exposes `C` as the current Blender context and `L` as the current `UILayout` in Custom items. Blender 4.5 and 5.2 expose `Object.dimensions` as a writable three-value float property and `UILayout.prop()` as the native drawing method.
 
 ## Related
 

@@ -70,13 +70,9 @@ Replace the illustrative property and operator with the add-on or Blender API yo
 
 ## Pitfalls
 
-- Poll methods should prevent impossible actions, not conceal ordinary choices.
+- Use Poll methods to prevent impossible actions while leaving ordinary choices visible.
 - A Custom drawing expression can run repeatedly. Avoid mutating Blender data while drawing it.
-- A condition does not solve a wrong Blender editor or mode; gate the item and still invoke it from a valid context.
-
-## Applies to
-
-PME 2.1 on Blender 4.5–5.2. PME evaluates Poll methods with scoped execution globals; Custom items can draw state-derived UI through `L`.
+- Conditions control availability; the item still needs a Blender editor and mode where its action is valid.
 
 ## Related answers
 

@@ -37,7 +37,7 @@ The community answer used PME's **Operator Searcher** rather than guessing the c
 3. Set its **Type** property to **Vertices**.
 4. Apply and save the item.
 
-The equivalent command shown in the episode began with:
+The equivalent command shown in the forum answer began with:
 
 ```python
 bpy.ops.mesh.select_mode()
@@ -45,18 +45,13 @@ bpy.ops.mesh.select_mode()
 
 PME's generated operator controls were then used to choose the vertex variant instead of hand-writing its arguments.
 
-## Why this was useful
+## Why it works
 
 An operator name alone often does not describe the final action. The same operator can expose an enum or other properties for vertex, edge, and face modes. Finding the operator first, then configuring its properties, avoids searching for three unrelated commands.
 
 The button still depends on Blender context: mesh selection mode is meaningful in Mesh Edit Mode. A menu intended for several modes should hide or disable the item outside that context.
 
-## What remains useful
-
-- Search by the UI action's label before writing Python from memory.
-- Treat operator properties as part of the captured action.
-- Configure one reusable operator differently for related variants.
-- Keep the menu's visibility aligned with the operator's valid Blender mode.
+Search by the UI action's label before writing Python from memory. The operator and its properties together describe the action, so one operator can provide related variants such as vertex, edge, and face selection.
 
 ## Sources
 

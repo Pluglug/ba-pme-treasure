@@ -48,7 +48,7 @@ Reuse a Blender menu or panel inside PME, or place PME controls directly in a na
 
 This is a temporary authoring mode. When it is enabled, compatible Blender UI blocks gain a red-highlighted **PME Tools** entry. The entry disappears when the mode is turned off; only the item or extension you create remains.
 
-The purpose is a visible, local change to Blender's interface: put your controls in an existing Blender location, or bring a native Blender panel or menu into a surface you designed yourself.
+The purpose is a visible, local change to Blender's interface: put your controls in an existing Blender location, or bring a native Blender panel or menu into a layout you designed yourself.
 
 ## Choose the direction before you begin
 
@@ -59,7 +59,7 @@ Interactive Panels connects Blender UI and PME in two directions:
 | Reuse an existing Blender menu or panel inside a PME customization | Blender → PME | **Add Menu**, **Add as Button**, **Add as Popover**, **Add as Panel** |
 | Put your own PME controls into an existing Blender menu, panel, or header | PME → Blender | **Extend Menu**, **Extend Panel**, **Extend Header** |
 
-The distinction matters. **Add as...** adds one item to the PME customization that is currently selected. **Extend...** creates or opens a dedicated PME customization whose contents are drawn on the native Blender surface.
+The distinction matters. **Add as...** adds one item to the selected PME customization. **Extend...** creates or opens a dedicated PME customization whose contents are drawn in the native Blender interface.
 
 ## When to use Capture instead
 
@@ -71,14 +71,14 @@ Use **Interactive Panels** when the thing you want is a container:
 - a registered Blender panel;
 - a Blender menu, panel, or header that should receive PME controls.
 
-Interactive Panels does not turn every label, row, or sub-control into a separately reusable item. For an individual control, Capture is usually the right tool.
+Interactive Panels works with whole menus and panels. Use Capture when you need an individual control.
 
 ## Turn on Interactive Panels
 
 1. Open PME Preferences.
 2. In the PME toolbar, enable the window-shaped **Interactive Panels** toggle.
 3. Return to the Blender editor that contains the UI you want.
-4. Open the target menu or panel if it is not already visible.
+4. Open the target menu or panel so it is visible.
 5. Look for the red-highlighted **PME Tools** entry on that menu, panel, or header.
 
 The toggle is shared across PME. Turning it on from one PME editor exposes the same authoring entries throughout Blender.
@@ -120,9 +120,8 @@ Use the least intrusive presentation that solves the problem. A button or popove
 
 - **Add as Button** and **Add as Popover** are offered for Pie Menus, Regular Menus, Pop-up Dialogs, and Stack Keys.
 - **Add as Panel** is offered for Pie Menus, Pop-up Dialogs, and Side Panel Editors.
-- Experimental Floating Panel support is not part of the normal user-facing route.
 
-If an action is missing, first check which PME customization is selected. PME hides panel presentations that the current destination does not normally support.
+If an action is missing, first check which PME customization is selected. Available presentations depend on the destination.
 
 ## Extend a Blender menu, panel, or header with PME
 
@@ -137,10 +136,10 @@ Use **Extend** when the native Blender location is already the right place for t
    - **Extend Header** inserts on the left or right side of a header region.
 5. PME creates a Pop-up Dialog for a panel or header target, or a Regular Menu for a menu target.
 6. Add operator buttons, property widgets, linked menus, or other supported slots to that new customization.
-7. Return to the Blender surface and confirm that the controls appear in the intended context.
+7. Return to the Blender interface and confirm that the controls appear in the intended context.
 8. Turn **Interactive Panels** off.
 
-Headers are extension targets; they are not imported into another PME customization as one reusable header block.
+Headers work as extension targets rather than reusable blocks imported into another PME customization.
 
 If an extension already exists on the same side of the same target, PME shows the existing extensions and an **Add New** choice. You can keep several extensions on one target, give each one its own Poll condition, and change their order later.
 
@@ -169,7 +168,7 @@ An extended Pop-up Dialog or Regular Menu has an Extend row in its editor:
 
 Select a Pie Menu, enable Interactive Panels, open the Blender submenu, and use **Add Menu** → **Menu**. The PME slot becomes one recognizable entry, while Blender continues to own the submenu's contents.
 
-Choose **Expand** only when the source menu is short and its entries make sense without their original parent label. Expanding a long menu can overwhelm the surface you were trying to simplify.
+Choose **Expand** only when the source menu is short and its entries make sense without their original parent label. Expanding a long menu can overwhelm the layout you were trying to simplify.
 
 ### Put one native panel behind a compact control
 
@@ -184,11 +183,11 @@ Extend a native panel or header, then add one or two operator buttons or propert
 Blender menus and panels are draw code, not static screenshots. Reusing them also reuses many of their assumptions.
 
 - Test the result in the editor, mode, object type, and selection state where the original UI works.
-- A panel may appear empty when its draw code expects a context that the destination does not provide.
+- A panel may appear empty when its draw code expects a different context.
 - A panel that works as a popup may still fail when embedded directly with **Add as Panel**.
 - A Blender or third-party add-on update can rename or remove a menu or panel class. Reacquire the target with **PME Tools** if an old identifier stops resolving.
 - Some UI is assembled from internal sub-layouts rather than a reusable registered menu or panel. Capture the individual operator or property instead.
-- Turn Interactive Panels off after authoring. Leaving red PME Tools entries across Blender adds noise but does not improve the saved customization.
+- Turn Interactive Panels off after authoring to remove the red PME Tools entries from Blender's interface.
 
 When direct panel reuse is unreliable, keep the idea but use a smaller boundary: capture the important operators and properties, or open the panel with a button instead of embedding all of its controls.
 
@@ -199,12 +198,12 @@ When direct panel reuse is unreliable, keep the idea but use a smaller boundary:
 - [[Guides/how-to/create-a-pme-sidebar-panel-group|Create a PME sidebar panel with Side Panel Editor]]
 - [[Guides/how-to/put-blender-header-menus-in-a-pie|Put Blender's header menus inside a Pie]]
 - [[Guides/showcases/workspace-controls-in-blender-headers|See controls placed beside the Blender UI they change]]
-- [[Guides/reference/panel-function-current-reference|Use the current panel() reference]]
-- [Read the current Interactive Panels reference](https://pie-menu-editor.github.io/pme-docs/editors/interactive_panels.html)
+- [[Guides/reference/panel-function-current-reference|Use the panel() reference]]
+- [Read the Interactive Panels reference](https://pie-menu-editor.github.io/pme-docs/editors/interactive_panels.html)
 
 ## Sources
 
-These historical posts preserve the problems and workflows that shaped the feature. The PME 2.1 behavior described above follows the current implementation and reference.
+These historical posts preserve the problems and workflows that shaped the feature. The instructions above describe PME 2.1.
 
 - [[Posts/2017/post_00569|Post 569 — the early destination-selection requirement]]
 - [[Posts/2019/post_02803|Post 2803 — the original Extend Menu workflow]]

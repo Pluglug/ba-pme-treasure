@@ -9,7 +9,7 @@ tags:
   - browse/modal-tools
   - browse/hotkeys
 created: 2026-09-01
-modified: 2026-09-01
+modified: 2026-09-03
 draft: false
 review_status: owner-review-pending
 verification_status: historical-unverified
@@ -57,17 +57,9 @@ Use a Modal operator for values you tune by eye rather than type: the pointer mo
 
 One motion, one value, a predictable sensitivity, and a clear way to finish or cancel.
 
-## What would need translating today
+## About the old presets
 
-The recording comes from Blender 2.80, and the import files have not been tested with PME 2.1. A current version needs:
-
-1. current Blender property paths for viewport focal length and studio-light rotation;
-2. confirmed PME 2.1 Modal configuration and finish/cancel behavior;
-3. shortcut-conflict checks in each intended editor and mode;
-4. tuned movement scale on modern pointer and display configurations;
-5. a fresh recording that makes the changed value and the gesture visible.
-
-Until then, the downloads are historical reference material rather than current presets.
+The recording and JSON files come from Blender 2.80 and have not been tested with PME 2.1. A new version needs the focal-length and studio-light property paths recaptured, then its Modal finish, cancel, sensitivity, and shortcuts tested in the intended editor.
 
 ## Video and attachments
 

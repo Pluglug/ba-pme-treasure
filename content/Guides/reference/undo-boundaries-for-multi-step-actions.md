@@ -26,9 +26,11 @@ source_urls:
 > **Historical · current compatibility unverified**
 > Original context: PME 1.19.0, Blender 4.5.4, 2025. Undo behavior is operator- and release-specific.
 
-## Outcome
+## Check what Blender records
 
-Treat undo as part of the automation design. A sequence that appears to be one action can create several Blender undo entries, or have different behavior in sculpt and paint tools.
+A sequence that appears to be one action can create several Blender undo entries, and sculpt or paint tools may behave differently from object operations.
+
+Choose `EXEC_DEFAULT` or `INVOKE_DEFAULT` for the interaction you need, then inspect undo separately. [[Guides/diagnostics/execute-modal-operator-without-invoke|The EXEC/INVOKE guide]] covers that first choice; this page starts with Blender's Undo History.
 
 ## Recipe
 
@@ -41,18 +43,14 @@ Treat undo as part of the automation design. A sequence that appears to be one a
    bpy.ops.ed.undo_push(message="visibility_invert")
    ```
 
-4. Give the pushed boundary a message that identifies the completed step.
+4. Give the undo entry a message that identifies the completed step.
 5. Test undo and redo from the actual mode and data type used in production.
 
 ## Pitfalls
 
-- Do not assume `EXEC_DEFAULT` alone controls the undo stack.
-- Do not add undo pushes blindly; extra entries can make a simple operation harder to reverse.
-- If an operator cannot be made reliable through operator stacking, a data-API implementation may be a better long-term automation boundary.
-
-## Applies to
-
-Historical Blender 4.5.4 sculpt and paint observations, surfaced through PME 1.19.0.
+- `EXEC_DEFAULT` alone does not control the undo stack.
+- Add an undo push only after inspecting Undo History; extra entries can make a simple operation harder to reverse.
+- If a sequence of operators remains unreliable, changing the data directly through Blender's API may be a better implementation.
 
 ## Related answers
 

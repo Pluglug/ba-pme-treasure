@@ -28,7 +28,7 @@ source_urls:
 
 ## Answer
 
-Build the controls in a PME **Popup Dialog**, then add that dialog to a **Panel Group**. A Panel Group can host Popup Dialogs and Blender panels; it does not accept Command items directly. For the N-panel, set the group to **3D Viewport → UI (Side Panel)**. The panel's category and context determine where Blender lists it.
+Build the controls in a PME **Popup Dialog**, then add that dialog to a **Panel Group**. Panel Groups host Popup Dialogs and Blender panels, while direct Command items belong inside the Popup Dialog. For the N-panel, set the group to **3D Viewport → UI (Side Panel)**. The panel's category and context determine where Blender lists it.
 
 ## Steps
 
@@ -49,19 +49,17 @@ The Popup Dialog remains the editable container for PME commands. The Panel Grou
 
 ## Pitfalls
 
-- A Panel Group is not a free-form command editor. Put direct commands in a Popup Dialog, then add that dialog to the group.
-- Choosing **Header** hides the Context and Category controls because headers do not use side-panel tabs.
+- Put direct commands in a Popup Dialog, then add that dialog to the Panel Group.
+- Choosing **Header** hides the Context and Category controls because headers use a different placement model from side-panel tabs.
 - A wrong **Space** or **Region** makes a correctly configured panel appear to be missing. Check the editor first, then open the matching T/N panel.
 - A context-specific panel can disappear when the mode or data context changes. Use **Any Context** while building, then narrow it deliberately.
 - For a temporary floating editor, use [[Guides/how-to/open-a-temporary-editor-with-popup-area|Popup Area]] instead of a Panel Group.
 
-## Applies to
-
-This recipe targets PME 2.1 with Blender 4.5–5.2. The source episode used PME 1.18.7 and Blender 3.6.5; only the placement concept is carried forward.
+These steps describe PME 2.1 with Blender 4.5–5.2. The linked 2024 discussion used PME 1.18.7 with Blender 3.6.5, so its screenshots and UI labels are historical.
 
 ## Related
 
-- [[Guides/reference/panel-function-current-reference|Current panel() reference for Popup Dialogs]]
+- [[Guides/reference/panel-function-current-reference|panel() reference for Popup Dialogs]]
 - [[Posts/2024/post_05043|Original custom N-panel question, post 5043]]
 - [[Posts/2024/post_05044|Panel Group UI (Side Panel) answer, post 5044]]
 - [[Posts/2024/post_05045|Adding commands to a panel, post 5045]]

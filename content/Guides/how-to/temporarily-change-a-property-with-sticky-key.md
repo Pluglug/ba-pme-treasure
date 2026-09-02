@@ -20,17 +20,13 @@ source_posts:
   - Posts/2018/post_01250
 ---
 
-## Applies to
-
-- PME 2.1
-- Blender 4.5–5.2
-- Sticky Key menus with Command items for On Press and On Release
-
 ## Answer
 
 Use a **Sticky Key** and generate a paired assignment with **Save and Restore Previous Value**. On press, PME stores the property's current value and applies the temporary value. On release, it writes the stored value back.
 
 This is safer than hard-coding an assumed release value because the user's original state may have been either enabled or disabled.
+
+The steps below were source-checked with PME 2.1 and Blender 4.5–5.2. The linked 2018 posts preserve the origin of the pattern rather than the present interface.
 
 ## Steps
 

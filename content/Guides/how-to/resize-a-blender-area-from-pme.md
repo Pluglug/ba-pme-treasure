@@ -1,6 +1,6 @@
 ---
 title: "Resize a Blender area from PME"
-description: "Move one edge of the current or a named Blender area by a fixed pixel distance with PME's current area-move operator."
+description: "Move one edge of the active or a named Blender area by a fixed pixel distance with PME's area-move operator."
 content_type: how_to
 search_scope: answers
 tags:
@@ -36,7 +36,7 @@ source_code_paths:
 
 ## Outcome
 
-Give a PME item a repeatable action that moves one boundary of the current Blender area:
+Give a PME item a repeatable action that moves one boundary of the active Blender area:
 
 ```python
 bpy.ops.pme.area_move(
@@ -97,17 +97,15 @@ Use the operator for a straightforward menu action. Use the bundled script when 
 
 ## Pitfalls
 
-- Keep `"INVOKE_DEFAULT"` in the operator call. The current resize work is performed by the operator's `invoke()` path.
+- Keep `"INVOKE_DEFAULT"` in the operator call. The operator performs the resize through its `invoke()` path.
 - Resizing one area moves a shared boundary, so the neighboring area changes size too.
 - `area="CURRENT"` is the safest choice when a screen contains several areas of the same type. A named target selects one matching `ui_type`; it is not a unique area identifier.
 - Large deltas can make an area inconveniently small. Test with `100` or less before choosing a final preset.
 - The operation uses Blender's screen-area movement and briefly warps the pointer to the selected boundary. With `move_cursor=False`, PME returns it to its prior position after the move.
-- This resizes an area inside the current Blender screen. It does not resize a Popup Area window or a Popup Dialog.
-- Do not copy the HTML-escaped historical one-liner from an archived reply. The current PME operator and bundled example preserve the technique without that quoting problem.
+- This resizes an area inside the active Blender screen. Popup Area windows and Popup Dialogs use different sizing controls.
+- The archived reply contains an HTML-escaped one-liner. Use PME 2.1's operator or bundled example to avoid its quoting problem.
 
-## Applies to
-
-PME 2.1 contains the `pme.area_move` operator and the bundled `command_area_move.py` example. Blender 4.5 and 5.2 expose the `screen.area_move` parameters PME relies on; final geometry still depends on the current screen layout and neighboring areas.
+PME 2.1 includes `pme.area_move` and the bundled `command_area_move.py` example. The resulting geometry still depends on the screen layout and its neighboring areas.
 
 ## Related
 
